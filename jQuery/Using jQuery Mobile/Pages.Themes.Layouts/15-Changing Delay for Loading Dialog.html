@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript">
+
+        $(document).bind("mobileinit", function () {
+            $.mobile.loadingMessage = "Loading Data...";
+        });
+        $(document).bind("pageinit", function () {
+            $("button").bind("tap", function (/*e*/) {
+                $.mobile.changePage("Static/document2.html", {
+                    loadMsgDelay: 1000
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript" src="Scripts/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <div id="page1" data-role="page">
+        <div data-role="header">
+            <h1>Jacqui's Shop</h1>
+        </div>
+        <div data-role="content">
+            <button id="forward">Go</button>
+        </div>
+    </div>
+</body>
+</html>

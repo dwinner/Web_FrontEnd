@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Распознавание подключенных модулей расширения</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<script type="text/javascript">
+// Проверка доступности Java
+if (navigator.javaEnabled())
+    document.write("JRE доступен<br />");
+else
+    document.write("JRE недоступен<br />");
+// Проверка доступности Flash
+if (navigator.appName.indexOf('Microsoft') == -1 || (navigator.plugins && navigator.plugins.length)) {
+    if (navigator.plugins["Shockwave Flash"])
+        alert("У вас есть Flash");
+    else
+        alert("Извините, не могу найти Flash");
+}
+else
+    alert("Наличие модуля не установлено: использую <object>");
+</script>
+</body>
+</html>

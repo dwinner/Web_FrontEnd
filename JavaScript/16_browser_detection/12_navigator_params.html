@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка параметров браузера Navigator</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function setHomePage() {
+	   if ((window.netscape) && (window.netscape.security)) {
+	       netscape.security.PrivilegeManager.enablePrivilege('UniversalPreferencesRead');
+	       var home = navigator.preference('browser.startup.homepage');
+	       if (home != 'http://www.google.com/') {
+	           netscape.security.PrivilegeManager.enablePrivilege('UniversalPreferencesWrite');
+	           navigator.preference('browser.startup.homepage', 'http://www.google.com/');
+           }
+       }
+    }
+	//-->
+    </script>
+</head>
+<body>
+<form action="#" method="get">
+    <input type="button" value="Установка начальной страницы обзора"
+        onclick="setHomePage();" />
+</form><p><hr /></p>
+<a href="#" onclick="HomePage = 'http://www.google.com'; 
+                     this.style.behavior='url(#default#homepage)';
+                     this.setHomePage(HomePage);
+                     return false;">
+    Установить в качестве домашней страницы.
+</a>
+</body>
+</html>

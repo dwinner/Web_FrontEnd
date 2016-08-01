@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+ 
+<head>
+	<title>Объектные циклы for...in</title>
+<meta http-equiv="content-cype" content="text/html; charset=windows-1251" />
+<meta name="author" content="D.I.V." />
+</head>
+ 
+<body>
+<script type="text/javascript">
+	var aProperty;
+	document.write("<h1>Свойства объекта Navigator</h1>");
+	document.write("<table border='2'>");
+	document.write("<tr><th>Свойство</th><th>Значение свойства</th></tr>");
+	for (aProperty in navigator) {
+		document.write("<tr>");
+		document.write("<td>" + aProperty + "</td>");
+		document.write("<td>" + navigator[aProperty] + "</td>");
+		document.write("</tr>");
+	}
+	document.write("</table>");
+</script> 
+</body>
+</html>

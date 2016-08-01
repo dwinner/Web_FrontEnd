@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+  function triangleArea(a, b, c) {
+    return 0.5*((a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.x));
+  }
+	function outputResults(oContent) {
+	  // Проверка вводимых координат на корректность
+	  with (parent.inputFrame.inputForm) {
+      var ax = parseFloat(a_x.value);
+      var ay = parseFloat(a_y.value);
+      if (isNaN(ax) || isNaN(ay)) {
+        oContent.innerHTML = "Координата a не корректна";
+        return;
+      }
+      var bx = parseFloat(b_x.value);
+      var by = parseFloat(b_y.value);
+      if (isNaN(bx) || isNaN(by)) {
+        oContent.innerHTML = "Координата b не корректна";
+        return;
+      }
+      var cx = parseFloat(c_x.value);
+      var cy = parseFloat(c_y.value);
+      if (isNaN(cx) || isNaN(cy)) {
+        oContent.innerHTML = "Координата c не корректна";
+        return;
+      }
+    }
+    // Cоздаем объекты, характеризующие точки на плоскости
+    var aPoint2D = new Object();
+    aPoint2D.x = ax;
+    aPoint2D.y = ay;
+    var bPoint2D = new Object();
+    bPoint2D.x = bx;
+    bPoint2D.y = by;
+    var cPoint2D = new Object();
+    cPoint2D.x = cx;
+    cPoint2D.y = cy;
+    // Вычисляем площадь треугольника
+    oContent.innerHTML = "Площадь данного треугольника равна ";
+    oContent.innerHTML += triangleArea(aPoint2D, bPoint2D, cPoint2D);
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame">
+  <input type="button" value="Вычислить"
+   onclick="outputResults(top.resultFrame.document.getElementById('results'));" />
+</form>
+</body>
+</html>

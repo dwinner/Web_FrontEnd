@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Получение информации об отсроченном объекте</title>
+    <script type="text/javascript" src="Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.11.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="Content/themes/base/all.css" />
+    <link rel="stylesheet" type="text/css" href="Content/themes/ui-lightness/jquery-ui.ui-lightness.css" />
+    <style type="text/css">
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            float: left;
+            width: 200px;
+        }
+
+        #buttonDiv {
+            float: left;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            function performLongTaskSync() {
+                var start = $.now();
+
+                var total = 0;
+                for (var i = 0; i < 500000000; i++) {
+                    total += (i + Number((Math.random() + 1).toFixed(0)));
+                }
+
+                var elapsedTime = (($.now() - start) / 1000).toFixed(1);
+                displayMessage("Task Complete. Time: " + elapsedTime + " sec");
+                return total;
+            }
+
+            function performLongTask() {
+                return $.Deferred(function (def) {
+                    setTimeout(function () {
+                        var total = performLongTaskSync();
+                        if (total % 2 === 0) {
+                            def.resolve(total);
+                        } else {
+                            def.reject(total);
+                        }                        
+                    }, 10);
+                });
+            }
+
+            $("button").button().click(function () {
+                if ($(":checked").length > 0) {
+                    displayMessage("Calling performLongTask()");
+
+                    var observer = performLongTask();
+                    observer.done(function () {
+                        displayMessage("Callback Executed");
+                    });
+
+                    observer.always(function() {
+                        if (observer.state() === "resolved") {
+                            displayMessage("Close");
+                        } else {
+                            displayMessage("Error");
+                        }
+                    });
+
+                    displayMessage("performLongTask() Returned");
+                } else {
+                    displayMessage("Calling performLongTaskSync()");
+                    performLongTaskSync();
+                    displayMessage("performLongTaskSync() Returned");
+                }
+            });
+
+            $(":checkbox").button();
+            displayMessage("Ready");
+        });
+
+        function displayMessage(msg) {
+            $("tbody").append("<tr><td>" + msg + "</td></tr>");
+        }
+    </script>
+</head>
+<body>
+    <h1>Jacqui's Flower Shop</h1>
+
+    <table class="ui-widget" border="1">
+        <thead class="ui-widget-header">
+            <tr>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody class="ui-widget-content"></tbody>
+    </table>
+
+    <div id="buttonDiv">
+        <button>Go</button>
+        <input type="checkbox" id="async" checked>
+        <label for="async">Async</label>
+    </div>
+</body>
+</html>

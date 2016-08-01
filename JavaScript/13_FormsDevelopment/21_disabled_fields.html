@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Демонстрация блокировки полей</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<form name="myform" id="myform" action="#" method="get">
+  Раскрасить вам робота? &nbsp; &nbsp;
+  Да
+  <input type="radio" name="colorrobot" id="colorrobot" value="да" checked="true"
+    onclick="myform.robotcolor.disabled=false;robotcolorlabel.style.color='black';" />
+  Нет
+  <input type="radio" name="colorrobot" id="colorrobot" value="Нет"
+    onclick="myform.robotcolor.disabled=true;robotcolorlabel.style.color='gray';" />
+  <br /><br />
+  <label id="robotcolorlabel">
+    Цвет:
+    <select name="robotcolor" id="robotcolor">
+      <option selected>Серебряный</option>
+      <option selected>Зеленый</option>
+      <option selected>Красный</option>
+      <option selected>Синий</option>
+      <option selected>Оранжевый</option>
+    </select>
+  </label>
+</form>
+</body>
+</html>

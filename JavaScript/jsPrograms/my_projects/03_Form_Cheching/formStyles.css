@@ -1,0 +1,36 @@
+table {
+	background-color: #dcdcdc;
+	width: 70%;
+	table-layout: fixed;
+}
+td {
+	padding: 3px;
+	font: normal 12px Tahoma;
+	color: red;
+}
+input, textarea, select {
+	border: 1px green dashed;
+	font: bolder 12px Arial;
+}
+input:focus, textarea:focus, select:focus {
+	border: 1px red dashed;
+	font: bolder 12px Arial;
+	background-color: #ffebcd;
+}
+label {
+	color: #a52a2a;
+}
+#sendData:hover {
+	color: red;
+	border-width: 0px;
+	background: deepskyblue;
+}
+.progress {
+	width: 1px;
+	height: 14px;
+	/* color: white; */
+	font-size: 12px;
+	overflow: hidden;
+	/* background-color: navy; */
+	padding-left: 5px;
+}

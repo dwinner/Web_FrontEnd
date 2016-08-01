@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Ограничение для области текста</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<form name="myform" id="myform" action="#" method="get">
+	<label>Комментарии:<br />
+	<textarea name="comments" id="comments" rows="4" cols="40"
+	 onkeypress="return (document.myform.comments.value.length < 100);">
+		Задает ограничение объема в 100 символов в соответствующих браузерах.
+	</textarea>
+	</label>
+</form>
+</body>
+</html>

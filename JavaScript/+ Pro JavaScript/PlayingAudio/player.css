@@ -1,0 +1,41 @@
+﻿body { text-align: center; }
+
+header, section, footer, aside, nav, article, figure, figcaption, hgroup { display: block; }
+
+#player {
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: #999999;
+    border: 1px solid #666666;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 5px;
+    width: 720px;
+}
+
+nav { margin: 5px 0; }
+
+#buttons {
+    float: left;
+    height: 20px;
+    width: 85px;
+}
+
+#bar {
+    background: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 16px;
+    padding: 2px;
+    position: relative;
+    width: 600px;
+}
+
+#progress {
+    background: #000096; /* fallback color */
+    background: rgba(0, 0, 150, .2);
+    height: 16px;
+    position: absolute;
+    width: 0;
+}

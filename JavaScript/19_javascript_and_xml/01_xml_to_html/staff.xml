@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1251" standalone="yes" ?>
+<?xml-stylesheet href="staff.xsl" type="text/xsl"?>
+<directory>
+	<employee>
+		<name>Фред Браун</name>
+		<title>Мойщик изделий</title>
+		<phone>(543) 555-1212</phone>
+		<email>fbrown@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Кори Ричардс</name>
+		<title>Менеджер по токсичным отходам</title>
+		<phone>(543) 555-1213</phone>
+		<email>mrichards@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Тим Пауэлл</name>
+		<title>Главный босс</title>
+		<phone>(543) 555-2222</phone>
+		<email>tpowell@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Саманта Джонс</name>
+		<title>Торговый представитель</title>
+		<phone>(543) 555-5672</phone>
+		<email>jones@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Эрик Робертс</name>
+		<title>Главный технолог</title>
+		<phone>(543) 567-3456</phone>
+		<email>eric@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Фрэнк Ли</name>
+		<title>Управляющий сбытом</title>
+		<phone>(123) 456-2222</phone>
+		<email>fli@democompany.com</email>
+	</employee>
+</directory>

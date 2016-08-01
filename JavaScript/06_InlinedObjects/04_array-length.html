@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Свойство length</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+/* length - первый свободный индекс, а не длина! */
+var myArray = new Array();
+myArray[1000] = "Это единственный элемент в массиве";
+alert(myArray.length);	// 1001
+
+/* Массив с дырами */
+// определим переменную для результата произведения
+var result = 1;
+// определим массив для умножаемых значений
+var myValues = new Array();
+// установим значения
+myValues[0] = 2;
+myValues[2] = 3;
+// пройдем по массиву, вычисляя произведение всех значений
+for (var index = 0; index < myValues.length; index++)
+	result *= myValues[index];
+alert("Значением result является: " + result);	// NaN!
+
+/* Аккуратная версия примера массива с дырами */
+var result = 1;
+// определим массив для умножаемых значений
+var myValues = new Array();
+myValues[0] = 2;
+myValues[2] = 3;
+for (var index = 0; index < myValues.length; index++) {
+	// проверим, действителен ли элемент
+	if (myValues[index] != undefined)
+		result *= myValues[index];
+}
+alert("Значением result является: " + result);	// 6
+
+/* Вот как можно удалить все элементы массива */
+var myArray = ["red", "green", "blue"];
+myArray.length = 0;
+alert("myArray = " + myArray);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Форсированная передача по ссылке</title>
+<meta http-equiv="content-cype" content="text/html; charset=windows-1251" />
+<meta name="author" content="D.I.V." />
+</head>
+<body>
+<script type="text/javascript">
+function fiddle(arg1) {
+	arg1.myString = "Новое значение";
+	document.write("Внутри функции fiddle arg1.myString = " + arg1.myString + "<br />");
+}
+var x = new Object();
+x.myString = "Исходное значение";
+document.write("До вызова функции x.myString = " + x.myString + "<br />");
+fiddle(x);
+document.write("После вызова функции x.myString = " + x.myString + "<br />");
+</script> 
+</body>
+</html>

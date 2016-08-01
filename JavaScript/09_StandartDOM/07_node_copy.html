@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Копирование узлов</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<p id="p1">Это <em>проверка</em> клонирования</p>
+<hr />
+<div id="insertthere" style="background-color: yellow;">
+</div>
+<hr />
+<script type="text/javascript">
+<!--
+function cloneAndCopy(nodeId, deep) {
+	var toClone = document.getElementById(nodeId);
+	var cloneNode = toClone.cloneNode(deep);
+	var insertPoint = document.getElementById('insertthere');
+	insertPoint.appendChild(cloneNode);
+}
+//-->
+</script>
+<form action="#" method="get">
+	<input type="button" value="Клонирование" onclick="cloneAndCopy('p1', false);" /><br />
+	<input type="button" value="Глубокое клонирование" onclick="cloneAndCopy('p1', true);" />
+</form>
+</body>
+</html>

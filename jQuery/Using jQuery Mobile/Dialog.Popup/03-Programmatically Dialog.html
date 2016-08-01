@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <link rel="stylesheet" href="Content/jquery.mobile-1.4.5.css" type="text/css" />
+    <script type="text/javascript" src="Scripts/jquery-1.8.0.js"></script>
+    <script>
+        $(document).bind("pageinit", function (event, data) {
+            $("#dialogLink").click(function (e) {
+                $.mobile.changePage(this.href, {
+                    role: "dialog"
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript" src="Scripts/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <div id="page1" data-role="page">
+        <div data-role="header">
+            <h1>Jacqui's Shop</h1>
+        </div>
+        <div data-role="content">
+            <p><a id="dialogLink" href="#page2">Show the dialog</a></p>
+            <p><a href="#page2">Show the page</a></p>
+        </div>
+    </div>
+    <div id="page2" data-role="page">
+        <div data-role="header">
+            <h1>You clicked the link!</h1>
+        </div>
+        <div data-role="content">
+            This is page 2
+            <a href="#" data-role="button" data-rel="back">Close</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Специальные окна IE</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	var myPopup = window.createPopup();
+    function showPopup() {    	var popupBody = myPopup.document.body;
+    	popupBody.style.backgroundColor = "#ffff99";
+    	popupBody.style.border = "solid black 1px";
+    	popupBody.innerHTML = "Щелкните вне этого окна или на кнопке 'Скрыть...'";
+    	myPopup.show(50, 100, 650, 25, document.body);
+    }
+    function makeModalDialog() {    	// modal.html содержит информацию о модальном диалоге
+    	showModalDialog("modal.html",window,"status:false;dialogWidth:300px;dialogHeight:100px;help:no;status:no;");
+    }
+    function makeModelessDialog() {    	var HTMLoutput = "";
+    	myModelessDialog = showModelessDialog("blank.htm",window,"status:false;dialogWidth:200px;dialogHeight:300px;help:no;status:no;");
+    	modelessBody = myModelessDialog.document.body;
+    	modelessBody.style.backgroundColor = "#ffcc33";
+
+    	HTMLoutput += "<html><head><title>Немодальное диалоговое окно</title></head>";
+    	HTMLoutput += "<body><h2>Важное сообщение в этом немодальном окне</h2><hr />";
+    	HTMLoutput += "<form><div align='center'><input type='button' value='закрыть' onclick='self.close();' />";
+    	HTMLoutput += "</div></form></body></html>";
+
+    	modelessBody.innerHTML = HTMLoutput;
+    }
+	</script>
+</head>
+<body>
+<form name="mainform" id="mainform" action="#" method="get">
+	<input type="button" value="Модальный диалог" onclick="makeModalDialog();" />
+	<input type="button" value="Немодальный диалог" onclick="makeModelessDialog();" />
+	<input type="button" value="Показать всплывающее окно" onclick="showPopup();" />
+	<input type="button" value="Скрыть всплывающее окно" onclick="myPopup.hide();" />
+</form>
+</body>
+</html>

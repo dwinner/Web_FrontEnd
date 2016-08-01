@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Пример всплывающего окна</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function showPopup() {
+	  /*@cc_on @*/
+	  /*@if (@_jscript_version >= 5.5)
+      var newpopup = window.createPopup();
+      newpopup.document.body.style.backgroundColor ="lightblue";
+      newpopup.document.body.style.padding = "8";
+      newpopup.document.body.innerHTML = "Какое <b>прекрасное</b> окно!";
+      newpopup.show(150, 300, 200, 50, document.all("mybutton"));
+    @else @*/
+      alert("Такое надоевшее окно!");
+    /*@end @*/
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2>Пример всплывающего окна</h2>
+<form action="#" method="get">
+  <input id="mybutton" type="button" value="Показать окно" onclick="showPopup();" />
+</form>
+</body>
+</html>

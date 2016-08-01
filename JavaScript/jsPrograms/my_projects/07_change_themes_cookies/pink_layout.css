@@ -1,0 +1,122 @@
+/* Стиль корневого элемента */
+body {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    background: black; 
+}
+/* Стиль главного бокса */
+#xMain {
+    margin-left: 10%;
+    width: 80%;
+}
+/* Стили верхнего бокса */
+#topcol {
+    background: #4b0082;
+    border: 1px solid white;
+    padding: 10px;
+    margin-bottom: 15px;
+    clear: both;
+}
+#topcol table {
+    table-layout: fixed;
+}
+#topcol table caption {
+    font: bolder 17px Arial; 
+    color: #ffb6c1;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+#topcol table td {
+    text-align: center;
+}
+#topcol a {
+    font: normal italic 15px Microsoft Sans Serif;
+    text-decoration: none;
+    color: #ff00ff;
+}
+#topcol a:hover {
+    text-decoration: underline;
+    color: #ff1493;
+}
+/* Стили левого бокса */
+#leftcol {
+    width: 250px;
+    height: 600px;
+    float: left;
+    background: #c71585;
+    border: 1px solid white;
+    padding: 0px;
+    margin-right: 15px;
+    overflow: auto;
+}
+/* Стили top-левого бокса и bottom-левого бокса */
+#leftcolTop, #leftcolBottom {
+    border: 1px dotted #e0ffff;
+    margin: 10px;
+    padding: 5px;
+}
+#leftcolTop ul {
+    list-style-type: none;
+    margin: 5px 0px 5px 0px;
+    padding: 0px 3px 0px 7px;
+}
+#leftcolTop ul li {
+    margin: 2px;
+    padding: 2px;
+}
+#leftcolTop a {
+    font: normal 14px Comic Sans MS;
+    text-decoration: none;
+    color: #f0e68c;
+}
+#leftcolTop a:hover {
+    text-decoration: underline;
+    color: #ffa500;
+}
+#leftcolBottom * {
+    font: lighter 10pt Arial;
+    color: #ffdead;
+}
+#leftcolBottom ol {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+/* Стили правого бокса */
+#rightcol {
+    height: 600px;
+    background: #c71585;
+    border: 1px solid white;
+    margin-left: 0px;
+    overflow: auto;
+}
+/* Стили нижнего бокса */
+#bottomcol {
+    background: #0000cd;
+    border: 2px groove black;
+    padding: 10px;
+    margin-top: 15px;
+    clear: both;
+}
+#bottomcol table {
+    table-layout: fixed;
+}
+#bottomcol table td {
+    text-align: center;
+}
+#bottomcol button {
+    background: #f0fff0;
+    font: normal 14px Comic Sans MS;
+    text-decoration: none;
+    color: #00008b;
+    border: 1px dashed black;
+}
+#bottomcol button:hover {
+    color: #008080;
+    border: 1px groove red;
+    cursor: hand;
+}
+#bottomcol button:focus {
+}

@@ -1,0 +1,91 @@
+﻿@import "Colors.less";
+@import "mixins.less";
+
+@baseSize: 14px; // Общий базовый размер шрифта
+
+html {
+    font-size: @baseSize;
+}
+
+body {
+    background: @mainColor;
+    margin: 0;
+    padding: 0;
+}
+
+#xMain {
+    background: @xMainColor;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#xHeader {
+    background: @topBottomColor;
+    border: #008800 groove 2px;
+}
+
+#xLeft {
+    background: @leftRightColor;
+    border: inset 2px red;
+    color: white;
+    float: left;
+    height: 500px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    overflow: auto;
+    padding: 3px;
+    width: 200px;
+    .rounded-corners(10px);
+
+    a {
+        color: white;
+    }
+}
+
+#xRight {
+    background: @leftRightColor;
+    border: inset 2px red;
+    color: white;
+    float: right;
+    height: 500px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    overflow: auto;
+    padding: 3px;
+    width: 200px;
+    .rounded-corners(10px);
+
+    a {
+        color: white;
+    }
+}    
+
+#xCenter {
+    background: #e3e8cc;
+    border: double 1px red;
+    margin: 5px 210px 5px 210px;
+    padding: 15px;
+    .rounded-corners();
+}
+
+#topContent {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#xBottom {
+    background: darken(@topBottomColor, 10%); // Более темный цвет
+    border: solid 1px black;
+    clear: both;
+    font-size: 0.9*@baseSize;
+    margin: 0;
+    padding: 3px;
+}
+
+.xButtons {
+    font-size: 1.2*@baseSize;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}

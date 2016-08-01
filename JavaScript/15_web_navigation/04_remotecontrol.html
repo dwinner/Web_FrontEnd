@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Окно управления</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function loadImage(which) {
+	   var contentWindowURL = "04_imageviewer.html";
+       if (!window.opener || window.opener.closed) {
+            alert("Главное окно исчезло и будет восстановлено.");
+            window.open(contentWindowURL", "_blank");
+            window.close();
+            return;
+       }
+       window.opener.document.images["displayedImage"].src = which;
+       window.opener.focus(); 
+    }
+	//-->
+	</script>
+</head>
+<body>
+<h3>Выберите фото для демонстрации</h3>
+<form action="#" onsubmit="return false;" method="get">
+    <input type="button" value="Фото1" onclick="loadImage('images/image1.jpg');" />&nbsp;
+    <input type="button" value="Фото2" onclick="loadImage('images/image2.jpg');" />&nbsp;
+    <input type="button" value="Фото3" onclick="loadImage('images/image3.jpg');" />&nbsp;
+    <input type="button" value="Фото4" onclick="loadImage('images/image4.jpg');" />&nbsp;
+</form>
+</body>
+</html>

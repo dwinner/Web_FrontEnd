@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Слайд-шоу изображений</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+<link rel="stylesheet" href="silder_rules.css" type="text/css" />
+<script type="text/javascript" src="ajaxroutine.js"></script>
+<script type="text/javascript" src="slider_scripts.js"></script>
+<script type="text/javascript"><!--
+// массив изображений, полученных асинхронно с сервера
+var imgList = new Array();
+// Признак того, получен ли список изображений с сервера
+var imglistLoaded = false;
+// объект бокса для вписывания
+var outputBox;
+// Параметр области вписывания
+var thumbDim, mini;
+// Флаг запуска Слайд-шоу
+var slideStart = false;
+// С какого места продолжать Слайд-шоу
+var curSlideIndex = 0;
+// Идентификатор таймера
+var timerID = null;
+// Скорость Слайд-шоу
+var sSpeed = 2000;
+// Функция обратного вызова, заполняющая массив изображений
+function imageProcess() {
+	var myajax = ajaxpack.ajaxobj;
+	var myfiletype = ajaxpack.filetype;
+	if (myajax.readyState == 4) {
+		if (myajax.status == 200 || window.location.href.indexOf("http") == -1) {
+			if (myfiletype == "xml") {
+				// Обработка данных XML;
+				// читаем сообщение, полученное от сервера
+	            var xmlResponse = myajax.responseXML;
+	            // Получаем ссылку на корневой элемент XML
+	            var xmlRoot = xmlResponse.documentElement;
+	            // Получаем ссылку на массив изображений
+	            var imgArray = xmlRoot.getElementsByTagName("image");
+	            // заполняем массив изображений
+	            for (var i=0; i<imgArray.length; i++) {
+	               imgList.push(imgArray.item(i).firstChild.data);
+                }
+                imglistLoaded = true;
+			}
+		}
+	}
+}
+// функция запуска slideshow
+function SlideShow() {
+    if (outputBox == null) return;
+    // Осуществляем предварительную загрузку очередного изображения
+    var curImg = new Image();
+    curImg.src = imgList[curSlideIndex];
+    // Если загрузка завершена, циклически инкрементируем индекс
+    if (curImg.complete) {
+        if (curSlideIndex == imgList.length-1)
+            curSlideIndex = 0;
+        else
+            curSlideIndex++;        
+    }
+    if (imglistLoaded) {
+        // Задаем параметры вписывания
+        var thumbs = createTumb(curImg, mini);
+        // Добавляем изображение средствами DOM
+        curImg.width = thumbs[0];
+        curImg.height = thumbs[1];
+        if (outputBox.hasChildNodes())
+            outputBox.removeChild(outputBox.firstChild);
+        outputBox.appendChild(curImg);
+        if (slideStart == false)
+            slideStart = true;
+        if (timerID == null)
+            timerID = setInterval("SlideShow();", sSpeed);
+    }
+    else { // Если список URL ещё не загружен
+        outputBox.innerHTML = "Список изображений не загружен.";
+        outputBox.innerHTML += "Попробуйте позже...";
+    }
+}
+// Функция, возвращающая параметры писывания изображения в бокс
+function createTumb(oImage, boxSize) {
+    var imgWidth = oImage.width;
+    var imgHeight = oImage.height;
+    var reduction;
+    boxSize = parseInt(boxSize);
+    // Изменяем размеры, если они больше максимума
+    if (imgWidth > boxSize || imgHeight > boxSize) {
+        // Вычисляем коэффициент пропорций сжатия
+        if (imgWidth < imgHeight)
+            reduction = Math.ceil(imgHeight/boxSize);
+        else
+            reduction = Math.ceil(imgWidth/boxSize);
+        var desWidth = Math.floor(imgWidth/reduction);
+        var desHeight = Math.floor(imgHeight/reduction);
+        return Array(desWidth, desHeight);
+    }
+    else
+        return Array(imgWidth, imgHeight);
+}
+// Функция остановки/запуска Слайд-шоу
+function StartStopSlideShow() {
+    if (slideStart == false)
+        slideStart = true;
+    if (timerID) {
+        clearInterval(timerID);
+        timerID = null;
+    }
+    else {
+        SlideShow();
+    } 
+}
+//--></script>	
+</head>
+<body onload='ajaxpack.postAjaxRequest("server_actions/getImages.php","",imageProcess,"xml");'>
+<center>
+<div id="slide" style="width:300px;height:300px;">
+</div>
+<button type="button" class="slider" id="btnSlider" 
+ name="btnSlider" value="" 
+ onclick="changeButtonText('btnSlider');StartStopSlideShow();">
+ Start
+</button>
+</center>
+<script type="text/javascript">
+<!-- Инициализация переменных после частичной загрузки
+// Получаем объект бокса для вписывания
+outputBox = document.getElementById('slide');
+// Получаем параметр области вписывания
+thumbDim = getBoxDim("slide");
+mini = (thumbDim[0] <= thumbDim[1]) ? thumbDim[0] : thumbDim[1];
+//--></script>
+</body>
+</html>

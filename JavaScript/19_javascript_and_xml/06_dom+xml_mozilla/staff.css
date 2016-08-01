@@ -1,0 +1,6 @@
+directory {display: block;}
+employee {display: block; border: solid;}
+name {display: inline; font-weight: bold; width: 175px;}
+title {display: inline; font-style: italic; width: 325px;}
+phone {display: inline; color: red; width: 150px;}
+email {display: inline; color: blue; width: 100px;}

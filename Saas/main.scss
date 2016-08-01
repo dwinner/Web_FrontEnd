@@ -1,0 +1,99 @@
+﻿$mainColor: #fff8dc;
+$baseFontSize: 14px;
+/*$rootPath: "http://localhost/";*/
+
+/*$baseClassName: "col";
+
+.#{$baseClassName}1{
+    font-size: $baseFontSize;
+}
+
+.#{$baseClassName}2{
+    font-size: $baseFontSize;
+}*/
+
+body {
+    padding: 0;
+    margin: 0;
+    background: lighten($mainColor, 25%); /* NOTE: Увеличение яркости цвета */
+    font-size: $baseFontSize;
+    /* NOTE: Интерполяция строк background-image: url("#{$rootPath}images/back.jpg");*/
+}
+
+#xMain {
+    margin-left: 10%;
+    margin-right: 10%;
+    background: #f0f8ff;
+}
+
+#xHeader {
+    background: #00ffff;
+    border: groove 2px #008000;
+}
+
+#xLeft {
+    width: 200px;
+    height: 500px;
+    background: #0000cd;
+    color: white;
+    border: inset 2px red;
+    float: left;
+    padding: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow: auto;
+
+    a {
+        color: white;
+    }
+}
+
+#xRight {
+    width: 200px;
+    height: 500px;
+    background: #0000cd;
+    color: white;
+    border: inset 2px red;
+    float: right;
+    padding: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow: auto;
+
+    a {
+        color: white;
+        &:hover: text-decoration: underline;
+    }
+}
+
+#xCenter {
+    background: #e3e8cc;
+    border: double 1px red;
+    margin: 5px 210px 5px 210px;
+    padding: 15px;
+}
+
+#topContent {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#bottomContent {
+}
+
+#xBottom {
+    background: #00ffff;
+    border: solid 1px black;
+    font-size: 90%;
+    padding: 3px;
+    margin: 0;
+    clear: both;
+}
+
+.xButtons {
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 120%;
+}

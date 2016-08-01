@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Генерирование событий вручную</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<form id="myForm" name="myForm" action="#" method="get">
+	<input type="button" id="button1" name="button1" value="Нажмите здесь!"
+		onclick="alert('Эй вы там!');" />
+</form>
+
+<script type="text/javascript">
+<!--
+document.myForm.button1.click();
+//-->
+</script>
+
+<img name="myButton" id="myButton" alt="кнопка"
+	 src="addtobasket.png"
+	 onmouseover="this.src='addtofavorites.png';"
+	 onmouseout="this.src='addtobasket.png';" 
+/>
+<form action="#" method="get">
+<input type="button" value="Вызвать mouseover" 
+	onclick="document.images['myButton'].onmouseover();" />
+<input type="button" value="Вызвать mouseout" 
+	onclick="document.images['myButton'].onmouseout();" />
+</form>
+</body>
+</html>

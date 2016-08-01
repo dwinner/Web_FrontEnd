@@ -1,0 +1,13 @@
+﻿#formbox {
+    float: left;
+    padding: 20px;
+    border: 1px solid #999999;
+}
+
+#dataBox {
+    float: left;
+    width: 500px;
+    margin-left: 20px;
+    padding: 20px;
+    border: 1px solid #999999;
+}

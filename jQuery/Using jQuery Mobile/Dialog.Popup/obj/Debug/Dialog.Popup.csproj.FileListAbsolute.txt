@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Dialog.Popup\bin\Dialog.Popup.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Dialog.Popup\bin\Dialog.Popup.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Dialog.Popup\bin\Dialog.Popup.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Dialog.Popup\obj\Debug\Dialog.Popup.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Dialog.Popup\obj\Debug\Dialog.Popup.pdb

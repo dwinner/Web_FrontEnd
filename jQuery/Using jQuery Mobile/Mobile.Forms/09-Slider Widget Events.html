@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <link href="Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.8.0.js"></script>
+    <script>
+        $(document).bind("pageinit", function () {
+            $("#quantity").slider({
+                start: function () {
+                    $("#message").text("Sliding");
+                },
+                stop: function () {
+                    $("#message").text(quantity.value);
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="Scripts/jquery.mobile-1.4.5.js"></script>
+    <style type="text/css">
+        div[data-role=fieldcontain] {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" data-role="page" data-theme="b">
+        <div data-role="header">
+            <h1>Jacqui's Shop</h1>
+        </div>
+        <form method="get">
+            <div data-role="fieldcontain">
+                <label for="quantity">Quantity: </label>
+                <input id="quantity" type="range" value="10" min="1" max="20">
+            </div>
+            Value: <span id="message">Ready</span>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	var whiteSpaces = " \t\n\r";
+	function isEmpty(s) {
+	  var i;
+	  if ((s == null) || (s.length == 0))
+      return true;
+    for (i=0; i<s.length; i++) {
+      var c = s.charAt(i);
+      if (whiteSpaces.indexOf(c) == -1)
+        return false;
+    }
+    return true;
+	}
+	function getCharMinCode(str) {
+	  var strlen = str.length;
+	  var minCode = str.charCodeAt(0);
+	  var tmpCode;
+	  for (var i=1; i <= strlen; i++) {
+      tmpCode = str.charCodeAt(i);
+      if (tmpCode < minCode)
+        minCode = tmpCode;
+    }
+    return String.fromCharCode(minCode);
+	}
+	function getCharMaxCode(str) {
+	  var strlen = str.length;
+	  var maxCode = str.charCodeAt(0);
+	  var tmpCode;
+	  for (var i=1; i <= strlen; i++) {
+      tmpCode = str.charCodeAt(i);
+      if (tmpCode > maxCode)
+        maxCode = tmpCode;
+    }
+    return String.fromCharCode(maxCode);
+	}
+	function OutputCharFromCodes(str, oContent) {
+	  if (isEmpty(str))
+      oContent.innerHTML = "Вы не ввели видимых символов";
+    else {
+      oContent.innerHTML = "Символ с наибольшим кодом:\t"+getCharMaxCode(str)+"<br />";
+      oContent.innerHTML += "Символ с наименьшим кодом:\t"+getCharMinCode(str);
+    }
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame">
+  <center>
+    <input type="button" value="Пуск!"
+     onclick="OutputCharFromCodes(parent.inputFrame.inputForm.str.value, top.resultFrame.document.getElementById('results'));" />
+  </center>
+</form>
+</body>
+</html>

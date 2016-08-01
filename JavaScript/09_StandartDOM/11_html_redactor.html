@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Редактор DOM HTML 0.1</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+	<script type="text/javascript">
+	<!--
+	
+	function addElement() {
+		var choise = document.htmlForm.elementList.selectedIndex;
+		var theElement = document.createElement(document.htmlForm.elementList.options[choise].text);
+		var textNode = document.createTextNode(document.htmlForm.elementText.value);
+		var insertSpot = document.getElementById('addHere');
+		theElement.appendChild(textNode);
+		insertSpot.appendChild(theElement);
+	}
+	
+	function addEmptyElement(elementName) {
+		var theBreak = document.createElement(elementName);
+		var insertSpot = document.getElementById('addHere');
+		insertSpot.appendChild(theBreak);
+	}
+	
+	function deleteNode() {
+		var deleteSpot = document.getElementById('addHere');
+		if (deleteSpot.hasChildNodes()) {
+			var toDelete = deleteSpot.lastChild;
+			deleteSpot.removeChild(toDelete);
+		}
+	}
+	
+	function showHTML() {
+		var insertSpot = document.getElementById('addHere');
+		if (insertSpot.innerHTML)
+			alert(insertSpot.innerHTML);
+		else
+			alert("Без innerHTML это представить трудно!");
+	}
+	
+	//-->
+	</script>
+</head>
+<body>
+<h1 style="text-align: center;">Простой редактор DOM HTML</h1>
+<br /><br />
+<div id="addHere" style="background-color: #ffffcc; border: solid;">&nbsp;</div>
+<br /><br />
+
+<form id="htmlForm" name="htmlForm" action="#" method="get">
+<select id="elementList" name="elementList">
+	<option>B</option>
+	<option>BIG</option>
+	<option>CITE</option>
+	<option>CODE</option>
+	<option>EM</option>
+	<option>H1</option>
+	<option>H2</option>
+	<option>H3</option>
+	<option>H4</option>
+	<option>H5</option>
+	<option>H6</option>
+	<option>I</option>
+	<option>P</option>
+	<option>U</option>
+	<option>SAMP</option>
+	<option>SMALL</option>
+	<option>STRIKE</option>
+	<option>STRONG</option>
+	<option>SUB</option>
+	<option>SUP</option>
+	<option>TT</option>
+	<option>VAR</option>
+</select>
+
+<input type="text" name="elementText" id="elementText" value="По умолчанию" />
+<input type="button" value="Добавить элемент" onclick="addElement();" />
+<br /><br />
+<input type="button" value="Вставить <br>" onclick="addEmptyElement('BR');" />
+<input type="button" value="Вставить <hr>" onclick="addEmptyElement('HR');" />
+<input type="button" value="Удалить элемент" onclick="deleteNode();" />
+<input type="button" value="Показать HTML" onclick="showHTML();" />
+</form>
+</body>
+</html>

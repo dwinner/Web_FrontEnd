@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Средства DOM и добавление содержимого в окно</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function domWindowAdd() {
+		var currentElement;
+		if ((window.myWindow) && (myWindow.closed == false)) {
+			var str = document.testForm.textToAdd.value;
+			var theString = myWindow.document.createTextNode(str);
+			var theBreak = myWindow.document.createElement("br");
+			
+			currentElement = myWindow.document.getElementById('heading1');
+			currentElement.appendChild(theString);
+			currentElement.appendChild(theBreak);
+			myWindow.focus();
+		}
+	}
+	// Создание окна, в которое будет добавляться текст
+	var myWindow = open('','mywin','height=300,width=300');
+	myWindow.document.writeln("<html><head><title>Оконце</title></head><body>");
+	myWindow.document.writeln("<h1 id='heading1'>Привет от JavaScript</h1></body></html>");
+	myWindow.document.close();
+	myWindow.focus();
+	//-->
+	</script>
+</head>
+<body>
+<h1>Взаимодействие с окном посредством DOM</h1>
+<form name="testForm" id="testForm" action="#" method="get">
+	<input type="text" name="textToAdd" id="textToAdd" size="30" />
+	<input type="button" value="Добавить текст" onclick="domWindowAdd();" />
+</form>
+</body>
+</html>

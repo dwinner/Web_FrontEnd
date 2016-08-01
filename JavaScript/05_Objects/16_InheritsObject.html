@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Наследование через цепочку прототипов и замена свойств</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+// Добавляем прототипы для родителя
+Robot.prototype.hasJetpack = false;
+Robot.prototype.actionValue = "Тревога! Нарушитель!";
+Robot.prototype.doAction = function() { alert(this.actionValue); };
+// Переопределяем свойство toString() для объектов типа Robot
+Robot.prototype.toString = function() { return "object Robot"; };
+// Конструктор для родительского объекта
+function Robot(needsToFly) {
+	if (needsToFly == true)
+		this.hasJetpack = true;
+	else
+		this.hasJetpack = false;
+}
+// Производим наследование через цепочку прототипов
+UltraRobot.prototype = new Robot();
+UltraRobot.prototype.feature = "Радар";
+// Переопределяем свойство toString() для объектов типа UltraRobot
+UltraRobot.prototype.toString = function() { return "object UltraRobot"; };
+// Конструтор для производного объекта
+function UltraRobot(extraFeature) {
+	if (extraFeature)
+		this.feature = extraFeature;
+}
+// Вот, что может получиться
+var guard = new UltraRobot("Выполняет вычисления");
+var feature = guard.feature;
+var canFly = guard.hasJetpack;
+guard.doAction();
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Watching position</title>
+    <script type="text/javascript">
+        var geoWatch;
+
+        function initiate() {
+            var location = document.getElementById('getlocation');
+            location.addEventListener('click', getLocation, false);
+        }
+
+        function getLocation() {
+            var geoConfig = {
+                enableHighAccuracy: true,
+                maximumAge: 60000
+            };
+            geoWatch = navigator.geolocation.watchPosition(showInfo, showError, geoConfig);
+        }
+
+        function showInfo(position) {
+            var locSection = document.getElementById('location');
+            var data = '';
+            data += 'Широта: ' + position.coords.latitude + '<br />';
+            data += 'Долгота: ' + position.coords.longitude + '<br />';
+            data += 'Точность: ' + position.coords.accuracy + ' mtc.<br />';
+            locSection.innerHTML = data;
+        }
+
+        function showError(error) {
+            alert('Ошибка: ' + error.code + ' ' + error.message);
+        }
+
+        // NOTE: Отмена наблюдения за местоположением: clearWatch(geoWatch);
+        window.addEventListener('load', initiate, false);
+    </script>
+</head>
+<body>
+    <section id="location">
+        <button id="getlocation">Location</button>
+    </section>
+</body>
+</html>

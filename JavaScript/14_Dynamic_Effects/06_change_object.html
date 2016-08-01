@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Пример изменения целевых объектов для изображений</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+  <script type="text/javascript">
+  <!--
+  if (document.images) {
+    var abouton = new Image();
+    abouton.src = "abouton.gif";
+    // ... другие кнопки ...
+    var blank = new Image();
+    blank.src = "blank.gif";
+    var description = new Image();
+    description.src = "description.src";
+    //... другие описания ...
+  }
+  /* подключение изображения и отображение соответствующего описания */
+  function on(imgName, description) {
+    if (document.images) {
+      imgOnSrc= eval(imgName + "on.src");
+      document.images[imgName].src= imgOnSrc;
+      document.images["descriptionregion"].src = description.src;
+    }
+  }
+  /* отключение изображения и очистка соответствующего описания */
+  function off(imgName) {
+    if (document.images) {
+      imgOffSrc= eval(imgName + "off.src");
+      document.images[imgName].src= imgOffSrc;
+      document.images["descriptionregion"].src = "blank.gif";
+    }
+  }
+  //-->
+  </script>
+</head>
+<body>
+<a href="about.html"
+  onmouseover="on('about', description1);window.status='Company';return true;"
+  onmouseout="off('about');window.status='';return true;">
+  <img src="aboutoff.gif" border="0" alt="О нашей компании"
+    name="about" id="about" width="440" height="60" />
+</a>
+<!-- ... Другие кнопки ... -->
+&nbsp;&nbsp;&nbsp;
+<a href="#">
+  <img src="blank.gif" border="0" alt=""
+    name="descriptionregion" id="about" width="640" height="140" />
+</a>
+</body>
+</html>

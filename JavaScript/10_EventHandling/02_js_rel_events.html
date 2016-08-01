@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Привязка событий в JavaScript</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<form action="#" method="get" name="myForm" id="myForm">
+	<input type="button" name="myButton" id="myButton" value="Щелкните здесь" />
+</form>
+<script type="text/javascript">
+<!--
+document.myForm.myButton.onclick = new Function("alert('Спасибо за щелчок!');");
+//-->
+</script>
+
+<script type="text/javascript">
+<!--
+function showMessage() {
+	alert("Ой! сойдите с меня!");
+}
+//-->
+</script>
+<form action="#" method="get" name="myForm" id="myForm">
+	<button id="MyButton">Укажите сюда</button>
+	
+	<script type="text/javascript">
+	<!--
+	document.getElementById("MyButton").onmouseover = showMessage;
+	//-->
+	</script>
+</form>
+</body>
+</html>

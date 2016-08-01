@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка качества цветопередачи</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<script type="text/javascript">
+<!--
+if (window.screen) {
+    // Проверка качества цветопередачи
+    if (screen.colorDepth > 8)
+        document.writeln('<img src="nosafecolors.gif" />');
+    else
+        document.writeln('<img src="safecolors.gif" />');
+}
+else
+    document.writeln('<img src="safecolors.gif" />');
+//-->
+</script>
+<noscript>
+    <img src="safecolors.gif" />
+</noscript>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Изменение стиля всех абзацев</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+
+<p>Это один абзац</p>
+<p>Это второй абзац</p>
+<div>А это не абзац</div>
+<p>Это третий абзац</p>
+
+<script type="text/javascript">
+<!--
+function alignAll(alignment) {
+	var allparagraphs = document.body.getElementsByTagName('p');
+	for (var i=0; i < allparagraphs.length; i++)
+		allparagraphs.item(i).style.textAlign = alignment;
+}
+//-->
+</script>
+<form action="#" method="get">
+	<input type="button" value="все абзацы по левому краю" onclick="alignAll('left');" />
+	<input type="button" value="все абзацы по центру" onclick="alignAll('center');" />
+	<input type="button" value="все абзацы по правому краю" onclick="alignAll('right');" />
+</form>
+</body>
+</html>

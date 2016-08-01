@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Чтение RSS с помощью JavaScript</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<style type="text/css">
+	<!--
+	body {font-family:verdana,arial,helvetica,sans-serif; font-size:10pt;}
+	a {color:#003399;}
+	a:hover {color:#FF9900;}
+	#feedOutput {border-style: solid; border-width: 1px; width: 50%; background-color: #fafad2; padding: 1em;}
+	-->
+	</style>
+	<script type="text/javascript">
+	<!--
+ function readRSS(feedURL) {
+   var request;
+   
+   /* создание объекта XMLHttpRequest */
+   try {
+    request = new XMLHttpRequest();
+   }
+   catch(e) {
+    request= new ActiveXObject("Msxml2.XMLHTTP");
+   }
+   try {
+    // Требуется в Mozilla при доступе локального файла к URL с http
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+   }
+   catch(e) { /* ignore */ }
+   
+   request.open("GET",feedURL,false);
+   request.send(null);
+   
+   var feed = request.responseXML;
+   var itemList = feed.getElementsByTagName('item');
+   var numItems = itemList.length;
+   
+   /* создание HTML для списка элементов */
+   var newULTag = document.createElement('ul');
+   
+   for (var i=0; i < numItems; i++) {
+    /* создание нового элемента списка */
+    var newLITag = document.createElement('li');
+    
+    /* получение Title элемента и его текста */
+    var itemTitle = itemList[i].getElementsByTagName('title');
+    var newItemTitleTxt = document.createTextNode(itemTitle[0].firstChild.nodeValue);
+    
+    /* построение ссылки на элемент */
+    var itemURL = itemList[i].getElementsByTagName('link');
+    var newATag = document.createElement('a');
+    newATag.href = itemURL[0].firstChild.nodeValue;
+    newATag.appendChild(newItemTitleTxt);
+    
+    /* получение Description элемента */
+    var itemDescription = itemList[i].getElementsByTagName('description');
+    var descriptionTxt = document.createTextNode(itemDescription[0].firstChild.nodeValue);
+    var newPTag = document.createElement('p');
+    newPTag.appendChild(descriptionTxt);
+    
+    /* построение и добавление HTML */
+    newLITag.appendChild(newATag);
+    newLITag.appendChild(newPTag);
+    newULTag.appendChild(newLITag);
+   }
+   
+   /* вывод финального HTML для материала RSS на страницу */
+   document.getElementById('feedOutput').appendChild(newULTag);
+ }
+	//-->
+	</script>
+</head>
+<body>
+<h1 align="center">Простая программа чтения RSS</h1>
+<hr />
+<form name="feedForm" id="feedForm" method="get" action="#">
+  <b>Адрес URL для RSS:</b>
+  <input type="text" name="feedURL" value="newsfeed.xml" size="50" />
+  <input type="button" value="Показать" onclick="readRSS(this.form.feedURL.value);" />
+</form>
+
+<div id="feedOutput">
+  <br />
+</div>
+
+<h2>Другие источники:</h2>
+<ul>
+  <li>http://rss.news.yahoo.com/rss/topstories</li>
+  <li>http://www.washingtonpost.com/wp-srv/topnews/rssheadlines.xml</li>
+  <li>http://rss.pcworld.com/rss/latestnews.rss</li>
+</ul>
+</body>
+</html>

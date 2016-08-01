@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Передача параметров по ссылке</title>
+<meta http-equiv="content-cype" content="text/html; charset=windows-1251" />
+<meta name="author" content="D.I.V." />
+</head>
+<body>
+<script type="text/javascript">
+function fiddle(arg1) {
+	arg1[0] = "другое";
+	document.write("Внутри функции fiddle arg1 = " + arg1 + "<br />");
+}
+var x = ["одно", "второе", "третье"];
+document.write("До вызова функции x = " + x + "<br />");
+fiddle(x);
+document.write("После вызова функции x = " + x + "<br />");
+</script> 
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Выбор диапазонов DOM</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<p id="p1">Это пример <em>текста</em>. Можно <i>выбрать</i> часть текста этого документа</p>
+<p id="p2">Это второй абзац.</p>
+<p id="p3">A вот еще один.</p>
+
+<script type="text/javascript">
+<!--
+var myRange;
+
+if (document.createRange) {
+	myRange = document.createRange();
+	myRange.setStartBefore(document.getElementById('p1'));
+	myRange.setEndAfter(document.getElementById('p2'));
+	alert(myRange);
+	
+	/* Теперь подсветим выбранный текст средствами выбора Mozilla */
+	mySelection = window.getSelection();
+	mySelection.addRange(myRange);
+}
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    <script src="../Scripts/jquery-ui-1.11.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Styles/styles.css" />
+    <link href="../Content/themes/base/all.css" rel="stylesheet" />
+    <link href="../Content/themes/ui-lightness/jquery-ui.ui-lightness.css" rel="stylesheet" />
+    <style type="text/css">
+        td {
+            text-align: left;
+            padding: 5px;
+        }
+
+        table {
+            width: 200px;
+            border-collapse: collapse;
+            float: left;
+        }
+
+        #buttonDiv {
+            text-align: center;
+            margin: 20px;
+            float: left;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            function performLongTaskSync() {
+                var start = $.now();
+
+                var total = 0;
+                for (var i = 0; i < 5000000  ; i++) {
+                    total += (i + Number((Math.random() + 1).toFixed(0)));
+                }
+                var elapsedTime = (($.now() - start) / 1000).toFixed(1);
+                displayMessage("Task Complete. Time: " + elapsedTime + " sec");
+                return total;
+            }
+
+            function performLongTask() {
+                return $.Deferred(function (def) {
+                    setTimeout(function () {
+                        performLongTaskSync();
+                        def.resolve();
+                    }, 10);
+                });
+            }
+
+            $("button").button().click(function () {
+                displayMessage("Calling performLongTask()");
+                var observer = performLongTask().done(function () {
+                    displayMessage("Task complete");
+                });
+                displayMessage("performLongTask() Returned");
+                displayMessage("Calling getJSON()");
+                var ajaxPromise = $.getJSON("mydata.json").done(function () {
+                    displayMessage("Ajax Request Completed");
+                });
+                displayMessage("getJSON() Returned");
+                $.when(observer, ajaxPromise).done(function () {
+                    displayMessage("All Done");
+                });
+            });
+            displayMessage("Ready");
+        });
+
+        function displayMessage(msg) {
+            $("tbody").append("<tr><td>" + msg + "</td></tr>");
+        }
+    </script>
+</head>
+<body>
+    <h1>Jacqui's Flower Shop</h1>
+
+    <!-- ReSharper disable Html.Obsolete -->
+    <table class="ui-widget" border=1>
+        <!-- ReSharper restore Html.Obsolete -->
+        <thead class="ui-widget-header">
+            <tr><th>Message</th></tr>
+        </thead>
+        <tbody class="ui-widget-content"></tbody>
+    </table>
+
+    <div id="buttonDiv">
+        <button>Go</button>
+    </div>
+</body>
+</html>

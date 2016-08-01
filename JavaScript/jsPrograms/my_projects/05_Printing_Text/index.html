@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Печать текста в контейнер</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+	<style type="text/css">
+	div#msgContent {
+		width: 400px;
+		height: 250px;
+		background: #f0f8ff;
+		color: #00008b;
+		border: inset 2px red;
+		float: auto;
+		padding: 3px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		overflow: auto;
+	}
+	</style>
+	<script type="text/javascript"><!--
+		function createDomMessage(msgText) {
+			var paraMsg = document.createElement("p");
+			var newMsg = document.createTextNode(msgText);
+			paraMsg.appendChild(newMsg);
+			return paraMsg;
+		}
+		function addMessage(divId, str) {
+			var node = document.getElementById(divId);
+			var line = document.createElement("hr");
+			var newNode = createDomMessage(str);
+			node.appendChild(newNode);
+			node.appendChild(line);
+		}
+	//--></script>
+</head>
+<body>
+<form id="msgForm" name="msgForm">
+	<b>Введите сообщение:</b>
+	<input type="text" size="60" maxlength="80" value="" 
+	  id="msgText" name="msgText" />
+	<input type="button" name="sendMessage" id="sendMessage"
+     value="Отправить"
+	 onclick="addMessage('msgContent', this.form.msgText.value);
+			  this.form.msgText.value='';" />
+</form>
+<div id="msgContent">
+</div>
+</body>
+</html>

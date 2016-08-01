@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	countClicks = 0;
+	startClick = null;
+	finishClick = null;
+	function OutputTriggerClick(oContent) {
+    countClicks++;
+    if (countClicks == 1) {
+      startClick = (new Date()).getTime();
+      oContent.innerHTML = "<b><big>Зафиксировано первое нажатие!</big></b><br />";
+    }
+    if (countClicks > 1) {
+      finishClick = (new Date()).getTime();
+      oContent.innerHTML += "<big>Время между "+countClicks+"-м и "+(countClicks-1)+"-м нажатием равно ";
+      oContent.innerHTML += parseInt((finishClick - startClick)/1000) + " секунд(ы)</big><br/>";
+    }
+    if (finishClick)
+      startClick = finishClick;
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame">
+  <center>
+    <input type="button" value="Push!"
+      onclick="OutputTriggerClick(top.resultFrame.document.getElementById('timeResults'));" />
+  </center>
+</form>
+</body>
+</html>

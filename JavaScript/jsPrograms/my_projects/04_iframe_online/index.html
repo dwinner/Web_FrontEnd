@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>RPC-запросы с помощью iframe</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+	<style type="text/css">
+	</style>
+	<script type="text/javascript"><!--
+	  function send() {
+		var newLocation = 'iframeResponse.php';
+		theIframe.src = newLocation;
+		timerID = setTimeout("send()", 1000);
+	  } 
+	  function RPCComplete(msg) {
+		var region = document.getElementById('response');
+		region.innerText = msg;
+	  }
+	//--></script>
+</head>
+<body onload="send();">
+<script type="text/javascript"><!--
+	var theIframe = document.createElement("iframe");
+	theIframe.setAttribute("src", "");
+	theIframe.setAttribute("id", "myIframe");
+	theIframe.style.visibility = 'hidden';
+	theIframe.style.width = '0px';
+	theIframe.style.height = '0px';
+	document.body.appendChild(theIframe); 
+//--></script>
+<h1>Ответ сервера:</h1>
+<div id="response"></div>
+</body>
+</html>

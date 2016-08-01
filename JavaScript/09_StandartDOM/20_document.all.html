@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка all</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<!-- комментарий 1 -->
+<h1>Это заголовок</h1>
+<hr />
+<p id="test">Это проверка. <em>Это просто проверка</em>!</p>
+<a href="http://www.yahoo.com">пример ссылки</a>
+<p>Еще один абзац</p>
+<badtag>плохо, очень плохо!</badtag>
+<script type="text/javascript">
+<!--
+if (!document.all)
+	document.all = document.getElementsByTagName("*");
+
+var allTags = "Document.all.length = " + document.all.length + "\n";
+
+for (var i = 0; i < document.all.length; i++)
+	allTags += document.all[i].tagName + "\n";
+
+alert(allTags);
+alert("Проверка all: " + document.all['test'].innerHTML);
+//-->
+</script>
+</body>
+</html>

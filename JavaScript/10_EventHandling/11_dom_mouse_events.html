@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>События мыши DOM2</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<h2>События мыши DOM2</h2>
+<form id="mouseform" name="mouseform" action="#" method="get">
+Нажата ли клавиша Alt?
+	<input type="text" id="altkey" /><br />
+Нажата ли клавиша Ctrl?
+	<input type="text" id="controlkey" /><br />
+Нажата ли клавиша Meta?
+	<input type="text" id="metakey" /><br />
+Нажата ли клавиша Shift?
+	<input type="text" id="shiftkey" /><br />
+Координаты щелчка относительно браузера:
+	<input type="text" id="clientx" />,
+	<input type="text" id="clienty" /><br />
+Координаты щелчка относительно экрана:
+	<input type="text" id="screenx" />,
+	<input type="text" id="screeny" /><br />
+Нажата кнопка:
+	<input type="text" id="buttonused" /><br /><br />
+</form><hr />
+Щелкните в любом месте документа...
+<script type="text/javascript">
+<!--
+function showMouseDetails(event) {
+	var theForm = document.mouseform;
+	theForm.altkey.value = event.altKey;
+	theForm.controlkey.value = event.ctrlKey;
+	theForm.shiftkey.value = event.shiftKey;
+	theForm.metakey.value = event.metaKey;
+	theForm.clientx.value = event.clientX;
+	theForm.clienty.value = event.clientY;
+	theForm.screenx.value = event.screenX;
+	theForm.screeny.value = event.screenY;
+	if (event.button == 0)
+		theForm.buttonused.value = "left";
+	else if (event.button == 1)
+		theForm.buttonused.value = "middle";
+	else
+		theForm.buttonused.value = "right";
+}
+document.addEventListener("click", showMouseDetails, true);
+//-->
+</script>
+</body>
+</html>

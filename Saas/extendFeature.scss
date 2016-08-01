@@ -1,0 +1,11 @@
+﻿body {
+}
+
+.button {
+    color: black;
+}
+
+.submit-button {
+    @extend .button;
+    border: 1px black solid;
+}

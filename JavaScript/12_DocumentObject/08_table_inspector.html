@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Инспектор таблиц (X)HTML</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<table border="1" frame="box" id="testTable">
+<caption>Тестовая таблица</caption>
+<thead>
+	<tr>
+		<th>Модель</th>
+		<th>Артикул</th>
+		<th>Цена</th>
+	</tr>
+</thead>
+<!-- tfoot должен размещаться перед tbody  -->
+<tfoot>
+	<tr>
+		<th colspan="3">Это пример таблицы HTML 4, спасибо за внимание</th>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<th colspan="3" align="center">Роботы</th>
+	</tr>
+	<tr>
+		<td>Робот-тренер</td>
+		<td>TR-456</td>
+		<td>$56,000</td>
+	</tr>
+	<tr>
+		<td>Робот-охранник</td>
+		<td>SEC-559</td>
+		<td>$5,000</td>
+	</tr>
+	<tr>
+		<td>Робот-друг</td>
+		<td>AG-343</td>
+		<td>$124,000</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+		<th colspan="3" align="center">Ускорители</th>
+	</tr>
+	<tr>
+		<td>Базовый</td>
+		<td>JP-3455E6</td>
+		<td>$6,000</td>
+	</tr>
+	<tr>
+		<td>"Люкс"</td>
+		<td>JP-9999d</td>
+		<td>$15,000</td>
+	</tr>
+</tbody>
+</table>
+<br clear="all" /><hr /><br clear="all" />
+<script type="text/javascript">
+	var theTable = document.getElementById('testTable');
+</script>
+<form action="#" method="get">
+	<strong>Выравнивание:</strong>
+	<select onchange="theTable.align = this.options[this.selectedIndex].text;">
+		<option>left</option>
+		<option>center</option>
+		<option>right</option>
+	</select>
+	<strong>Фон:</strong>
+	<select onchange="theTable.bgColor = this.options[this.selectedIndex].text;">
+		<option>white</option>
+		<option>red</option>
+		<option>blue</option>
+		<option>yellow</option>
+		<option>orange</option>
+		<option>green</option>
+		<option>black</option>
+	</select>
+	<strong>Рамка:</strong>
+	<select onchange="theTable.frame = this.options[this.selectedIndex].text;">
+		<option>above</option>
+		<option>below</option>
+		<option>border</option>
+		<option>box</option>
+		<option>hsides</option>
+		<option>vsides</option>
+		<option>lhs</option>
+		<option>rhs</option>
+		<option>void</option>
+	</select>
+	<strong>Линии-разделители:</strong>
+	<select onchange="theTable.rules = this.options[this.selectedIndex].text;">
+		<option>all</option>
+		<option>cols</option>
+		<option>groups</option>
+		<option>none</option>
+		<option>rows</option>
+	</select>
+	<br /><br />
+	<strong>Граница:</strong>
+	<input type="text" size="2" maxlength="2" value="1" onchange="theTable.border = this.value;" />
+	<strong>Заполнитель:</strong>
+	<input type="text" size="2" maxlength="2" value="1" onchange="theTable.cellPadding = this.value;" />
+	<strong>Расстояние между ячейками:</strong>
+	<input type="text" size="2" maxlength="2" value="1" onchange="theTable.cellSpacing = this.value;" />
+</form>
+
+<!-- Отображение итогов для таблицы -->
+<script type="text/javascript">
+<!--
+var theTable = document.getElementById('testTable');
+document.writeln("<pre>");
+document.writeln("Всего строк в таблице = " + theTable.rows.length);
+document.writeln("Число дескрипторов tbody = " + theTable.tBodies.length);
+for (i = 0; i < theTable.tBodies.length; i++)
+	document.writeln("\t tbody[" + i + "] число строк = " + theTable.tBodies[i].rows.length);
+document.writeln("Строк в дескрипторе tfoot = " + theTable.tFoot.rows.length);
+document.writeln("Строк в дескрипторе thead = " + theTable.tHead.rows.length);
+document.writeln("</pre>");
+//-->
+</script>
+
+<!-- Удаление элементов таблицы -->
+<script type="text/javascript">
+<!--
+	var theTable = document.getElementById('testTable');
+//-->
+</script>
+<form name="testForm" id="testForm">
+	<input type="text" name="rowtodelete" id="rowtodelete" size="2" maxlength="2" value="2" />
+	<input type="button" value="Удалить строку" 
+		onclick="if (theTable.rows.length > 0) theTable.deleteRow(document.testForm.rowtodelete.value);" />
+	<br />
+	<input type="button" value="Удалить <thead>" onclick="theTable.deleteTHead();" />
+	<input type="button" value="Удалить <tfoot>" onclick="theTable.deleteTFoot();" />
+	<input type="button" value="Удалить <caption>" onclick="theTable.deleteCaption();" />
+	
+	<input type="text" name="rowtoinsert" id="rowtoinsert" size="2" maxlength="2" value="1" />
+	<input type="button" value="Вставить строку" 
+		onclick="theTable.insertRow(document.testForm.rowtoinsert.value);" />
+</form>
+</body>
+</html>

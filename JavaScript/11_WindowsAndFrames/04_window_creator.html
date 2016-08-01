@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Создатель окон</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function createFeatureString() {
+		var featurestring = "";
+		var numelements = document.windowform.elements.length;
+		for (var i=0; i < numelements; i++) {
+			if ((document.windowform.elements[i].type == "checkbox") && (document.windowform.elements[i].checked))
+				featurestring += document.windowform.elements[i].name+"=yes,";
+		}
+		featurestring += "height="+document.windowform.height.value+",";
+		featurestring += "width="+document.windowform.width.value+",";
+		featurestring += "top="+document.windowform.top.value+",";
+		featurestring += "left="+document.windowform.left.value+",";
+		featurestring += "screenx="+document.windowform.screenX.value+",";
+		featurestring += "screeny="+document.windowform.screenY.value;
+		return featurestring;
+	}
+	function openWindow() {
+		var features = createFeatureString();
+		var url = document.windowform.windowurl.value;
+		var name = document.windowform.windowname.value;
+		theNewWindow = window.open(url, name, features);
+		if (theNewWindow)
+			document.windowform.jscode.value = "window.open('"+url+"','"+name+"','"+features+"');"
+		else
+			document.windowform.jscode.value = "Ошибка: Неверный код JavaScript";
+	}
+	function closeWindow() {
+		if (window.theNewWindow)
+			theNewWindow.close();
+	}
+	//-->
+	</script>
+</head>
+<body>
+<form name="windowform" id="windowform" action="#" method="get">
+	<h2>Базовые параметры окна</h2>
+	Адрес URL:
+	<input type="text" name="windowurl" id="windowurl" size="30" maxlength="300" value="http://www.yahoo.com" /><br />
+	Имя окна:
+	<input type="text" name="windowname" id="windowname" size="30" maxlength="300" value="secondwindow" /><br />
+	
+	<h2>Размеры</h2>
+	Высота:
+	<input type="text" name="height" id="height" size="4" maxlength="4" value="100" /><br />
+	Ширина:
+	<input type="text" name="width" id="width" size="4" maxlength="4" value="100" /><br />
+	
+	<h2>Координаты</h2>
+	Значение top:
+	<input type="text" name="top" id="top" size="4" maxlength="4" value="100" /><br />
+	Значение left:
+	<input type="text" name="left" id="left" size="4" maxlength="4" value="100" /> (IE)<br /><br />
+	Значение screenX:
+	<input type="text" name="screenX" id="screenX" size="4" maxlength="4" value="100" /><br />
+	Значение screenY:
+	<input type="text" name="screenY" id="screenY" size="4" maxlength="4" value="100" /> (Netscape)<br /><br />
+	
+	<h2>Парамерты отображения</h2>
+	Всегда позади:
+	<input type="checkbox" name="alwaysLowered" id="alwaysLowered" />
+	Всегда впереди:
+	<input type="checkbox" name="alwaysRaised" id="alwaysRaised" />
+	Зависимость:
+	<input type="checkbox" name="dependent" id="dependent" />
+	Панель ссылок:
+	<input type="checkbox" name="directories" id="directories" />
+	"Горячие клавиши":
+	<input type="checkbox" name="hotkeys" id="hotkeys" />
+	Строка адреса:
+	<input type="checkbox" name="location" id="location" />
+	Строка меню:
+	<input type="checkbox" name="menubar" id="menubar" />
+	Строка состояния:
+	<input type="checkbox" name="status" id="status" /><br />
+	Разрешить изменение размеров:
+	<input type="checkbox" name="resizable" id="resizable" />
+	Полосы прокрутки:
+	<input type="checkbox" name="scrollbars" id="scrollbars" />
+	Строка заголовка:
+	<input type="checkbox" name="titlebar" id="titlebar" />
+	Панель инструментов:
+	<input type="checkbox" name="toolbar" id="toolbar" />
+	Z-lock:
+	<input type="checkbox" name="z-lock" id="z-lock" />
+	<br /><br />
+	<input type="button" value="Создать окно" onclick="openWindow();" />
+	<input type="button" value="Закрыть окно" onclick="closeWindow();" />
+	<br /><br />
+	<hr />
+	
+	<h2>JavaScript Window.open Statement</h2>
+	<textarea name="jscode" id="jscode" rows="4" cols="80"></textarea>
+</form>
+</body>
+</html>

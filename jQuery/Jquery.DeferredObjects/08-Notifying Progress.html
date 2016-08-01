@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Предоставление информации о ходе выполнения задачи</title>
+    <script type="text/javascript" src="Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.11.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="Content/themes/base/all.css" />
+    <link href="Content/themes/ui-darkness/jquery-ui.ui-darkness.css" rel="stylesheet" />
+    <script src="Scripts/_references.js"></script>
+    <style type="text/css">
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            float: left;
+            width: 200px;
+        }
+
+        #buttonDiv {
+            float: left;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            function performLongTaskSync() {
+                var start = $.now();
+                var total = 0;
+                for (var i = 0; i < 5000000; i++) {
+                    total += (i + Number((Math.random() + 1).toFixed(0)));
+                }
+                var elapsedTime = (($.now() - start) / 1000).toFixed(1);
+                displayMessage("Task Complete. Time: " + elapsedTime + " sec");
+                return total;
+            }
+
+            function performLongTask() {
+
+                function doSingleIteration() {
+                    return $.Deferred(function(innerDef) {
+                        setTimeout(function() {
+                            performLongTaskSync();
+                            innerDef.resolve();
+                        }, 10);
+                    });
+                }
+
+                var def = $.Deferred();
+
+                setTimeout(function() {
+                    doSingleIteration().done(function() {
+                        def.notify(25);
+                        doSingleIteration().done(function() {
+                            def.notify(50);
+                            doSingleIteration().done(function() {
+                                def.notify(75);
+                                doSingleIteration().done(function() {
+                                    def.notify(100);
+                                    def.resolve();
+                                });
+                            });
+                        });
+                    });
+                }, 10);                
+            }
+
+            $("button").button().click(function () {
+
+                performLongTask().progress(function(val) {
+                    displayMessage("Прогресс: " + val + "%");
+                }).done(function() {
+                    displayMessage("Задача выполнена");
+                });
+            });
+        });
+
+        displayMessage("Готово");
+
+        function displayMessage(msg) {
+            $("tbody").append("<tr><td>" + msg + "</td></tr>");
+        }
+    </script>
+</head>
+<body>
+    <h1>Jacqui's Flower Shop</h1>
+
+    <!-- ReSharper disable Html.Obsolete -->
+    <table class="ui-widget" border="1">
+        <!-- ReSharper restore Html.Obsolete -->
+        <thead class="ui-widget-header">
+            <tr>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody class="ui-widget-content"></tbody>
+    </table>
+
+    <div id="buttonDiv">
+        <button>Go</button>
+    </div>
+</body>
+</html>

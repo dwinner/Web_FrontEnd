@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Базовые и пользовательские объекты</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+var robot = new Object();
+robot.name = "Парабеллум";
+robot.model = "Страж";
+robot.hasJetpack = true;
+// Динамическое добавление функции
+function strikeIntruder() {
+	alert("Бах!");
+}
+robot.attack = strikeIntruder();
+// Другой способ добавления функции в объект
+robot.anotherAttack = function() {
+					alert("Другой бах!");
+				};
+// Вызов функций
+robot.anotherAttack();
+</script>
+</body>
+</html>

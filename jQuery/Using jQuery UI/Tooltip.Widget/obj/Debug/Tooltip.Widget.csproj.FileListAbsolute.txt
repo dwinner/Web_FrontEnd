@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tooltip.Widget\bin\Tooltip.Widget.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tooltip.Widget\bin\Tooltip.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tooltip.Widget\bin\Tooltip.Widget.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tooltip.Widget\obj\Debug\Tooltip.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tooltip.Widget\obj\Debug\Tooltip.Widget.pdb

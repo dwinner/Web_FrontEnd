@@ -1,0 +1,6 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\PuttingInContext\bin\PuttingInContext.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\PuttingInContext\bin\PuttingInContext.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\PuttingInContext\bin\PuttingInContext.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\PuttingInContext\obj\Debug\PuttingInContext.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\PuttingInContext\obj\Debug\PuttingInContext.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\PuttingInContext\obj\Debug\PuttingInContext.csprojResolveAssemblyReference.cache

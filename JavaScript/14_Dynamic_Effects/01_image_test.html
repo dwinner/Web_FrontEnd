@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка объекта Image JavaScript</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<img src="images/front.jpg" width="200" height="100"
+  name="image1" id="image1" align="left"
+  alt="Тестируемое изображение" border="0" />
+<br clear="all" />
+<hr />
+<br clear="all" />
+<h1>Свойства объекта Image</h1>
+<form name="imageForm" id="imageForm" action="#" method="get">
+
+  left:
+  <input type="radio" name="align" id="alignleft" value="left"
+    checked="checked" onclick="document.images.image1.align=this.value" />
+    
+  right:
+  <input type="radio" name="align" id="alignright" value="right"
+     onclick="document.images.image1.align=this.value" />
+     
+  alt:
+  <input type="text" name="alt" id="alt" value=""
+     onchange="document.images.image1.alt=this.value" />
+     
+  border:
+  <input type="text" name="border" id="border" value=""
+     onchange="document.images.image1.border=this.value" />
+     
+  complete:
+  <input type="text" name="complete" id="complete" value="" />
+  <br />
+  
+  height:
+  <input type="text" name="height" id="height" value=""
+     onchange="document.images.image1.height=this.value" />
+  <br />
+     
+  hspace:
+  <input type="text" name="hspace" id="hspace" value=""
+     onchange="document.images.image1.hspace=this.value" />
+  <br />
+  
+  name:
+  <input type="text" name="name" id="name" />
+  <br />
+  
+  src:
+  <input type="text" name="src" id="src" value="" size="40"
+     onchange="document.images.image1.src=this.value" />
+  <br />
+     
+  vspace:
+  <input type="text" name="vspace" id="vspace" value=""
+     onchange="document.images.image1.vspace=this.value" />
+  <br />
+  
+  width:
+  <input type="text" name="width" id="width" value=""
+     onchange="document.images.image1.width=this.value" />
+</form>
+
+<script type="text/javascript">
+<!--
+function populateForm() {
+  if (document.images && document.images.image1 && document.images.image1.complete) {
+    with (document.imageForm) {
+      var i = document.images.image1;
+      alt.value = i.alt;
+      border.value = i.border;
+      complete.value = i.complete;
+      height.value= i.height;
+      hspace.value= i.hspace;
+      name.value= i.name;
+      src.value= i.src;
+      vspace.value = i.vspace;
+      width.value = i. width;
+    }
+  }
+}
+window.onload = populateForm;
+//-->
+</script>
+</body>
+</html>

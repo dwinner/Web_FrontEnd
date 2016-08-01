@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Демонстрация маски ввода для чисел</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function isNumberInput(field, event) {
+		var key, keyChar;
+		if (window.event)
+			key = window.event.keyCode;
+		else if (event)
+			key = event.which;
+		else
+			return true;
+		// Проверка на специальные символы типа возврата на одну позицию
+		if (key == null || key == 0 || key == 8 || key == 13 || key == 27)
+			return true;
+		// Проверка на числа
+		keyChar = String.fromCharCode(key);
+		if (/\d/.test(keyChar)) {
+			window.status = "";
+			return true;
+		}
+		else {
+			window.status = "Поле принимает только числа";
+			return false;
+		}
+	}
+	//-->
+	</script>
+</head>
+<body>
+<form name="testform" id="testform" action="#" method="get">
+Серийный номер робота:
+<input type="text" name="serialnumber" id="serialnumber" size="10" maxlength="10" 
+	onkeypress="return isNumberInput(this, event);"
+	title="Серийный номер должен состоять только из цифр" />
+</form>
+</body>
+</html>

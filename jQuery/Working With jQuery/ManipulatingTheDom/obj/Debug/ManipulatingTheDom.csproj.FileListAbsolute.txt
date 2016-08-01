@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingTheDom\bin\ManipulatingTheDom.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingTheDom\bin\ManipulatingTheDom.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingTheDom\bin\ManipulatingTheDom.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingTheDom\obj\Debug\ManipulatingTheDom.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingTheDom\obj\Debug\ManipulatingTheDom.pdb

@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Класс комплексного числа</title>
+    <script src="Scripts/Complex.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        var c = new Complex(2, 3);
+        var d = new Complex(c.im, c.real);
+        console.log(c.add(d).toString());
+        console.log(Complex.parse(c.toString()).add(c.neg()).equals(Complex.ZERO));
+    </script>
+</body>
+</html>

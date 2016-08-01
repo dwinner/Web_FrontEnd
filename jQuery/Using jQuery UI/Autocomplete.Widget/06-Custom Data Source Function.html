@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="Scripts/jquery-2.1.4.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui-1.11.4.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="Content/themes/ui-darkness/jquery-ui-1.8.23.custom.css" />
+    <style type="text/css">
+        button {margin-bottom: 5px}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#acInput").autocomplete({
+                source: function (request, response) {
+                    $.getJSON("http://localhost:8086/auto", 
+                        function(flowers) {
+                            var term = request.term;
+                            var pattern = new RegExp("^" + term, "i");
+                            var results = $.map(flowers, function (elem) {
+                                return pattern.test(elem) ? elem : null;
+                            });
+
+                            response(results);
+                        });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>     
+        <div class="ui-widget">
+            <label for="acInput">Flower Name: </label><input id="acInput"/>
+        </div>
+
+    </form>
+</body>
+</html>

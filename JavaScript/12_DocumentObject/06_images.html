@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Работа с изображениями</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function showProps(theImage) {
+		var prop, str = "Свойства изображения\n\n";
+		
+		str += "alt: " + theImage.alt + "\n";
+		str += "border: " + theImage.border + "\n";
+		str += "complete: " + theImage.complete + "\n";
+		str += "height: " + theImage.height + "\n";
+		str += "hspace: " + theImage.hspace + "\n";
+		// Используйте lowsrc, а не lowSrc по причине отсутствия поддержки в IE6
+		str += "lowsrc: " + theImage.lowsrc + "\n";
+		str += "name: " + theImage.name + "\n";
+		str += "src: " + theImage.src + "\n";
+		str += "vspace: " + theImage.vspace + "\n";
+		str += "width: " + theImage.width + "\n";
+		alert(str);
+	}
+	//-->
+	</script>
+</head>
+<body>
+<img src="Frie.jpg" alt="The Fry" lowsrc="lowres.gif" id="testimage"
+	name="testimage" width="100" height="100" border="1" hspace="10" vspace="15" />
+<br /><br />
+<form action="#" method="get">
+	<input type="button" value="Показать свойства" onclick="showProps(document.images['testimage']);" />
+	<input type="button" value="Заменить рисунок" onclick="document.testimage.src='Frie2.jpg';" />
+	<input type="button" value="Восстановить рисунок" onclick="document.testimage.src='Frie.jpg';" />
+</form>
+</body>
+</html>

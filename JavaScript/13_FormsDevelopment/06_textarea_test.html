@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка областей текста</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<h2 align="center">Форма для проверки</h2>
+<form name="testform" id="testform" action="http://www.javascriptref.com" method="get">
+	<label>Область текста 1:
+	<textarea name="field1" id="field1" rows="5" cols="40">
+		Некоторый текст,
+			выводимый по умолчанию
+	</textarea></label>
+	<br /><br />
+	
+	<input type="button" value="Проверить значение" 
+		onclick="alert(document.testform.field1.value);" />
+	
+	<input type="button" value="Установить значение" 
+		onclick="document.testform.field1.value='Это \n\n\n\t\t проверка!';" />
+	<br />
+	
+	<input type="button" value="Изменить число строк" 
+		onclick="document.testform.field1.rows=document.testform.rowsField.value;" 
+	/>
+	<input type="text" name="rowsField" id="rowsField" value="2" 
+		size="2" maxlength="2" />
+	<br />
+	
+	<input type="button" value="Изменить число столбцов" 
+		onclick="document.testform.field1.cols=document.testform.colsField.value;" 
+	/>
+	<input type="text" name="colsField" id="colsField" value="10" 
+		size="2" maxlength="2" />
+	<br />
+</form>
+<hr />
+<h2 align="center">Общие свойства поля</h2>
+<script type="text/javascript">
+<!--
+	document.write("defaultValue: " + document.testform.field1.defaultValue + "<br />");
+	document.write("form: " + document.testform.field1.form + "<br />");
+	document.write("form.name: " + document.testform.field1.form.name + "<br />");
+	document.write("name: " + document.testform.field1.name + "<br />");
+	document.write("type: " + document.testform.field1.type + "<br />");
+	document.write("value: " + document.testform.field1.value + "<br />");
+	document.write("rows: " + document.testform.field1.rows + "<br />");
+	document.write("cols: " + document.testform.field1.cols + "<br />");
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	function isInteger(s) {
+	  return /^\d+$/.test(s);
+	}
+	function gcd(num1, num2) {
+	  var iShift;
+	  if (num1 == 0 || num2 == 0)
+      return (num1 | num2);
+    for (iShift = 0; ((num1 | num2) & 1) == 0; ++iShift) {
+      num1 >>= 1;
+      num2 >>= 1;
+    }
+    
+    while ((num1 & 1) == 0)
+      num1 >>= 1;
+
+    do {
+      while ((num2 & 1) == 0)
+        num2 >>= 1;
+
+      if (num1 < num2) {
+        num2 -= num1;
+      }
+      else {
+        var diff = parseInt(num1 - num2);
+        num1 = num2;
+        num2 = diff;
+      }
+      num2 >>= 1;
+    }
+    while (num2 != 0);
+    
+    return (num1 << iShift);
+	}
+	function outputResult(oContent) {
+    var num1 = parent.inputFrame.inputForm.num1.value;
+    var num2 = parent.inputFrame.inputForm.num2.value;
+    if (!isInteger(num1) || !isInteger(num2)) {
+      oContent.innerHTML = "Введенные числа должны быть целыми";
+      return;
+    }
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+    oContent.innerHTML = "Наименьшее общее кратное для чисел "+num1+" и "+num2+": ";
+    oContent.innerHTML += gcd(num1, num2);
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame">
+  <input type="button" value="Вычислить"
+   onclick="outputResult(top.resultFrame.document.getElementById('gcdResult'));" />
+</form>
+</body>
+</html>

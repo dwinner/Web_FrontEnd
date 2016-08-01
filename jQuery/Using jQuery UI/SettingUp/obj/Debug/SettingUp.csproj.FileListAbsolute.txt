@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\SettingUp\bin\SettingUp.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\SettingUp\bin\SettingUp.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\SettingUp\bin\SettingUp.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\SettingUp\obj\Debug\SettingUp.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\SettingUp\obj\Debug\SettingUp.pdb

@@ -1,0 +1,63 @@
+h1 {
+    background-image: url("../Content/border.png");
+    -ms-background-size: contain;
+    background-size: contain;
+    border: thick double black;
+    color: darkgreen;
+    font-size: x-large;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    -moz-min-width: 500px;
+    -ms-min-width: 500px;
+    -o-min-width: 500px;
+    -webkit-min-width: 500px;
+    min-width: 500px;
+    padding: .5em;
+    text-align: center;
+}
+
+.dtable {
+    display: table;
+}
+
+.drow {
+    display: table-row;
+}
+
+.dcell {
+    display: table-cell;
+    padding: 10px;
+}
+
+    .dcell > * {
+        vertical-align: middle;
+    }
+
+input {
+    border: thin solid black;
+    padding: 2px;
+    text-align: right;
+    width: 2em;
+}
+
+label {
+    display: inline-block;
+    padding-left: .5em;
+    width: 5em;
+}
+
+#buttonDiv {
+    text-align: center;
+}
+
+#oblock {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    -moz-min-width: 700px;
+    -ms-min-width: 700px;
+    -o-min-width: 700px;
+    -webkit-min-width: 700px;
+    min-width: 700px;
+}

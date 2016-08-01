@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	function isPositiveInteger(s) {
+	   return /^\d+$/.test(s);
+    }
+    function gcd(u, v) {
+        var shift;
+        if (u == 0 || v == 0)
+            return u | v;
+        for (shift=0; ((u | v) & 1) == 0; ++shift) {
+            u >>= 1;
+            v >>= 1;
+        }
+        while ((u & 1) == 0)
+            u >>= 1;
+        do {
+            while ((v & 1) == 0)
+                v >>= 1;
+            if (u < v) {
+                v -= u;
+            }
+            else {
+                var diff = u - v;
+                u = v;
+                v = diff;
+            }
+            v >>= 1;
+        }
+        while (v != 0);
+        
+        return u << shift;
+    }
+    function outputResults(oContent) {
+        var num1 = parent.inputFrame.inputForm.num1.value;
+        var num2 = parent.inputFrame.inputForm.num2.value;
+        if (!isPositiveInteger(num1) || !isPositiveInteger(num2)) {
+            oContent.innerHTML = "Вводимые числа должны быть целыми и положительными";
+            return;
+        }
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        oContent.innerHTML = "НОД для чисел "+num1+" и "+num2+" равно "+gcd(num1, num2);
+    }
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame">
+    <input name="gcd" id="gcd" type="button" value="GCD Execute"
+     onclick="outputResults(top.resultFrame.document.getElementById('results'));" />
+</form>
+</body>
+</html>

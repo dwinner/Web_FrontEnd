@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Классы символов</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+// несколько примеров
+var pattern = /[pbm]ill/;
+var pattern = /[0-9]+/;
+var pattern = /[a-zA-Z0-9]/;
+// более сжатый вид функции проверки номеров
+function isPhoneNumber(phone) {
+	var pattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+	return pattern.test(phone);
+}
+document.write("Является ли 123456 номером телефона? ");
+document.write(isPhoneNumber("123456"));
+document.write("Является ли 12-12-4322 номером телефона? ");
+document.write(isPhoneNumber("12-12-4322"));
+document.write("Является ли 415-555-1212 номером телефона? ");
+document.write(isPhoneNumber("415-555-1212"));
+// шаблон для проверки имен пользователей
+var patUserName = /^[a-z][a-z0-9_-]*/i;
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/jquery-ui-1.11.4.js"></script>
+    <link href="Content/themes/ui-darkness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
+    <style>
+        #rangeslider, *.inputDiv {
+            margin: 10px;
+        }
+
+        label {
+            width: 80px;
+            display: inline-block;
+            margin: 4px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            function setInputsFromSlider() {
+                $("#rangeMin").val($("#rangeslider").slider("values", 0));
+                $("#rangeMax").val($("#rangeslider").slider("values", 1));
+            }
+
+            $("#rangeslider").slider({
+                values: [35, 65],
+                range: true,
+                create: setInputsFromSlider,
+                slide: setInputsFromSlider,
+                stop: setInputsFromSlider
+            });
+            $("input").change(function (e) {
+                var index = (this.id === "rangeMax") ? 1 : 0;
+                $("#rangeslider").slider("values", index, $(this).val())
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="rangeslider"></div>
+    <div class="inputDiv">
+        <label for="rangeMin">Range Min: </label><input id="rangeMin" />
+        <label for="rangeMax">Range Max: </label><input id="rangeMax" />
+    </div>
+</body>
+</html>

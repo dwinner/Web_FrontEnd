@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Изменение классов</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+  <style type="text/css">
+  #mirror {border-style: solid; border-width: 1px; width: 100%;}
+  #theStyles {border-style: dashed; border-width: 1px; width: 80%; padding: 5%;}
+  h1 {text-align: center;}
+  
+  /* классы на выбор */
+  .big {font-size: 48pt;}
+  .small {font-size: 8pt;}
+  .important {text-decoration: underline; font-weight: bold;}
+  .annoying {background-color: yellow; color: red;}
+  </style>
+  <script type="text/javascript">
+  <!--
+  function changeClass(whichClass) {
+    document.getElementById("mirror").className = whichClass;
+  }
+  //-->
+  </script>
+</head>
+<body>
+<h1>Результат</h1>
+<div id="mirror">
+  Укажите мышью любой размещенный ниже текст,
+  и его CSS-свойства отразятся на представлении данного текста.
+</div>
+<br /><br />
+<h1>Образцы стилей для тестирования</h1>
+<div id="theStyles">
+  <div onmouseover="changeClass(this.className);" class="big">
+    Очень большой текст.
+  </div>
+  <hr />
+  <div onmouseover="changeClass(this.className);" class="small">
+    Текст небольшого размера.
+  </div>
+  <hr />
+  <div onmouseover="changeClass(this.className);" class="important">
+    Очень важный текст.
+  </div>
+  <hr />
+  <div onmouseover="changeClass(this.className);" class="annoying">
+    Текст раздражающего вида.
+  </div>
+</body>
+</html>

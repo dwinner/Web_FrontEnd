@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Объект Global</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+/* Замена не алфавитно-цифровых символов */
+var aString = "O;Neill & Sons";
+aString = escape(aString);
+document.write(aString + "<br /><br />");	// O%3BNeill%20%26%20Sons
+
+/* Выпонить строку как программный код */
+var x;
+var aString = "5+9";
+x = eval(aString);
+document.write(x + "<br /><br />");	// 14
+
+/* Является ли аргумент конечным? */
+document.write(isFinite('56') + "<br />");	// true
+document.write(isFinite(Infinity) + "<br /><br />");	// false
+
+/* Является ли аргумент значением NaN */
+document.write(isNaN('56') + "<br />");	// false
+document.write(isNaN(0/0) + "<br />");	// true
+document.write(isNaN(NaN) + "<br /><br />");	// true
+
+/* Преобразование строки в вещественное число */
+document.write(parseFloat("33.01568") + "<br />");	// 33.01568
+document.write(parseFloat("47.6k-red-dog") + "<br />");	// 47.6
+document.write(parseFloat("a567.34") + "<br />");	// NaN
+document.write(parseFloat("won;t work") + "<br /><br />");	// NaN
+
+/* Преобразование строки в целое значение */
+document.write(parseInt("-53") + "<br />");	// -53
+document.write(parseInt("33.01568") + "<br />");	// 33
+document.write(parseInt("47.6k-red-dog") + "<br />");	// 47
+document.write(parseInt("a567.34") + "<br />");	// NaN
+document.write(parseInt("won't work") + "<br /><br />");	// NaN
+
+/* Преобразование обратное по отношению к escape */
+var aString = "O%3BNeill%20%26%20Sons";
+aString = unescape(aString);
+document.write(aString);
+</script>
+</body>
+</html>

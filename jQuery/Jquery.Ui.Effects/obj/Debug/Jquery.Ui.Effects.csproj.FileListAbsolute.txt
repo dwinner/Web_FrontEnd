@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.Ui.Effects\bin\Jquery.Ui.Effects.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.Ui.Effects\bin\Jquery.Ui.Effects.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.Ui.Effects\bin\Jquery.Ui.Effects.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.Ui.Effects\obj\Debug\Jquery.Ui.Effects.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.Ui.Effects\obj\Debug\Jquery.Ui.Effects.pdb

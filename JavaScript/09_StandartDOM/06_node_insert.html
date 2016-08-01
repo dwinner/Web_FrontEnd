@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Вставка и добавление узлов</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+	<script type="text/javascript">
+	<!--
+	function makeNode(str) {
+		var newParagraph = document.createElement("p");
+		var newText = document.createTextNode(str);
+		newParagraph.appendChild(newText);
+		return newParagraph;
+	}
+	
+	function appendBefore(nodeId, str) {
+		var node = document.getElementById(nodeId);
+		var newNode = makeNode(str);
+		if (node.parentNode)
+			node.parentNode.insertBefore(newNode, node);
+	}
+	
+	function insertWithin(nodeId, str) {
+		var node = document.getElementById(nodeId);
+		var newNode = makeNode(str);
+		node.appendChild(newNode);
+	}
+	
+	function appendAfter(nodeId, str) {
+		var node = document.getElementById(nodeId);
+		var newNode = makeNode(str);
+		
+		if (node.parentNode) {
+			if (node.nextSibling)
+				node.parentNode.insertBefore(newNode, node.nextSibling);
+			else
+				node.parentNode.appendChild(newNode);
+		}
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h1>DOM: вставка и добавление</h1>
+<hr />
+<div style="background-color:#66ff00;">
+	<div id="innerDiv" style="background-color:#ffcc00;"></div>
+</div>
+<hr />
+<form id="form1" name="form1" action="#" method="get">
+	<input type="text" id="field1" name="field1" value="" />
+	<input type="button" value="До" onclick="appendBefore('innerDiv', document.form1.field1.value);" />
+	<input type="button" value="Вовнутрь" onclick="insertWithin('innerDiv', document.form1.field1.value);" />
+	<input type="button" value="После" onclick="appendAfter('innerDiv', document.form1.field1.value);" />
+</form>
+</body>
+</html>

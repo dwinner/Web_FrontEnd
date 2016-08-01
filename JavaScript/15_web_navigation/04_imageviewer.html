@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Окно демонстрации изображений</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<img name="displayedImage" id="displayedImage" alt="" src="images/image1.jpg" />
+
+<script type="text/javascript">
+var remoteControlURL = "04_remotecontrol.html";
+var remoteFeatures = "height=150,width=400,location=no,";
+remoteFeatures += "menubar=no,scrollbars=no,status=no,toolbar=no";
+var remoteControl = window.open(remoteControlURL, "controlWindow", remoteFeatures);
+</script>
+</body>
+</html>

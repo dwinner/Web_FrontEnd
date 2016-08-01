@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Проверка доступности пользователей</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251"/>
+</head>
+<body>
+<script type="text/javascript">
+    <!--
+    var commandURL = "http://demos.javascriptref.com/isuseronline.php?";
+    // Запросы не обязательно выполнять сразу, поэтому необходимо
+    // периодически проверять состояние.
+    var timer = null;
+    var currentRequest = null;
+    // Отправка RPC с данным url, а затем вызов функции,
+    // заданной параметром callback.
+    function sendRPC(url, callback) {
+        // Если уже есть обрабатываемый запрос, отменить его
+        if (currentRequest)
+            clearTimeout(timer);
+        currentRequest = new Image();
+        currentRequest.src = url;	// Отправка RPC
+        setTimeout(callback, 50);	// Проверка завершения каждые 50 мсек.
+    }
+
+    // Завершена ли обработка RPC? Если - да, то проверяется размер
+    // изображения и выдается соответствующее сообщение пользователю.
+    // Если нет, назначается новая проверка через 50 мсек.
+    function readResponse() {
+        // Если изображение еще не загружено...
+        if (!currentRequest.complete) {
+            timer = setTimeout(readResponse, 50);
+            return;
+        }
+        // Иначе изображение загружено, и его можно проверить
+        if (currentRequest.height == 1)
+            alert("Пользователь недоступен");
+        else
+            alert("Пользователь в сети");
+        timer = currentRequest = null;
+    }
+
+    // Проверка дотупности пользователя. Если получен ответ,
+    // будет вызвана функция readResponse.
+    function isUserOnLine(user) {
+        var params = "user=" + user;
+        sendRPC(commandURL + params, readResponse);
+        return false;
+    }
+    //-->
+</script>
+<!-- Программный код проверки -->
+Пользователь: Smeagol
+(<a href="#" onclick="return isUserOnLine('smeagol');">проверить доступность</a>)
+[должно быть false] <br/>
+Пользователь: Deaagol
+(<a href="#" onclick="return isUserOnLine('deagol');">проверить доступность</a>)
+[должно быть true] <br/>
+</body>
+</html>

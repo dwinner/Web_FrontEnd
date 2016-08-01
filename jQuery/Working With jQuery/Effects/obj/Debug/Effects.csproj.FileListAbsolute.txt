@@ -1,0 +1,6 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Effects\bin\Effects.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Effects\bin\Effects.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Effects\bin\Effects.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Effects\obj\Debug\Effects.csprojResolveAssemblyReference.cache
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Effects\obj\Debug\Effects.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Effects\obj\Debug\Effects.pdb

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN"
+	"http://www.w3.org/TR/MathML2/dtd/xhtml-math11-f.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Демонстрация MathML</title>
+</head>
+<body>
+<h1 style="text-align:center;">Ниже размещается объект MathML</h1>
+<hr />
+<math mode="display" xmlns="htp://www.w3.org/1998/Math/MathML">
+<mrow><mfrac>
+	<mrow>
+		<mi>x</mi>
+		<mo>+</mo>
+		<msup>
+			<mi>y</mi>
+			<mn>2</mn>
+		</msup>
+	</mrow>
+	
+	<mrow>
+		<mi>k</mi>
+		<mo>+</mo>
+		<mn>1</mn>
+	</mrow>
+</mfrac></mrow>
+</math>
+</body>
+</html>

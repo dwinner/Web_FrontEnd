@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<?xml-stylesheet href="staff.xml" type="text/css" ?>
+
+<directory xmlns:html="http://www.w3c.org/1999/xhtml"
+	   xmlns:xlink="http://www.w3.org/1999/xlink">
+	<html:form id="myform" name="myform">
+		<html:label>
+			Имя: <html:input type="text" name="namefield" id="namefield" size="50" />
+		</html:label><html:br />
+		<html:label>
+			Должность: <html:input type="text" name="titlefield" id="titlefield" size="30" />
+		</html:label><html:br />
+		<html:label>
+			Телефон: <html:input type="text" name="phonefield" id="phonefield" size="20" />
+		</html:label><html:br />
+		<html:label>
+			Адрес электронной почты: <html:input type="text" name="emailfield" id="emailfield" size="20" />
+		</html:label><html:br />
+		
+		<html:input type="button" value="добавить запись" onclick="addElement();" />
+		<html:input type="button" value="удалить последнюю запись" onclick="deleteLastElement();" />
+		<html:hr />
+	</html:form>
+
+	<employee>
+		<name>Фред Браун</name>
+		<title>Мойщик изделий</title>
+		<phone>(543) 555-1212</phone>
+		<email>fbrown@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Кори Ричардс</name>
+		<title>Менеджер по токсичным отходам</title>
+		<phone>(543) 555-1213</phone>
+		<email>mrichards@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Тим Пауэлл</name>
+		<title>Главный босс</title>
+		<phone>(543) 555-2222</phone>
+		<email>tpowell@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Саманта Джонс</name>
+		<title>Торговый представитель</title>
+		<phone>(543) 555-5672</phone>
+		<email>jones@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Эрик Робертс</name>
+		<title>Главный технолог</title>
+		<phone>(543) 567-3456</phone>
+		<email>eric@democompany.com</email>
+	</employee>
+	
+	<employee>
+		<name>Фрэнк Ли</name>
+		<title>Управляющий сбытом</title>
+		<phone>(123) 456-2222</phone>
+		<email>fli@democompany.com</email>
+	</employee>
+	
+	<html:script src="mozillaxmldemo.js" />
+
+</directory>

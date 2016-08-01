@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Встреча и приветствие-2</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+	<script type="text/javascript">
+	<!--
+	function sayHello() {
+		var theirname = document.myForm.userName.value;
+		if (theirname != "")
+			document.myForm.theResponse.value = "Привет, " + theirname + "!";
+		else
+			document.myForm.theResponse.value = "Не стесняйтесь!";
+	}
+	//-->
+	</script>
+</head>
+<body>
+<form name="myForm" id="myForm" action="#" method="get">
+	<b>Укажите имя:</b>
+	<input type="text" name="userName" id="userName" size="20" />
+	<br /><br />
+	<b>Приветствие:</b>
+	<input type="text" name="theResponse" id="theResponse" size="40" />
+	<br /><br />
+	<input type="button" value="Приветствие" onclick="sayHello();" />
+</form>
+</body>
+</html>

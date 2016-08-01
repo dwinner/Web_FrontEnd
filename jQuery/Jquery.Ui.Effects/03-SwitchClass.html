@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/jquery-ui-1.11.4.js"></script>
+    <link href="Content/themes/south-street/jquery.ui.all.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style type="text/css">
+        .elemClass {
+            border: medium solid black;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .classOne {
+            font-size: 25px;
+            background-color: white;
+            color: black;
+        }
+
+        .classTwo {
+            font-size: 40px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("button").click(function () {
+                $("#animTarget").switchClass("classOne", "classTwo", "fast");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Jacqui's Flower Shop</h1>
+
+    <div id=animTarget class="elemClass classOne">
+        Hello!
+    </div>
+    <button>Switch Class</button>
+</body>
+</html>

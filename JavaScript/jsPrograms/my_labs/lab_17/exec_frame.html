@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	function bin2dec(bin) {
+	    var b, k, m, n, len, sum = 0;
+	    len = bin.length;
+	    for (k=0; k < len; k++) {
+	       n = parseInt(bin.charAt(k));
+	       for (b=1, m=len; m>k; m--)
+	           b *= 2;
+           sum += n*b;
+        }
+        return parseInt(sum/2);
+    }
+    function dec2bin(dec) {
+        var binArray = new Array();
+        var tmpRest;
+        while (dec != 1) {
+            tmpRest = num % 2;
+            binArray.push(tmpRest);
+            num = parseInt(num/2);
+        }
+        binArray.push(1);
+        binArray.reverse();
+        return binArray.join("");
+    }
+    function isBinaryStr(str) {
+        return /^[10]+$/.test(str);
+    }
+    function isPositiveInteger(str) {
+        return /^\d+$/.test(str);
+    }
+    function outputResults(oContent) {
+        var startValue = parent.inputFrame.inputForm.start.value;
+        var finishValue = parent.inputFrame.inputForm.finish.value;
+        var step = parent.inputFrame.inputForm.step.value;
+        if (!isBinaryStr(startValue)) {
+            oContent.innerHTML = "Начальное значение должно быть двоичным";
+            return;
+        }
+        if (!isBinaryStr(finishValue)) {
+            oContent.innerHTML = "Конечное значение должно быть двоичным";
+            return;
+        }
+        if (!isPositiveInteger(step)) {
+            oContent.innerHTML = "Шаг должен быть положительным";
+            return;
+        }
+        if (bin2dec(startValue) > bin2dec(finishValue)) {
+            oContent.innerHTML = "Начальное значение должно быть меньше кончного";
+            return;
+        }
+        step = parseInt(step);
+        var ratio = 0;
+        oContent.innerHTML = "<table border=\"1\">";
+        oContent.innerHTML += "<tr><th>Двоичное число</th><th>Десятичное число</th></tr>";
+        while ((bin2dec(startValue)+ratio) <= bin2dec(finishValue)) {
+            oContent.innerHTML += "<tr><td>"+(startValue)+"</td>";
+            oContent.innerHTML += "<td>"+(bin2dec(startValue)+ratio)+"</td></tr>";
+            ratio += step;
+        }
+        oContent.innerHTML += "</table>";  
+    }
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame"><center>
+    <input type="button" value="Вывести таблицу соответствия"
+     onclick="outputResults(top.resultFrame.document.getElementById('results'));" />
+</center></form>
+</body>
+</html>

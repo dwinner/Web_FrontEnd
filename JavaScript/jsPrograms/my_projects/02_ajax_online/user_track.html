@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>On line users listener</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="ajaxroutine.js"></script>
+	<script type="text/javascript"><!--
+		function processGetPost(){
+			var myajax=ajaxpack.ajaxobj;
+			var myfiletype=ajaxpack.filetype;
+			if (myajax.readyState == 4){ //if request of file completed
+				//if request was successful or running script locally
+				if (myajax.status==200 || window.location.href.indexOf("http")==-1){
+					if (myfiletype=="txt") {
+						// Ничего не делаем
+					}
+					else {
+						// Обрабатываем xml-данные
+						var resp = myajax.responseXML;
+						var xmlRoot = resp.documentElement;
+						dateArray = xmlRoot.getElementsByTagName("putdate");
+						userArray = xmlRoot.getElementsByTagName("name");
+						// сгенерировать html-код
+						var html = "<table border='1'><tr><th>Время входа</th>";
+						html += "<th>Имя пользователя</th></tr>";
+						// обойти в цикле массивы и создать структуру HTML
+						var conlines = dateArray.length;
+						if (conlines) { // Кто-то в online-режиме
+							for (var i=0; i<conlines; i++) {
+								html += "<tr>";
+								html += "<td>"+dateArray.item(i).firstChild.data+"</td>";
+								html += "<td>"+userArray.item(i).firstChild.data+"</td>";
+								html += "</tr>";
+							}
+						}
+						html += "</table>";
+						// получить ссылку на элемент <div>
+						myDiv = document.getElementById("onlines");
+						// вывести полученный код HTML
+						myDiv.innerHTML = html;
+					}
+					timerID = setTimeout("ajaxpack.getAjaxRequest('active_users.php','',processGetPost,'xml');", 5000);
+				}
+			}
+		}
+	//--></script>
+</head>
+<body onload="ajaxpack.getAjaxRequest('active_users.php','',processGetPost,'xml');">
+<div id="onlines"></div>
+</body>
+</html>

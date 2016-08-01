@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Menu.Widget\bin\Menu.Widget.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Menu.Widget\bin\Menu.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Menu.Widget\bin\Menu.Widget.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Menu.Widget\obj\Debug\Menu.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Menu.Widget\obj\Debug\Menu.Widget.pdb

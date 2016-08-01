@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Свойства RegExp</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+var pattern = /(кот)-(пес)/g;
+pattern.test("это кот-пес и кот-пес");
+document.write("<pre>");
+// строка, найденная в результате последней операции сравнения
+document.writeln(RegExp.lastMatch);	// кот-пес
+// последнее подвыражение, найденное в последней строке соответствия
+document.writeln(RegExp.lastParen);	// пес
+// текст, оставшийся слева
+document.writeln(RegExp.leftContext);	// это
+// текст, оставшийся справа
+document.writeln(RegExp.rightContext);	// и кот-пес
+document.write("</pre>");
+</script>
+</body>
+</html>

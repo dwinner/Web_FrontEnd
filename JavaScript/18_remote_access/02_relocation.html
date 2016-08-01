@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd" /> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Перенаправление</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+</head>
+<body>
+<script type="text/javascript">
+<!--
+var commandURL = "./server_handlers/02_handle204.php?";
+function sendURL(url) {
+	window.location = url;
+}
+function sendRating(productid, rating, user) {
+	var params = "productid=" + productid;
+	params += "&rating=" + rating;
+	params += "&user=" + user;
+	sendURL(commandURL + params);
+	return false;
+}
+//-->
+</script>
+<!-- ... -->
+Оцените этот продукт:
+<form action="#" method="get">
+	<input type="button" value="Кошмар!" 
+		onclick="return sendRating(2158, 1, 'Ivan');" />
+	<input type="button" value="Норма" 
+		onclick="return sendRating(2158, 2, 'Ivan');" />
+	<input type="button" value="Высший класс!" 
+		onclick="return sendRating(2158, 3, 'Ivan');" />
+</form>
+</body>
+</html>

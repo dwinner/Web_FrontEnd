@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <style>
+        h1 {
+            -ms-background-size: contain;
+            background-image: url("border.png");
+            background-size: contain;
+            border: thick double black;
+            color: darkgreen;
+            font-size: x-large;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+            padding: .5em;
+            text-align: center;
+            width: 700px;
+        }
+
+        .dtable {
+            display: table;
+        }
+
+        .drow {
+            display: table-row;
+        }
+
+        .dcell {
+            display: table-cell;
+            padding: 10px;
+        }
+
+            .dcell > * {
+                vertical-align: middle;
+            }
+
+        input {
+            border: thin solid black;
+            padding: 2px;
+            text-align: right;
+            width: 2em;
+        }
+
+        label {
+            display: inline-block;
+            padding-left: .5em;
+            width: 5em;
+        }
+
+        #buttonDiv {
+            text-align: center;
+        }
+
+        #oblock {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jacqui's Flower Shop</h1>
+    <form method="post">
+        <div id="oblock">
+            <div class="dtable">
+                <div class="drow">
+                    <div class="dcell">
+                        <img src="Content/aster.png" /><label for="aster">Aster:</label>
+                        <input name="aster" id="aster" value="0" required>
+                    </div>
+                    <div class="dcell">
+                        <img src="Content/daffodil.png" /><label for="daffodil">Daffodil:</label>
+                        <input name="daffodil" id="daffodil" value="0" required>
+                    </div>
+                    <div class="dcell">
+                        <img src="Content/rose.png" /><label for="rose">Rose:</label>
+                        <input name="rose" id="rose" value="0" required>
+                    </div>
+                </div>
+                <div class="drow">
+                    <div class="dcell">
+                        <img src="Content/peony.png" /><label for="peony">Peony:</label>
+                        <input name="peony" id="peony" value="0" required>
+                    </div>
+                    <div class="dcell">
+                        <img src="Content/primula.png" /><label for="primula">Primula:</label>
+                        <input name="primula" id="primula" value="0" required>
+                    </div>
+                    <div class="dcell">
+                        <img src="Content/snowdrop.png" /><label for="snowdrop">Snowdrop:</label>
+                        <input name="snowdrop" id="snowdrop" value="0" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttonDiv">
+            <button type="submit">Place Order</button>
+        </div>
+    </form>
+    <script>
+        var elements = document.getElementsByTagName("img");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].onmouseover = handleMouseOver;
+            elements[i].onmouseout = handleMouseOut;
+        }
+
+        function handleMouseOver(e) {
+            e.target.style.opacity = 0.5;
+        }
+
+        function handleMouseOut(e) {
+            e.target.style.opacity = 1;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!-- Примерный frameset-блок -->
+<frameset cols="250,*">
+	<frame src="navigation.html" name="navigation" id="navigation" />
+	<frame src="content.html" name="content" id="content" />
+</framset>
+
+<!-- Восстановление страниц за пределами frameset -->
+<script type="text/javascript">
+if (parent.location.href == self.location.href)
+	window.location.href = 'frameset.html';
+</script>

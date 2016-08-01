@@ -1,0 +1,25 @@
+<!-- Загрузка в другой фрейм -->
+<a href="http://www.google.com" target="framename">Google</a>
+
+<!-- Примерный frameset-блок -->
+<frameset cols="300,* ">
+	<frame src="navigation.html" name="frame1" id="frame1" />
+	<frame src="content.html" name="frame2" id="frame2" />
+	<frame src="morecontent.html" name="frame3" id="frame3" />
+</frameset>
+
+<!-- Загрузка несколько документов одной ссылкой -->
+<script type="text/javascript">
+<!--
+function loadFrames(theFrames, theURLs) {
+	if ( (loadFrames.arguments.length != 2) || (theFrames.length != theURLs.length) )
+		return;
+	for (var i=0; i < theFrames.length; i++)
+		theFrames[i].location = theURLs[i];
+}
+//-->
+</script>
+
+<a href="javascript:loadFrames([parent.frames['frame2'], parent.frames['frame3'], parent.frames['frame4']],
+							   ['http://www.google.com', 'http://www.javascriptref.com', 'http://www.ucsd.edu']);">
+Три узла</a>

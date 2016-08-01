@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>exec и флаг глобальности</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+var lucky = "Счастливыми числами являются 3, 14 и 27";
+var pattern = /\d+/;
+document.write("Без флага глобальности получаем:<br />");
+document.write(pattern.exec(lucky) + "<br />");
+document.write(pattern.exec(lucky) + "<br />");
+document.write(pattern.exec(lucky) + "<br />");
+pattern = /\d+/g;
+document.write("C флагом глобальности получаем:<br />");
+document.write(pattern.exec(lucky) + "<br />");
+document.write(pattern.exec(lucky) + "<br />");
+document.write(pattern.exec(lucky) + "<br />");
+/* Пример с использованием подвыражений */
+document.write("<pre>");
+var sentence = "Ну очень интересное предложение.";
+var pattern = /\B[а-яА-Я0-9_]+\B/g;	// распознает слова, глобально
+var token = pattern.exec(sentence);	// поиск первого соответствия
+while (token != null) {
+	// если соответствие найдено, выводится информация о нем
+	document.write("Найдено " + token[0] + "\n");
+	document.write("\ttoken.input = " + token.input);
+	document.write("\ttoken.index = " + token.index);
+	document.write("\ttoken.lastIndex = " + token.lastIndex + "\n ");
+	token = pattern.exec(sentence);
+}
+// lastIndex = 0 !!! - возможно нужно вручную "сбросить" lastIndex
+document.write("</pre>");
+</script>
+</body>
+</html>

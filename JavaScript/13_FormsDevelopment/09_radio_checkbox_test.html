@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка radio/checkbox</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function showradiovalue(radiogroup) {
+		var numradios = radiogroup.length;
+		
+		for (var i=0; i<numradios; i++)
+			if (radiogroup[i].checked)
+				alert('переключатель ' + i + ' со значением ' + radiogroup[i].value);
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Форма для проверки</h2>
+
+<form name="testform" id="testform" action="#" method="get">
+	<em>Флажок: </em>
+	<input type="checkbox" name="check1" id="check1" value="Проверка" />
+	<br /><br />
+	<em>Переключатель: </em>
+	да
+	<input type="radio" name="radiogroup1" id="radio1" value="да" />
+	нет
+	<input type="radio" name="radiogroup1" id="radio1" value="нет" />
+	возможно
+	<input type="radio" name="radiogroup1" id="radio1" value="возможно" />
+	<br /><br />
+	<input type="button" value="Щелчок на флажке" onclick="document.testform.check1.click();" />
+	<input type="button" value="Щелчок на переключателе" onclick="document.testform.radiogroup1[0].click();" />
+	<input type="button" value="Передать фокус флажку" onclick="document.testform.check1.focus();" />
+	<input type="button" value="Убрать фокус с флажка" onclick="document.testform.check1.blur();" />
+	<input type="button" value="Состояние флажка" onclick="alert('checked?'+document.testform.check1.checked);" />
+	<input type="button" value="Состояние переключателя" onclick="showradiovalue(document.testform.radiogroup1);" />
+</form>
+<hr />
+<h2 align="center">Свойства поля</h2>
+<script type="text/javascript">
+<!--
+with (document) {
+	write("checked: " + document.testform.check1.checked + "<br />");
+	write("defaultchecked: " + document.testform.check1.defaultChecked + "<br />");
+	write("form: " + document.testform.check1.form + "<br />");
+	write("form.name: " + document.testform.check1.form.name + "<br />");
+	write("name: " + document.testform.check1.name + "<br />");
+	write("type: " + document.testform.check1.type + "<br />");
+	write("value: " + document.testform.check1.value + "<br /><br />");
+	write("radiogroup array: " + document.testform.radiogroup1 + "<br />");
+	write("radiogroup array length: " + document.testform.radiogroup1.length + "<br />");
+	for (var i=0; i<document.testform.radiogroup1.length; i++)
+		write("radiogroup["+i+"].value: " + document.testform.radiogroup1[i].value + "<br />");
+}
+//-->
+</script>
+</body>
+</html>

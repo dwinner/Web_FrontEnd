@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Принципы передачи парамтров</title>
+<meta http-equiv="content-cype" content="text/html; charset=windows-1251" />
+<meta name="author" content="D.I.V." />
+<script type="text/javascript">
+function sayHello(someName) {
+	if (someName != "")
+		alert("Привет, " + someName);
+	else
+		alert("Не стесняйся!");
+}
+function addThree(arg1, arg2, arg3) {
+	if ((typeof arg1 != "number") || (typeof arg2 != "number") || (typeof arg3 != "number"))
+		alert("Ошибка: допустимы только числа.")
+	else
+		alert(arg1+arg2+arg3);
+}
+</script>
+</head>
+<body onload="addThree(1, 7, 8);">
+<form action="#">
+	Введите имя:&nbsp;&nbsp;&nbsp;
+	<input type="text" id="tName" name="tName" value="" />&nbsp;&nbsp;&nbsp;
+	<input type="button" onclick="sayHello(this.form.tName.value);" value="Поздороваться!" />
+</form> 
+</body>
+</html>

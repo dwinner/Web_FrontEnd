@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Работа с датами</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+var myDate = new Date();	// текущая дата
+var year = myDate.getYear();	// извлекаем текущий год
+year += 1;
+myDate.setYear(year);	// устанавливаем +1 год со времени текущей даты
+alert(myDate)
+var today = new Date();	// текущая дата
+document.write("Текущая дата : "+today+"<br />");
+document.write("Date.getDate() : "+today.getDate()+"<br />");
+document.write("Date.getDay() : "+today.getDay()+"<br />");
+document.write("Date.getFullYear() : "+today.getFullYear()+"<br />");
+document.write("Date.getHours() : "+today.getHours()+"<br />");
+document.write("Date.getMilliseconds() : "+today.getMilliseconds()+"<br />");
+document.write("Date.getMinutes() : "+today.getMinutes()+"<br />");
+document.write("Date.getMonth() : "+today.getMonth()+"<br />");
+document.write("Date.getSeconds() : "+today.getSeconds()+"<br />");
+document.write("Date.getTime() : "+today.getTime()+"<br />");
+document.write("Date.getTimezoneOffset() : "+today.getTimezoneOffset()+"<br />");
+document.write("Date.getYear() : "+today.getYear()+"<br />");
+</script>
+</body>
+</html>

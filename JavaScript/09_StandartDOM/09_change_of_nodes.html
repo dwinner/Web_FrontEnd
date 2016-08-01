@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>ћодификаци€ узла текста</title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<body>
+		<p id="p1">Ёто проверка</p>
+		<script type="text/javascript">
+			<!--
+			var textNode = document.getElementById('p1').firstChild;
+			//-->
+		</script>
+		<form action="#" method="get">
+			<input type="button" value="показать" onclick="alert(textNode.data);" />
+			<input type="button" value="длина" onclick="alert(textNode.length);" />
+			<input type="button" value="»зменить" onclick="textNode.data='Ёто новое значение!';" />
+			<input type="button" value="добавить" onclick="textNode.appendData(' добавлено в конец');" />
+			<input type="button" value="вставить" onclick="textNode.insertData(0, 'вставлено в начало ');" />
+			<input type="button" value="удалить" onclick="textNode.deleteData(0, 2);" />
+			<input type="button" value="заменить" onclick="textNode.replaceData(0,4,'”ра!');" />
+			<input type="button" value="подстрока" onclick="alert(textNode.substringData(4,4));" />
+			<input type="button" value="разделить" onclick="temp=textNode.splitText(5); alert('”зел текста='+textNode.data+'\nSplit Value='+temp.data);" />
+		</form>
+	</body>
+</html>

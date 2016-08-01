@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Spinner.Widget\bin\Spinner.Widget.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Spinner.Widget\bin\Spinner.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Spinner.Widget\bin\Spinner.Widget.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Spinner.Widget\obj\Debug\Spinner.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Spinner.Widget\obj\Debug\Spinner.Widget.pdb

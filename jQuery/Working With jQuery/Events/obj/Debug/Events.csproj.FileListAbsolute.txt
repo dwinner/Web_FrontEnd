@@ -1,0 +1,6 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Events\bin\Events.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Events\bin\Events.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Events\bin\Events.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Events\obj\Debug\Events.csprojResolveAssemblyReference.cache
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Events\obj\Debug\Events.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\Events\obj\Debug\Events.pdb

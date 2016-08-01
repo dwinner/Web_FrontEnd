@@ -1,0 +1,63 @@
+﻿#basketTable {
+    border: none;
+    border: thin solid black;
+    border-collapse: collapse;    
+}
+
+th, td {
+    padding: 4px;
+    width: 50px;    
+}
+
+    td:first-child, th:first-child {
+        width: 150px;
+    }
+
+#placeholder {
+    text-align: center;
+}
+
+#productWrapper {
+    float: left;
+    width: 65%;
+}
+
+#basket {
+    /*width: 30%;*/
+    text-align: left;
+    /*float: left;
+    margin-left: 10px;*/
+}
+
+#buttonDiv {
+    clear: both;
+    margin: 5px;
+}
+
+#logo {
+    font-size: 1.5em;
+    -ms-background-size: contain;
+    background-size: contain;
+    margin: 1px;
+    border: none;
+    color: inherit;
+}
+
+#logoWrapper {
+    margin-bottom: 5px;
+}
+
+#theader {
+    border: none;
+}
+
+#completeDialog input {
+    width: 150px;
+    margin-left: 5px;
+    text-align: left;
+}
+
+#completeDialog label {
+    width: 60px;
+    text-align: right;
+}

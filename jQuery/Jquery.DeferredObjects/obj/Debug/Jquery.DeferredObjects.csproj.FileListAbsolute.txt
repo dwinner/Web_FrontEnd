@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.DeferredObjects\bin\Jquery.DeferredObjects.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.DeferredObjects\bin\Jquery.DeferredObjects.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.DeferredObjects\bin\Jquery.DeferredObjects.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.DeferredObjects\obj\Debug\Jquery.DeferredObjects.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.DeferredObjects\obj\Debug\Jquery.DeferredObjects.pdb

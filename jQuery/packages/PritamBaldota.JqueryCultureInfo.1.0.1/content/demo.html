@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery Culture Info</title>
+
+    <script src="scripts/jquery-1.10.0.min.js"></script>
+    <script src="scripts/jquery-cultureinfo-1.0.0.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function GetCultureByLCID() {
+            var culture = $.getCultureInfoByLCID($("#txtLCID").val());
+            if (culture != undefined) {
+                $("#lcidResult").html(JSON.stringify(culture));
+            }
+        }
+
+        function GetCultureByCultureName() {
+            var culture = $.GetCultureInfoByCultureName($("#txtCulture").val());
+            if (culture != undefined) {
+                $("#cultureResult").html(JSON.stringify(culture));
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Get By LCID</h1>
+    <div>
+        Enter LCID (for e.g. 1033 for english United States) : <input type="text" id="txtLCID" /> <input type="button" value="Get Culture Info By LCID" onclick="GetCultureByLCID();" />
+        <br />
+        Result: <div id="lcidResult"></div>
+    </div>
+
+    <h1>Get By Culture Name</h1>
+    <div>
+        Enter Culture (for e.g. en-Us for english United States) : <input type="text" id="txtCulture" /> <input type="button" value="Get Culture Info By Culture Name" onclick="GetCultureByCultureName();" />
+        <br />
+        Result: <div id="cultureResult"></div>
+    </div>
+</body>
+</html>

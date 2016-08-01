@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Типичные методы объекта Window</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	var myWindow;
+	function openIt() {
+		myWindow = open('','mywin','height=300,width=300,scrollbars=yes');
+		myWindow.document.writeln("<table bgcolor='#ffcc66' border='1' width='600'><tr><td>");
+		myWindow.document.writeln("<h1>JavaScript: методы Window</h1><br /><br /><br /><br /><br /><br /><br /><br />");
+		myWindow.document.writeln("</tr></td></table></body></html>");
+		myWindow.document.close();
+		myWindow.focus();
+	}
+	
+	function moveIt() {
+		if ((window.myWindow) && (myWindow.closed == false))
+			myWindow.moveTo(document.testform.moveX.value, document.testform.moveY.value);
+	}
+	
+	function scrollIt() {
+		if ((window.myWindow) && (myWindow.closed == false))
+			myWindow.scrollTo(document.testform.scrollX.value, document.testform.scrollY.value);
+	}
+	
+	function resizeIt() {
+		if ((window.myWindow) && (myWindow.closed == false))
+			myWindow.resizeTo(document.testform.resizeX.value, document.testform.resizeY.value);
+	}
+	//-->
+	</script>
+</head>
+<body onload="openIt();">
+<h1 align="center">Методы Window в действии</h1>
+<hr />
+<form name="testform" id="testform" action="#" method="get">
+	<input type="button" value="Открыть окно" onclick="openIt();" />
+	<input type="button" value="Закрыть окно" onclick="myWindow.close();" />
+	<input type="button" value="Передать фокус" onclick="if (myWindow) myWindow.focus();" />
+	<input type="button" value="Забрать фокус" onclick="if (myWindow) myWindow.blur();" />
+	<br /><br />
+	<input type="button" value="Переместить вверх" onclick="if (myWindow) myWindow.moveBy(0, -10);" />
+	<input type="button" value="Переместить влево" onclick="if (myWindow) myWindow.moveBy(-10, 0);" />
+	<input type="button" value="Переместить вправо" onclick="if (myWindow) myWindow.moveBy(10, 0);" />
+	<input type="button" value="Переместить вниз" onclick="if (myWindow) myWindow.moveBy(0, 10);" />
+	<br /><br />
+	X:
+	<input type="text" size="4" name="moveX" id="moveX" value="0" />
+	Y:
+	<input type="text" size="4" name="moveY" id="moveY" value="0" />
+	<input type="button" value="Переместить в указанную точку" onclick="moveIt();" />
+	<br /><br />
+	<input type="button" value="Прокрутить вверх" onclick="if (myWindow) myWindow.scrollBy(0, -10);" />
+	<input type="button" value="Прокрутить влево" onclick="if (myWindow) myWindow.scrollBy(-10, 0);" />
+	<input type="button" value="Прокрутить вправо" onclick="if (myWindow) myWindow.scrollBy(10, 0);" />
+	<input type="button" value="Прокрутить вниз" onclick="if (myWindow) myWindow.scrollBy(0, 10);" />
+	<br /><br />
+	X:
+	<input type="text" size="4" name="scrollX" id="scrollX" value="0" />
+	Y:
+	<input type="text" size="4" name="scrollY" id="scrollY" value="0" />
+	<input type="button" value="Прокрутить в указанное положение" onclick="scrollIt();" />
+	<br /><br />
+	<input type="button" value="Сжать вверх" onclick="if (myWindow) myWindow.resizeBy(0, -10);" />
+	<input type="button" value="Сжать влево" onclick="if (myWindow) myWindow.resizeBy(-10, 0);" />
+	<input type="button" value="Расширить вправо" onclick="if (myWindow) myWindow.resizeBy(10, 0);" />
+	<input type="button" value="Расширить вниз" onclick="if (myWindow) myWindow.resizeBy(0, 10);" />
+	<br />
+	X:
+	<input type="text" size="4" name="resizeX" id="resizeX" value="0" />
+	Y:
+	<input type="text" size="4" name="resizeY" id="resizeY" value="0" />
+	<input type="button" value="Установить указанные размеры" onclick="resizeIt();" />
+	<br /><br />
+</form>
+</body> 
+</html>

@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Buttons.CollapsibleBlocks\bin\Buttons.CollapsibleBlocks.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Buttons.CollapsibleBlocks\bin\Buttons.CollapsibleBlocks.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Buttons.CollapsibleBlocks\bin\Buttons.CollapsibleBlocks.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Buttons.CollapsibleBlocks\obj\Debug\Buttons.CollapsibleBlocks.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Buttons.CollapsibleBlocks\obj\Debug\Buttons.CollapsibleBlocks.pdb

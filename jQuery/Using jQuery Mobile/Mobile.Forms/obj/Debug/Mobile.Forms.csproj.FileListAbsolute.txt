@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Mobile.Forms\bin\Mobile.Forms.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Mobile.Forms\bin\Mobile.Forms.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Mobile.Forms\bin\Mobile.Forms.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Mobile.Forms\obj\Debug\Mobile.Forms.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Mobile.Forms\obj\Debug\Mobile.Forms.pdb

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Традиционный объект Document</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+	<script type="text/javascript">
+	<!--
+	function showProps() {
+		var i;
+		
+		document.write("<h1 align='center'>Свойства объекта Document</h1><hr /><br />");
+		document.write("<h2>Основные свойства страницы</h2>");
+		document.write("Размещение = " + document.location + "<br />");
+		document.write("Адрес URL = " + document.URL + "<br />");
+		document.write("Заголовок документа = " + document.title + "<br />");
+		document.write("Дата последнего изменения = " + document.lastModified + "<br />");
+		
+		document.write("<h2>Цветовые характеристики</h2>");
+		document.write("Цвет фона = " + document.bgColor + "<br />");
+		document.write("Цвет текста = " + document.fgColor + "<br />");
+		document.write("Цвет ссылки = " + document.linkColor + "<br />");
+		document.write("Цвет активной ссылки = " + document.alinkColor + "<br />");
+		document.write("Цвет посещавшейся ссылки = " + document.vlinkColor + "<br />");
+		if (document.links.length > 0) {
+			document.write("<h2>Ссылки</h2>");
+			document.write("Число ссылок = " + document.links.length + "<br />");
+			for (i=0; i < document.links.length; i++)
+				document.write("Links["+i+"] = " + document.links[i] + "<br />");
+		}
+		if (document.anchors.length > 0) {
+			document.write("<h2>Анкеры</h2>");
+			document.write("Число анкеров = " + document.anchors.length + "<br />");
+			for (i=0; i < document.anchors.length; i++)
+				document.write("Anchors["+i+"] = " + document.anchors[i] + "<br />");
+		}
+		if (document.forms.length > 0) {
+			document.write("<h2>Формы</h2>");
+			document.write("Число форм = " + document.forms.length + "<br />");
+			for (i=0; i < document.forms.length; i++)
+				document.write("Forms["+i+"] = " + document.forms[i] + "<br />");
+		}
+	}
+	//-->
+	</script>
+</head>
+<body bgcolor="white" text="green" link="red" alink="#ffff00">
+<h1 align="center">
+	Объект Document: тест №1
+</h1>
+<hr />
+<a href="http://www.pint.com/">Образец ссылки</a>
+<a name="anchor1"></a>
+<a name="anchor2" href="http://www.javascriptref.com">Образец ссылки 2</a>
+<form name="form1" action="#" method="get"></form>
+<form name="form2" action="#" method="get"></form>
+<hr />
+<br /><br />
+<script type="text/javascript">
+<!--
+	// Должно размещаться в конце страницы
+	showProps();
+//-->
+</script>
+</body>
+</html>

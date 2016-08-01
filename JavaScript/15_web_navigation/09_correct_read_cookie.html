@@ -1,0 +1,33 @@
+<script type="text/javascript">
+// правило индексации ассоциативного массива: cookies["имя"]="значение";
+var cookies = new Object();
+
+function extractCookies() {
+	var name, value;
+	var beginning, middle, end;
+	for (name in cookeis) {
+		// если имеются значения, удалить их
+		cookies = new Object();
+		break;
+	}
+	beginning = 0;	// начать с начала строки cookie
+	while (beginning < document.cookie.length) {
+		middle = document.cookie.indexOf('=', beginning);
+		end = document.cookie.indexOf(';', beginning);
+		// если нет ';', то это последнее поле cookie 
+		if (end == -1)
+			end = document.cookie.length;
+		if ((middle > end) || (middle == -1) || (end == middle + 1)) {
+			// если поле cookie не имеет значения...
+			name = document.cookie.substring(beginning, end);
+			value = "";
+		}
+		else {	// извлечь значение поля
+			name = document.cookie.substring(beginning, middle);
+			value = document.cookie.substring(middle + 1, end);
+		}
+		cookies[name] = unescape(value);	// добавить в массив
+		beginning = end + 2;	// пропуск до начала следующего поля
+	}
+}
+</script>

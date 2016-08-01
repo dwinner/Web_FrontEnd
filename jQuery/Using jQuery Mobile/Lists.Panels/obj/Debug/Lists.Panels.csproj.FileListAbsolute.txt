@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Lists.Panels\bin\Lists.Panels.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Lists.Panels\bin\Lists.Panels.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Lists.Panels\bin\Lists.Panels.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Lists.Panels\obj\Debug\Lists.Panels.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Lists.Panels\obj\Debug\Lists.Panels.pdb

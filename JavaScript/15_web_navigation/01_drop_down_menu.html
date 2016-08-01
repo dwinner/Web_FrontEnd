@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+ <title>Раскрывающиеся меню</title>
+ <meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+ <meta name="author" content="D.I.V." />
+ <script type="text/javascript">
+ <!--
+ function redirect(menu) {
+	var choice = menu.selectedIndex;
+	if (choice != 0)
+		window.location = menu.options[choice].value;
+ }
+ //-->
+ </script>
+</head>
+<body>
+<form name="navform" id="navform" method="post" 
+	action="redirect.cgi">
+	<strong>Выбор узла для посещения</strong><br />
+	<select name="sites" id="sites" onchange="redirect(this);">
+		<option value="" selected="selected">Выберите узел для посещения</option>
+		<option value="http://news.google.ru">RuNet Google News</option>
+		<option value="http://news.yahoo.com">Новости Yahoo!</option>
+		<option value="http://www.alternet.org">AlterNet</option>
+		<option value="http://allafrica.com">AllAfrica</option>
+	</select>
+	<noscript>
+		<input type="submit" value="Перейти" />
+	</noscript>
+</form>
+</body>
+</html>

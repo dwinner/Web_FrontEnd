@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Пример HTA</title>
+  <!--
+  Не используйте XHTML для HTA - это не дает никаких преимуществ, но
+  может порождать проблемы
+  -->
+  <script type="text/jscript">
+  <!--
+  // Осторожно: никакой проверки на отсутствие ошибок нет!
+  function readfile() {
+    var fso, filehandle, contents;
+    fso = new ActiveXObject("Scripting.FileSystemObject");
+    filehandle = fso.OpenTextFile("test.txt", 1);
+    contents = filehandle.ReadAll();
+    
+    if (contents)
+      document.all("filecontents").value = contents;
+      
+    filehandle.Close();
+  }
+  
+  function writefile() {
+    var fso, filehandle;
+    fso = new ActiveXObject("Scripting.FileSystemObject");
+    filehandle = fso.CreateTextFile("test.txt", true);
+    filehandle.Write(document.all("filecontents").value);
+    filehandle.Close();
+  }
+  //-->
+  </script>
+</head>
+<body onload="writefile();">
+<h2>Простой редактор содержимого файла</h2>
+Модификация <tt>test.txt</tt>
+<form>
+<textarea id="filecontents" cols="50" rows="15">
+  HTA-приложения имеют очень широкие возможности.
+</textarea>
+<br />
+<input type="button" value="Прочитать из файла" onclick="readfile();" />
+  &nbsp;&nbsp;
+<input type="button" value="Записать в файл" onclick="writefile();" />
+</form>
+</body>
+</html>

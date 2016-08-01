@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Более совершенный вариант проверки данных</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	// Определение символов пустого пространства
+	var whitespace = " \t\n\r";
+	function isEmpty(s) {
+		var i;
+		if ((s == null) || (s.length == 0))
+			return true;
+		// Проверка строки на наличие символов, отличных от пробелов
+		for (i=0; i<s.length; i++) {
+			var c = s.charAt(i);
+			if (whitespace.indexOf(c) == -1)
+				return false;
+		}
+		// Здесь все символы являются символами пустого пространства.
+		return true;
+	}
+	
+	function validate() {
+		if (isEmpty(document.myform.username.value)) {
+			alert("Ошибка: необходимо указать имя пользователя.");
+			document.myform.username.focus();
+			return false;
+		}
+		if (isEmpty(document.myform.userpass.value)) {
+			alert("Ошибка: пароль не должен быть пустым.");
+			document.myform.userpass.focus();
+			return false;
+		}
+		return true;
+	}
+	//-->
+	</script>
+</head>
+<body>
+<form name="myform" id="myform" method="get"
+	action="http://www.javascriptref.com"
+	onsubmit="return validate();">
+Имя пользователя:
+	<input type="text" name="username" id="username" size="30" maxlength="60" />
+<br />
+Пароль:
+	<input type="password" name="userpass" id="userpass" size="8" maxlength="8" />
+<br />
+<input type="submit" value="Отправить" />
+</form>
+</body>
+</html>

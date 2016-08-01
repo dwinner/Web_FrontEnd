@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка конечных состояний нескольких отсроченных объектов</title>
+    <script type="text/javascript" src="Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.11.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="Content/themes/base/all.css" />
+    <link href="Content/themes/ui-darkness/jquery-ui.ui-darkness.css" rel="stylesheet" />
+    <script src="Scripts/_references.js"></script>
+    <style type="text/css">
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            float: left;
+            width: 200px;
+        }
+
+        #buttonDiv {
+            float: left;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            function performLongTaskSync() { // Рабочий элемент
+                var start = $.now();
+                var total = 0;
+                for (var i = 0; i < 5000000; i++) {
+                    total += (i + Number((Math.random() + 1).toFixed(0)));
+                }
+                var elapsedTime = (($.now() - start) / 1000).toFixed(1);
+                displayMessage("Task Complete. Time: " + elapsedTime + " sec");
+                return total;
+            }
+
+            function performLongTask() { // Асинхронная функция, возвращающая отсроченный объект
+                return $.Deferred(function (def) {
+                    setTimeout(function () {
+                        var total = performLongTaskSync();
+                        if (total % 2 === 0) {
+                            def.resolve({
+                                total: total
+                            });
+                        } else {
+                            def.reject(total);
+                        }
+                    }, 10);
+                });
+            }
+
+            $("button").button().click(function () {
+
+                var ob1 = performLongTask().done(function() {
+                    displayMessage("Задача 1 <b>Успех</b>");
+                }).fail(function() {
+                    displayMessage("Задача 1 <b>Неудача</b>");
+                });
+
+                var ob2 = performLongTask().done(function () {
+                    displayMessage("Задача 2 <b>Успех</b>");
+                }).fail(function () {
+                    displayMessage("Задача 2 <b>Неудача</b>");
+                });
+
+                var ob3 = performLongTask().done(function () {
+                    displayMessage("Задача 3 <b>Успех</b>");
+                }).fail(function () {
+                    displayMessage("Задача 3 <b>Неудача</b>");
+                });
+
+                $.when(ob1, ob2, ob3).done(function() {
+                    displayMessage("Агрегат <b>Успех</b>");
+                }).fail(function() {
+                    displayMessage("Агрегат <b>Неудача</b>");
+                });
+            });            
+        });
+
+        displayMessage("Готово");
+
+        function displayMessage(msg) {
+            $("tbody").append("<tr><td>" + msg + "</td></tr>");
+        }
+    </script>
+</head>
+<body>
+    <h1>Jacqui's Flower Shop</h1>
+
+    <table class="ui-widget" border="1">
+        <thead class="ui-widget-header">
+            <tr>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody class="ui-widget-content"></tbody>
+    </table>
+
+    <div id="buttonDiv">
+        <button>Go</button>        
+    </div>    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка текстовых полей</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<h2 align="center">Форма для проверки</h2>
+<form name="testform" id="testform" action="http://www.javascriptref.com" method="get">
+	<label>Поле текста 1:
+	<input type="text" name="text1" id="text1" size="20" value="Исходное значение" />
+	</label><br />
+	<label>Поле текста 2:
+	<input type="text" name="text2" id="text2" size="20" value="Исходное значение" />
+	</label><br />
+	<input type="button" value="Проверить значение"
+		onclick="alert(document.testform.text1.value);" />
+		
+	<input type="button" value="Установить значение"
+		onclick="document.testform.text1.value=document.testform.text2.value" />
+		
+	<input type="button" value="Сделать недоступным" 
+		onclick="document.testform.text1.disabled=!(document.testform.text1.disabled);" />
+		
+	<input type="button" value="Сделать только для чтения" 
+		onclick="document.testform.text1.readOnly=!(document.testform.text1.readOnly);" />
+		
+	<input type="button" value="Передать фокус" 
+		onclick="document.testform.text1.focus();" />
+	<input type="button" value="Убрать фокус" 
+		onclick="document.testform.text1.blur();" />
+	<input type="button" value="Выделить" 
+		onclick="document.testform.text1.select();" />
+</form>
+
+<hr />
+<h2 align="center">Общие свойства поля</h2>
+<script type="text/javascript">
+<!--
+try {
+	document.write("defaultValue: " + document.testform.text1.defaultValue + "<br />");
+	document.write("form: " + document.testform.text1.form + "<br />");
+	// document.write("form.name: " + document.testform.text1.form.name + "<br />");
+	document.write("name: " + document.testform.text1.name + "<br />");
+	document.write("type: " + document.testform.text1.type + "<br />");
+	document.write("value: " + document.testform.text1.value + "<br />");
+}
+catch(e) {}
+//-->
+</script>
+</body>
+</html>

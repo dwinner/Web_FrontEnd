@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>    
+    <script type="text/javascript" src="miner.js"></script>
+    <title>JavaScript miner</title>
+</head>
+<body onload="initGameField();document.mineForm.reset();">
+
+    <form action="#" name="mineForm" id="mineForm" method="get">
+        <table>
+            <tr>
+                <td>Открыть поле:</td>
+                <td><input type="radio" name="fieldVariant" id="openFieldId" value="openField"
+                        checked="checked" onchange="window.gameVariant=this.value;"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Поставить флажок:</td>
+                <td><input type="radio" name="fieldVariant" id="setFlagId" value="setFlag"
+                        onchange="window.gameVariant=this.value;"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <table align="center" cellpadding="0" cellspacing="0" border="1" bgcolor="white">
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(1, 1);">
+                    <img src="images/close.jpg" border="0" name="rc11" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(1, 2);">
+                    <img src="images/close.jpg" border="0" name="rc12" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(1, 3);">
+                    <img src="images/close.jpg" border="0" name="rc13" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(1, 4);">
+                    <img src="images/close.jpg" border="0" name="rc14" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(1, 5);">
+                    <img src="images/close.jpg" border="0" name="rc15" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(1, 6);">
+                    <img src="images/close.jpg" border="0" name="rc16" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(1, 7);">
+                    <img src="images/close.jpg" border="0" name="rc17" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(1, 8);">
+                    <img src="images/close.jpg" border="0" name="rc18" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(1, 9);">
+                    <img src="images/close.jpg" border="0" name="rc19" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(1, 10);">
+                    <img src="images/close.jpg" border="0" name="rc110" alt=""/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(2, 1);">
+                    <img src="images/close.jpg" border="0" name="rc21" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(2, 2);">
+                    <img src="images/close.jpg" border="0" name="rc22" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(2, 3);">
+                    <img src="images/close.jpg" border="0" name="rc23" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(2, 4);">
+                    <img src="images/close.jpg" border="0" name="rc24" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(2, 5);">
+                    <img src="images/close.jpg" border="0" name="rc25" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(2, 6);">
+                    <img src="images/close.jpg" border="0" name="rc26" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(2, 7);">
+                    <img src="images/close.jpg" border="0" name="rc27" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(2, 8);">
+                    <img src="images/close.jpg" border="0" name="rc28" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(2, 9);">
+                    <img src="images/close.jpg" border="0" name="rc29" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(2, 10);">
+                    <img src="images/close.jpg" border="0" name="rc210" alt=""/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(3, 1);">
+                    <img src="images/close.jpg" border="0" name="rc31" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(3, 2);">
+                    <img src="images/close.jpg" border="0" name="rc32" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(3, 3);">
+                    <img src="images/close.jpg" border="0" name="rc33" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(3, 4);">
+                    <img src="images/close.jpg" border="0" name="rc34" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(3, 5);">
+                    <img src="images/close.jpg" border="0" name="rc35" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(3, 6);">
+                    <img src="images/close.jpg" border="0" name="rc36" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(3, 7);">
+                    <img src="images/close.jpg" border="0" name="rc37" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(3, 8);">
+                    <img src="images/close.jpg" border="0" name="rc38" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(3, 9);">
+                    <img src="images/close.jpg" border="0" name="rc39" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(3, 10);">
+                    <img src="images/close.jpg" border="0" name="rc310" alt=""/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(4, 1);">
+                    <img src="images/close.jpg" border="0" name="rc41" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(4, 2);">
+                    <img src="images/close.jpg" border="0" name="rc42" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(4, 3);">
+                    <img src="images/close.jpg" border="0" name="rc43" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(4, 4);">
+                    <img src="images/close.jpg" border="0" name="rc44" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(4, 5);">
+                    <img src="images/close.jpg" border="0" name="rc45" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(4, 6);">
+                    <img src="images/close.jpg" border="0" name="rc46" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(4, 7);">
+                    <img src="images/close.jpg" border="0" name="rc47" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(4, 8);">
+                    <img src="images/close.jpg" border="0" name="rc48" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(4, 9);">
+                    <img src="images/close.jpg" border="0" name="rc49" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(4, 10);">
+                    <img src="images/close.jpg" border="0" name="rc410" alt=""/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(5, 1);">
+                    <img src="images/close.jpg" border="0" name="rc51" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(5, 2);">
+                    <img src="images/close.jpg" border="0" name="rc52" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(5, 3);">
+                    <img src="images/close.jpg" border="0" name="rc53" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(5, 4);">
+                    <img src="images/close.jpg" border="0" name="rc54" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(5, 5);">
+                    <img src="images/close.jpg" border="0" name="rc55" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(5, 6);">
+                    <img src="images/close.jpg" border="0" name="rc56" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(5, 7);">
+                    <img src="images/close.jpg" border="0" name="rc57" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(5, 8);">
+                    <img src="images/close.jpg" border="0" name="rc58" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(5, 9);">
+                    <img src="images/close.jpg" border="0" name="rc59" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(5, 10);">
+                    <img src="images/close.jpg" border="0" name="rc510" alt=""/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(6, 1);">
+                    <img src="images/close.jpg" border="0" name="rc61" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(6, 2);">
+                    <img src="images/close.jpg" border="0" name="rc62" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(6, 3);">
+                    <img src="images/close.jpg" border="0" name="rc63" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(6, 4);">
+                    <img src="images/close.jpg" border="0" name="rc64" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(6, 5);">
+                    <img src="images/close.jpg" border="0" name="rc65" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(6, 6);">
+                    <img src="images/close.jpg" border="0" name="rc66" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(6, 7);">
+                    <img src="images/close.jpg" border="0" name="rc67" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(6, 8);">
+                    <img src="images/close.jpg" border="0" name="rc68" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(6, 9);">
+                    <img src="images/close.jpg" border="0" name="rc69" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(6, 10);">
+                    <img src="images/close.jpg" border="0" name="rc610" alt=""/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(7, 1);">
+                    <img src="images/close.jpg" border="0" name="rc71" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(7, 2);">
+                    <img src="images/close.jpg" border="0" name="rc72" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(7, 3);">
+                    <img src="images/close.jpg" border="0" name="rc73" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(7, 4);">
+                    <img src="images/close.jpg" border="0" name="rc74" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(7, 5);">
+                    <img src="images/close.jpg" border="0" name="rc75" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(7, 6);">
+                    <img src="images/close.jpg" border="0" name="rc76" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(7, 7);">
+                    <img src="images/close.jpg" border="0" name="rc77" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(7, 8);">
+                    <img src="images/close.jpg" border="0" name="rc78" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(7, 9);">
+                    <img src="images/close.jpg" border="0" name="rc79" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(7, 10);">
+                    <img src="images/close.jpg" border="0" name="rc710" alt=""/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(8, 1);">
+                    <img src="images/close.jpg" border="0" name="rc81" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(8, 2);">
+                    <img src="images/close.jpg" border="0" name="rc82" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(8, 3);">
+                    <img src="images/close.jpg" border="0" name="rc83" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(8, 4);">
+                    <img src="images/close.jpg" border="0" name="rc84" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(8, 5);">
+                    <img src="images/close.jpg" border="0" name="rc85" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(8, 6);">
+                    <img src="images/close.jpg" border="0" name="rc86" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(8, 7);">
+                    <img src="images/close.jpg" border="0" name="rc87" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(8, 8);">
+                    <img src="images/close.jpg" border="0" name="rc88" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(8, 9);">
+                    <img src="images/close.jpg" border="0" name="rc89" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(8, 10);">
+                    <img src="images/close.jpg" border="0" name="rc810" alt=""/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(9, 1);">
+                    <img src="images/close.jpg" border="0" name="rc91" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(9, 2);">
+                    <img src="images/close.jpg" border="0" name="rc92" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(9, 3);">
+                    <img src="images/close.jpg" border="0" name="rc93" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(9, 4);">
+                    <img src="images/close.jpg" border="0" name="rc94" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(9, 5);">
+                    <img src="images/close.jpg" border="0" name="rc95" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(9, 6);">
+                    <img src="images/close.jpg" border="0" name="rc96" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(9, 7);">
+                    <img src="images/close.jpg" border="0" name="rc97" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(9, 8);">
+                    <img src="images/close.jpg" border="0" name="rc98" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(9, 9);">
+                    <img src="images/close.jpg" border="0" name="rc99" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(9, 10);">
+                    <img src="images/close.jpg" border="0" name="rc910" alt=""/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#" onclick="gameController(10, 1);">
+                    <img src="images/close.jpg" border="0" name="rc101" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(10, 2);">
+                    <img src="images/close.jpg" border="0" name="rc102" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(10, 3);">
+                    <img src="images/close.jpg" border="0" name="rc103" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(10, 4);">
+                    <img src="images/close.jpg" border="0" name="rc104" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(10, 5);">
+                    <img src="images/close.jpg" border="0" name="rc105" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(10, 6);">
+                    <img src="images/close.jpg" border="0" name="rc106" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(10, 7);">
+                    <img src="images/close.jpg" border="0" name="rc107" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(10, 8);">
+                    <img src="images/close.jpg" border="0" name="rc108" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(10, 9);">
+                    <img src="images/close.jpg" border="0" name="rc109" alt=""/>
+                </a>
+            </td>
+            <td>
+                <a href="#" onclick="gameController(10, 10);">
+                    <img src="images/close.jpg" border="0" name="rc1010" alt=""/>
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

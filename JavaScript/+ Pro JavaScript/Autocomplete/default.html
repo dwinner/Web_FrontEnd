@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Autocomplete</title>
+    <link href="suggest.css" rel="stylesheet" />
+    <script src="suggest.js"></script>
+</head>
+<body>
+    <noscript>
+        Your browser does not support JavaScript!!
+    </noscript>
+    <div id="content" onclick=" hideSuggestions(); ">
+        <div id="message">Enter a keyword:</div>
+        <input type="text" name="keyword" id="keyword" maxlength="70" size="69"
+               onkeyup=" handleKeyUp(event) " value="" />
+        <div id="scroll">
+            <div id="suggest"></div>
+        </div>
+    </div>
+</body>
+</html>

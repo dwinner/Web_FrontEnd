@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\Widgets\bin\Widgets.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\Widgets\bin\Widgets.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\Widgets\bin\Widgets.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\Widgets\obj\Debug\Widgets.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\Widgets\obj\Debug\Widgets.pdb

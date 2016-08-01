@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Возможности настройки на базе файлов cookie</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	var cookies = new Object();
+	function extractCookies() {
+	   var name, value;
+	   var beginning, middle, end;
+	   for (name in cookies) {
+	       cookies = new Object();
+	       break;
+       }
+       beginning = 0;
+       while (beginning < document.cookie.length) {
+            middle = document.cookie.indexOf('=', beginning);
+            end = document.cookie.indexOf(';', beginning);
+            if (end == -1)
+                end = document.cookie.length;
+            if ((middle > end) || (middle == -1)) {
+                name = document.cookie.substring(beginning, end);
+                value = "";
+            }
+            else {
+                name = document.cookie.substring(beginning, middle);
+                value = document.cookie.substring(middle + 1, end);
+            }
+            cookies[name] = unescape(value);
+            beginning = end + 2;
+       }
+    }
+    
+    function changeColors(scheme) {
+        var foreground, background;
+        switch(scheme) {
+            case "plain":
+                foreground = "black";
+                background = "white";
+                break;
+            case "ice":
+                foreground = "lightblue";
+                background = "darkblue";
+                break;
+            case "green":
+                foreground = "white";
+                background = "darkgreen";
+                break;
+            default:
+                return;
+        }
+        document.bgColor = background;
+        document.fgColor = foreground;
+    }
+    
+    function changeScheme(which) {
+        document.cookie = "cookiesenabled=true";
+        extractCookies();
+        if (!cookies["cookiesenabled"]) {
+            alert("Вам слудует разрешить использовать cookie!");
+            return;
+        }
+        document.cookie = "scheme=" + which;
+        changeColors(which);
+    }
+    var pageLoaded = false;
+    extractCookies();
+    changeColors(cookies["scheme"]);
+	//-->
+    </script>
+</head>
+<body onload="pageLoaded=true;">
+<h1>Возможности настройки</h1>
+<hr />
+<blockquote>
+    Вычислительное ядро ENIAC содержит 19000 электровакуумных ламп
+    и весит 30 тонн, но компьютеры будущего будут содержать всего
+    1000 электровакуумных ламп и весить, наверное, всего 1,5 тонны
+</blockquote>
+<em>Popular Mechanics, март 1949 г.</em>
+<hr />
+<form action="#" method="get">
+    Изменить цыетовую схему: &nbsp; &nbsp;
+    <input type="button" value="обычная" onclick="changeScheme('plain');" />
+    <input type="button" value="синева" onclick="changeScheme('ice');" />
+    <input type="button" value="зелень" onclick="changeScheme('green');" />
+</form>
+</body>
+</html>

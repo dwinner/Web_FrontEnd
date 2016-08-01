@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+ 
+<head>
+	<title>Метки и управление потоком</title>
+<meta http-equiv="content-cype" content="text/html; charset=windows-1251" />
+<meta name="author" content="D.I.V." />
+</head>
+ 
+<body>
+<script type="text/javascript">
+	// break с метками
+	outerloop:
+	for (var i = 0; i < 3; i++) {
+		document.write("Внешний цикл: " + i + "<br />");
+		for (var j = 0; j < 5; j++) {
+			if (j == 3)
+				break outerloop;
+			document.write("Внутренний цикл: " + j + "<br />");
+		}
+	}
+	document.write("<i>Все циклы завершены</i><br />");
+	// continue с метками
+	outerloop:
+	for (var i = 0; i < 3; i++) {
+		document.write("Внешний цикл: "+i+"<br />");
+		for (var j = 0; j < 5; j++) {
+			if (j == 3)
+				continue outerloop;
+			document.write("Внутренний цикл: " + j + "<br />");
+		}
+	}
+	document.write("<i>Все циклы завершены</i><br />");
+</script>
+</body>
+</html>

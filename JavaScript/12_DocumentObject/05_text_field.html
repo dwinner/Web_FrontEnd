@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Работа с полем текста</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function showProps(textfield) {
+		var prop, str = "Свойства поля\n\n";
+		str += "name: " + textfield.name + "\n";
+		str += "type: " + textfield.type + "\n";
+		str += "size: " + textfield.size + "\n";
+		str += "maxLength: " + textfield.maxLength + "\n";
+		str += "value: " + textfield.value + "\n";
+		str += "defaultValue: " + textfield.defaultValue + "\n";
+		alert(str);
+	}
+	//-->
+	</script>
+</head>
+<body>
+<form action="#" method="get" id="myform" name="myform">
+	<input type="text" id="field1" name="field1" size="20" maxlength="30" value="исходное значение" /><br />
+	<input type="button" value="Прочитать текст" onclick="alert(document.myform.field1.value);" /><br />
+	<input type="button" value="Записать текст" onclick="document.myform.field1.value='Изменено!!!';" /><br />
+	<input type="button" value="Показать свойства" onclick="showProps(document.myform.field1);" />
+</form>
+</body>
+</html>

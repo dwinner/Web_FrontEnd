@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3c.org/TR/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3c.org/1999/xhtml">
+<head>
+<title>Переключатель стилей</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+<link id="styleLink" rel="stylesheet" href="red.css" type="text/css" />
+</head>
+<body>
+<script type="text/javascript">
+<!--
+function changeStyle(userStyle) {
+	document.getElementById('styleLink').href = userStyle;
+}
+//-->
+</script>
+<h1>Измените мой стиль!</h1>
+<form action="#" method="get">
+Выбрать стиль:
+	<select onchange="changeStyle(this.options[this.selectedIndex].value);">
+		<option value="red.css">Красный стиль</option>
+		<option value="white.css">Белый стиль</option>
+		<option value="blue.css">Синий стиль</option>
+	</select>
+</form>
+</body>
+</html>

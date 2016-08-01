@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Playing video</title>
+    <link rel="stylesheet" href="player.css"/>
+    <script src="player.js"></script>
+</head>
+<body>
+<section id="player">
+    <video id="media" width="720" height="400">
+        <source src="trailer.mp4"/>
+        <!-- Для обратной совместимости с видео-кодеками браузера: <source src="trailer.ogg"/>-->
+    </video>
+    <nav>
+        <div id="buttons">
+            <button type="button" id="play">Play</button>
+        </div>
+        <div id="bar">
+            <div id="progress"></div>
+        </div>
+        <div style="clear: both;"></div>
+    </nav>
+</section>
+</body>
+</html>

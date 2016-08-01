@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	function isPositiveInteger(s) {
+	  return /^\d+$/.test(s);
+	}
+	function intCompare(x, y) {
+	  if (x < y) return -1;
+	  else if (x === y) return 0;
+	  else return 1;
+	}
+	function OutputRandoms(cRandoms, oContent) {
+	  if (!isPositiveInteger(cRandoms)) {
+      oContent.innerHTML = "Введенное число не является целым";
+      return;
+    }
+    cRandoms = parseInt(cRandoms);
+    if (cRandoms <= 1 || cRandoms > 100) {
+      oContent.innerHTML = "Введенное число не входит в диапазон от 1 до 100";
+      return;
+    }
+    // Создаем массив заданного количества случайных чисел
+    var aRandoms = new Array(cRandoms);
+    // Заполняем массив случайными числами в диапазоне от 1 до 100
+    for (var i=0; i < aRandoms.length; i++)
+      aRandoms[i] = Math.round(99*Math.random())+1;
+    // Сортируем массив по возрастанию целых значений
+    aRandoms.sort(intCompare);
+    // Выводим массив случайных чисел как элементы ненумерованного списка
+    oContent.innerHTML = "<ul>";
+    for (var i=0; i < aRandoms.length; i++)
+      oContent.innerHTML += "<li>&nbsp;&nbsp;Случайное число № "+(i+1)+" :&nbsp;&nbsp;"+aRandoms[i]+"</li>";
+    oContent.innerHTML += "</ul>";
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame">
+  <input type="button" value="Выполнить вычисления"
+   onclick="OutputRandoms(parent.inputFrame.inputForm.inputValue.value, top.resultFrame.document.getElementById('results'));" />
+</form>
+</body>
+</html>

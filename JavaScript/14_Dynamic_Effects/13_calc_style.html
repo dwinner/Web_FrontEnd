@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Какой у меня стиль? Попытка № 2</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<style type="text/css">
+    p { text-decoration: underline !important }
+	</style>
+</head>
+<body>
+<p id="para">
+  Этот текст всегда отображается подчеркнутым,
+  даже если попытаться изменить его представление,
+  установив другой внутристрочный стиль
+</p>
+<script type="text/javascript">
+  document.getElementById("para").style.textDecoration = "none";
+  alert("Стиль, определенный для абзаца: "+ document.getElementById("para").style.textDecoration);
+  var p = document.getElementById("para");
+  if (p.currentStyle)
+    alert("Стиль, используемый для абзаца на самом деле: " + p.currentStyle.textDecoration);
+  else {
+    var finalStyle = document.defaultView.getComputedStyle(p, "");
+    alert("Стиль, используемый для абзаца на самом деле (dom flag): " + finalStyle.getPropertyValue("text-decoration"));
+  }
+</script>
+</body>
+</html>

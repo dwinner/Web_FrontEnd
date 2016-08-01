@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/jquery-ui-1.11.4.js"></script>
+    <link href="Content/themes/ui-darkness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
+    <style>
+        #slider {
+            margin: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            function displaySliderValues() {
+                $("#lower").text($("#slider").slider("values", 0));
+                $("#upper").text($("#slider").slider("values", 1));
+            }
+
+            $("#slider").slider({
+                values: [35, 65],
+                range: true,
+                create: displaySliderValues,
+                slide: displaySliderValues
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="slider"></div>
+    <div>
+        Lower Value: <span id="lower">
+        </span> Upper Value: <span id="upper"></span>
+    </div>
+</body>
+</html>

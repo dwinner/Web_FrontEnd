@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Список служащих</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+</head>
+<body>
+<xml id="myIsland" src="staff.xml"></xml>
+<h1 align="center">Персонал DemoCompany</h1>
+<hr />
+<table width="100%" datasrc="#myIsland">
+	<thead>
+		<tr>
+			<th>Имя</th>
+			<th>Должность</th>
+			<th>Телефон</th>
+			<th>Адрес электронной почты</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><span datafld="name"></span></td>
+			<td><span datafld="title"></span></td>
+			<td><span datafld="phone"></span></td>
+			<td><span datafld="email"></span></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

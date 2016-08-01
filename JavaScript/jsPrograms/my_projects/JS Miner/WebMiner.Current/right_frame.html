@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+    <script type="text/javascript" src="js/miner.js"></script>
+</head>
+<body>
+
+<div id="mineFormContent" style="visibility: hidden;">
+    <form action="#" name="mineForm" id="mineForm" method="get">
+        <table>
+            <tr>
+                <td>Открыть поле:</td>
+                <td><input type="radio" name="fieldVariant" id="openFieldId" value="openField"
+                           checked="checked" onchange="window.GameVariant=this.value;"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Поставить флажок:</td>
+                <td><input type="radio" name="fieldVariant" id="setFlagId" value="setFlag"
+                           onchange="window.GameVariant=this.value;"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="mineFieldId"></div>
+
+</body>
+</html>

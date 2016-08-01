@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Ограничение для области текста</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function checkLimit(field, limit) {
+		if (field.value.length > limit) {
+			alert("Поле ограничено " + limit + " сиволами");
+			// Усечение до предела
+			var revertField = field.value.slice(0, limit-1);
+			field.value = revertField;
+			field.focus();
+		}
+	}
+	//-->
+	</script>
+</head>
+<body>
+<form id="myform" name="myform" action="#" method="get">
+	<label>Комментарии:<br />
+	<textarea id="comments" name="comments" rows="8" cols="40"
+	 onchange="checkLimit(this, 100);">
+		Введите еще 10 символов для превышения предела в 100 символов, а затем
+		щелкните вне области текста.
+	</textarea>
+</form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка доступного региона</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<h2 align="center">Измените размеры окна браузера</h2>
+<hr />
+<form action="#" method="get" name="form1" id="form1">
+    Доступная высота: <input type="text" name="availHeight" size="4" /><br />
+    Доступная ширина: <input type="text" name="availWidth" size="4" /><br />
+</form>
+<script type="text/javascript">
+<!--
+    var winWidth = 0;
+    var winHeight = 0;
+    function findDimensions() {
+        if (window.innerWidth)
+            winWidth = window.innerWidth;
+        else if ((document.body) && (document.body.clientWidth))
+            winWidth = document.body.clientWidth;
+            
+        if (window.innerHeight)
+            winHeight = window.innerHeight;
+        else if ((document.body) && (document.body.clientHeight))
+            winHeight = document.body.clientHeight;
+        /* "грязный" трюк для работы с doctype IE */
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+            winHeight = document.documentElement.clientHeight;
+            winWidth = document.documentElement.clientWidth;
+        }
+        document.form1.availHeight.value = winHeight;
+        document.form1.availWidth.value = winWidth;
+    }
+    findDimensions();
+    window.onresize = findDimensions;
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Базовые концепции</title>
+    <meta charset="utf-8" />
+    <link href="Styles/styles.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript">
+        var rootContentPath = "Content/";
+        $(document).ready(function () {
+            // Добавление дополнительных видов цветочной продукции
+            var fNames = ["carnation", "lily", "orchid"];
+            var frNames = ["Гвоздики", "Лилии", "Орхидеи"];
+            var fRow = $("<div id='row3' class='drow' />").appendTo("div.dtable");
+            var fTemplate = $("<div class='dcell'><img /><label /><input /></div>");
+            for (var i = 0; i < fNames.length; i++) {
+                fTemplate.clone().appendTo(fRow).children()
+                    .filter("img").attr("src", rootContentPath + fNames[i] + ".png")
+                    .end()
+                    .filter("label").attr("for", fNames[i]).text(frNames[i])
+                    .end()
+                    .filter("input").attr({ name: fNames[i], value: 0, required: "required" });
+            }
+
+            // Добавление кнопок для прокрутки изображений
+            function handleArrowPress(e) {
+                var elemSequence = ["row1", "row2", "row3"];
+                var visibleRow = $("div.drow:visible");
+                var visibleRowIndex = jQuery.inArray(visibleRow.attr("id"), elemSequence);
+                var targetRowIndex;
+                if (e.target.id === "left") {
+                    targetRowIndex = visibleRowIndex - 1;
+                    if (targetRowIndex < 0) {
+                        targetRowIndex = elemSequence.length - 1;
+                    }
+                } else {
+                    targetRowIndex = (visibleRowIndex + 1) % elemSequence.length;
+                }
+
+                visibleRow.fadeOut("fast", function () {
+                    $("#" + elemSequence[targetRowIndex]).fadeIn("fast");
+                });
+            }
+
+            function handleArrowMouse(e) {
+                var propValue = e.type === "mouseenter" ? "-50px 0px" : "0px 0px";
+                $(this).css("background-position", propValue);
+            }
+
+            $("<a id='left'></a><a id='right'></a>").prependTo("form")
+                .css({
+                    "background-image": "url(" + rootContentPath + "leftarrows.png" + ")",
+                    "float": "left",
+                    "margin-top": "15px",
+                    "display": "block",
+                    "width": "50px",
+                    "height": "50px"
+                }).click(handleArrowPress).hover(handleArrowMouse);
+
+            $("#right")
+                .css("background-image", "url(" + rootContentPath + "rightarrows.png" + ")")
+                .appendTo("form");
+
+            $("h1").css({
+                "min-width": "0",
+                "width": "95%"
+            });
+
+            $("#row2, #row3").hide();
+
+            $("#oblock")
+                .css({
+                    "float": "left",
+                    "display": "inline",
+                    "border": "thin solid black"
+                });
+
+            $("form")
+                .css({
+                    "margin-left": "auto",
+                    "margin-right": "auto",
+                    "width": "885px"
+                });
+
+            var total = $("#buttonDiv")
+                .prepend("<div>Общий объем заказа: <span id='total'>0</span></div>")
+                .css({
+                    "clear": "both",
+                    "padding": "5px"
+                });
+
+            $("<div id='bbox' />")
+                .appendTo("body").append(total).css("clear: left");
+
+            // Определение общего объема заказа
+            $("input").change(function (/*e*/) {
+                var totalOrder = 0;
+                $("input").each(function (index, element) {
+                    totalOrder += Number($(element).val());
+                });
+                $("#total").text(totalOrder);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Цветочный магазин Джеки</h1>
+    <form method="POST">
+        <div id="oblock">
+            <div class="dtable">
+                <div id="row1" class="drow">
+                    <div class="dcell">
+                        <img src="Content/aster.png" alt="" />
+                        <label for="astor">Астры:</label>
+                        <input name="astor" id="astor" value="0" required />
+                    </div>
+                    <div class="dcell">
+                        <img src="Content/daffodil.png" alt="" />
+                        <label for="daffodil">Нарциссы:</label>
+                        <input name="daffodil" id="daffodil" value="0" required />
+                    </div>
+                    <div class="dcell">
+                        <img src="Content/rose.png" alt="" />
+                        <label for="rose">Розы:</label>
+                        <input name="rose" id="rose" value="0" required />
+                    </div>
+                </div>
+                <div id="row2" class="drow">
+                    <div class="dcell">
+                        <img src="Content/peony.png" alt="" />
+                        <label for="peony">Пионы:</label>
+                        <input name="peony" id="peony" value="0" required />
+                    </div>
+                    <div class="dcell">
+                        <img src="Content/primula.png" alt="" />
+                        <label for="primula">Примулы:</label>
+                        <input name="primula" id="primula" value="0" required />
+                    </div>
+                    <div class="dcell">
+                        <img src="Content/snowdrop.png" alt="" />
+                        <label for="snowdrop">Подснежники:</label>
+                        <input name="snowdrop" id="snowdrop" value="0" required />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttonDiv">
+            <button type="submit">Заказать</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Autocomplete.Widget\bin\Autocomplete.Widget.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Autocomplete.Widget\bin\Autocomplete.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Autocomplete.Widget\bin\Autocomplete.Widget.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Autocomplete.Widget\obj\Debug\Autocomplete.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Autocomplete.Widget\obj\Debug\Autocomplete.Widget.pdb

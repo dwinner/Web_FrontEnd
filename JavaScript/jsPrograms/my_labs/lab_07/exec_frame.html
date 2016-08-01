@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	function isInteger(s) {
+	  return /^\d+$/.test(s);
+	}
+	function geomAverage(aNumbers) {
+	  var aSize= aNumbers.length;
+	  if (!aSize) return 0;
+    var tmpMul = 1;
+    for (var i=0; i < aSize; i++) {
+      aNumbers[i] = parseFloat(aNumbers[i]);
+      if (aNumbers[i])
+        tmpMul *= aNumbers[i];
+    }
+    return parseFloat(tmpMul/aSize);
+	}
+	function outputResults(cRandoms, oContent) {
+	  if (!isInteger(cRandoms)) {
+      oContent.innerHTML = "<b><big><u>Вам нужно ввести целое число</u></big></b>";
+      return;
+    }
+    var aRandoms = new Array(parseInt(cRandoms));
+    for (var i=0; i < aRandoms.length; i++)
+      aRandoms[i] = Math.round(Math.random()*999) + 1;
+    oContent.innerHTML = "<ul>";
+    for (var i=0; i < aRandoms.length; i++)
+      oContent.innerHTML += "<li>&nbsp;"+aRandoms[i];
+    oContent.innerHTML += "</ul>";
+    oContent.innerHTML += "<br clear='none' /><hr /><br clear='none' />";
+    oContent.innerHTML += "Среднее геометрическое чисел "+geomAverage(aRandoms);
+    oContent.innerHTML += "<br clear='none' /><hr /><br clear='none' />";
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame">
+  <input type="button" value="Вперед!"
+   onclick="outputResults(parent.inputFrame.inputForm.cRandoms.value, top.resultFrame.document.getElementById('rResults'));" />
+</form>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Асинхронные вычисления</title>
+    <script type="text/javascript" src="Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.11.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="Content/themes/base/all.css"/>
+    <link rel="stylesheet" type="text/css" href="Content/themes/ui-lightness/jquery-ui.ui-lightness.css"/>
+    <style type="text/css">
+        td {
+            text-align: left;
+            padding: 5px;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            float: left;
+        }
+
+        #buttonDiv {
+            width: 15%;
+            text-align: center;
+            margin: 20px;
+            float: left;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var def = $.Deferred();
+
+            def.done(function () {
+                displayMessage("Функция обратного вызовы выполнена");
+            });
+
+            function performLongTask() {
+                setTimeout(function () {
+                    var start = $.now();
+                    var total = 0;
+                    for (var i = 0; i < 1075000000; i++) {
+                        total += i;
+                    }
+
+                    var elapsedTime = (($.now() - start) / 1000).toFixed(1);
+                    displayMessage("Задача завершена. Время: " + elapsedTime + " c");
+                    def.resolve();
+                }, 10);
+            }
+
+            $("button").button().click(function () {
+                displayMessage("Вызов performLongTask()");
+                performLongTask();
+                displayMessage("Выполнен возврат из performLongTask");
+            });
+
+            displayMessage("Готово");
+        });
+
+        function displayMessage(msg) {
+            $("tbody").append("<tr><td>" + msg + "</td></tr>");
+        }
+    </script>
+</head>
+<body>
+<h1>Цветочный магазин Джеки</h1>
+<table class="ui-widget" border="1">
+    <thead class="ui-widget-header">
+    <tr>
+        <th>Сообщение</th>
+    </tr>
+    </thead>
+    <tbody class="ui-widget-content"></tbody>
+</table>
+<div id="buttonDiv">
+    <button>Выполнить</button>
+</div>
+</body>
+</html>

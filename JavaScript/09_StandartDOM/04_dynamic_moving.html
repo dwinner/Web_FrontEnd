@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Интерактивное движение по дереву DOM</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<h1>Заголовок примера</h1>
+<hr />
+<!-- Это просто комметарий -->
+<p>Это абзац <em>текста</em> для примера</p>
+<ul>
+	<li><a href="http://www.yahoo.com">Yahoo!</a></li>
+</ul>
+
+<form name="testform" id="testform" action="#" method="get">
+	Имя узла: <input type="text" id="nodeName" name="nodeName" /><br />
+	Тип узла: <input type="text" id="nodeType" name="nodeType" /><br />
+	Значение: <input type="text" id="nodeValue" name="nodeValue" /><br />
+</form>
+<script type="text/javascript">
+<!--
+
+function update(currentElement) {
+	window.document.testform.nodeName.value = currentElement.nodeName;
+	window.document.testform.nodeType.value = currentElement.nodeType;
+	window.document.testform.nodeValue.value = currentElement.nodeValue;
+}
+
+function nodeMove(currentElement, direction) {
+	switch (direction) {
+		case "previousSibling":
+			if (currentElement.previousSibling)
+				currentElement = currentElement.previousSibling;
+			else
+				alert("Нет предыдущего сестринского");
+			break;
+		case "nextSibling":
+			if (currentElement.nextSibling)
+				currentElement = currentElement.nextSibling;
+			else
+				alert("Нет следующего сестринского");
+			break;
+		case "parent":
+			if (currentElement.parentNode)
+				currentElement = currentElement.parentNode;
+			else
+				alert("Нет родителя");
+			break;
+		case "firstChild":
+			if (currentElement.hasChildNodes())
+				currentElement = currentElement.firstChild;
+			else
+				alert("Нет дочерних узлов");
+			break;
+		case "lastChild":
+			if (currentElement.hasChildNodes())
+				currentElement = currentElement.lastChild;
+			else
+				alert("Нет дочерних узлов");
+			break;
+		default:
+			alert("Вызов неправильного направления");
+			break;
+	}
+	
+	update(currentElement);
+	return currentElement;
+}
+
+var currentElement = document.documentElement;
+update(currentElement);
+
+//-->
+</script>
+
+<form action="#" method="get">
+	<input type="button" value="Родитель" onclick="currentElement=nodeMove(currentElement, 'parent');" />
+	<input type="button" value="Первый дочерний" onclick="currentElement=nodeMove(currentElement, 'firstChild');" />
+	<input type="button" value="Последний дочерний" onclick="currentElement=nodeMove(currentElement, 'lastChild');" />
+	<input type="button" value="Следующий сестринский" onclick="currentElement=nodeMove(currentElement, 'nextSibling');" />
+	<input type="button" value="Предыдущий сестринский" onclick="currentElement=nodeMove(currentElement, 'previousSibling');" />
+	<input type="button" value="Возврат к корню" onclick="currentElement=document.documentElement;update(currentElement);" />
+</form>
+</body>
+</html>

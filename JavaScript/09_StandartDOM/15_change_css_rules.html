@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Изменение правил стиля</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<style type="text/css" id="style1">
+	<!--
+		h1 {color: red; font-size: 24pt; font-style: italic; font-family: Impact;}
+		p {color: blue; font-size: 12pt; font-family: Arial;}
+		body {background-color: white;}
+		strong {color: red;}
+		em {font-weight: bold; font-style: normal; text-decoration: underline;}
+	-->
+	</style>
+</head>
+<body>
+<h1>Проверка возможностей CSS</h1>
+<hr />
+<p>Это абзац для <strong>проверки</strong> возможностей.</p>
+<p>Вот ещё немного <em>импровизированного</em> текста.</p>
+<p>Все ясно. Нет смысла <strong>все это продолжать</strong></p>
+<hr />
+<h3>Конец документа</h3>
+
+<script type="text/javascript">
+<!--
+var styleSheet = document.styleSheets[0];
+
+function modifyRule() {
+	if (styleSheet.rules)
+		styleSheet.cssRules = styleSheet.rules;
+	if (styleSheet.cssRules[0]) {
+		styleSheet.cssRules[0].style.color = 'purple';
+		styleSheet.cssRules[0].style.fontSize = '36pt';
+		styleSheet.cssRules[0].style.backgroundColor = 'yellow';
+	}
+}
+
+function deleteRule() {
+	if (styleSheet.rules)
+		styleSheet.cssRules = styleSheet.rules;
+	if (styleSheet.cssRules.length > 0)	{ // пока есть правила 
+		if (styleSheet.removeRule)
+			styleSheet.removeRule(0);
+		else if (styleSheet.deleteRule)
+			styleSheet.deleteRule(0);
+	}
+}
+
+function addRule() {
+	if (styleSheet.addRule)
+		styleSheet.addRule("h3", "color:blue", 0);
+	else if (styleSheet.insertRule)
+		styleSheet.insertRule("h3 {color: blue}", 0);
+}
+//-->
+</script>
+
+<form action="#" method="get">
+	<input type="button" value="Включить" 
+		onclick="document.styleSheets[0].disabled=false;" />
+	<input type="button" value="Отключить" 
+		onclick="document.styleSheets[0].disabled=true;" />
+	<input type="button" value="Изменить правило" 
+		onclick="modifyRule();" />
+	<input type="button" value="Удалить правило" 
+		onclick="deleteRule();" />
+	<input type="button" value="Добавить правило" 
+		onclick="addRule();" />
+</form>
+
+</body>
+</html>

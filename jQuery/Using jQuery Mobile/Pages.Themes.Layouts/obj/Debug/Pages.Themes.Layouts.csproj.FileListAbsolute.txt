@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Pages.Themes.Layouts\bin\Pages.Themes.Layouts.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Pages.Themes.Layouts\bin\Pages.Themes.Layouts.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Pages.Themes.Layouts\bin\Pages.Themes.Layouts.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Pages.Themes.Layouts\obj\Debug\Pages.Themes.Layouts.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\Pages.Themes.Layouts\obj\Debug\Pages.Themes.Layouts.pdb

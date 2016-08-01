@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Пример изменяемой графики на базе CSS</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<style type="text/css">
+	 a img {height: 35px; width: 70px; border-width: 0px; background: top left no-repeat;}
+	 
+	 a#button1 img {background-image: url("button1off.gif");}
+	 a#button2 img {background-image: url("button2off.gif");}
+	 
+	 a#button1:hover img {background-image: url("button1on.gif");}
+	 a#button2:hover img {background-image: url("button2on.gif");}
+	</style>
+</head>
+<body>
+<div id="navbar">
+  <a id="button1" href="http://www.javascriptref.com/">
+    <img src="blank.gif" alt="JavaScript Ref" />
+  </a>
+  
+  <a id="button2" href="http://www.google.com/">
+    <img src="blank.gif" alt="Google" />
+  </a>
+</div>
+</body>
+</html>

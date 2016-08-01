@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="Content/jquery.mobile-1.4.5.css" type="text/css" />
+    <style type="text/css">
+        table {border-collapse: collapse; border: medium solid black; padding: 4px}
+        #placeholder {text-align: center}
+        #countContainer * {display: inline; width:50px}
+        th {width: 100px}
+    </style>
+    <script type="text/javascript">
+        $(document).bind("pageinit", function() {
+            var eventList = [
+                "mousedown", "mouseup", "click", "mousecancel",
+                "touchstart", "touchend", "touchmove", "touchcancel"];
+            for (var i = 0; i < eventList.length; i++) {           
+                $("#pressme").bind(eventList[i], handleEvent);
+            }
+            
+            $("#reset").bind("tap", function() {
+                $("tbody").children().remove();
+                $("#placeholder").show();
+                startTime = 0;
+            });
+        });
+        
+        var startTime = 0;
+        function handleEvent(ev) {
+            var timeDiff = startTime === 0 ? 0 : (ev.timeStamp - startTime);
+            if (startTime === 0) {
+                startTime = ev.timeStamp;
+            }
+            $("#placeholder").hide();
+            $("<tr><td>" + ev.type + "</td><td>" + timeDiff + "</td></tr>")
+                .appendTo("tbody");    
+        }
+    </script>    
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="content">	
+            <div id="tcontainer" class="ui-grid-a">
+                <div class="ui-block-a">
+                    <button id="pressme">Press Me</button>
+                    <button id="reset">Reset</button>
+                </div>
+                <div class="ui-block-b">
+                    <table border=1>
+                        <thead>
+                            <tr><th>Event</th><th>Time</th></tr>
+                            <tr id="placeholder"><td colspan=2>No Events</td><tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+   </div>
+</body>
+</html>

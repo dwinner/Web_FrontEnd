@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd" /> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Новости JavaScript Reference</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+</head>
+<body>
+<h2>Новости JavaScript со всего мира</h2>
+<form name="newsform" id="newsform" action="#" method="get">
+	Загружать по
+	<input type="text" name="numstories" id="numstories" size="1" value="5" />
+	статей каждые
+	<input type="text" name="howoften" id="howoften" size="2" value="5" />
+	минут.
+	<input type="button" value="Загрузить новости"
+		onclick="updateNews();" />
+</form>
+<hr />
+<div id="news">
+	Загрузка новых статей...
+</div>
+<br />
+<script type="text/javascript">
+<!--
+var commandURL = "http://demos.javascriptref.com/getnews.php";
+
+// Отправка RPC с данным url. Сервер возвратит программный код
+// JavaScript, который должен выполнить необходимые действия.
+function sendRPC(url) {
+	var newScript = document.createElement('script');
+	newScript.src = url;
+	newScript.type = "text/javascript";
+	document.body.appendChild(newScript);
+}
+
+// Получить несколько статей с новостями от сервера с помощью RPC.
+// После отправки запроса устанавливается таймер
+// для обновления списка статей через некоторое время.
+function updateNews() {
+	var params = "numstories=" + document.newsform.numstories.value;
+	sendRPC(commandURL + params);
+	var checkAgain = 5 * 60 * 1000;	// по умолчанию - 5 минут
+	if (parseInt(document.forms.newsform.howoften))
+		checkAgain = parseInt(document.forms.newsform.howoften) * 60 * 1000;
+	setTimeout(updateNews, checkAgain);
+}
+
+updateNews();
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	function getNumberOfPastDays(day, month, year) {
+    var insertRegion = top.resultFrame.document.getElementById("nDays");
+    var day = parseInt(day);
+    var month = parseInt(month);
+    var year = parseInt(year);
+    var eDate;
+    // insertRegion.innerHTML = day + " " + month + " " + year;
+    if (!isNaN(day) && !isNaN(month) && !isNaN(year))
+      eDate = new Date(year, month, day);
+    else {
+      insertRegion.innerHTML = "<p>Дата введена некорректно</p>";
+      return;
+    }
+    if (!eDate) {
+      insertRegion.innerHTML = "<p>Дата введена некорректно</p>";
+      return;
+    }
+    var eTime = eDate.getTime();
+    var curTime = (new Date()).getTime();
+    if (curTime > eTime) {
+      insertRegion.innerHTML = "С указанной даты прошло <b>";
+      insertRegion.innerHTML += parseInt((curTime - eTime)/(1000*60*60*24));
+      insertRegion.innerHTML += " дней(я)</b>";
+    }
+    else
+      insertRegion.innerHTML = "Вы ввели будущую дату";
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form name="exec" id="exec" target="resultFrame">
+  <input type="button" value="Вычислить дату"
+    onclick="getNumberOfPastDays(parent.inputFrame.inputForm.day[parent.inputFrame.inputForm.day.selectedIndex].value,
+                                 parent.inputFrame.inputForm.month[parent.inputFrame.inputForm.month.selectedIndex].value,
+                                 parent.inputFrame.inputForm.year[parent.inputFrame.inputForm.year.selectedIndex].value);" />
+</form>
+</body>
+</html>

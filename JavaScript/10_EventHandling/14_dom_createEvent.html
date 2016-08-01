@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Создание событий DOM2</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<h2>Создание событий DOM2</h2>
+<form id="mouseform" name="mouseform" action="#" method="get">
+Координаты указателя при щелчке:
+	<input id="clientx" type="text" />
+	<input id="clienty" type="text" /> <br />
+</form>
+<br /><hr /><br />
+<script type="text/javascript">
+<!--
+// Только браузеры DOM2, в IE6 не поддерживается
+
+function showMouseDetails(event) {
+	document.mouseform.clientx.value = event.clientX;
+	document.mouseform.clienty.value = event.clientY;
+}
+
+function makeEvent() {
+	evt = document.createEvent("HTMLEvents");
+	evt.initEvent("click", "true", "true");
+	currentNode.dispatchEvent(evt);
+}
+
+function startListen() {
+	document.addEventListener("click", showMouseDetails, true);
+}
+
+function stopListen() {
+	document.removeEventListener("click", showMouseDetails, true);
+}
+
+startListen();
+//-->
+</script>
+<form action="#" method="get" id="myForm" name="myForm">
+Текущий узел:
+	<input type="text" name="statusField" id="statusField" value="" />
+	<br />
+	<input type="button" value="Родитель" 
+		onclick="if (currentNode.parentNode) currentNode = currentNode.parentNode;
+				 document.myForm.statusField.value = currentNode.nodeName;" />
+	<input type="button" value="Первый дочерний" 
+		onclick="if (currentNode.firstChild) currentNode = currentNode.firstChild;
+				 document.myForm.statusField.value = currentNode.nodeName;" />
+	<input type="button" value="Следующий сестринский" 
+		onclick="if (currentNode.nextSibling) currentNode = currentNode.nextSibling;
+				 document.myForm.statusField.value = currentNode.nodeName;" />
+	<input type="button" value="Предыдущий сестринский" 
+		onclick="if (currentNode.previousSibling) currentNode = currentNode.previousSibling;
+				 document.myForm.statusField.value = currentNode.nodeName;" />
+	<input type="button" value="Начало приема" onclick="startListen();" />
+	<input type="button" value="Конец приема" onclick="stopListen();" />
+	<br /><br />
+	<input type="button" value="Создание события" onclick="makeEvent();" />
+</form>
+<script type="text/javascript">
+<!--
+var currentNode = document.body;
+document.myForm.statusField.value = currentNode.nodeName;
+//-->
+</script>
+</body>
+</html>

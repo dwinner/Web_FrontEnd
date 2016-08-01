@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<rss version="2.0">
+  <channel>
+    <title>Проверка RSS</title>
+    <link>http://www.javascriptref.com</link>
+    <description>Описание материала</description>
+    <item>
+      <title>Фиктивная статья</title>
+      <link>http://www.javascript.com</link>
+      <description>Играем с RSS в описании фиктивной статьи</description>
+    </item>
+  </channel>
+</rss>

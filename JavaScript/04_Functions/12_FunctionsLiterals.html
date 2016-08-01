@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Литералы функций</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+<meta name="author" content="D.I.V." />
+</head>
+<body>
+<script type="text/javascript">
+function SimpleRobot(robotName) {
+	this.name = robotName;
+	this.sayHi = function () { alert('Привет, меня зовут ' + this.name); };
+	this.sayBye = function () { alert('До свидания!'); };
+	this.sayAnything = function (msg) { alert(this.name + 'говорит: ' + msg); };
+}
+var freddy = new SimpleRobot("Фредди");
+freddy.sayHi();
+freddy.sayAnything("Я не знаю, что сказать");
+freddy.sayBye();
+</script> 
+</body>
+</html>

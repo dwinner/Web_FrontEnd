@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Демонстрация динамической формы</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	// Установка переменных и констант формы
+	var widgetCost = 1.50;
+	var gadgetCost = 2.70;
+	var thingieCost = 1.25;
+	var taxRate = 0.075;
+	var shippingCost = 0;
+	
+	function isNumberInput(field, event) {
+	  var key, keyChar;
+	  if (window.event)
+      key= window.event.keyCode;
+    else if (event)
+      key = event.which;
+    else
+      return true;
+    // Проверка на специальные символы типа возврата на одну позицию
+    if (key == null || key == 0 || key == 13 || key == 27)
+      return true;
+    // Проверка на числа
+    keyChar = String.fromCharCode(key);
+    if (/\d/.test(keyChar)) {
+      window.status = "";
+      return true;
+    }
+    else {
+      window.status= "Поле допускает ввод только чисел";
+      return false;
+    }
+	}
+	
+	function format(value) {
+	  // Формат, допускающий только два десятичных знака
+	  var temp = Math.round(value*100);
+	  temp /= 100; // temp = temp / 100
+	  return temp;
+	}
+	
+	function calc() {
+    with (document.myform) {
+      widgettotal.value= format(widgets.value * widgetCost);
+      gadgettotal.value = format(gadgets.value * gadgetCost);
+      thingietotal.value = format(thingies.value * thingieCost);
+      subtotal.value = format(parseFloat(widgettotal.value) +
+                              parseFloat(gadgettotal.value) +
+                              parseFloat(thingietotal.value));
+      tax.value = format(subtotal.value * taxRate);
+      for (var i=0; i<shipping.length; i++)
+        if (shipping[i].checked)
+          shippingcost = parseFloat(shipping[i].value);
+      grandtotal .value = format(parseFloat(subtotal.value) +
+                                 parseFloat(tax.value) +
+                                 shippingcost);
+    }
+	}
+	//-->
+	</script>
+</head>
+<body>
+<form id="myform" name="myform" action="#" method="get">
+   Виджеты:
+   <input type="text" name="widgets" id="widgets" size="2" value="0"
+    onchange="calc();"
+    onkeypress="return isNumberInput(this, event);" />
+   @ 1.50 за шт.
+   <input type="text" id="widgettotal" name="widgettotal" size="5" readonly="readonly" />
+   <br />
+   Гаджеты:
+   <input type="text" name="gadgets" id="gadgets" size="2" value="0"
+    onchange="calc();" onkeypress="return isNumberInput(this, event);" />
+   @ 2.70 за шт.
+   <input type="text" id="gadgettotal" name="gadgettotal" size="5" readonly="readonly" />
+   <br />
+   Футляры:
+   <input type="text" name="thingies" id="thingies" size="2" value="0"
+    onchange="calc();" onkeypress="return isNumberInput(this, event);" />
+    @1,25 за шт.
+   <input type="text" id="thingietotal" name="thingietotal" size="5" readonly="readonly" />
+   <br /><br /><br />
+   <em>Всего:</em>
+   <input type="text" id="subtotal" name="subtotal" size="8" value="0" readonly="readonly" />
+   <br /><br /><br />
+   <em>Налог:</em>
+   <input type="text" id="tax" name="tax" size="5" value="0" readonly="readonly" />
+   <br /><br /><br />
+   <em>Доставка:</em>
+   следующий день
+   <input type="radio" value="12.00" name="shipping" id="shipping"
+    checked="true" onclick="calc();" />
+    двухдневный срок:
+   <input type="radio" value="7.00" name="shipping" id="shipping"
+    checked="false" onclick="calc();" />
+   стандартные сроки:
+   <input type="radio" value="3.00" name="shipping" id="shipping"
+    checked="false" onclick="calc();" />
+   <br /><br /><br />
+   <strong>Общая сумма:</strong>
+   <input type="text" id="grandtotal" name="grandtotal" size="8" readonly="readonly" />
+</form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Демонстрация типичной процедуры проверки формы</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	var validations = new Array();
+	/* Определение необходимого типа проверки. Каждый элемент массива
+	содержит поле формы для проверки, и выполняется соответствующая
+	процедура проверки. При использовании сценария на новой странице
+	требуется подкорректировать только эту часть программы!
+	*/
+	
+	validations[0] = ["document.myform.username", "notblank"];
+	validations[1] = ["document.myform.useremail", "validemail"];
+	validations[2] = ["document.myform.favoritenumber", "isnumber"];
+	
+	// Настройка массива для использования на странице.
+	function isEmpty(s) {
+		if (s == null || s.length == 0)
+			return true;
+		// Проверка возвращает true, если есть хотя бы один символ,
+		// отличный от символа пустого пространства, т.е. строка не пуста.
+		// Если проверка возвращает false, строка является пустой.
+		return !/\S/.test(s);
+	}
+	
+	function looksLikeEmail(field) {
+		var s = field.value;
+		if (isEmpty(s)) {
+			alert("Адрес не должен быть пустым");
+			field.focus();
+			return false;
+		}
+		if (/[^@]+@\w+/.test(s))
+			return true;
+		alert("Адрес имеет недопустимую форму.");
+		field.focus();
+		return false;
+	}
+	
+	function isInteger(field) {
+		var s = field.value;
+		if (isEmpty(s)) {
+			alert("Поле не должно оставаться пустым");
+			field.focus();
+			return false;
+		}
+		if (!(/^-?\d+$/.test(s))) {
+			alert("Поле должно содержать только цифры");
+			field.focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function validate() {
+		var i;
+		var checkToMake;
+		var field;
+		for (i=0; i<validations.length; i++) {
+			field = eval(validations[i][0]);
+			checkToMake = validations[i][1];
+			switch (checkToMake) {
+				case 'notblank' :
+					if (isEmpty(field.value)) {
+						alert("Поле не должно быть пустым");
+						field.focus();
+						return false;
+					}
+					break;
+				case 'validemail':
+					if (!looksLikeEmail(field))
+						return false;
+					break;
+				case 'isnumber':
+					if (!isInteger(field))
+						return false;
+			}
+		}
+		return true;
+	}
+	//-->
+	</script>
+</head>
+<body>
+<form name="myform" id="myform" method="get"
+	action="http://www.javascriptref.com"
+	onsubmit="return validate();">
+
+Имя пользователя:
+	<input type="text" name="username" id="username" size="30" maxlength="60" /><br />
+Адрес электронной почты:
+	<input type="text" name="useremail" id="useremail" size="30" maxlength="90" /><br />
+Любимое число:
+	<input type="text" name="favoritenumber" id="favoritenumber" size="10" maxlength="10" /><br />
+<input type="submit" value="Отправить" />	
+</form>
+</body>
+</html>

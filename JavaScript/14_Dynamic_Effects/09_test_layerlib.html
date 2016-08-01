@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3c.org/1999/xhtml">
+<head>
+<title>Проверка библиотеки, обеспечивающей совместимость</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+<script type="text/javascript" src="08_layerlib.js"></script>
+</head>
+<body>
+<div id="region1" style="position: absolute; top: 10px; left: 300px;
+								   width: 100px; height: 100px;
+								   background-color: #ffff99; z-index: 10;">
+	Позиционировано!
+</div>
+
+<div id="region2" style="position: absolute; top: 10px; left: 450px;
+								   width: 100px; height: 200px;
+								   background-color: #33ff99; z-index: 5;">
+	Слой с z-index, равным 5, для проверки z-index
+</div>
+
+<br /><br /><br /><br /><br /><br />
+<hr />
+<form name="testform" id="testform" action="#" method="get">
+	Видимость:
+	<input type="button" value="Показать" onclick="show('region1');" />
+	<input type="button" value="Скрыть" onclick="hide('region1');" />
+	
+	<br /><br />
+	x: <input type="text" value="300" name="x" id="x" size="4" />
+	<input type="button" value="Установить" 
+		onclick="setX('region1',document.testform.x.value);" />
+	y: <input type="text" value="10" name="y" id="y" size="4" />
+	<input type="button" value="Установить" 
+		onclick="setY('region1',document.testform.y.value);" />
+	z: <input type="text" value="10" name="z" id="z" size="4" />
+	<input type="button" value="Установить" 
+		onclick="setZ('region1',document.testform.z.value);" />
+	<br /><br />
+	
+	Высота: <input type="text" value="100" name="height" id="height" size="4" />
+	<input type="button" value="установить" 
+		onclick="setHeight('region1',document.testform.height.value);" />
+		
+	Ширина: <input type="text" value="100" name="width" id="width" size="4" />
+	<input type="button" value="установить" 
+		onclick="setWidth('region1',document.testform.width.value);" />
+	<br /><br />
+	
+	Прямоугольник отсечения: <br />
+	сверху: <input type="text" value="0" name="top" id="top" size="4" />
+	слева: <input type="text" value="0" name="left" id="left" size="4" />
+	снизу: <input type="text" value="100" name="bottom" id="bottom" size="4" />
+	справа: <input type="text" value="100" name="right" id="right" size="4" />
+	<input type="button" value="установить" 
+		onclick="setClip('region1', document.testform.top.value,
+									document.testform.right.value,
+									document.testform.bottom.value,
+									document.testform.left.value);" />
+	<br /><br />
+	<input type="text" name="newcontent" id="newcontent" 
+		value="Позиционировано!" size="40" />
+	<input type="button" value="Установить содержимое"
+		onclick="setContents('region1',document.testform.newcontent.value);" />
+</form>
+</body>
+</html>

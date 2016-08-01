@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+ <title>Навигационное меню</title>
+ <meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+ <meta name="author" content="D.I.V." />
+ <style type="text/css">
+ <!--
+ .nochoice {color: black;}
+ .choice {color: blue;}
+ //-->
+ </style>
+ <script type="text/javascript">
+ <!--
+ function redirect(pulldown) {
+	var newLocation = pulldown[pulldown.selectedIndex].value;
+	if (newLocation != "")
+		self.location = newLocation;
+ }
+ 
+ function resetIfBlank(pulldown) {
+	var possibleNewLocation = pulldown[pulldown.selectedIndex].value;
+	if (possibleNewLocation == "")
+		pulldown.selectedIndex = 0;	// восстановление состояния
+ }
+ //-->
+ </script>
+</head>
+<body>
+<form name="navform" id="navform" action="redirect.cgi" method="post">
+	<b>Избранное:</b>
+	<select name="menu" id="menu" onchange="resetIfBlank(this);">
+		<option value="" class="nochoice" selected="selected">
+			Выберите узел для посещения
+		</option>
+		<option value="" class="nochoice"></option>
+		<option value="" class="nochoice">Поисковики</option>
+		<option value="" class="nochoice">--------------------</option>
+		<option value="http://www.google.com" class="choice">
+			Google
+		</option>
+		<option value="http://www.yahoo.com" class="choice">
+			Yahoo!
+		</option>
+		<option value="http://www.teoma.com" class="choice">
+			Teoma
+		</option>
+		<option value="" class="nochoice"></option>
+		<option value="" class="nochoice">Internet-магазины</option>
+		<option value="" class="nochoice">--------------------</option>
+		<option value="http://www.amazon.com" class="choice">
+			Amazon
+		</option>
+		<option value="http://www.buy.com" class="choice">
+			Buy.com
+		</option>
+		<option value="" class="nochoice"></option>
+		<option value="" class="nochoice">Демонстрация</option>
+		<option value="" class="nochoice">--------------------</option>
+		<option value="http://www.democompany.com" class="choice">
+			DemoCompany
+		</option>
+	</select>
+	<input type="submit" value="Перейти" 
+		onclick="redirect(document.navform.menu); return false;" />
+</form>
+<script type="text/javascript">
+<!--
+document.navform.menu.selectedIndex = 0;
+//-->
+</script>
+</body>
+</html>

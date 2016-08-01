@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+ 
+<head>
+	<title>Специальные значения</title>
+<meta http-equiv="content-cype" content="text/html; charset=windows-1251" />
+<meta name="author" content="D.I.V." />
+</head>
+ 
+<body>
+<script type="text/javascript">
+	var x = Number.MAX_VALUE;
+	alert("Максимальное целое значение: " + x);
+	// Специальное значение +Infinity
+	x += 1e292;
+	alert("Положительная бесконечность: " + x);
+	// Не число
+	var x = 0 / 0;
+	if (x != x) {
+		alert("x - не число");
+	}
+	if (isNaN(x)) {
+		alert("x - не число");
+	}
+	// Иллюстрируем равенство всех значений Infinity:
+	var posInf = Number.POSITIVE_INFINITY;
+	var negInf = Number.NEGATIVE_INFINITY;
+	alert(posInf == -negInf);	// true
+	// Проблема больших целых чисел
+	var x = 2e53;
+	if (x == x + 1)
+		alert("Имеем true! Большие целые значения являются приближенными.");
+	// Проблема вещественных чисел
+	var x = .3333;
+	x *= 5;
+	alert(x);
+</script> 
+</body>
+</html>

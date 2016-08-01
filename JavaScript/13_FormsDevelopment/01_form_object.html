@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка объекта Form</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<h2 align="center">Форма для проверки</h2>
+<form action="http://www.javascriptref.com/formEcho" 
+	method="post" name="testform" id="testform"
+	onreset="return confirm('Вы уверены?');"
+	onsubmit="alert('Данные фактически не отправляются'); return false;">
+<label>Имя:
+<input type="text" id="field1" name="field1" size="20" value="Иван Степанов" /></label>
+<br />
+<label>Пароль:
+<input type="password" id="field2" name="field2" size="8" maxlength="8" />
+</label>
+<br />
+<input type="reset" value="Очистка" />
+<input type="submit" value="Отправка" />
+<input type="button" value="Выполнить очистку" 
+	onclick="document.testform.reset();" />
+<input type="button" value="Выполнить отправку" 
+	onclick="document.testform.submit();" />
+</form>
+<hr />
+<h2 align="center">Свойства объекта Form</h2>
+<script type="text/javascript">
+<!--
+// Можете заменить document.testform на document.forms[0] -
+// результат будет тем же.
+with (document.testform) {
+	document.write("action: " + action + "<br />");
+	document.write("encoding: " + encoding + "<br />");
+	document.write("length: " + length + "<br />");
+	document.write("method: " + method + "<br />");
+	document.write("name: " + name + "<br />");
+	document.write("target: " + target + "<br />");
+	for (var i=0; i<document.testform.length; i++)
+		document.write("elements[" + i + "].type = " + document.testform.elements[i].type + "<br />");
+}
+//-->
+</script>
+</body>
+</html>

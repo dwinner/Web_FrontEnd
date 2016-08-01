@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	function getDiffOfDays() {
+    var insertRegion = top.resultFrame.document.getElementById("nDays");
+    var day1 = parseInt(parent.inputFrame.inputForm.day1[parent.inputFrame.inputForm.day1.selectedIndex].value);
+    var month1 = parseInt(parent.inputFrame.inputForm.month1[parent.inputFrame.inputForm.month1.selectedIndex].value);
+    var year1 = parseInt(parent.inputFrame.inputForm.year1[parent.inputFrame.inputForm.year1.selectedIndex].value);
+    var day2 = parseInt(parent.inputFrame.inputForm.day2[parent.inputFrame.inputForm.day2.selectedIndex].value);
+    var month2 = parseInt(parent.inputFrame.inputForm.month2[parent.inputFrame.inputForm.month2.selectedIndex].value);
+    var year2 = parseInt(parent.inputFrame.inputForm.year2[parent.inputFrame.inputForm.year2.selectedIndex].value);
+    var eDate1, eDate2;
+    if (!isNaN(day1) && !isNaN(month1) && !isNaN(year1))
+      eDate1 = new Date(year1, month1, day1);
+    else {
+      insertRegion.innerHTML = "<p>Первая дата введена некорректно</p>";
+      return;
+    }
+    if (!isNaN(day2) && !isNaN(month2) && !isNaN(year2))
+      eDate2 = new Date(year2, month2, day2);
+    else {
+      insertRegion.innerHTML = "<p>Вторая дата введена некорректно</p>";
+      return;
+    }
+    if (!eDate1 || !eDate2) {
+      insertRegion.innerHTML = "<p>Даты введены некорректно</p>";
+      return;
+    }
+    var eTime1 = eDate1.getTime();
+    var eTime2 = eDate2.getTime();
+    insertRegion.innerHTML = "Разница между двумя датами <b>";
+    insertRegion.innerHTML += parseInt(Math.abs(eTime1 - eTime2)/(1000*60*60*24));
+    insertRegion.innerHTML += " дней(я)</b>";
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form name="exec" id="exec" target="resultFrame">
+  <input type="button" value="Вычислить разницу" onclick="getDiffOfDays();" />
+</form>
+</body>
+</html>

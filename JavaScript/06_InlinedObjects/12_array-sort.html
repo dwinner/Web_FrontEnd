@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Метод sort()</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+/* 1) По-умолчанию элементы сортируются лексикографически */
+var myArray = [14, 52, 3, 14, 45, 36];
+myArray.sort();
+alert(myArray);	// 14,14,3,36,45,52
+
+/* 2) Передаем функцию обратного вызова для числового сравнения */
+function digitCompare(x, y) {
+	if (x < y) return -1;
+	else if (x === y) return 0;
+	else return 1;
+}
+var myArray = [14, 52, 3, 14, 45, 36];
+myArray.sort(digitCompare);
+alert(myArray);	// 3,14,14,36,45,52
+
+/* 3) Сортируем нечетные слева, а четные справа */
+var myArray = [1, 2, 3, 4, 5, 6];
+myArray.sort( function(x, y) {
+								if (x % 2) return -1;
+								if (x % 2 == 0) return 1;
+							 }
+			);
+alert(myArray);	// 3,5,1,6,2,4
+</script>
+</body>
+</html>

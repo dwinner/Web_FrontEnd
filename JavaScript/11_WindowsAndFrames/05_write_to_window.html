@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>JavaScript-гуру 1.1</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function customAlert(title, message) {
+		var guruWindow = window.open("","","width=300,height=200");
+		if (guruWindow != null) {
+			var windowHTML = "<html><head><title>"+title+"</title></head>";
+			windowHTML += "<body bgcolor='black' text='yellow'><h1 align='center'>";
+			windowHTML += message + "</h1><hr /><div align='center'>";
+			windowHTML += "<form><input type='button' value='CLOSE' onclick='self.close()' />";
+			windowHTML += "</form></div></body></html>";
+			guruWindow.document.write(windowHTML);
+			guruWindow.focus();
+			return;
+		}
+	}
+	
+	function askGuru() {
+		var question = prompt("Что ты хочешь спросить, о искатель знаний", "");
+		if (question != null) {
+			if (question == "")
+				customAlert("Раздраженный гуру", "Вы меня до инфаркта доведете!");
+			else
+				customAlert("Усталый гуру", "Не тратьте попусту мое время.");
+		}
+	}
+	//-->
+	</script>
+</head>
+<body>
+<div align="center">
+	<h1>JavaScript Гуру 1.1</h1>
+	<hr />
+	<form action="#" method="get">
+		<input type="button" value="Спросить гуру" onclick="askGuru();" />
+	</form>
+</div>
+</body>
+</html>

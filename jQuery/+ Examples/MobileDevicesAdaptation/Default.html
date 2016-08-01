@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link href="Content/jquery.mobile-1.4.5.css" rel="stylesheet"/>
+    <link href="default.css" rel="stylesheet"/>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/jquery.mobile-1.4.5.js"></script>
+    <script src="Scripts/jQuery.tmpl.js"></script>
+    <script src="default.js"></script>
+    <script id="liTmpl" type="text/x-jquery-tmpl">
+        <li>
+            <!-- ReSharper disable once Html.IdDuplication -->
+            <a href="#basket" class="buy" id="${name}">${label}</a>
+            <a href="#" class="productLink" data-flower="${name}">${label}</a>
+        </li>
+    </script>
+    <script id="trTmpl" type="text/x-jquery-tmpl">
+        <!-- ReSharper disable once Html.IdDuplication -->
+        <tr data-price="${price}" id="${name}">
+            <td>${label}</td>
+            <td id="count">
+                <input type="number" value="1" min="0" max="10" />
+            </td>
+            <td id="subtotal">0</td>
+        </tr>
+    </script>
+    <title>MobileApp</title>
+</head>
+<body>
+    <div id="page1" data-role="page" data-theme="b">
+        <div data-role="header">
+            <h1>Магазин Джеки</h1>
+        </div>
+        <div id="container" style="padding: 20px;">
+            <ul data-role="listview" data-inset="true"></ul>
+        </div>
+    </div>
+
+    <div id="productPage" data-role="page" data-theme="b">
+        <div data-role="header">
+            <h1 id="header"></h1>
+        </div>
+        <div>
+            <div class="lcontainer">
+                <img id="image" src="" alt="" />
+                <div>
+                    <a href="#" data-rel="back" data-role="button"
+                       data-inline="true" data-direction="reverse">Назад</a>
+                </div>
+            </div>
+            <div class="productData">
+                <span id="description"></span>
+                <div>
+                    <b>Цена: <span id="price"></span></b>
+                    <a href="#" id="buyButton" data-flower=""
+                       data-role="button"
+                       data-inline="true">Купить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="basket" data-role="page" data-theme="b">
+        <div data-role="header">
+            <h1>Магазин Джеки</h1>
+        </div>
+        <div class="cWrapper">
+            <!-- ReSharper disable once Html.Obsolete -->
+            <table id="basketTable" border="0">
+                <thead>
+                    <tr>
+                        <th>Цветы</th>
+                        <th>Количество</th>
+                        <th>Всего</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="2">ИТОГО:</th>
+                        <td id="total"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="cWrapper">
+            <a href="#" data-rel="back" data-role="button"
+               data-inline="true" data-direction="reverse">Назад</a>
+            <a href="#checkout" data-role="button" data-inline="true">Заказать</a>
+        </div>
+    </div>
+
+    <div id="checkout" data-role="page" data-theme="b">
+        <div data-role="header">
+            <h1>Магазин Джеки</h1>
+        </div>
+        <div data-role="content">
+            <label for="name">Имя: </label>
+            <input id="name" placeholder="Ваше имя" />
+
+            <label for="wrap"><span>Подарочная упаковка:</span></label>
+            <select id="wrap" name="wrap" data-role="slider">
+                <option value="yes" selected="selected">Да</option>
+                <option value="no">Нет</option>
+            </select>
+
+            <fieldset data-role="controlgroup">
+                <legend>Shipping:</legend>
+
+                <input type="radio" name="ship" id="overnight" checked="checked"/>
+                <label for="overnight">В течение суток</label>
+
+                <input type="radio" name="ship" id="23day"/>
+                <label for="23day">2-3 дня</label>
+
+                <input type="radio" name="ship" id="710day" checked="checked" />
+                <label for="710day">7-10 дней</label>
+            </fieldset>
+
+            <div class="cWrapper">
+                <a href="#" data-rel="back" data-role="button"
+                   data-inline="true" data-direction="reverse">Назад</a>
+                <a href="#" id="submit" data-role="button"
+                   data-inline="true">Отправить заказ</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

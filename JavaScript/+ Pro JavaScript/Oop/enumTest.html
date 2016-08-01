@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Тест типа перечисления</title>
+    <script src="Scripts/inherit.js"></script>
+    <script src="Scripts/enum.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        var Coin = enumeration({ Penny: 1, Nickel: 5, Dime: 10, Quarter: 25 });
+        var c = Coin.Dime;
+        console.log(c instanceof Coin); // true
+        console.log(c.constructor === Coin); // true
+        console.log(Coin.Quarter + 3 * Coin.Nickel);    // 40
+        console.log(Coin.Dime == 10);   // true
+        console.log(Coin.Dime > Coin.Nickel);   // true
+    </script>
+</body>
+</html>

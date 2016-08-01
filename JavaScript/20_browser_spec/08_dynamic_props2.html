@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Динамические свойства: пример № 2</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<form action="#" method="get">
+Первое число: <input type="text" id="num1" value="0" /><br />
+Второе число: <input type="text" id="num2" value="0" /><br />
+Сумма: <b id="sum"> </b>
+</form>
+<script type="text/jscript">
+<!--
+// Могут возникнуть проблемы, если значения полей не являются
+// числами, поэтому мы считаем все нецелые значения нулевыми.
+
+function computeSum() {
+  var n1 = parseInt(document.all("num1").value);
+  if (!isFinite(n1))
+    n1 = 0;
+  var n2 = parseInt(document.all("num2").value);
+  if (!isFinite(n2))
+    n2 = 0;
+  return n1 + n2;
+}
+document.all("sum").setExpression("innerText", "computeSum()");
+//-->
+</script>
+</body>
+</html>

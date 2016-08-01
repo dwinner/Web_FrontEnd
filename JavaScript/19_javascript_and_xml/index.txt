@@ -1,0 +1,10 @@
+		JavaScript и XML.
+
+1) Преобразование XML в HTML с помощью XSLT;
+2) Визуализация XML-документа с помощью CSS;
+3) Объединение XML и XHTML;
+4) Островки XML-данных в Internet Explorer;
+5) XML в Internet Explorer;
+6) Пример DOM+XML в Mozilla;
+7) Доступ сценариев к островкам XML-данных в Internet Explorer;
+8) Удаленный XML;

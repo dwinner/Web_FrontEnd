@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Провкерка атрибутов</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<font id="test" size="2" color="red">Измените мои атрибуты!</font>
+<script type="text/javascript">
+<!--
+	theElement = document.getElementById('test');
+//-->
+</script>
+<form name="testform" id="testform" action="#" method="get">
+Цвет:
+	<input type="text" id="color" name="color" value="" size="8" />
+	<input type="button" value="Установить цвет" 
+	 onclick="theElement.setAttribute('color', document.testform.color.value);" />
+	<input type="button" value="Убрать цвет" 
+	 onclick="theElement.removeAttribute('color');" />
+	<br />
+	Размер:
+	<select onchange="theElement.setAttribute('size',this.options[this.selectedIndex].text);">
+		<option>1</option>
+		<option>2</option>
+		<option selected="selected">3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+</form>
+<script type="text/javascript">
+<!--
+	document.testform.color.value = theElement.getAttribute('color');
+//-->
+</script>
+</body>
+</html>

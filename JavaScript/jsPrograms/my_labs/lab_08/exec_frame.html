@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript">
+	<!--
+	function squareRoots(a, b, c) {
+    var oContent = top.resultFrame.document.getElementById("roots");
+    a = parseFloat(a);
+	  b = parseFloat(b);
+	  c = parseFloat(c);
+	  if (isNaN(a) || isNaN(b) || isNaN(c)) {
+      oContent.innerHTML = "Вы ввели НЕ вещественные значения коэффициентов";
+      return;
+	  }
+    if (a == 0 && b == 0 && c == 0) {
+      oContent.innerHTML = "Подходит любое значение корня";
+      return;
+    }
+    else if (a == 0 && b == 0 && c != 0) {
+      oContent.innerHTML = "Корней нет";
+      return;
+    }
+    else if (a == 0 && b != 0 && c != 0) {
+      oContent.innerHTML = "Значение корня:\t"+parseFloat(-c/b);
+      return;
+    }
+    else {
+      var d = b*b-4*a*c;
+      if (d < 0) {
+        oContent.innerHTML = "Первый комплексный корень: "+(-b/(2*a))+" + i*"+(Math.sqrt(Math.abs(d)))+"<br />";
+        oContent.innerHTML += "Второй комплексный корень: "+(-b/(2*a))+" - i*"+(Math.sqrt(Math.abs(d)));
+        return;
+      }
+      else if (d == 0) {
+        oContent.innerHTML = "Корень кратности 2: "+(-b/(2*a));
+        return;
+      }
+      else {
+        oContent.innerHTML = "Первый действительный корень: "+((-b+Math.sqrt(d))/(2*a))+"<br />";
+        oContent.innerHTML += "Второй действительный корень: "+((-b-Math.sqrt(d))/(2*a));
+      }
+    }
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame">
+  <input type="button" value="Вычислить корни"
+   onclick="squareRoots(parent.inputFrame.inputForm.aRatio.value,
+                        parent.inputFrame.inputForm.bRatio.value,
+                        parent.inputFrame.inputForm.cRatio.value);" />
+</form>
+</body>
+</html>

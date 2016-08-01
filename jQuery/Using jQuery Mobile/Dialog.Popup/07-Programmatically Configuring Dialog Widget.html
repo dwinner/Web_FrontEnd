@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <link rel="stylesheet" href="Content/jquery.mobile-1.4.5.css" type="text/css" />
+    <script type="text/javascript" src="Scripts/jquery-1.8.0.js"></script>
+    <script>
+        $(document).bind("pageinit", function () {
+            $("#dialog1").dialog({
+                corners: false,
+                overlayTheme: "e"
+            });
+        });
+    </script>
+    <script type="text/javascript" src="Scripts/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <div id="page1" data-role="page">
+        <div data-role="header">
+            <h1>Jacqui's Shop</h1>
+        </div>
+        <div data-role="content">
+            <a href="#dialog1">Show the dialog</a>
+        </div>
+    </div>
+    <div id="dialog1" data-role="dialog" data-overlay-theme="d">
+        <div data-role="header">
+            <h1>You clicked the link!</h1>
+        </div>
+        <div data-role="content">
+            This is the content area of the dialog
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd" /> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Распознавание модулей расширений</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+</head>
+<body>
+<script type="text/javascript">
+<!--
+try {
+	// Все MIME-типы, поддерживаемые модулем расширения Flash
+	if (navigator.plugins["Shockwave Flash"]) {
+		for (var i=0; i<navigator.plugins["Shockwave Flash"].length; i++) 
+			document.write("Flash MimeTypes: " + 
+						   navigator.plugins["Shockwave Flash"][i].type + "<br />");
+	}
+	else throw("Plugins are undefined \n in navigator object");
+
+	// Весь массив plugins
+	for (var i=0; i<navigator.plugins.length; i++) {
+		document.write("Имя: " + navigator.plugins[i].name + "<br />");
+		document.write("Описание: " + navigator.plugins[i].name + "<br />");
+		document.write("Поддерживает: ");
+		for (var j=0; j<navigator.plugins[i].length; j++)
+			document.write(" &nbsp; " + navigator.plugins[i][j].type);
+		document.write("<br /><br />");
+	}
+}
+catch(e) {
+	alert(e.toString());
+}
+//-->
+</script>
+</body>
+</html>

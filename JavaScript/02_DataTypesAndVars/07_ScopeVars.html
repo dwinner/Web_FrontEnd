@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+ 
+<head>
+	<title>Область видимости переменных в функции</title>
+<meta http-equiv="content-cype" content="text/html; charset=windows-1251" />
+<meta name="author" content="D.I.V." />
+</head>
+ 
+<body>
+<script type="text/javascript">
+	var scope = "глобальная";
+	function myFunction()
+	{
+		var scope = "локальная";
+		document.writeln("Значение scope в myFunction: " + scope);
+	}
+	myFunction();
+	document.writeln("Значение scope в глобальном контексте: " + scope);
+</script>
+<hr />
+<script type="text/javascript">
+	function myFunction()
+	{
+		document.writeln("Значением x до инициализации в myFunction является ", x);
+		var x = "Hullo there!";
+		document.writeln("Значением x после инициализации в myFunction является ", x);
+	}
+	myFunction();
+</script>
+<hr />
+<script type="text/javascript">
+	var scope = "global";
+	function outerFunction()
+	{
+		var scope = "local";
+		innerFunction();
+	}
+	function innerFunction()
+	{
+		alert("Значение переменной scope является " + scope);
+	}
+	outerFunction();
+</script> 
+</body>
+</html>

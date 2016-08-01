@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3c.org/TR/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3c.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+</head>
+<body>
+<form action="#" method="get">
+Сказать приветствие:
+	<select 
+	 onchange="document.getElementById('thephrase').firstChild.data = 
+				this.options[this.selectedIndex].value">
+		<option value="Привет">Русский</option>
+		<option value="Hello">English</option>
+		<option value="Bonjour">French</option>
+		<option value="Hola">Spanish</option>
+	</select>
+</form>
+<div id="thephrase">
+	Привет
+</div>
+</body>
+</html>

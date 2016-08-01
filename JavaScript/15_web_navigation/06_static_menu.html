@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Пример статического меню</title>
+<!-- Не используйте XHTML из-за проблем в модели IE -->
+<!-- Лучше используйте свойство CSS2 position:fixed; -->
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+<style type="text/css">
+<!--
+.menu
+{
+	background: blue;
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px;
+	border-color: lightblue;
+	color: white;
+	position: absolute;
+	text-align: left;
+	width: 170px;
+}
+-->
+</style>
+<script type="text/javascript">
+<!--
+var xoff = 5;
+var yoff = 5;
+function makeStatic(elementName) {
+	if (document.layers) { // ns4
+		document.layers[elementName].x = window.pageXOffset + xoff;
+		document.layers[elementName].y = window.pageYOffset + yoff;
+	}
+	else if (document.all) { // ie4+
+		document.all(elementName).style.left = document.body.scrollLeft + xoff;
+		document.all(elementName).style.top = document.body.scrollTop + xoff;
+	}
+	else if (document.getElementById) { // DOM
+		document.getElementById(elementName).style.left = window.pageXOffset + xoff;
+		document.getElementById(elementName).style.top = window.pageYOffset + yoff;
+	}
+}
+//-->
+</script>
+</head>
+<body onload="setInterval('makeStatic(\'staticmenu\')', 30);">
+<layer class="menu" name="staticmenu">
+	<div class="menu" name="staticmenu" id="staticmenu">
+		Содержимое меню
+	</div>
+</layer>
+<h1>Добро пожаловать в нашу компанию</h1>
+<!-- Добавлено, чтобы содержимое не помещалось на экране -->
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<h1>Конец страницы</h1>
+</body>
+</html>

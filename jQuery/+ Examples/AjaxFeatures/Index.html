@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/jQuery.tmpl.js"></script>
+    <script src="Scripts/jquery.form.js"></script>
+    <script src="Scripts/jquery.validate.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ajax features</title>
+    <meta charset="utf-8" />
+    <link href="Styles/styles.css" rel="stylesheet" />
+    <link href="Styles/index.css" rel="stylesheet" />
+    <script src="Scripts/index.js"></script>
+    <script id="flowerTmpl" type="text/x-jquery-tmpl">
+        <div class="dcell">
+            <img src="Content/${product}.png" alt="${product}" />
+            <label for="${product}">${name}:</label>
+            <input name="${product}" id="${product}" value="0" />
+        </div>
+    </script>
+    <script id="productRowTmpl" type="text/x-jquery-tmpl">
+        <tr>
+            <td>${name}</td>
+            <td>${quantity}</td>
+        </tr>
+    </script>
+</head>
+<body>
+    <h1>Цветочный магазин Джеки</h1>
+    <form id="orderForm" method="post" action="http://localhost:1337/order">
+        <div id="oblock">
+            <div class="dtable">
+                <div id="row1" class="drow"></div>
+                <div id="row2" class="drow"></div>
+                <div id="row3" class="drow"></div>
+            </div>
+        </div>
+        <div id="buttonDiv">
+            <button type="submit">Заказать</button>
+        </div>
+    </form>
+    <form id="summaryForm" method="post" action="">
+        <div id="summary">
+            <h3>Отчет о заказе</h3>
+            <table style="border-width: 1px;">
+                <thead>
+                    <tr>
+                        <th>Продукт</th>
+                        <th>Кол-во единиц</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <th>Кол-во единиц:</th>
+                        <td id="totalItems"></td>
+                    </tr>
+                    <tr>
+                        <th>Общая стоимость:</th>
+                        <td id="totalPrice"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div id="buttonDiv2">
+                <button type="submit">Оформить заказ</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

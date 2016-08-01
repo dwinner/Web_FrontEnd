@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Querying google maps</title>
+    <script type="text/javascript">
+        window.addEventListener('load', function () {
+            var get = document.getElementById('getlocation');
+            get.addEventListener('click', function () {
+                var geoconfig = {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 60000
+                };
+
+                navigator.geolocation.getCurrentPosition(function (pos) {
+                    var location = document.getElementById('location');
+                    var mapurl = 'http://maps.google.com/maps/api/staticmap?center='
+                        + pos.coords.latitude
+                        + ','
+                        + pos.coords.longitude
+                        + '&zoom=12&size=400x400&sensor=false&markers='
+                        + pos.coords.latitude
+                        + ','
+                        + pos.coords.longitude;
+                    location.innerHTML = '<img src="' + mapurl + '">';
+                }, function (error) {
+                    alert('Error: ' + error.code + ' ' + error.message);
+                }, geoconfig);
+            }, false);
+        }, false);
+    </script>
+</head>
+<body>
+    <section id="location">
+        <button id="getlocation">Get location</button>
+    </section>
+</body>
+</html>

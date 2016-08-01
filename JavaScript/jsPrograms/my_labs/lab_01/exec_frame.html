@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript" src="returnParent.js"></script>
+	<script type="text/javascript" language="JavaScript">
+	<!--
+	function makeFuntToKgTable(start, last, step) {
+		var tblBuffer = "";
+		var error = "";
+		var insertRegion = top.resultFrame.document.getElementById('resTable');
+		start = parseInt(start);
+		last = parseInt(last);
+		step = parseInt(step);
+		if (isNaN(start) || start < 0)
+			error += "<b>- Значение "+start+" не может быть начальным</b><br />";
+		if (isNaN(last) || last < 0)
+			error += "<b>- Значение "+last+" не может быть конечным</b><br />";
+		if (isNaN(step) || step <= 0)
+			error += "<b>- Значение "+step+" не может быть шагом</b><br />";
+		if (start >= last)
+			error += "<b>- Начальное значение больше конечного</b><br />";
+		if (error != "") {
+			insertRegion.innerHTML = error;
+			return;
+		}
+		tblBuffer += "<table border='1'><tr><th>Фунты</th><th>Килограммы</th></tr>";
+		while (start <= last) {
+			tblBuffer += "<tr><td>"+start+"</td><td>"+parseFloat(0.4*start)+"</td></tr>";
+			start += step;
+		}
+		tblBuffer += "</table>";
+		insertRegion.innerHTML = tblBuffer;
+	}
+	//-->
+	</script>
+</head>
+<body>
+<h2 align="center">Запуск вычислений</h2><hr />
+<form target="resultFrame">
+	<input type="button" value="Вывести таблицу" 
+		onclick="makeFuntToKgTable(parent.inputFrame.inputParams.start.value,
+								   parent.inputFrame.inputParams.finish.value,
+								   parent.inputFrame.inputParams.step.value);" />
+</form>
+</body>
+</html>

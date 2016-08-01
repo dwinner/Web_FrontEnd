@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Получение текста с сервера</title>
+    <script src="Scripts/getText.js"></script>
+    <script type="text/javascript">
+        function callServer() {
+            var url = "GetTextHandler.ashx";
+            getText(url, onServerResponse);
+        }
+
+        function onServerResponse(responseText) {
+            alert(responseText);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="callServer();">Call</button>
+</body>
+</html>

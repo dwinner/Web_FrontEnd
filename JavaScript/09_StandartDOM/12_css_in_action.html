@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Правила CSS в сценарии</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+
+<div id="test"> Правила CSS в действии </div>
+<hr />
+
+<script type="text/javascript">
+<!--
+theElement = document.getElementById("test");
+//-->
+</script>
+
+<form id="cssForm" name="cssForm" action="#" method="get">
+	<strong>Выравнивание:</strong>
+	<select onchange="theElement.style.textAlign=this.options[this.selectedIndex].text;">
+		<option>left</option>
+		<option>center</option>
+		<option>right</option>
+		<option>justify</option>
+	</select>
+	<br /><br />
+	
+	<strong>Шрифт:</strong>
+	<select onchange="theElement.style.fontFamily=this.options[this.selectedIndex].text;">
+		<option>sans-serif</option>
+		<option selected="selected">serif</option>
+		<option>cursive</option>
+		<option>fantasy</option>
+		<option>monospace</option>
+	</select>
+	
+	&nbsp;&nbsp;
+	
+	<input type="text" id="font" name="font" size="10" value="Impact" />
+	<input type="button" value="установить" onclick="theElement.style.fontFamily=document.cssForm.font.value;" />
+	
+	<br /><br />
+	<strong>Стиль:</strong>
+	<select onchange="theElement.style.fontStyle=this.options[this.selectedIndex].text;">
+		<option>normal</option>
+		<option>italic</option>
+		<option>oblique</option>
+	</select>
+	
+	<strong>Плотность:</strong>
+	<select onchange="theElement.style.fontWeight=this.options[this.selectedIndex].text;">
+		<option>normal</option>
+		<option>bolder</option>
+		<option>lighter</option>
+	</select>
+	
+	<strong>Вариант:</strong>
+	<select onchange="theElement.style.fontVariant=this.options[this.selectedIndex].text;">
+		<option>normal</option>
+		<option>small-caps</option>
+	</select>
+	<br /><br />
+	
+	<strong>Декорирование:</strong>
+	<select onchange="theElement.style.textDecoration=this.options[this.selectedIndex].text;">
+		<option>none</option>
+		<option>overline</option>
+		<option>underline</option>
+		<option>line-through</option>
+		<option>blink</option>
+	</select>
+	
+	<br /><br />
+	<strong>Размер шрифта:</strong>
+	<select onchange="theElement.style.fontSize=this.options[this.selectedIndex].text;">
+		<option>xx-small</option>
+		<option>x-small</option>
+		<option selected="selected">small</option>
+		<option>medium</option>
+		<option>large</option>
+		<option>x-large</option>
+		<option>xx-large</option>
+	</select>
+	&nbsp;&nbsp;
+	
+	<input type="text" id="size" name="size" size="3" maxlength="3" value="24pt" />&nbsp;&nbsp;
+	<input type="button" value="установить" onclick="theElement.style.fontSize=document.cssForm.size.value;" />
+	<br /><br />
+	
+	<strong>Цвет:</strong>
+	<input type="text" id="fgColor" name="fgColor" size="8" value="yellow" />
+	<input type="button" value="установить" onclick="theElement.style.color=document.cssForm.fgColor.value;" />
+	
+	<br /><br />
+	<strong>Цвет фона:</strong>
+	<input type="text" id="bgColor" name="bgColor" size="8" value="red" />
+	<input type="button" value="установить" onclick="theElement.style.backgroundColor=document.cssForm.bgColor.value;" />
+	
+	<br /><br />
+	<strong>Границы:</strong>
+	<select onchange="theElement.style.borderStyle=this.options[this.selectedIndex].text;">
+		<option>none</option>
+		<option>dotted</option>
+		<option>dashed</option>
+		<option>solid</option>
+		<option>double</option>
+		<option>groove</option>
+		<option>ridge</option>
+		<option>inset</option>
+		<option>outset</option>
+	</select>
+	<br /><br />
+	
+	<strong>Высота:</strong>
+	<input type="text" id="height" name="height" value="100px" size="3" />
+	&nbsp;&nbsp;
+	
+	<strong>Ширина:</strong>
+	<input type="text" id="width" name="width" value="100px" size="3" />
+	&nbsp;&nbsp;
+	<input type="button" value="установить" 
+		onclick="theElement.style.height=document.cssForm.height.value;
+				 theElement.style.width=document.cssForm.width.value;" />
+				 
+	<br /><br />
+	<strong>Сверху:</strong>
+	<input type="text" id="top" name="top" value="100px" size="3" />
+	&nbsp;&nbsp;
+	<strong>Слева:</strong>
+	<input type="text" id="left" name="left" value="100px" size="3" />
+	&nbsp;&nbsp;
+	<input type="button" value="установить" 
+		onclick="theElement.style.position='absolute';
+				 theElement.style.top=document.cssForm.top.value;
+				 theElement.style.left=document.cssForm.left.value;" />
+	<br /><br />
+	<strong>Видимость:</strong> &nbsp;&nbsp;
+	<input type="button" value="показать" onclick="theElement.style.visibility='visible';" />
+	<input type="button" value="скрыть" onclick="theElement.style.visibility='hidden';" />
+</form>
+</body>
+</html>

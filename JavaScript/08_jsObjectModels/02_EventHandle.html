@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Обработка событий</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<!-- Простая обработка -->
+<form method="get" action="#">
+	<input type="button" value="Нажмите здесь" onclick="alert('Щекотно!');" />
+</form>
+
+<!-- Привязывание событий -->
+<form name="myForm" id="myForm" method="get" action="#">
+	<input type="button" name="myButton" id="myButton" value="Нажмите здесь" onclick="alert('Щекотно!');" />
+</form>
+<script type="text/javascript">
+<!--
+document.myForm.myButton.onclick = new Function("alert('Щекотно!');");
+//-->
+</script>
+
+<!-- Прямой вызов обработчика -->
+<script type="text/javascript">
+document.myForm.myButton.click();
+</script>
+</body>
+</html>

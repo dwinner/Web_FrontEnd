@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Свойства ссылок в документе</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<a href="http://win.mail.ru/cgi-bin/readmsg" target="blank" name="mailru" id="mailru">
+	Mail fucking Spammer
+</a><br/>
+<form action="#" method="get">
+	<input type="button" value="изменить ссылку" onclick="document.links[0].href='http://www.google.com';" />
+</form>
+<big><pre>
+<script type="text/javascript">
+<!--
+var xLink = document.getElementById('mailru');
+document.writeln("Адрес : " + xLink.href);
+document.writeln("Хост : " + xLink.host);
+document.writeln("Имя хоста : " + xLink.hostname);
+document.writeln("Относительный путь : " + xLink.pathname);
+document.writeln("Порт : " + xLink.port);
+document.writeln("Протокол : " + xLink.protocol);
+document.writeln("Компонент поиска : " + xLink.search);
+document.writeln("Хэш : " + xLink.hash);
+document.writeln("Назначение : " + xLink.target);
+//-->
+</script>
+</pre></big>
+</body>
+</html>

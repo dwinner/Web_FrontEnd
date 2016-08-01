@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManagingElementSelection\bin\ManagingElementSelection.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManagingElementSelection\bin\ManagingElementSelection.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManagingElementSelection\bin\ManagingElementSelection.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManagingElementSelection\obj\Debug\ManagingElementSelection.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManagingElementSelection\obj\Debug\ManagingElementSelection.pdb

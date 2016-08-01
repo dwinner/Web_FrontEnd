@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Content/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript">
+
+        $(document).bind("pageload", function (event, data) {
+            if (data.url === "Static/document2.html") {
+                $("#gobutton").button("enable").bind("tap", function () {
+                    $.mobile.changePage("Static/document2.html");
+                });
+            }
+        });
+        var loadedPages = false;
+        $(document).bind("pageinit", function () {
+            if (!loadedPages) {
+                loadedPages = true;
+                $.mobile.loadPage("Static/document2.html", {});
+            }
+        });
+
+    </script>
+    <script type="text/javascript" src="Scripts/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+    <div id="page1" data-role="page">
+        <div data-role="header">
+            <h1>Jacqui's Shop</h1>
+        </div>
+        <div data-role="content">
+            <button id="gobutton" disabled>Go</button>
+        </div>
+    </div>
+</body>
+</html>

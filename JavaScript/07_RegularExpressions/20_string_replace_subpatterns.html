@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Метод replace с подвыражениями</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+var pattern = /(\d{3})(\d{2})(\d{4})/;
+var ssn = "123456789";
+ssn = ssn.replace(pattern, "$1-$2-$3");	// 123-45-6789
+alert(ssn);
+// нормализация представления телефонных номеров
+function normalizePhone(phone) {
+	var p1 = /(\d{3})(\d{3})(\d{4})/;
+	var p2 = /\((\d{3})\)\s+(\d{3})[^\d]+(\d{4})/;
+	phone = phone.replace(p1, "$1-$2-$3");
+	phone = phone.replace(p2, "$1-$2-$3");
+	return phone;
+}
+</script>
+</body>
+</html>

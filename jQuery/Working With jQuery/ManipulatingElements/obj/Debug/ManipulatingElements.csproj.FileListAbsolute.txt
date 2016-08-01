@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingElements\bin\ManipulatingElements.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingElements\bin\ManipulatingElements.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingElements\bin\ManipulatingElements.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingElements\obj\Debug\ManipulatingElements.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\ManipulatingElements\obj\Debug\ManipulatingElements.pdb

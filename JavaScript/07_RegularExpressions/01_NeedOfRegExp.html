@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Необходимость регулярных выражений</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+// возвращается true, если символ является цифрой
+function isDigit(character) {
+	return (character >= "0" && character <= "9" );
+}
+// возвращается true, если phone имеет формат NNN-NNN-NNNN
+function isPhoneNumber(phone) {
+	if (phone.length != 12)
+		return false;
+	// Для каждого символа в строке...
+	for (var i=0; i<12; i++) {
+		// Если здесь должен стоять дефис...
+		if (i == 3 || i == 7) {
+			// возвращается false, если дефиса нет
+			if (phone.charAt(i) != "-")
+				return false;
+		}
+		// иначе здесь должна стоять цифра...
+		else {
+			// возвращается false, если это не цифра
+			if (!isDigit(phone.charAt(i)))
+				return false;
+		}
+	}
+	return true;
+}
+</script>
+</body>
+</html>

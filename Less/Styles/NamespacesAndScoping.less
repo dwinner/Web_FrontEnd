@@ -1,0 +1,19 @@
+﻿body {
+}
+
+@app-root: "http://localhost:8000";
+
+@base-size: 10px;
+
+#contanct-module{    
+    .fonts(){
+        font-family: "Open Sans", Verdana, Geneva, 'DejaVu Sans', sans-serif;
+        font-size: @base-size;
+    }
+}
+
+input {
+    @base-size: 12px;
+    #contanct-module > .fonts();
+    background-image: url("@{app-root}images/background.jpg");
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Метод match</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<script type="text/javascript">
+var pattern = /\d{2}/g;
+var lottoNumbers = "22, 48, 13, 17, 26";
+var result = lottoNumbers.match(pattern);
+alert(result);	// 22,48,13,17,26
+// разделение url на компоненты
+var url = "Адресом является http://www.w3c.org/DOM/Activity";
+var pattern = /(\w+):\/\/([\w\.]+)\/([\w\/]+)/;	// три подвыражения
+var results = url.match(pattern);
+document.writeln("results.input =\t" + results.input);
+document.writeln("<br />");
+document.writeln("results.index =\t" + results.index);
+document.writeln("<br />");
+for (var i=0; i < results.length; i++) {
+	document.writeln("results[" + i + "] = \t" + results[i]);
+	document.writeln("<br />");
+}
+</script>
+</body>
+</html>

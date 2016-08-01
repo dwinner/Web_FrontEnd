@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Iframe</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<h1>Обычное содержимое</h1>
+<iframe src="http://www.google.com" name="iframe1" id="iframe1" height="200" width="200">
+</iframe>
+<form action="#" method="get">
+	<input type="button" value="Загрузить через массив фреймов" 
+		onclick="frames['iframe1'].location='http://www.javascriptref.com';" />
+	<input type="button" value="Загрузить посредством DOM" 
+		onclick="document.getElementById('iframe1').src='http://www.pint.com';" />
+</form>
+<h1>Продолжение обычного содержимого</h1>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- 7) Использование внутренних фреймов -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd" /> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>RPC-запросы с помощью iframe</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+</head>
+<body>
+<form action="#" method="get">
+	<input type="text" name="username" id="username" />
+	<input type="button" value="Отправить" onclick="send(this.form.username.value);" />
+</form>
+
+<h1>Ответ сервера:</h1>
+<div id="response"></div>
+<script type="text/javascript">
+<!--
+  var theIframe = document.createElement("iframe");
+  theIframe.setAttribute("src", "");
+  theIframe.setAttribute("id", "myIframe");
+  theIframe.style.visibility = 'hidden';
+  document.body.appendChild(theIframe);
+  
+  function send(sendValue) {
+	var newLocation = 'iframeResponse.php?sendvalue='+escape(sendValue);
+	theIframe.src = newLocation;
+  }
+  
+  function RPCComplete(msg) {
+	var region = document.getElementById('response');
+	region.innerText = msg;
+  }
+//-->
+</script>
+</body>
+</html>

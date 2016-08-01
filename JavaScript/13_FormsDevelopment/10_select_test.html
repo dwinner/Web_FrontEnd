@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Меню выбора</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+
+<!-- Одиночный выбор -->
+<form>
+	<select onchange="alert(this.options[this.selectedIndex].value);">
+		<option value="Значение один">Опция 1</option>
+		<option value="Значение два">Опция 2</option>
+		<option value="Значение три">Опция 3</option>
+	</select>
+</form><p><hr /></p>
+
+<!-- Множественный выбор -->
+<script type="text/javascript">
+<!--
+function showSelected(menu) {
+	var i, msg="";
+	for (i=0; i<menu.options.length; i++)
+		if (menu.options[i].selected)
+			msg += "опция " + i + "выбрана\n";
+	if (msg.length == 0)
+		msg = "не выбрано ни одной опции";
+	alert(msg);
+}
+//-->
+</script>
+<form name="myform" id="myform">
+	<select name="myselect" id="myselect" multiple="true">
+		<option value="Значение 1" selected="true">Опция 1</option>
+		<option value="Значение 2">Опция 2</option>
+		<option value="Значение 3">Опция 3</option>
+		<option value="Значение 4">Опция 4</option>
+		<option value="Значение 5">Опция 5</option>
+	</select>
+	<br />
+	<input type="button" value="Показать выбранное" onclick="showSelected(document.myform.myselect);" />
+</form>
+</body>
+</html>

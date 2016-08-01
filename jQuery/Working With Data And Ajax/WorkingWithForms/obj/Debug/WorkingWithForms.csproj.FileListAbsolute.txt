@@ -1,0 +1,6 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\WorkingWithForms\bin\WorkingWithForms.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\WorkingWithForms\bin\WorkingWithForms.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\WorkingWithForms\bin\WorkingWithForms.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\WorkingWithForms\obj\Debug\WorkingWithForms.csprojResolveAssemblyReference.cache
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\WorkingWithForms\obj\Debug\WorkingWithForms.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\WorkingWithForms\obj\Debug\WorkingWithForms.pdb

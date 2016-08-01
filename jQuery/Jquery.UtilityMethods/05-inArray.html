@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="Scripts/" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/styles.css" />
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var flowerArray = ["aster", "daffodil", "rose", "peony", "primula", "snowdrop"];
+        console.log("Array contains rose: " + $.inArray("rose", flowerArray));
+        console.log("Array contains lily: " + $.inArray("lily", flowerArray));
+    });     
+</script>
+
+
+
+
+
+
+</head>
+<body>
+    <h1>Jacqui's Flower Shop</h1>
+    <form method="post">
+        <div id="oblock">        
+            <div class="dtable">
+                <div id="row1" class="drow">
+                    <div class="dcell">
+                        <img src="Images/aster.png"/><label for="aster">Aster:</label>
+                        <input name="aster" value="0" required />
+                    </div>
+                    <div class="dcell">
+                        <img src="Images/daffodil.png"/><label for="daffodil">Daffodil:</label>
+                        <input name="daffodil" value="0" required />
+                    </div>
+                    <div class="dcell">
+                        <img src="Images/rose.png"/><label for="rose">Rose:</label>
+                        <input name="rose" value="0" required />
+                    </div>                
+                </div>
+                <div id="row2"class="drow">
+                    <div class="dcell">
+                        <img src="Images/peony.png"/><label for="peony">Peony:</label>
+                        <input name="peony" value="0" required />
+                    </div>
+                    <div class="dcell">
+                        <img src="Images/primula.png"/><label for="primula">Primula:</label>
+                        <input name="primula" value="0" required />
+                    </div>            
+                    <div class="dcell">
+                        <img src="Images/snowdrop.png"/><label for="snowdrop">Snowdrop:</label>
+                        <input name="snowdrop" value="0" required />
+                    </div>            
+                </div>            
+            </div>
+        </div>
+        <div id="buttonDiv"><button type="submit">Place Order</button></div>                    
+    </form>
+</body>
+</html>

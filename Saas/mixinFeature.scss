@@ -1,0 +1,22 @@
+﻿body {
+}
+
+@mixin font-large {
+    font: {
+        size: 14px;
+        family: sans-serif;
+        weight: bold;
+    }
+}
+
+// С параметрами
+@mixin rounded-corners-all($size: 5px) {
+    -webkit-border-radius: $size;
+    -moz-border-radius: $size;
+    border-radius: $size;
+}
+
+#form {
+    @include font-large;
+    @include rounded-corners-all(5px);
+}

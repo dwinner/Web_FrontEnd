@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Проверка attach/detachEvent для событий IE</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	function showAuthor() {
+		alert("Оскар Уайльд");
+	}
+	function enableEvent() {
+		someText.attachEvent("onmouseover", showAuthor);
+	}
+	function disableEvent() {
+		someText.detachEvent("onmouseover", showAuthor);
+	}
+	//-->
+	</script>
+</head>
+<body onload="enableEvent();">
+<em id="someText">
+	Можно находиться в сточной канаве, но при этом обращать свой взор к звездам
+</em>
+<form action="#" method="get">
+	<input type="button" value="Привязать событие" onclick="enableEvent();" />
+	<input type="button" value="Разорвать связь" onclick="disableEvent();" />
+</form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Удаление и замена узлов</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+	<script type="text/javascript">
+	<!--
+	function doDelete() {
+		var deletePoint = document.getElementById('toDelete');
+		if (deletePoint.hasChildNodes())
+			deletePoint.removeChild(deletePoint.lastChild);
+	}
+	
+	function doReplace() {
+		var replace = document.getElementById('toReplace');
+		if (replace) {
+			var newNode = document.createElement("strong");
+			var newText = document.createTextNode("элемент 'strong'");
+			newNode.appendChild(newText);
+			replace.parentNode.replaceChild(newNode, replace);
+		}
+	}
+	//-->
+	</script>
+</head>
+<body>
+<div id="toDelete">
+	<p>Это абзац</p>
+	<p>Это <em>другой абзац</em> для удаления</p>
+	<p>Это ещё один абзац</p>
+</div>
+<p>
+	Этот абзац содержит <em id="toReplace">элемент 'em'</em>.
+</p>
+<hr />
+<form action="#" method="get">
+	<input type="button" value="Удаление" onclick="doDelete();" />
+	<input type="button" value="Замена" onclick="doReplace();" />
+</form>
+</body>
+</html>

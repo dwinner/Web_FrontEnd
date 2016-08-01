@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>DOM Implementation Test</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251"/>
+	<meta name="author" content="D.I.V."/>
+</head>
+<body>
+<h1>Поддержка DOM</h1>
+<hr />
+<script type="text/javascript">
+<!--
+
+var featureArray = ["HTML","XML","Core","HTML","XML","Views","StyleSheets",
+					"CSS","CSS2","Events","UIEvents","MouseEvents","HTMLEvents",
+					"MutationEvents","Range","Traversal"];
+
+var versionArray = ["1.0","1.0","2.0","2.0","2.0","2.0","2.0","2.0","2.0","2.0",
+					"2.0","2.0","2.0","2.0","2.0","2.0"];
+					
+var feature;
+var version;
+
+for (var i=0; i<featureArray.length; i++) {
+	feature = featureArray[i];
+	version = versionArray[i];
+	
+	if (document.implementation && document.implementation.hasFeature) {
+		document.write(feature + " " + version + " : ");
+		document.write(document.implementation.hasFeature(feature, version));
+		document.write("<br />");
+	}
+}
+//-->
+</script>
+</body>
+</html>

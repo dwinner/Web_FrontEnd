@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>Обозреватель отношений фреймов</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+</head>
+<body>
+<script type="text/javascript">
+<!--
+	var msg = "";
+	var i = 0;
+	msg += "<h2>Окно " + window.name + "</h2><hr />";
+	if (self.frames.length > 0) {
+		msg += "self.frames.length = " + self.frames.length + "<br />";
+		for (i=0; i < self.frames.length; i++)
+			msg += "self.frames[" + i + "].name = " + self.frames[i].name + "<br />";
+	}
+	else
+		msg += "Само это окно фреймов не имеет<br />";
+	msg += "<br />";
+	if (parent.frames.length > 0) {
+		msg += "parent.frames.length = " + parent.frames.length + "<br />";
+		for (i=0; i < parent.frames.length; i++)
+			msg += "parent.frames[" + i + "].name = " + parent.frames[i].name + "<br />";
+	}
+	msg += "<br />";
+	if (top.frames.length > 0) {
+		msg += "top.frames.length = " + top.frames.length + "<br />";
+		for (i=0; i < top.frames.length; i++)
+			msg += "top.frames[" + i + "].name = " + top.frames[i].name + "<br />";
+	}
+	
+	document.write(msg);
+//-->
+</script>
+</body>
+</html>

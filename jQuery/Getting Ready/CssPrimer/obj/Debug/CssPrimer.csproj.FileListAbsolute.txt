@@ -1,0 +1,6 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\CssPrimer\bin\CssPrimer.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\CssPrimer\bin\CssPrimer.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\CssPrimer\bin\CssPrimer.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\CssPrimer\obj\Debug\CssPrimer.csprojResolveAssemblyReference.cache
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\CssPrimer\obj\Debug\CssPrimer.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\CssPrimer\obj\Debug\CssPrimer.pdb

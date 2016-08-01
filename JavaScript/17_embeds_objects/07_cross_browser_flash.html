@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<title>"Универсальный" пример управления файлом Flash</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<meta name="author" content="D.I.V." />
+	<script type="text/javascript">
+	<!--
+	var dataReady = false;
+	var pluginAvailable = false;
+	// if (document.all) alert("Это пример для netscape и mozilla");
+	function detectPlugin() {
+	   // если модуль расширения существует и правильно настроен,
+	   // то разрешить взаимодействие с ним
+	   if (  navigator.plugins && 
+            (navigator.plugins["Shockwave Flash"] && 
+             navigator.plugins["Shockwave Flash"]["application/x-shockwave-flash"])
+                              ||
+            (navigator.plugins["Shockwave Flash 2.0"] && 
+             navigator.plugins["Shockwave Flash 2.0"]["application/x-shockwave-flash"]))
+             pluginAvailable = true;
+        return(pluginAvailable);          
+    }
+    
+    function changeFrame(i) {
+        if (!dataReady)
+            return;
+        // Некоторые версии элемента управления ActiveX не поддерживают
+        // TotalFrames, поэтому здесь пропущена соответствующая проверка.
+        // Но этот элемент управления правильно обрабатывает значения,
+        // выходящие за рамки диапазона.
+        document.demo.GotoFrame(parseInt(i)); 
+    }
+    
+    function play() {
+        if (!dataReady)
+            return;
+        if (!document.demo.IsPlaying())
+            document.demo.Play();
+    }
+    
+    function stop() {
+        if (!dataReady)
+            return;
+        if (document.demo.IsPlaying())
+            document.demo.StopPlay();
+    }
+    
+    function rewind() {
+        if (!dataReady)
+            return;
+        if (document.demo.IsPlaying())
+            document.demo.StopPlay();
+        document.demo.Rewind();
+    }
+    
+    function zoom(percent) {
+        if (!dataReady)
+            return;
+        if (percent > 0)
+            document.demo.Zoom(parseInt(percent));
+    }
+	//-->
+    </script>
+</head>
+<body onload="dataReady = true;">
+
+<!-- Замечание: дескриптор embed не является стандартным -->
+<embed id="demo" name="demo" src="858coun.swf"
+ width="318" height="300" play="false" loop="false"
+ pluginspage="http://www.macromedia.com/go/getflashplayer"
+ swliveconnect="true">
+</embed>
+
+<form name="controlform" id="controlform" action="#" method="get">
+    <input type="button" value="Старт" onclick="play();" />
+    <input type="button" value="Стоп" onclick="stop();" />
+    <input type="button" value="Перемотка" onclick="rewind();" /><br />
+    <input type="text" name="whichframe" id="whichframe" value="" />
+    <input type="button" value="Сменить фрейм" 
+     onclick="changeFrame(controlform.whichframe.value);" /><br />
+    <input type="text" name="zoomvalue" id="zoomvalue" value="" />
+    <input type="button" value="Изменить размер" 
+     onclick="zoom(controlform.zoomvalue.value);" />
+     (больше 100 - увеличение, меньше 100 - уменьшение)<br />
+</form>
+</body>
+</html>

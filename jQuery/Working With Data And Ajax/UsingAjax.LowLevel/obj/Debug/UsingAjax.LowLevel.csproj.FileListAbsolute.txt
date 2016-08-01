@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingAjax.LowLevel\bin\UsingAjax.LowLevel.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingAjax.LowLevel\bin\UsingAjax.LowLevel.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingAjax.LowLevel\bin\UsingAjax.LowLevel.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingAjax.LowLevel\obj\Debug\UsingAjax.LowLevel.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingAjax.LowLevel\obj\Debug\UsingAjax.LowLevel.pdb

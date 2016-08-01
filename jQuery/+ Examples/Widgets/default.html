@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Widgets demo</title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/jquery-ui-1.11.4.js"></script>
+    <script src="Scripts/jQuery.tmpl.js"></script>
+    <script src="Scripts/custom/default.js"></script>
+    <link href="Content/themes/base/all.css" rel="stylesheet" />
+    <link href="Content/themes/cupertino/jquery-ui.cupertino.css" rel="stylesheet" />
+    <link href="Styles/styles.css" rel="stylesheet" />
+    <link href="Styles/default.css" rel="stylesheet" />
+    <script id="flowerTmpl" type="text/x-jquery-tmpl">
+        <div class="dcell">
+            <img src="Content/${product}.png" alt="${product}" />
+            <label for="${product}">${name}:</label>
+            <input name="${product}" id="${product}" value="0" />
+        </div>
+    </script>
+    <script id="rowTmpl" type="text/x-jquery-tmpl">
+        <tr id="${name}">
+            <td>${product}</td>
+            <td>${val}</td>
+            <td>
+                <a href="#">Remove</a>
+            </td>
+        </tr>
+    </script>
+</head>
+<body>
+    <div id="logoWrapper" class="ui-widget ui-widget-content ui-corner-all">
+        <h1 id="logo">Цветочный магазин Джеки</h1>
+    </div>
+    <form method="post" action="http://localhost:8084/order">
+        <div id="productWrapper">
+            <div id="products"></div>
+        </div>
+        <div id="basket" class="ui-widget ui-widget-content ui-corner-all">
+            <table id="basketTable">
+                <thead id="theader" class="ui-widget-header">
+                    <tr>
+                        <th class="ui-corner-tl">Продукт</th>
+                        <th>Количество</th>
+                        <th class="ui-corner-tr">Удалить</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="placeholder">
+                        <td colspan="3">Продукты не выбраны</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="buttonDiv">
+            <button type="submit">Заказать</button>
+        </div>
+    </form>
+    <div id="completeDialog" title="Завершите покупку">
+        <div>
+            <label for="name">Имя: </label>
+            <input name="first" id="name" />
+        </div>
+        <div>
+            <label form="email">Email: </label>
+            <input name="email" id="email" />
+        </div>
+        <div>
+            <label for="city">Город: </label>
+            <input name="city" id="city" />
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\ProgressBar.Widget\bin\ProgressBar.Widget.dll.config
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\ProgressBar.Widget\bin\ProgressBar.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\ProgressBar.Widget\bin\ProgressBar.Widget.pdb
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\ProgressBar.Widget\obj\Debug\ProgressBar.Widget.dll
+f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\ProgressBar.Widget\obj\Debug\ProgressBar.Widget.pdb

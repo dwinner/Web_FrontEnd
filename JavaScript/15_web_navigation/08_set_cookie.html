@@ -1,0 +1,12 @@
+<script type="text/javascript">
+// Установка cookie
+document.cookie = "username=fritz; expires=Sun, 01-Dec-2010 08:00:00 GMT; path=/home";
+// Кодирование параметров cookie
+var problemString = "Избавиться от , ; и ?";
+var encodedString = escape(problemString);
+alert("Закодировано: " + encodedString + "\n" + "Декодировано: " + unescape(encodedString));
+// Замена значения новым
+document.cookie = "username=fritz";
+document.cookie = "username=thomas";
+alert("Строка cookie: " + document.cookie);
+</script>
