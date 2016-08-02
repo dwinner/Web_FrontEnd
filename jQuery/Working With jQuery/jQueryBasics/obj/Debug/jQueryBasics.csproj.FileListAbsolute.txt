@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\jQueryBasics\bin\jQueryBasics.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\jQueryBasics\bin\jQueryBasics.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\jQueryBasics\bin\jQueryBasics.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\jQueryBasics\obj\Debug\jQueryBasics.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With jQuery\jQueryBasics\obj\Debug\jQueryBasics.pdb

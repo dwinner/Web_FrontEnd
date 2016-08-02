@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Button.Widget\bin\Button.Widget.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Button.Widget\bin\Button.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Button.Widget\bin\Button.Widget.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Button.Widget\obj\Debug\Button.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Button.Widget\obj\Debug\Button.Widget.pdb

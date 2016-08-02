@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tabs.Widget\bin\Tabs.Widget.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tabs.Widget\bin\Tabs.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tabs.Widget\bin\Tabs.Widget.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tabs.Widget\obj\Debug\Tabs.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Tabs.Widget\obj\Debug\Tabs.Widget.pdb

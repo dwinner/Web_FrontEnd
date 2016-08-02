@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.UtilityMethods\bin\Jquery.UtilityMethods.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.UtilityMethods\bin\Jquery.UtilityMethods.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.UtilityMethods\bin\Jquery.UtilityMethods.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.UtilityMethods\obj\Debug\Jquery.UtilityMethods.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Jquery.UtilityMethods\obj\Debug\Jquery.UtilityMethods.pdb

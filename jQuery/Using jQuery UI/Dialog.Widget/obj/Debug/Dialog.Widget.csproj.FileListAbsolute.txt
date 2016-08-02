@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Dialog.Widget\bin\Dialog.Widget.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Dialog.Widget\bin\Dialog.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Dialog.Widget\bin\Dialog.Widget.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Dialog.Widget\obj\Debug\Dialog.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Dialog.Widget\obj\Debug\Dialog.Widget.pdb

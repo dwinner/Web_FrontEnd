@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\OtherInteractions\bin\OtherInteractions.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\OtherInteractions\bin\OtherInteractions.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\OtherInteractions\bin\OtherInteractions.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\OtherInteractions\obj\Debug\OtherInteractions.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\OtherInteractions\obj\Debug\OtherInteractions.pdb

@@ -1,6 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingDataTemplates\bin\UsingDataTemplates.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingDataTemplates\bin\UsingDataTemplates.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingDataTemplates\bin\UsingDataTemplates.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingDataTemplates\obj\Debug\UsingDataTemplates.csprojResolveAssemblyReference.cache
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingDataTemplates\obj\Debug\UsingDataTemplates.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Working With Data And Ajax\UsingDataTemplates\obj\Debug\UsingDataTemplates.pdb

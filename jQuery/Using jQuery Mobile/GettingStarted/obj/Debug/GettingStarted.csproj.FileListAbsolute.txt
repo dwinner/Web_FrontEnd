@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\GettingStarted\bin\GettingStarted.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\GettingStarted\bin\GettingStarted.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\GettingStarted\bin\GettingStarted.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\GettingStarted\obj\Debug\GettingStarted.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery Mobile\GettingStarted\obj\Debug\GettingStarted.pdb

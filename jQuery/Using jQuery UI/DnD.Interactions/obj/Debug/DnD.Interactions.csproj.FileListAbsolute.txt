@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\DnD.Interactions\bin\DnD.Interactions.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\DnD.Interactions\bin\DnD.Interactions.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\DnD.Interactions\bin\DnD.Interactions.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\DnD.Interactions\obj\Debug\DnD.Interactions.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\DnD.Interactions\obj\Debug\DnD.Interactions.pdb

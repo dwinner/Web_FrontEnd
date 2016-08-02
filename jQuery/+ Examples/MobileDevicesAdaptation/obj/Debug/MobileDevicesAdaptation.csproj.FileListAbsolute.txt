@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\MobileDevicesAdaptation\bin\MobileDevicesAdaptation.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\MobileDevicesAdaptation\bin\MobileDevicesAdaptation.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\MobileDevicesAdaptation\bin\MobileDevicesAdaptation.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\MobileDevicesAdaptation\obj\Debug\MobileDevicesAdaptation.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\+ Examples\MobileDevicesAdaptation\obj\Debug\MobileDevicesAdaptation.pdb

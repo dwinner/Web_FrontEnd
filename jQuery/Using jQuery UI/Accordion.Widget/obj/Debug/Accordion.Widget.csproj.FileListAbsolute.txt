@@ -1,6 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Accordion.Widget\bin\Accordion.Widget.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Accordion.Widget\bin\Accordion.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Accordion.Widget\bin\Accordion.Widget.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Accordion.Widget\obj\Debug\Accordion.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Accordion.Widget\obj\Debug\Accordion.Widget.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Accordion.Widget\obj\Debug\Accordion.Widget.csprojResolveAssemblyReference.cache

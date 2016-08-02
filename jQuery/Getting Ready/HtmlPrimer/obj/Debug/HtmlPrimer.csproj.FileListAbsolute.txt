@@ -1,6 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\HtmlPrimer\bin\HtmlPrimer.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\HtmlPrimer\bin\HtmlPrimer.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\HtmlPrimer\bin\HtmlPrimer.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\HtmlPrimer\obj\Debug\HtmlPrimer.csprojResolveAssemblyReference.cache
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\HtmlPrimer\obj\Debug\HtmlPrimer.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Getting Ready\HtmlPrimer\obj\Debug\HtmlPrimer.pdb

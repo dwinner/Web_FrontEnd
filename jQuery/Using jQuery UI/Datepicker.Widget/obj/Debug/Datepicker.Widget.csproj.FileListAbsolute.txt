@@ -1,5 +1,0 @@
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Datepicker.Widget\bin\Datepicker.Widget.dll.config
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Datepicker.Widget\bin\Datepicker.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Datepicker.Widget\bin\Datepicker.Widget.pdb
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Datepicker.Widget\obj\Debug\Datepicker.Widget.dll
-f:\CSharpNetAppDev\ASP.NET\Client Dev\jQuery\Using jQuery UI\Datepicker.Widget\obj\Debug\Datepicker.Widget.pdb
