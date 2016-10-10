@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Architecture rules"/>
+    <meta name="author" content="Hakim El Hattab"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="/Content/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="/Content/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/Content/releal/reveal.css"/>
+    <link rel="stylesheet" href="/Content/releal/theme/sky.css" id="theme"/>
+    <link rel="stylesheet" href="/Reveal/lib/css/zenburn.css"/>
+    <script type="text/javascript">
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi)
+                ? '../../Content/releal/print/pdf.css'
+                : '../../Content/releal/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/modernizr-2.8.3.min.js"></script>
+    <title>Object Relationships</title>
+</head>
+<body>
+<!--
+<div class="row">
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/black.css'); return false;">Black</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/white.css'); return false;">White</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/league.css'); return false;">League</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/sky.css'); return false;">Sky</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/beige.css'); return false;">Beige</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/simple.css'); return false;">Simple</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/serif.css'); return false;">Serif</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/blood.css'); return false;">Blood</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/night.css'); return false;">Night</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/moon.css'); return false;">Moon</a>
+   </div>
+   <div class="col-md-1">
+      <a class="btn btn-default" href="#" onclick="document.getElementById ('theme').setAttribute ('href', '../../Content/releal/theme/solarized.css'); return false;">Solarized</a>
+   </div>
+   <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row">
+   <div class="col-md-2">
+      <a class="btn btn-default" href="?transition=none#/transitions">None</a>
+   </div>
+   <div class="col-md-2">
+      <a class="btn btn-default" href="?transition=fade#/transitions">Fade</a>
+   </div>
+   <div class="col-md-2">
+      <a class="btn btn-default" href="?transition=slide#/transitions">Slide</a>
+   </div>
+   <div class="col-md-2">
+      <a class="btn btn-default" href="?transition=convex#/transitions">Convex</a>
+   </div>
+   <div class="col-md-2">
+      <a class="btn btn-default" href="?transition=concave#/transitions">Concave</a>
+   </div>
+   <div class="col-md-2">
+      <a class="btn btn-default" href="?transition=zoom#/transitions">Zoom</a>
+   </div>
+</div>
+-->
+
+<div class="reveal">
+    <div class="slides">
+        <section id="title-slide">
+            <h3>Отношения между объектами</h3>
+        </section>
+
+        <section id="class-set">
+            <h4>Рассмотрим следующий набор объектных сущностей</h4>
+            <ol>
+                <li class="slide" id="enums">
+                    <h5>Перечисления: </h5>
+                    <p>Genre, InstrumentCategory, MusicianType</p>
+                </li>
+                <li class="slide" id="ifaces">
+                    <h5>Интерфейсы: </h5>
+                    <p>IBand, IInstrument, IMusician</p>
+                </li>
+                <li class="slide" id="classes">
+                    <h5>Классы: </h5>
+                    <p>Guitar, Guitarist, LeadGuitarist, RockBand</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="enum-depth">
+            <h6>Перечисления</h6>
+            <img src="../../Content/Screenshots/objrelationships/enumerations.png" alt="Enumerations"/>
+        </section>
+
+        <section id="ifaces-depth">
+            <h4>Интерфейсы</h4>
+            <img src="../../Content/Screenshots/objrelationships/ifaces.png" alt="Interfaces"/>
+        </section>
+
+        <section id="guitar">
+            <h4>Класс Guitar</h4>
+            <img src="../../Content/Screenshots/objrelationships/guitar-class.png" alt="guitar"/>
+        </section>
+
+        <section id="guitarist">
+            <h4>Класс Guitarist</h4>
+            <img src="../../Content/Screenshots/objrelationships/guitarist-class.png" width="500" alt="Guitarist"/>
+        </section>
+
+        <section id="lead-guitarist">
+            <h4>Класс LeadGuitarist</h4>
+            <img src="../../Content/Screenshots/objrelationships/lead-guitarist-class.png" alt="Lead guitarist"/>
+        </section>
+
+        <section id="rock-band">
+            <h4>Класс RockBand</h4>
+            <img src="../../Content/Screenshots/objrelationships/rock-band-class.png" alt="RockBand"/>
+        </section>
+
+        <section id="class-diagram">
+            <h6>Общая диаграмма классов</h6>
+            <img src="../../Content/Screenshots/objrelationships/band-class-diagram.png" alt="Band class diagram"/>
+        </section>
+
+        <section id="association">
+            <section>
+                <h4>Ассоциации между объектами</h4>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/accociation1.png" alt="Accociation1"/>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/accosiation2.png" alt="Accociation2"/>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <ul>
+                    <li>Ассоциация показывает структурную связь между объектами</li>
+                    <li>Ассоциация имеет кратность: (1..1), (1..*), (*..*)</li>
+                    <li>Ассоциация может имеет направление: однонаправленная, двунаправленная</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="composition">
+            <section>
+                <h4>Композиция</h4>
+            </section>
+            <section>
+                <img src="../../Content/Screenshots/objrelationships/composition.png" alt="Composition"/>
+            </section>
+            <section>
+                <ul>
+                    <li>Музыкант "знает" свои инструменты</li>
+                    <li>Инструменты "не знают" ничего про своих музыкантов</li>
+                    <li>Инструменты НЕ могут существовать без музыкантов</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="aggregation">
+            <section>
+                <h4>Аггрегирование</h4>
+            </section>
+            <section>
+                <img src="../../Content/Screenshots/objrelationships/aggregation.png" alt="Aggregation"/>
+            </section>
+            <section>
+                <ul>
+                    <li>Группа "знает" про своих музыкантов</li>
+                    <li>Музыканты, возможно, "знают" свою группу</li>
+                    <li>Музыканты могут существовать и без группы</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="right-inheritance">
+            <section>
+                <h4>Правильное наследование</h4>
+            </section>
+            <section>
+                <img src="../../Content/Screenshots/objrelationships/right-inheritance.png" alt="Right inheritance"/>
+            </section>
+            <section>
+                <ul>
+                    <li>Класс не обещает большего, но обеспечивает функциональный минимум</li>
+                    <li>Класс может являться полиморфным, но не более того</li>
+                    <li>Тип может быть взаимозаменяемым по смыслу</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="wrong-inheritance">
+            <section>
+                <h6>Неправильное наследование</h6>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/employee.png" alt="Employee"/>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/manager-class.png" alt="Manager"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/wrong-inheritance-app.png"
+                             alt="Wrong-inh-app"/>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/wrong-inheritance-diagram.jpg" width="370"
+                             alt="Wrong-inh-cd"/>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="wrong-inheritance-issues">
+            <section>
+                <h4>К чему приводит неправильное наследование</h4>
+            </section>
+            <section>
+                <ul>
+                    <li>К появлению нисходящих преобразований</li>
+                    <li>К появлению процедурных конструкций if-else-if, switch-case с проверкой типа</li>
+                    <li>Сводит практическую пользу полиморфизма к нулю</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="include-delegate">
+            <section>
+                <h4>Включение-делегирование</h4>
+            </section>
+            <section>
+                <img src="../../Content/Screenshots/objrelationships/iemployee.png" alt="iemployee"/>
+            </section>
+            <section>
+                <img src="../../Content/Screenshots/objrelationships/employee-include-delegate.png"
+                     alt="employee-include-delegate"/>
+            </section>
+            <section>
+                <img src="../../Content/Screenshots/objrelationships/manager-include-delegate.png"
+                     alt="manager-include-delegate"/>
+            </section>
+        </section>
+
+        <section id="geterogeneus">
+            <section>
+                <h4>Гетерогенные структуры данных (обобщенные)</h4>
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        Ковариантность - Если тип T преобразуем в R, то из этого следует, что IOperation&lt;T&gt; можно
+                        безопасно преобразовать в IOperation&lt;R&gt;
+                    </li>
+                    <li>
+                        Контравариантность - Если тип R преобразуем в T, то из этого следует, что IOperation&lt;T&gt;
+                        можно безопасно преобразовать в IOperation&lt;R&gt;
+                    </li>
+                    <li>
+                        Инвариантность - для типов R и T не существует операций преобразования
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="geterogeneus-examples">
+            <section>
+                <h4>Примеры вариантности</h4>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/variancy-ifaces.png"
+                             alt="variancy-ifaces"/>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/variance-shape.png" alt="variance-shape"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="../../Content/Screenshots/objrelationships/variancy-shapedisplay.png"
+                         alt="variancy-shapedisplay"/>
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/variancy-rect-coll.png"
+                             alt="variancy-rect-coll"/>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../../Content/Screenshots/objrelationships/variancy-app.png" alt="variancy-app"/>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>
+<script src="../../Reveal/lib/js/head.min.js"></script>
+<script src="../../Scripts/reveal/reveal.js"></script>
+<script type="text/javascript">
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide',
+        dependencies: [
+            {
+                src: '../../Reveal/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: '../../Scripts/reveal/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: '../../Scripts/reveal/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: '../../Scripts/reveal/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: '../../Scripts/reveal/zoom.js', async: true},
+            {src: '../../Scripts/reveal/notes.js', async: true}
+        ]
+    });
+</script>
+</body>
+</html>
