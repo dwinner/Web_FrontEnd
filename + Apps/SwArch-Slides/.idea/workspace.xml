@@ -2,10 +2,96 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0642ef0b-110c-4050-a487-4a23f2dd512f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objRel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/cn-begin-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/cn-ctor-props-5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/cn-icomparable-2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/cn-iequatable-3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/cn-private-classes-8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/cn-private-fields-4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/cn-single-inst-6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/cn-system-object-7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/compare-func.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/compare-impl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/caninicalforms/compare-strategy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/builder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/factory.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/inner-builder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/prototype.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-address.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-addressfactory.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-app.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-frenchaddress.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-frenchaddressfactory.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-frenchphonenumber.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-phonenumber.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-usaddress.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-usaddressfactory.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider-usphonenumber.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/provider.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objectgenerators/singleton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/accociation1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/accosiation2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/aggregation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/band-class-diagram.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/composition.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/employee-include-delegate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/employee.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/enumerations.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/guitar-class.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/guitarist-class.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/iemployee.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/ifaces.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/lead-guitarist-class.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/manager-class.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/manager-include-delegate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/right-inheritance.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/rock-band-class.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/variance-shape.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/variancy-app.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/variancy-ifaces.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/variancy-rect-coll.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/variancy-shapedisplay.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/wrong-inheritance-app.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/objrelationships/wrong-inheritance-diagram.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/canonical.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/print/paper.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/print/pdf.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/reveal.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/beige.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/black.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/blood.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/league.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/moon.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/night.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/serif.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/simple.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/sky.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/solarized.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reveal/theme/white.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/bootstrap/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery/jquery-1.9.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/modernizr-2.8.3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/highlight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/markdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/marked.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/master.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/math.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/notes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/print-pdf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/reveal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/search.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/reveal/zoom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/objGenerators.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/revealDemo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/revealTemplate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objRel.html" afterPath="$PROJECT_DIR$/objRel.html" />
     </list>
     <ignored path="SwArch-Slides.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,30 +111,7 @@
     <favorites_list name="SwArch-Slides" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="objRel.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/objRel.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
-              <folding>
-                <element signature="e#1350#4453#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,8 +126,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/revealTemplate.html" />
         <option value="$PROJECT_DIR$/objRel.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/canonical.html" />
+        <option value="$PROJECT_DIR$/objGenerators.html" />
+        <option value="$PROJECT_DIR$/revealDemo.html" />
       </list>
     </option>
   </component>
@@ -75,10 +142,29 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -136,6 +222,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="C:\nodejs\node.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -163,6 +250,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -201,20 +294,24 @@
       <updated>1476088146285</updated>
       <workItem from="1476088148264" duration="51000" />
       <workItem from="1476092488290" duration="576000" />
+      <workItem from="1476129201461" duration="88000" />
+      <workItem from="1476206395011" duration="2840000" />
+      <workItem from="1476211395225" duration="6845000" />
+      <workItem from="1476219061849" duration="303000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="627000" />
+    <option name="totallyTimeSpent" value="10703000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18958333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18958333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -247,7 +344,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
@@ -255,10 +360,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/objRel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+        <state relative-caret-position="700">
+          <caret line="92" column="8" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/revealTemplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objRel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objRel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/reveal/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objRel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="298" column="13" selection-start-line="298" selection-start-column="13" selection-end-line="298" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canonical.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objGenerators.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/revealTemplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/revealDemo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="171" column="18" selection-start-line="171" selection-start-column="18" selection-end-line="171" selection-end-column="18" />
           <folding>
-            <element signature="e#1350#4453#0" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#section#2;n#section#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#code#0;n#pre#0;n#section#2;n#section#6;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#3;n#section#6;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#code#0;n#pre#0;n#div#0;n#section#3;n#section#6;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#code#0;n#pre#0;n#section#8;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#section#16;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#code#0;n#pre#0;n#section#18;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#21;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

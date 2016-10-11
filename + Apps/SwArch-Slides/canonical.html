@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Architecture hints"/>
+    <meta name="author" content="dwinner@inbox.ru"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/reveal/reveal.css"/>
+    <link rel="stylesheet" href="css/reveal/theme/sky.css" id="theme"/>
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css"/>
+    <script type="text/javascript">
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi)
+                ? 'css/releal/print/pdf.css'
+                : 'css/releal/print/pdf.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <script src="js/jquery/jquery-1.9.1.min.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    <title>Object canonical forms</title>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <section>
+                <h4>Каноническая форма класса</h4>
+                <p>
+                    Чтобы привести класс к канонической форме нужно ответить на вопросы
+                </p>
+            </section>
+            <section>
+                <ul>
+                    <li class="fragment">Является ли класс POCO-классом</li>
+                    <li class="fragment">Является ли объект сортируемым</li>
+                    <li class="fragment">Будет ли объект храниться в ассоциативных контейнерах в качестве ключа</li>
+                    <li class="fragment">Участвует ли объект в структурных сравнениях</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <h4>POCO-класс</h4>
+            <ul>
+                <li class="fragment highlight-blue">
+                    Plain Old CLR Object
+                </li>
+                <li class="fragment highlight-blue">
+                    POCO-класс - класс, который имеет только данные и не имеет открытых операций для работы к ними
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <section>
+                <h4>Поддержка сортировки</h4>
+            </section>
+            <section>
+                <p>
+                    Рассмотрим POCO-класс ComplexNumber:
+                </p>
+                <img src="img/caninicalforms/cn-begin-1.png" alt="demo"/>
+            </section>
+            <section>
+                <p>
+                    Он строго реализует интерфейс IComparable&lt;ComplexNumber&gt;
+                    для прямой поддержки сравнения объектов этого класса:
+                </p>
+                <img src="img/caninicalforms/cn-icomparable-2.png" alt="demo"/>
+            </section>
+            <section>
+                <p>
+                    Он строго реализует интерфейс IEquatable&lt;ComplexNumber&gt;
+                    для поддержки структурной эквивалентности:
+                </p>
+                <img src="img/caninicalforms/cn-iequatable-3.png" alt="demo"/>
+            </section>
+            <section>
+                <p>
+                    Закрытые поля класса:
+                </p>
+                <img src="img/caninicalforms/cn-private-fields-4.png" alt="demo"/>
+            </section>
+            <section>
+                <p>
+                    Свойства и конструктор:
+                </p>
+                <img src="img/caninicalforms/cn-ctor-props-5.png" alt="demo"/>
+            </section>
+            <section>
+                <p>
+                    Статические одиночные экземпляры объектов классов, которые используются в служебных целях:
+                </p>
+                <img src="img/caninicalforms/cn-single-inst-6.png" alt="demo"/>
+            </section>
+            <section>
+                <p>
+                    Переопределение методов класса System.Object:
+                </p>
+                <img src="img/caninicalforms/cn-system-object-7.png" alt="demo"/>
+            </section>
+            <section>
+                <p>
+                    Закрытые классы:
+                </p>
+                <img src="img/caninicalforms/cn-private-classes-8.png" alt="demo"/>
+            </section>
+        </section>
+
+        <section>
+            <div class="row">
+                <div class="col-md-3">Явная реализация:</div>
+                <div class="col-md-9 left">
+                    <img src="img/caninicalforms/compare-impl.png" alt="demo"/>
+                </div>
+            </div>
+            <div class="row fragment fade-up">
+                <div class="col-md-3">Независимая реализация:</div>
+                <div class="col-md-9 left">
+                    <img src="img/caninicalforms/compare-strategy.png" alt="demo"/>
+                </div>
+            </div>
+            <div class="row fragment fade-up">
+                <div class="col-md-3">Функциональное сравнение:</div>
+                <div class="col-md-9 left">
+                    <img src="img/caninicalforms/compare-func.png" alt="demo"/>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <section>
+                <h5>Шаблон освобождения ресурсов</h5>
+            </section>
+            <section>
+                <h6>Неуправляемые ресурсы</h6>
+      <pre>
+      <code class="hljs" data-trim contenteditable>
+public static class Unmanaged
+{
+   [DllImport("kernel32.dll",
+      CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall,
+      SetLastError = true)]
+   public static extern IntPtr CreateFile(
+      string lpFileName,
+      uint dwDesiredAccess,
+      uint dwSharedMode,
+      IntPtr securityAttributes,
+      uint dwCreationDisposition,
+      uint dwFlagsAndAttributes,
+      IntPtr hTemplateFile);
+   [DllImport("kernel32.dll", SetLastError = true)]
+   [return: MarshalAs(UnmanagedType.Bool)]
+   public static extern bool CloseHandle(IntPtr hObject);
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h6>Шаблон освобождения ресурсов</h6>
+      <pre>
+         <code class="hljs" data-trim contenteditable>
+public abstract class DisposeRoutine : IDisposable
+{
+   private bool IsDisposed { get; set; }
+
+   public void Dispose()
+   {
+      Dispose(true);
+      GC.SuppressFinalize(this);
+   }
+
+   ~DisposeRoutine()
+   {
+      Dispose(false);
+   }
+
+   private void Dispose(bool disposing)
+   {
+      if (!IsDisposed)
+      {
+         if (disposing)
+         {
+            ManagedCleaning();
+         }
+
+         UnmanagedCleaning();
+      }
+
+      IsDisposed = true;
+   }
+
+   protected abstract void UnmanagedCleaning();
+
+   protected abstract void ManagedCleaning();
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h6>
+                    Реализация шаблона освобождения ресурсов
+                </h6>
+      <pre>
+      <code class="hljs" data-trim contenteditable>
+public sealed class DisposeRoutineImpl : DisposeRoutine
+{
+   private readonly Stream _managedRes;
+   private readonly IntPtr _unmanagedRes;
+
+   public DisposeRoutineImpl(Stream aRes, string aFileName)
+   {
+      _managedRes = aRes;
+      _unmanagedRes =
+         CreateFile(aFileName,
+            0x80000000, 1, IntPtr.Zero, 3, 0, IntPtr.Zero);
+   }
+
+   protected override void UnmanagedCleaning()
+   {
+      if (_unmanagedRes != IntPtr.Zero)
+      {
+         CloseHandle(_unmanagedRes);
+      }
+   }
+
+   protected override void ManagedCleaning() => _managedRes.Dispose();
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h6>Использование шаблона освобождения ресурсов</h6>
+      <pre>
+      <code class="hljs" data-trim contenteditable>
+using (var routineImpl =
+   new DisposeRoutineImpl(
+       new FileStream("Test1.test", FileMode.Create), "Test2.test"))
+{
+   Console.WriteLine(routineImpl);
+}
+</code>
+</pre>
+            </section>
+        </section>
+    </div>
+</div>
+<script src="reveal/lib/js/head.min.js"></script>
+<script src="js/reveal/reveal.js"></script>
+<script type="text/javascript">
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide',
+        dependencies: [
+            {
+                src: 'reveal/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'js/reveal/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'js/reveal/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'js/reveal/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'js/reveal/zoom.js', async: true},
+            {src: 'js/reveal/notes.js', async: true}
+        ]
+    });
+</script>
+</body>
+</html>

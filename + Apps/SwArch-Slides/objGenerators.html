@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Architecture hints"/>
+    <meta name="author" content="dwinner@inbox.ru"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/reveal/reveal.css"/>
+    <link rel="stylesheet" href="css/reveal/theme/sky.css" id="theme"/>
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css"/>
+    <script type="text/javascript">
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi)
+                ? 'css/releal/print/pdf.css'
+                : 'css/releal/print/pdf.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <script src="js/jquery/jquery-1.9.1.min.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    <title>Object generators</title>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <section>
+                <h4>Object generators</h4>
+            </section>
+            <section>
+                <ul>
+                    <li>Фабричный метод</li>
+                    <li>Абстрактная фабрика</li>
+                    <li>Строитель</li>
+                    <li>Прототип</li>
+                    <li>Одиночка</li>
+                    <li>Отложенное создание объектов</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>Фабричный метод</h4>
+                <p class="fragment fade-up">Определяет интерфейс для создания объекта</p>
+                <p class="fragment fade-up">Оставляет подклассам решение о том, объект какого класса нужно создать</p>
+                <p class="fragment fade-up">Делегирует подклассам поведение при создании объекта</p>
+            </section>
+            <section>
+                <img src="img/objectgenerators/factory.png" alt="factory" />
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>Интерфейсы</h4>
+                <div class="row">
+                    <div class="col-md-6">
+            <pre>
+               <code class="hljs" data-trim contenteditable>
+public interface IModule
+{
+   void SomeModule();
+}
+</code>
+</pre>
+                    </div>
+                    <div class="col-md-6">
+            <pre>
+               <code class="hljs" data-trim contenteditable>
+public interface IPage&lt;T&gt;
+   where T : IModule
+{
+   IList&lt;T&gt; PageCompositor { get; }
+   void AddModule();
+   void DisplayPage();
+}
+</code>
+</pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h4>Абстрактные реализации</h4>
+      <pre>
+         <code class="hljs" data-trim contenteditable>
+public abstract class ModuleImpl : IModule
+{
+   public abstract void SomeModule();
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>Абстрактные реализации</h4>
+      <pre>
+         <code class="hljs" data-trim contenteditable>
+public class PageImpl : IPage&lt;ModuleImpl&gt;
+{
+   protected PageImpl()
+   {
+   }
+
+   public IList&lt;ModuleImpl&gt; PageCompositor { get; protected set; }
+
+   public virtual void AddModule()
+   {
+      PageCompositor.Clear();
+      PageCompositor.Add(new FeaturesModuleImpl());
+      PageCompositor.Add(new PictureModuleImpl());
+   }
+
+   public virtual void DisplayPage()
+   {
+      foreach (var moduleImpl in PageCompositor)
+      {
+         moduleImpl.SomeModule();
+      }
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>Реализации интрерфейса IModule</h4>
+      <pre>
+<code class="hljs" data-trim contenteditable>
+public sealed class TechnicalModuleImpl : ModuleImpl
+{
+   public override void SomeModule()
+      => Console.WriteLine("Technical content");
+}
+</code>
+</pre>
+      <pre>
+<code class="hljs" data-trim contenteditable>
+public class PictureModuleImpl : ModuleImpl
+{
+   public override void SomeModule()
+      => Console.WriteLine("Picture content");
+}
+</code>
+</pre>
+      <pre>
+<code class="hljs" data-trim contenteditable>
+public class FeaturesModuleImpl : ModuleImpl
+{
+   public override void SomeModule()
+      => Console.WriteLine("Technical content");
+}
+</code>
+</pre>
+      <pre>
+<code class="hljs" data-trim contenteditable>
+public class InstructionModuleImpl : ModuleImpl
+{
+   public override void SomeModule()
+      => Console.WriteLine("Instruction content");
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>
+                    Реализация интерфейса IPage&lt;T&gt;
+                </h4>
+      <pre>
+         <code class="hljs" data-trim contenteditable>
+public sealed class CatalogPage : PageImpl
+{
+   public CatalogPage()
+   {
+      PageCompositor = new List&lt;moduleimpl&gt;();
+   }
+
+   public override void AddModule()
+   {
+      PageCompositor.Clear();
+      PageCompositor.Add(new FeaturesModuleImpl());
+      PageCompositor.Add(new PictureModuleImpl());
+   }
+
+   public override void DisplayPage()
+   {
+      foreach (var moduleImpl in PageCompositor)
+      {
+         moduleImpl.SomeModule();
+      }
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>
+                    Реализация интерфейса IPage&lt;T&gt;
+                </h4>
+      <pre>
+      <code class="hljs" data-trim contenteditable>
+public class ManualPage : PageImpl
+{
+   public ManualPage()
+   {
+      PageCompositor = new List&lt;moduleimpl&gt;();
+   }
+
+   public override void AddModule()
+   {
+      PageCompositor.Clear();
+      PageCompositor.Add(new TechnicalModuleImpl());
+      PageCompositor.Add(new PictureModuleImpl());
+      PageCompositor.Add(new InstructionModuleImpl());
+   }
+
+   public override void DisplayPage()
+   {
+      Console.WriteLine("Manual page contains:");
+      foreach (var moduleImpl in PageCompositor)
+      {
+         moduleImpl.SomeModule();
+      }
+
+      Console.WriteLine();
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>Приложение</h4>
+      <pre>
+         <code class="hljs" data-trim contenteditable>
+PageImpl catalogPage = new CatalogPage();
+catalogPage.AddModule();
+catalogPage.DisplayPage();
+
+PageImpl manualPage = new ManualPage();
+manualPage.AddModule();
+manualPage.DisplayPage();
+</code>
+</pre>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>Провайдер (Абстрактная фабрика)</h4>
+            </section>
+            <section>
+                <h4>Мотивация</h4>
+                <p class="fragment fade-up">
+                    Требуется создавать объекты-продукты разных типов и налаживать между ними взаимодействие,
+                    при этом образуя семейства из этих объектов-продуктов. Входящие в семейство объекты-продукты
+                    обязательно должны использоваться вместе.
+                </p>
+            </section>
+            <section>
+                <p class="fragment fade-up">
+                    Требуется построить подсистему (модуль или компонент) таким образом, чтобы ее внутреннее
+                    устройство (состояние и/или поведение) настраивалось при ее создании. При этом чтобы ни
+                    процесс, ни результат построения подсистемы не был зависим от способа создания в ней объектов,
+                    их композиции (составления и соединения объектов) и представления (настройки внутреннего
+                    состояния объектов.
+                </p>
+            </section>
+            <section>
+                <p class="fragment fade-up">
+                    Подсистема или система должна настраиваться (конфигурироваться) через использование одного
+                    из семейств объектов-продуктов, порождаемых одним объектом-фабрикой
+                </p>
+            </section>
+            <section>
+                <h4>Диаграмма классов</h4>
+                <img src="img/objectgenerators/provider.png" alt="provider"/>
+            </section>
+        </section>
+
+        <section>
+            <h4>Телефонный номер</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="img/objectgenerators/provider-phonenumber.png" alt="phoneNumber"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="img/objectgenerators/provider-usphonenumber.png" alt="usphonenumber"/>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/objectgenerators/provider-frenchphonenumber.png"
+                         alt="frenchphonenumber"/>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h4>Адрес</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="img/objectgenerators/provider-address.png" alt="address"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="img/objectgenerators/provider-frenchaddress.png" alt="frenchaddress"/>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/objectgenerators/provider-usaddress.png" alt="usaddress"/>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h4>Провайдер семейств объектов</h4>
+            <p class="fragment fade-up">
+                <img src="img/objectgenerators/provider-addressfactory.png" alt="addressfactory"/>
+            </p>
+            <p class="fragment fade-up">
+                <img src="img/objectgenerators/provider-frenchaddressfactory.png"
+                     alt="frenchaddressfactory"/>
+            </p>
+            <p class="fragment fade-up">
+                <img src="img/objectgenerators/provider-usaddressfactory.png" alt="usaddressfactory"/>
+            </p>
+        </section>
+
+        <section>
+            <h4>Использование провайдера</h4>
+            <img src="img/objectgenerators/provider-app.png" alt="provider-app"/>
+        </section>
+
+        <section>
+            <section>
+                <h4>Строитель</h4>
+            </section>
+            <section>
+                <h4>Мотивация</h4>
+                <p class="fragment fade-up">
+                    Алгоритм пошагового создания сложного объекта-продукта не должен зависеть от того, из каких
+                    частей состоит объект-продукт и как эти части стыкуются между собой
+                </p>
+                <p class="fragment fade-up">
+                    Процесс создания продукта должен обеспечивать возможность получения различных вариаций
+                    создаваемого продукта
+                </p>
+            </section>
+            <section>
+                <h4>Диаграмма классов</h4>
+                <img src="img/objectgenerators/builder.png" alt="builder"/>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>Классическая реализация строителя</h4>
+            </section>
+            <section>
+                <h5>Интерфейсы</h5>
+   <pre>
+<code class="hljs" data-trim contenteditable>
+public interface IContact
+{
+   string FirstName { get; set; }
+   string LastName { get; set; }
+   string Title { get; set; }
+   string Organization { get; set; }
+}
+</code>
+</pre>
+            </section>
+            <section>
+   <pre>
+<code class="hljs" data-trim contenteditable>
+public interface ILocation
+{
+   string Location { get; set; }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h5>Реализации</h5>
+   <pre>
+<code class="hljs" data-trim contenteditable>
+[Serializable]
+public class ContactImpl : IContact
+{
+   public ContactImpl(
+      string firstName, string lastName, string title, string organization)
+   {
+      FirstName = firstName;
+      LastName = lastName;
+      Title = title;
+      Organization = organization;
+   }
+
+   public string FirstName { get; set; }
+   public string LastName { get; set; }
+   public string Title { get; set; }
+   public string Organization { get; set; }
+   public override string ToString() => $"{FirstName} {LastName}";
+}
+</code>
+</pre>
+            </section>
+            <section>
+   <pre>
+<code class="hljs" data-trim contenteditable>
+public class LocationImpl : ILocation
+{
+   public LocationImpl(string location)
+   {
+      Location = location;
+   }
+
+   public string Location { get; set; }
+   public override string ToString() => Location;
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>Класс для композиции других объектов</h4>
+   <pre>
+      <code class="hljs" data-trim contenteditable>
+public class Appointment
+{
+   [NotNull]
+   public ICollection&lt;IContact&gt; Attendees { get; }
+      = new LinkedList&lt;IContact&gt;();
+
+   [CanBeNull]
+   public ILocation Location { get; set; }
+
+   public DateTime StartDate { get; set; }
+
+   public DateTime EndDate { get; set; }
+
+   [CanBeNull]
+   public string Description { get; set; }
+
+   public void AddAttendee([NotNull] IContact aContact) => Attendees.Add(aContact);
+
+   public void RemoveAttendee([NotNull] IContact aContact) => Attendees.Remove(aContact);
+
+   public override string ToString()
+      =>
+         $"[Location={Location}, StartDate={StartDate}, EndDate={EndDate}, Description={Description}]";
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h6>Пошаговое создание объекта</h6>
+   <pre>
+      <code class="hljs" data-trim contenteditable>
+public class AppointmentBuilder
+{
+   [NotNull] protected Appointment Appointment = new Appointment();
+   protected bool HasErrors;
+   protected InfoRequiredException.InfoErrors RequiredElements
+      = InfoRequiredException.InfoErrors.None;
+
+   public void BuildAppointment() => Appointment = new Appointment();
+
+   public void BuildDates(DateTime startDate, DateTime endDate)
+   {
+      var currentDateTime = DateTime.Now;
+      Appointment.StartDate = startDate > currentDateTime
+         ? startDate
+         : currentDateTime;
+      Appointment.EndDate = endDate >= startDate ? endDate : startDate;
+   }
+
+   public void BuildDescription([CanBeNull] string newDescription)
+      => Appointment.Description = newDescription;
+
+   public void BuildAttendees([CanBeNull] ICollection&lt;IContact&gt; attendees)
+   {
+      if (attendees == null || attendees.Empty())
+      {
+         return;
+      }
+
+      foreach (var attendee in attendees)
+      {
+         Appointment.Attendees.Add(attendee);
+      }
+   }
+
+   public void BuildLocation([NotNull] ILocation newLocation)
+      => Appointment.Location = newLocation;
+
+   [NotNull]
+   public virtual Appointment GetAppointment()
+   {
+      if (Appointment.Location == null)
+      {
+         RequiredElements
+            |= InfoRequiredException.InfoErrors.LocationRequired;
+      }
+
+      if (Appointment.Attendees.Empty())
+      {
+         RequiredElements
+            |= InfoRequiredException.InfoErrors.AttendeeRequired;
+      }
+
+      if (RequiredElements != InfoRequiredException.InfoErrors.None)
+      {
+         HasErrors = true;
+         throw new InfoRequiredException(
+            "Some field is not set", RequiredElements);
+      }
+
+      return Appointment;
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h6>Класс-распорядитель</h6>
+   <pre>
+      <code class="hljs" data-trim contenteditable>
+public static class Scheduler
+{
+   [NotNull]
+   public static Appointment CreateAppointment(
+      [NotNull] AppointmentBuilder builder,
+      DateTime startDateTime,
+      DateTime endDateTime,
+      [NotNull] string description,
+      [NotNull] ILocation location,
+      [NotNull] ICollection&lt;IContact&gt; attendees)
+   {
+      builder.BuildAppointment();
+      builder.BuildDates(startDateTime, endDateTime);
+      builder.BuildDescription(description);
+      builder.BuildAttendees(attendees);
+      builder.BuildLocation(location);
+
+      return builder.GetAppointment();
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>Использование строителя</h4>
+   <pre>
+      <code class="hljs" data-trim contenteditable>
+var appointmentBuilder = new AppointmentBuilder();
+try
+{
+   var appointment = Scheduler.CreateAppointment(appointmentBuilder,
+      new DateTime(2010, 7, 7),
+      new DateTime(2011, 7, 7),
+      "Trek conversion",
+      new LocationImpl("Fargo, ND"),
+      new List&lt;IContact&gt;
+      {
+         new ContactImpl("Denny", "Glover", "Gun", "Hollywood")
+      });
+
+   foreach (var contact in appointment.Attendees)
+   {
+      WriteLine(contact);
+   }
+
+   WriteLine(appointment.Description);
+   WriteLine(appointment.StartDate);
+   WriteLine(appointment.EndDate);
+   WriteLine(appointment.Location);
+}
+catch (InfoRequiredException infoRequiredEx)
+{
+   PrintExceptions(infoRequiredEx);
+}
+</code>
+</pre>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>Внутренний строитель</h4>
+            </section>
+
+        </section>
+    </div>
+</div>
+<script src="reveal/lib/js/head.min.js"></script>
+<script src="js/reveal/reveal.js"></script>
+<script type="text/javascript">
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide',
+        dependencies: [
+            {
+                src: 'reveal/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'js/reveal/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'js/reveal/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'js/reveal/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'js/reveal/zoom.js', async: true},
+            {src: 'js/reveal/notes.js', async: true}
+        ]
+    });
+</script>
+</body>
+</html>
