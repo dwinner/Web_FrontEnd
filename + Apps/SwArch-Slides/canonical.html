@@ -31,17 +31,17 @@
     <div class="slides">
         <section>
             <section>
-                <h4>Каноническая форма класса</h4>
+                <h4>The class canonical form</h4>
                 <p>
-                    Чтобы привести класс к канонической форме нужно ответить на вопросы
+                    To bring the class to the canonical form, it is needed to answer the questions
                 </p>
             </section>
             <section>
                 <ul>
-                    <li class="fragment">Является ли класс POCO-классом</li>
-                    <li class="fragment">Является ли объект сортируемым</li>
-                    <li class="fragment">Будет ли объект храниться в ассоциативных контейнерах в качестве ключа</li>
-                    <li class="fragment">Участвует ли объект в структурных сравнениях</li>
+                    <li class="fragment">Is the class POCO?</li>
+                    <li class="fragment">Is the object sortable?</li>
+                    <li class="fragment">Will the object be stored in associative containers as a key?</li>
+                    <li class="fragment">Will the object take a part in structural comparisons?</li>
                 </ul>
             </section>
         </section>
@@ -53,62 +53,62 @@
                     Plain Old CLR Object
                 </li>
                 <li class="fragment highlight-blue">
-                    POCO-класс - класс, который имеет только данные и не имеет открытых операций для работы к ними
+                    POCO-class is a class, which has only data and no open operations
                 </li>
             </ul>
         </section>
 
         <section>
             <section>
-                <h4>Поддержка сортировки</h4>
+                <h4>Sorting support</h4>
             </section>
             <section>
                 <p>
-                    Рассмотрим POCO-класс ComplexNumber:
+                    Consider the POCO-class ComplexNumber:
                 </p>
                 <img src="img/caninicalforms/cn-begin-1.png" alt="demo"/>
             </section>
             <section>
                 <p>
-                    Он строго реализует интерфейс IComparable&lt;ComplexNumber&gt;
-                    для прямой поддержки сравнения объектов этого класса:
+                    It strictly implements the interface IComparable&lt;ComplexNumber&gt;
+                    to support the comparison directly:
                 </p>
                 <img src="img/caninicalforms/cn-icomparable-2.png" alt="demo"/>
             </section>
             <section>
                 <p>
-                    Он строго реализует интерфейс IEquatable&lt;ComplexNumber&gt;
-                    для поддержки структурной эквивалентности:
+                    It strictly implements the interface IEquatable&lt;ComplexNumber&gt;
+                    to support the structural equality:
                 </p>
                 <img src="img/caninicalforms/cn-iequatable-3.png" alt="demo"/>
             </section>
             <section>
                 <p>
-                    Закрытые поля класса:
+                    Private members:
                 </p>
                 <img src="img/caninicalforms/cn-private-fields-4.png" alt="demo"/>
             </section>
             <section>
                 <p>
-                    Свойства и конструктор:
+                    Constructor and properties:
                 </p>
                 <img src="img/caninicalforms/cn-ctor-props-5.png" alt="demo"/>
             </section>
             <section>
                 <p>
-                    Статические одиночные экземпляры объектов классов, которые используются в служебных целях:
+                    Static single object instances of classes for the internal purposes:
                 </p>
                 <img src="img/caninicalforms/cn-single-inst-6.png" alt="demo"/>
             </section>
             <section>
                 <p>
-                    Переопределение методов класса System.Object:
+                    Overriding the System.Object class methods:
                 </p>
                 <img src="img/caninicalforms/cn-system-object-7.png" alt="demo"/>
             </section>
             <section>
                 <p>
-                    Закрытые классы:
+                    Private classes:
                 </p>
                 <img src="img/caninicalforms/cn-private-classes-8.png" alt="demo"/>
             </section>
@@ -116,19 +116,19 @@
 
         <section>
             <div class="row">
-                <div class="col-md-3">Явная реализация:</div>
+                <div class="col-md-3">Explicit implementation:</div>
                 <div class="col-md-9 left">
                     <img src="img/caninicalforms/compare-impl.png" alt="demo"/>
                 </div>
             </div>
             <div class="row fragment fade-up">
-                <div class="col-md-3">Независимая реализация:</div>
+                <div class="col-md-3">Independent implementation:</div>
                 <div class="col-md-9 left">
                     <img src="img/caninicalforms/compare-strategy.png" alt="demo"/>
                 </div>
             </div>
             <div class="row fragment fade-up">
-                <div class="col-md-3">Функциональное сравнение:</div>
+                <div class="col-md-3">Functional comparison:</div>
                 <div class="col-md-9 left">
                     <img src="img/caninicalforms/compare-func.png" alt="demo"/>
                 </div>
@@ -137,10 +137,10 @@
 
         <section>
             <section>
-                <h5>Шаблон освобождения ресурсов</h5>
+                <h5>Resource release template</h5>
             </section>
             <section>
-                <h6>Неуправляемые ресурсы</h6>
+                <h6>Unmanaged resources</h6>
       <pre>
       <code class="hljs" data-trim contenteditable>
 public static class Unmanaged
@@ -164,7 +164,7 @@ public static class Unmanaged
 </pre>
             </section>
             <section>
-                <h6>Шаблон освобождения ресурсов</h6>
+                <h6>Resource release template</h6>
       <pre>
          <code class="hljs" data-trim contenteditable>
 public abstract class DisposeRoutine : IDisposable
@@ -206,7 +206,7 @@ public abstract class DisposeRoutine : IDisposable
             </section>
             <section>
                 <h6>
-                    Реализация шаблона освобождения ресурсов
+                    Resource release template implementation
                 </h6>
       <pre>
       <code class="hljs" data-trim contenteditable>
@@ -237,7 +237,7 @@ public sealed class DisposeRoutineImpl : DisposeRoutine
 </pre>
             </section>
             <section>
-                <h6>Использование шаблона освобождения ресурсов</h6>
+                <h6>Using resource release template</h6>
       <pre>
       <code class="hljs" data-trim contenteditable>
 using (var routineImpl =

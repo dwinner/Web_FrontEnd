@@ -35,22 +35,22 @@
             </section>
             <section>
                 <ul>
-                    <li>Фабричный метод</li>
-                    <li>Абстрактная фабрика</li>
-                    <li>Строитель</li>
-                    <li>Прототип</li>
-                    <li>Одиночка</li>
-                    <li>Отложенное создание объектов</li>
+                    <li>Factory method</li>
+                    <li>Abstract Factory (Provider)</li>
+                    <li>Builder</li>
+                    <li>Prototype</li>
+                    <li>Singleton</li>
+                    <li>Lazy object instantiation</li>
                 </ul>
             </section>
         </section>
 
         <section>
             <section>
-                <h4>Фабричный метод</h4>
-                <p class="fragment fade-up">Определяет интерфейс для создания объекта</p>
-                <p class="fragment fade-up">Оставляет подклассам решение о том, объект какого класса нужно создать</p>
-                <p class="fragment fade-up">Делегирует подклассам поведение при создании объекта</p>
+                <h4>The factory method</h4>
+                <p class="fragment fade-up">Defines an interface for object creation</p>
+                <p class="fragment fade-up">Delegates to subclasses the responsibility for object creation</p>
+                <p class="fragment fade-up">Delegates to subclasses the behavior for object creation</p>
             </section>
             <section>
                 <img src="img/objectgenerators/factory.png" alt="factory" />
@@ -59,7 +59,7 @@
 
         <section>
             <section>
-                <h4>Интерфейсы</h4>
+                <h4>Interfaces</h4>
                 <div class="row">
                     <div class="col-md-6">
             <pre>
@@ -87,7 +87,7 @@ public interface IPage&lt;T&gt;
                 </div>
             </section>
             <section>
-                <h4>Абстрактные реализации</h4>
+                <h4>Abstract implementations</h4>
       <pre>
          <code class="hljs" data-trim contenteditable>
 public abstract class ModuleImpl : IModule
@@ -98,7 +98,6 @@ public abstract class ModuleImpl : IModule
 </pre>
             </section>
             <section>
-                <h4>Абстрактные реализации</h4>
       <pre>
          <code class="hljs" data-trim contenteditable>
 public class PageImpl : IPage&lt;ModuleImpl&gt;
@@ -128,7 +127,7 @@ public class PageImpl : IPage&lt;ModuleImpl&gt;
 </pre>
             </section>
             <section>
-                <h4>Реализации интрерфейса IModule</h4>
+                <h4>IModule implementation</h4>
       <pre>
 <code class="hljs" data-trim contenteditable>
 public sealed class TechnicalModuleImpl : ModuleImpl
@@ -168,7 +167,7 @@ public class InstructionModuleImpl : ModuleImpl
             </section>
             <section>
                 <h4>
-                    Реализация интерфейса IPage&lt;T&gt;
+                    IPage&lt;T&gt; implementation
                 </h4>
       <pre>
          <code class="hljs" data-trim contenteditable>
@@ -199,7 +198,7 @@ public sealed class CatalogPage : PageImpl
             </section>
             <section>
                 <h4>
-                    Реализация интерфейса IPage&lt;T&gt;
+                    IPage&lt;T&gt; implementation
                 </h4>
       <pre>
       <code class="hljs" data-trim contenteditable>
@@ -233,7 +232,7 @@ public class ManualPage : PageImpl
 </pre>
             </section>
             <section>
-                <h4>Приложение</h4>
+                <h4>The Application</h4>
       <pre>
          <code class="hljs" data-trim contenteditable>
 PageImpl catalogPage = new CatalogPage();
@@ -250,39 +249,35 @@ manualPage.DisplayPage();
 
         <section>
             <section>
-                <h4>Провайдер (Абстрактная фабрика)</h4>
+                <h4>Abstract factory</h4>
             </section>
             <section>
-                <h4>Мотивация</h4>
+                <h4>Motivation</h4>
                 <p class="fragment fade-up">
-                    Требуется создавать объекты-продукты разных типов и налаживать между ними взаимодействие,
-                    при этом образуя семейства из этих объектов-продуктов. Входящие в семейство объекты-продукты
-                    обязательно должны использоваться вместе.
+                    It is required to create products different object types and establish the cooperation
+                    between them, forming a family of products. It must be used together.
                 </p>
             </section>
             <section>
                 <p class="fragment fade-up">
-                    Требуется построить подсистему (модуль или компонент) таким образом, чтобы ее внутреннее
-                    устройство (состояние и/или поведение) настраивалось при ее создании. При этом чтобы ни
-                    процесс, ни результат построения подсистемы не был зависим от способа создания в ней объектов,
-                    их композиции (составления и соединения объектов) и представления (настройки внутреннего
-                    состояния объектов.
+                    It is required to construct a subsystem so that its internal state are configured when
+                    you create it. We must have a process to construct subsystem independently.
                 </p>
             </section>
             <section>
                 <p class="fragment fade-up">
-                    Подсистема или система должна настраиваться (конфигурироваться) через использование одного
-                    из семейств объектов-продуктов, порождаемых одним объектом-фабрикой
+                    Subsystem must be configured through the use of product family generated by a
+                    factory object
                 </p>
             </section>
             <section>
-                <h4>Диаграмма классов</h4>
+                <h4>Class diagram</h4>
                 <img src="img/objectgenerators/provider.png" alt="provider"/>
             </section>
         </section>
 
         <section>
-            <h4>Телефонный номер</h4>
+            <h4>Phone number</h4>
             <div class="row">
                 <div class="col-md-12">
                     <img src="img/objectgenerators/provider-phonenumber.png" alt="phoneNumber"/>
@@ -300,7 +295,7 @@ manualPage.DisplayPage();
         </section>
 
         <section>
-            <h4>Адрес</h4>
+            <h4>Address</h4>
             <div class="row">
                 <div class="col-md-12">
                     <img src="img/objectgenerators/provider-address.png" alt="address"/>
@@ -317,7 +312,7 @@ manualPage.DisplayPage();
         </section>
 
         <section>
-            <h4>Провайдер семейств объектов</h4>
+            <h4>Family objects provider</h4>
             <p class="fragment fade-up">
                 <img src="img/objectgenerators/provider-addressfactory.png" alt="addressfactory"/>
             </p>
@@ -331,37 +326,36 @@ manualPage.DisplayPage();
         </section>
 
         <section>
-            <h4>Использование провайдера</h4>
+            <h4>Using provider</h4>
             <img src="img/objectgenerators/provider-app.png" alt="provider-app"/>
         </section>
 
         <section>
             <section>
-                <h4>Строитель</h4>
+                <h4>Builder</h4>
             </section>
             <section>
-                <h4>Мотивация</h4>
+                <h4>Motivation</h4>
                 <p class="fragment fade-up">
-                    Алгоритм пошагового создания сложного объекта-продукта не должен зависеть от того, из каких
-                    частей состоит объект-продукт и как эти части стыкуются между собой
+                    Algorithm of a step by step created object of a complex type should not depend on
+                    any object part
                 </p>
                 <p class="fragment fade-up">
-                    Процесс создания продукта должен обеспечивать возможность получения различных вариаций
-                    создаваемого продукта
+                    The build process is able to create the different object variations
                 </p>
             </section>
             <section>
-                <h4>Диаграмма классов</h4>
+                <h4>Class diagram</h4>
                 <img src="img/objectgenerators/builder.png" alt="builder"/>
             </section>
         </section>
 
         <section>
             <section>
-                <h4>Классическая реализация строителя</h4>
+                <h4>Classical builder implementation</h4>
             </section>
             <section>
-                <h5>Интерфейсы</h5>
+                <h5>Interfaces</h5>
    <pre>
 <code class="hljs" data-trim contenteditable>
 public interface IContact
@@ -385,7 +379,7 @@ public interface ILocation
 </pre>
             </section>
             <section>
-                <h5>Реализации</h5>
+                <h5>Implementation</h5>
    <pre>
 <code class="hljs" data-trim contenteditable>
 [Serializable]
@@ -426,7 +420,7 @@ public class LocationImpl : ILocation
 </pre>
             </section>
             <section>
-                <h4>Класс для композиции других объектов</h4>
+                <h4>Class for composition of other objects</h4>
    <pre>
       <code class="hljs" data-trim contenteditable>
 public class Appointment
@@ -457,7 +451,7 @@ public class Appointment
 </pre>
             </section>
             <section>
-                <h6>Пошаговое создание объекта</h6>
+                <h6>The step by step object creation</h6>
    <pre>
       <code class="hljs" data-trim contenteditable>
 public class AppointmentBuilder
@@ -526,7 +520,7 @@ public class AppointmentBuilder
 </pre>
             </section>
             <section>
-                <h6>Класс-распорядитель</h6>
+                <h6>The director</h6>
    <pre>
       <code class="hljs" data-trim contenteditable>
 public static class Scheduler
@@ -553,7 +547,7 @@ public static class Scheduler
 </pre>
             </section>
             <section>
-                <h4>Использование строителя</h4>
+                <h4>Using the builder pattern</h4>
    <pre>
       <code class="hljs" data-trim contenteditable>
 var appointmentBuilder = new AppointmentBuilder();
@@ -590,7 +584,7 @@ catch (InfoRequiredException infoRequiredEx)
 
         <section>
             <section>
-                <h4>Внутренний строитель</h4>
+                <h4>The inner builder variation</h4>
             </section>
 
         </section>

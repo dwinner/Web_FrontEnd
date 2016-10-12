@@ -31,136 +31,136 @@
     <div class="slides">
 
         <section id="title-slide">
-            <h3>Отношения между объектами</h3>
+            <h3>Object relationships</h3>
         </section>
 
         <section id="class-set">
-            <h4>Рассмотрим следующий набор объектных сущностей</h4>
+            <h4>Consider the following set of the object entities</h4>
             <ol>
                 <li class="slide" id="enums">
-                    <h5>Перечисления: </h5>
+                    <h5>Enums: </h5>
                     <p>Genre, InstrumentCategory, MusicianType</p>
                 </li>
                 <li class="slide" id="ifaces">
-                    <h5>Интерфейсы: </h5>
+                    <h5>Interfaces: </h5>
                     <p>IBand, IInstrument, IMusician</p>
                 </li>
                 <li class="slide" id="classes">
-                    <h5>Классы: </h5>
+                    <h5>Classes: </h5>
                     <p>Guitar, Guitarist, LeadGuitarist, RockBand</p>
                 </li>
             </ol>
         </section>
 
         <section id="enum-depth">
-            <h6>Перечисления</h6>
+            <h6>Enums</h6>
             <img src="img/objrelationships/enumerations.png" alt="Enumerations"/>
         </section>
 
         <section id="ifaces-depth">
-            <h4>Интерфейсы</h4>
+            <h4>Interfaces</h4>
             <img src="img/objrelationships/ifaces.png" alt="Interfaces"/>
         </section>
 
         <section id="guitar">
-            <h4>Класс Guitar</h4>
+            <h4>Class Guitar</h4>
             <img src="img/objrelationships/guitar-class.png" alt="guitar"/>
         </section>
 
         <section id="guitarist">
-            <h4>Класс Guitarist</h4>
+            <h4>Class Guitarist</h4>
             <img src="img/objrelationships/guitarist-class.png" alt="Guitarist"/>
         </section>
 
         <section id="lead-guitarist">
-            <h4>Класс LeadGuitarist</h4>
+            <h4>Class LeadGuitarist</h4>
             <img src="img/objrelationships/lead-guitarist-class.png" alt="Lead guitarist"/>
         </section>
 
         <section id="rock-band">
-            <h4>Класс RockBand</h4>
+            <h4>Class RockBand</h4>
             <img src="img/objrelationships/rock-band-class.png" alt="RockBand"/>
         </section>
 
         <section id="class-diagram">
-            <h6>Общая диаграмма классов</h6>
+            <h6>The common class diagram</h6>
             <img src="img/objrelationships/band-class-diagram.png" alt="Band class diagram"/>
         </section>
 
         <section id="association">
             <section>
-                <h4>Ассоциации между объектами</h4>
+                <h4>The association</h4>
             </section>
             <section>
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="img/objrelationships/accociation1.png" alt="Accociation1"/>
+                        <img src="img/objrelationships/accociation1.png" alt="Association1"/>
                     </div>
                     <div class="col-md-6">
-                        <img src="img/objrelationships/accosiation2.png" alt="Accociation2"/>
+                        <img src="img/objrelationships/accosiation2.png" alt="Association2"/>
                     </div>
                 </div>
             </section>
             <section>
                 <ul>
-                    <li>Ассоциация показывает структурную связь между объектами</li>
-                    <li>Ассоциация имеет кратность: (1..1), (1..*), (*..*)</li>
-                    <li>Ассоциация может имеет направление: однонаправленная, двунаправленная</li>
+                    <li>The Association shows the structural relationship between objects</li>
+                    <li>The Association has a multiplicity: (1..1), (1..*), (*..*)</li>
+                    <li>The Association may have a direction: unidirectional, bidirectional</li>
                 </ul>
             </section>
         </section>
 
         <section id="composition">
             <section>
-                <h4>Композиция</h4>
+                <h4>Composition</h4>
             </section>
             <section>
                 <img src="img/objrelationships/composition.png" alt="Composition"/>
             </section>
             <section>
                 <ul>
-                    <li>Музыкант "знает" свои инструменты</li>
-                    <li>Инструменты "не знают" ничего про своих музыкантов</li>
-                    <li>Инструменты НЕ могут существовать без музыкантов</li>
+                    <li>Musician "knows" his tools</li>
+                    <li>Tools "do not know" anything about its musicians</li>
+                    <li>Tools cannot exist without the musicians</li>
                 </ul>
             </section>
         </section>
 
         <section id="aggregation">
             <section>
-                <h4>Аггрегирование</h4>
+                <h4>Aggregation</h4>
             </section>
             <section>
                 <img src="img/objrelationships/aggregation.png" alt="Aggregation"/>
             </section>
             <section>
                 <ul>
-                    <li>Группа "знает" про своих музыкантов</li>
-                    <li>Музыканты, возможно, "знают" свою группу</li>
-                    <li>Музыканты могут существовать и без группы</li>
+                    <li>The group "knows" about its musicians</li>
+                    <li>Musicians maybe "know" your group</li>
+                    <li>Musicians can exist without group</li>
                 </ul>
             </section>
         </section>
 
         <section id="right-inheritance">
             <section>
-                <h4>Правильное наследование</h4>
+                <h4>The proper inheritance</h4>
             </section>
             <section>
                 <img src="img/objrelationships/right-inheritance.png" alt="Right inheritance"/>
             </section>
             <section>
                 <ul>
-                    <li>Класс не обещает большего, но обеспечивает функциональный минимум</li>
-                    <li>Класс может являться полиморфным, но не более того</li>
-                    <li>Тип может быть взаимозаменяемым по смыслу</li>
+                    <li>Class does not promise more, but at least provides a functional minimum</li>
+                    <li>Class can be polymorphic, but no more</li>
+                    <li>The type can be interchangeable in meaning</li>
                 </ul>
             </section>
         </section>
 
         <section id="wrong-inheritance">
             <section>
-                <h6>Неправильное наследование</h6>
+                <h6>Incorrect inheritance</h6>
             </section>
             <section>
                 <div class="row">
@@ -186,20 +186,20 @@
 
         <section id="wrong-inheritance-issues">
             <section>
-                <h4>К чему приводит неправильное наследование</h4>
+                <h4>What causes incorrect inheritance</h4>
             </section>
             <section>
                 <ul>
-                    <li>К появлению нисходящих преобразований</li>
-                    <li>К появлению процедурных конструкций if-else-if, switch-case с проверкой типа</li>
-                    <li>Сводит практическую пользу полиморфизма к нулю</li>
+                    <li>The appearance of downcasts</li>
+                    <li>The appearance of procedural if-else-if, switch-case with type checking</li>
+                    <li>Brings practical benefits of polymorphism to the zero</li>
                 </ul>
             </section>
         </section>
 
         <section id="include-delegate">
             <section>
-                <h4>Включение-делегирование</h4>
+                <h4>Inclusion/Delegation</h4>
             </section>
             <section>
                 <img src="img/objrelationships/iemployee.png" alt="iemployee"/>
@@ -216,20 +216,20 @@
 
         <section id="geterogeneus">
             <section>
-                <h4>Гетерогенные структуры данных (обобщенные)</h4>
+                <h4>Heterogeneous data structures (generic)</h4>
             </section>
             <section>
                 <ul>
                     <li>
-                        Ковариантность - Если тип T преобразуем в R, то из этого следует, что IOperation&lt;T&gt; можно
-                        безопасно преобразовать в IOperation&lt;R&gt;
+                        Covariance - If the T-type can be transformed into the R-type it follows that IOperation&lt;T&gt;
+                        can be safely transformed into IOperation&lt;R&gt;
                     </li>
                     <li>
-                        Контравариантность - Если тип R преобразуем в T, то из этого следует, что IOperation&lt;T&gt;
-                        можно безопасно преобразовать в IOperation&lt;R&gt;
+                        Contravariant - If the R-type can be transformed into the T-type it follows that IOperation&lt;T&gt;
+                        can be safely transformed into IOperation&lt;R&gt;
                     </li>
                     <li>
-                        Инвариантность - для типов R и T не существует операций преобразования
+                        Invariance - For R- and T- types there is no conversion
                     </li>
                 </ul>
             </section>
@@ -237,7 +237,7 @@
 
         <section id="geterogeneus-examples">
             <section>
-                <h4>Примеры вариантности</h4>
+                <h4>Variation examples</h4>
             </section>
             <section>
                 <div class="row">
