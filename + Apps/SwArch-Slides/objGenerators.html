@@ -751,6 +751,61 @@ catch (InfoRequiredException infoRequiredEx)
                 </p>
             </section>
         </section>
+
+        <section>
+            <section>
+                <h4>The Singleton</h4>
+            </section>
+            <section>
+                <h4>Motivation</h4>
+                <p class="fragment fade-up">
+                    The system should have one and only one class instance or a fixed number of instances
+                </p>
+                <p class="fragment fade-up">
+                    It's required to organize a single instance through the use of inheritance
+                </p>
+            </section>
+            <section>
+                <h4>The diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/singleton.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Generic thread-safety singleton</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/singleton-gen-ts.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Application</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/singleton-app.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Output</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/singleton-app-output.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Why I have developed so general singleton solution?!</h4>
+                <p class="fragment fade-up">
+                    I want to have a thread safety object creation
+                </p>
+                <p class="fragment fade-up">
+                    I want not to apply this pattern on each class that must be single as well
+                </p>
+                <p class="fragment fade-up">
+                    But I still have a problems: I can create instances by the new operator, because
+                    the default constructor isn't private!
+                </p>
+                <p class="fragment fade-up">
+                    ...So I still have The Big "BUT" problem!
+                </p>
+            </section>
+        </section>
     </div>
 </div>
 <script src="reveal/lib/js/head.min.js"></script>
