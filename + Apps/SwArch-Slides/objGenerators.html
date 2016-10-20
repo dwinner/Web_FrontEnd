@@ -53,7 +53,7 @@
                 <p class="fragment fade-up">Delegates to subclasses the behavior for object creation</p>
             </section>
             <section>
-                <img src="img/objectgenerators/factory.png" alt="factory" />
+                <img src="img/objectgenerators/factory.png" alt="factory"/>
             </section>
         </section>
 
@@ -586,7 +586,170 @@ catch (InfoRequiredException infoRequiredEx)
             <section>
                 <h4>The inner builder variation</h4>
             </section>
+            <section>
+                <h4>Motivation</h4>
+                <p class="fragment fade-up">
+                    The class is enough to have one strategy for creating objects step by step
+                </p>
+            </section>
+            <section>
+                <h4>Inner builder diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/inner-builder.png">
+                </p>
+            </section>
+            <section>
+                <h4>The AudioEntity class</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/01-inner-builder-class-begin.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>The inner builder class</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/02-inner-builder-inner-class-begin.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Mandatory fields</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/03-inner-builder-mandatory-fields.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Optional fields</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/04-inner-builder-optional-fields.png"/>
+                </p>
+                <abbr>End of inner class here!</abbr>
+            </section>
+            <section>
+                <h4>Generator methods for optional fields</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/05-inner-builder-generator-methods.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Object fields and private constructor</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/06-inner-builder-fld-ctor.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>IEquatable &lt;AudioEntity&gt;</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/07-inner-builder-equ.png"/>
+                </p>
+            </section>
+            <section>
+                <h4></h4>
+                <p class="fragment fade-up">
+                    <img src=""/>
+                </p>
+            </section>
+            <section>
+                <h4>System.Object</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/08-inner-builder-system-object.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>ToString</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/09-inner-builder-tostring.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Inner builder application</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/10-inner-builder-app.png"/>
+                </p>
+            </section>
+        </section>
 
+        <section>
+            <section>
+                <h4>The prototype</h4>
+            </section>
+            <section>
+                <h4>Motivation</h4>
+                <p class="fragment fade-up">
+                    The programmer should not know how objects are created
+                </p>
+                <p class="fragment fade-up">
+                    Classes, which instances are planned to create, determinate at runtime
+                </p>
+                <p class="fragment fade-up">
+                    Copies of a particular class may have a small number of states. It can be
+                    easier to install a prototype instead of manually creating of objects.
+                </p>
+            </section>
+            <section>
+                <h4>Prototype class diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Universal copy utility</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-unicopy.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Deep copy manager</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-deep-copy-manager.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>ICopy &lt;out T&gt; behavior</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-icopy.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Deep copying</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-copy-ext.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Class Address</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-address-begin.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Constructors and cloning</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-addr-ctor-and-cloning.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Defaults And Properties</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-addr-defaults-props.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>App use case: using copy extensions</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-using-copy-ext.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>App use case: using universal copy utils</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-using-unicopy.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>App use case: using ICopy contract</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-using-icopy.png"/>
+                </p>
+            </section>
         </section>
     </div>
 </div>
