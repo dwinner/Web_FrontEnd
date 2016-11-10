@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Architecture hints"/>
+    <meta name="author" content="dwinner@inbox.ru"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/reveal/reveal.css"/>
+    <link rel="stylesheet" href="css/reveal/theme/sky.css" id="theme"/>
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css"/>
+    <script type="text/javascript">
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi)
+                ? 'css/releal/print/pdf.css'
+                : 'css/releal/print/pdf.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <script src="js/jquery/jquery-1.9.1.min.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    <title>Structural patterns</title>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h4>Structural patterns</h4>
+        </section>
+        <section>
+            <ul>
+                <li>Adapter</li>
+                <li>Bridge</li>
+                <li>Composite</li>
+                <li>Proxy</li>
+                <li>Decorator</li>
+                <li>Facade</li>
+                <li>Flyweight</li>
+                <li>Immutable object</li>
+            </ul>
+        </section>
+        <!-- Adapter -->
+        <section>
+            <section>
+                <h4>The Adapter</h4>
+            </section>
+            <section>
+                <h4>Motivation</h4>
+                <p class="fragment fade-up">
+                    The Adapter pattern enables a system to use classes whose interfaces don’t quite
+                    match its requirements.
+                </p>
+                <p class="fragment fade-up">
+                    It is especially useful for off-the-shelf code, for toolkits, and
+                    for libraries.
+                </p>
+                <p class="fragment fade-up">
+                    Many examples of the Adapter pattern involve input/output because
+                    that is one domain that is constantly changing.
+                </p>
+            </section>
+            <section>
+                <p class="fragment fade-up">
+                    For example, programs written in the
+                    1980s will have very different user interfaces from those written in the 2000s. Being
+                    able to adapt those parts of the system to new hardware facilities would be much
+                    more cost effective than rewriting them.
+                </p>
+                <p class="fragment fade-up">
+                    Toolkits also need adapters. Although they are designed for reuse, not all applica-
+                    tions will want to use the interfaces that toolkits provide; some might prefer to stick
+                    to a well-known, domain-specific interface. In such cases, the adapter can accept
+                    calls from the application and transform them into calls on toolkit methods.
+                </p>
+            </section>
+            <section>
+                <h4>The diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/adapter/adapter-diagram.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>IEmployee</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/adapter/IEmployee.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>EmployeeImpl</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/adapter/EmployeeImpl.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>ComparableEmployee</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/adapter/ComparableEmployee.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Adapter App</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/adapter/app.png"/>
+                </p>
+            </section>
+        </section>
+        <!-- Bridge -->
+        <section>
+            <section>
+                <h4>The Bridge</h4>
+            </section>
+            <section>
+                <h4>Role</h4>
+                <p class="fragment fade-up">
+                    The Bridge pattern decouples an abstraction from its implementation, enabling them
+                    to vary independently. The Bridge pattern is useful when a new version of software is
+                    brought out that will replace an existing version, but the older version must still run
+                    for its existing client base. The client code will not have to change,
+                    as it is conforming to a given abstraction, but the client will need to
+                    indicate which version it wants
+                    to use.
+                </p>
+            </section>
+            <section>
+                <h4>The diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/bridge/bridge.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>IBaseList iface</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/bridge/IBaseList.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>BaseList impl</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/bridge/BaseList.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Numbered list</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/bridge/NumberedList.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Ordered list</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/bridge/OrderedList.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Ornamented list</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/bridge/OrnamentedList.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Bridge App</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/bridge/app.png"/>
+                </p>
+            </section>
+        </section>
+        <!-- Composite -->
+        <section>
+            <section>
+                <h4>Composite</h4>
+            </section>
+            <section>
+                <h4>Role</h4>
+                <p class="fragment fade-up">
+                    The Composite pattern arranges structured hierarchies so that single components
+                    and groups of components can be treated in the same way. Typical operations on the
+                    components include add, remove, display, find, and group.
+                </p>
+            </section>
+            <section>
+                <h4>The diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/composite.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Contact interface</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/IContact.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Contact Impl</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/ContactImpl.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Project item interface</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/IProjectItem.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Project Impl</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/Project.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Deliverable</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/Deliverable.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Work task</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/WorkTask.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Data serializer helper</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/DataSerializer.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Creating the contacts</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/CreatingContacts.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Creating the project</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/CreatingProject.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Adding tasks, subtasks</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/AddingTasks.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Composite App</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/composite/app.png"/>
+                </p>
+            </section>
+        </section>
+        <!-- Proxy -->
+
+    </div>
+</div>
+<script src="reveal/lib/js/head.min.js"></script>
+<script src="js/reveal/reveal.js"></script>
+<script type="text/javascript">
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide',
+        dependencies: [
+            {
+                src: 'reveal/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'js/reveal/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'js/reveal/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'js/reveal/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'js/reveal/zoom.js', async: true},
+            {src: 'js/reveal/notes.js', async: true}
+        ]
+    });
+</script>
+</body>
+</html>
