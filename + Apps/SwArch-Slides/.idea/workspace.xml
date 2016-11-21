@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0642ef0b-110c-4050-a487-4a23f2dd512f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/adapter/ComparableEmployee.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/adapter/EmployeeImpl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/adapter/IEmployee.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/adapter/adapter-diagram.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/adapter/app.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/AddingTasks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/ContactImpl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/CreatingContacts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/CreatingProject.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/DataSerializer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/Deliverable.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/IContact.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/IProjectItem.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/Project.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/WorkTask.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/structural/composite/composite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/structuralPatterns.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="SwArch-Slides.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +13,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -43,8 +26,8 @@
       <file leaf-file-name="structuralPatterns.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/structuralPatterns.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+            <state relative-caret-position="449">
+              <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
               <folding>
                 <element signature="n#section#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#section#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -91,8 +74,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1883" />
+    <option name="y" value="65" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -338,6 +321,7 @@
       <workItem from="1478774443219" duration="1932000" />
       <workItem from="1478776459479" duration="34000" />
       <workItem from="1478776794918" duration="4626000" />
+      <workItem from="1479671371637" duration="176000" />
     </task>
     <task id="LOCAL-00001" summary="Adding slides for inner builderm prototype">
       <created>1476949117493</created>
@@ -350,11 +334,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43529000" />
+    <option name="totallyTimeSpent" value="43705000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="1883" y="65" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1796875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -394,6 +378,19 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/structuralPatterns.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#section#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#section#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#section#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/structuralPatterns.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -604,8 +601,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/structuralPatterns.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+        <state relative-caret-position="449">
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
           <folding>
             <element signature="n#section#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
