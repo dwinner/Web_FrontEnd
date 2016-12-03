@@ -72,7 +72,7 @@
                     more cost effective than rewriting them.
                 </p>
                 <p class="fragment fade-up">
-                    Toolkits also need adapters. Although they are designed for reuse, not all applica-
+                    Toolkits also need adapters. Although they are designed for reuse, not all applica
                     tions will want to use the interfaces that toolkits provide; some might prefer to stick
                     to a well-known, domain-specific interface. In such cases, the adapter can accept
                     calls from the application and transform them into calls on toolkit methods.
@@ -256,7 +256,79 @@
             </section>
         </section>
         <!-- Proxy -->
-
+        <section>
+            <section>
+                <h4>Proxy</h4>
+            </section>
+            <section>
+                <h4>Role</h4>
+                <p class="fragment fade-up">
+                    The Proxy pattern supports objects that control the creation of and access to other
+                    objects. The proxy is often a small (public) object that stands in for a more complex
+                    (private) object that is activated once certain circumstances are clear
+                </p>
+            </section>
+            <section>
+                <h4>The diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/proxy-diagram.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Address interface</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/IAddress.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Address implementation</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/AddressImpl.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>AddressBook interface</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/IAddressBook.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>AddressBook implementation</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/AddressBookImpl.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>AddressBook Proxy</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/AddressBookProxy1.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>AddressBook Proxy</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/AddressBookProxy2.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>AddressBook Proxy</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/AddressBookProxy3.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>AddressBook Proxy</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/AddressBookProxy4.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Proxy App</h4>
+                <p class="fragment fade-up">
+                    <img src="img/structural/proxy/ProxyApp.png"/>
+                </p>
+            </section>
+        </section>
     </div>
 </div>
 <script src="reveal/lib/js/head.min.js"></script>
