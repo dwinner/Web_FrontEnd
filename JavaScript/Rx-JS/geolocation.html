@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocation + RXJS Sample</title>
+    <script type="text/javascript" src="node_modules/jquery/src/jquery.js"></script>
+    <script type="text/javascript" src="node_modules/rx/dist/rx.js"></script>
+    <script type="text/javascript" src="node_modules/rx-jquery/rx.jquery.js"></script>
+    <script type="text/javascript" src="scripts/locationMap.js"></script>
+</head>
+<body>
+<h2>Geolocation + RxJs sample</h2>
+
+<form>
+    <select id="mapOpts">
+        <option class="typeopt" value="roadmap">Road Map</option>
+        <option class="typeopt" value="satellite">Satellite</option>
+        <option class="typeopt" value="terrain">Terrain</option>
+        <option class="typeopt" value="hybrid">Hybrid</option>
+    </select>
+</form>
+<p></p>
+<img id="mapImage" alt="Location map"/>
+</body>
+</html>
