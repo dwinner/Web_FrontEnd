@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E98E1FD9-0C76-40DD-99D4-472EACDBE576}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchitectureTips.WebClient</RootNamespace>
+    <AssemblyName>ArchitectureTips.WebClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="canonical.html" />
+    <Content Include="css\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap\bootstrap.min.css" />
+    <Content Include="css\reveal\print\paper.css" />
+    <Content Include="css\reveal\print\pdf.css" />
+    <Content Include="css\reveal\reveal.css" />
+    <Content Include="css\reveal\theme\beige.css" />
+    <Content Include="css\reveal\theme\black.css" />
+    <Content Include="css\reveal\theme\blood.css" />
+    <Content Include="css\reveal\theme\league.css" />
+    <Content Include="css\reveal\theme\moon.css" />
+    <Content Include="css\reveal\theme\night.css" />
+    <Content Include="css\reveal\theme\serif.css" />
+    <Content Include="css\reveal\theme\simple.css" />
+    <Content Include="css\reveal\theme\sky.css" />
+    <Content Include="css\reveal\theme\solarized.css" />
+    <Content Include="css\reveal\theme\white.css" />
+    <Content Include="img\caninicalforms\cn-begin-1.png" />
+    <Content Include="img\caninicalforms\cn-ctor-props-5.png" />
+    <Content Include="img\caninicalforms\cn-icomparable-2.png" />
+    <Content Include="img\caninicalforms\cn-iequatable-3.png" />
+    <Content Include="img\caninicalforms\cn-private-classes-8.png" />
+    <Content Include="img\caninicalforms\cn-private-fields-4.png" />
+    <Content Include="img\caninicalforms\cn-single-inst-6.png" />
+    <Content Include="img\caninicalforms\cn-system-object-7.png" />
+    <Content Include="img\caninicalforms\compare-func.png" />
+    <Content Include="img\caninicalforms\compare-impl.png" />
+    <Content Include="img\caninicalforms\compare-strategy.png" />
+    <Content Include="img\objectgenerators\01-inner-builder-class-begin.png" />
+    <Content Include="img\objectgenerators\02-inner-builder-inner-class-begin.png" />
+    <Content Include="img\objectgenerators\03-inner-builder-mandatory-fields.png" />
+    <Content Include="img\objectgenerators\04-inner-builder-optional-fields.png" />
+    <Content Include="img\objectgenerators\05-inner-builder-generator-methods.png" />
+    <Content Include="img\objectgenerators\06-inner-builder-fld-ctor.png" />
+    <Content Include="img\objectgenerators\07-inner-builder-equ.png" />
+    <Content Include="img\objectgenerators\08-inner-builder-system-object.png" />
+    <Content Include="img\objectgenerators\09-inner-builder-tostring.png" />
+    <Content Include="img\objectgenerators\10-inner-builder-app.png" />
+    <Content Include="img\objectgenerators\builder.png" />
+    <Content Include="img\objectgenerators\factory.png" />
+    <Content Include="img\objectgenerators\inner-builder.png" />
+    <Content Include="img\objectgenerators\prototype-addr-ctor-and-cloning.png" />
+    <Content Include="img\objectgenerators\prototype-addr-defaults-props.png" />
+    <Content Include="img\objectgenerators\prototype-address-begin.png" />
+    <Content Include="img\objectgenerators\prototype-copy-ext.png" />
+    <Content Include="img\objectgenerators\prototype-deep-copy-manager.png" />
+    <Content Include="img\objectgenerators\prototype-icopy.png" />
+    <Content Include="img\objectgenerators\prototype-unicopy.png" />
+    <Content Include="img\objectgenerators\prototype-using-copy-ext.png" />
+    <Content Include="img\objectgenerators\prototype-using-icopy.png" />
+    <Content Include="img\objectgenerators\prototype-using-unicopy.png" />
+    <Content Include="img\objectgenerators\prototype.png" />
+    <Content Include="img\objectgenerators\provider-address.png" />
+    <Content Include="img\objectgenerators\provider-addressfactory.png" />
+    <Content Include="img\objectgenerators\provider-app.png" />
+    <Content Include="img\objectgenerators\provider-frenchaddress.png" />
+    <Content Include="img\objectgenerators\provider-frenchaddressfactory.png" />
+    <Content Include="img\objectgenerators\provider-frenchphonenumber.png" />
+    <Content Include="img\objectgenerators\provider-phonenumber.png" />
+    <Content Include="img\objectgenerators\provider-usaddress.png" />
+    <Content Include="img\objectgenerators\provider-usaddressfactory.png" />
+    <Content Include="img\objectgenerators\provider-usphonenumber.png" />
+    <Content Include="img\objectgenerators\provider.png" />
+    <Content Include="img\objectgenerators\singleton-app-output.png" />
+    <Content Include="img\objectgenerators\singleton-app.png" />
+    <Content Include="img\objectgenerators\singleton-gen-ts.png" />
+    <Content Include="img\objectgenerators\singleton.png" />
+    <Content Include="img\objrelationships\accociation1.png" />
+    <Content Include="img\objrelationships\accosiation2.png" />
+    <Content Include="img\objrelationships\aggregation.png" />
+    <Content Include="img\objrelationships\band-class-diagram.png" />
+    <Content Include="img\objrelationships\composition.png" />
+    <Content Include="img\objrelationships\employee-include-delegate.png" />
+    <Content Include="img\objrelationships\employee.png" />
+    <Content Include="img\objrelationships\enumerations.png" />
+    <Content Include="img\objrelationships\guitar-class.png" />
+    <Content Include="img\objrelationships\guitarist-class.png" />
+    <Content Include="img\objrelationships\iemployee.png" />
+    <Content Include="img\objrelationships\ifaces.png" />
+    <Content Include="img\objrelationships\lead-guitarist-class.png" />
+    <Content Include="img\objrelationships\manager-class.png" />
+    <Content Include="img\objrelationships\manager-include-delegate.png" />
+    <Content Include="img\objrelationships\right-inheritance.png" />
+    <Content Include="img\objrelationships\rock-band-class.png" />
+    <Content Include="img\objrelationships\variance-shape.png" />
+    <Content Include="img\objrelationships\variancy-app.png" />
+    <Content Include="img\objrelationships\variancy-ifaces.png" />
+    <Content Include="img\objrelationships\variancy-rect-coll.png" />
+    <Content Include="img\objrelationships\variancy-shapedisplay.png" />
+    <Content Include="img\objrelationships\wrong-inheritance-app.png" />
+    <Content Include="img\objrelationships\wrong-inheritance-diagram.jpg" />
+    <Content Include="img\structural\adapter\adapter-diagram.png" />
+    <Content Include="img\structural\adapter\app.png" />
+    <Content Include="img\structural\adapter\ComparableEmployee.png" />
+    <Content Include="img\structural\adapter\EmployeeImpl.png" />
+    <Content Include="img\structural\adapter\IEmployee.png" />
+    <Content Include="img\structural\bridge\app.png" />
+    <Content Include="img\structural\bridge\BaseList.png" />
+    <Content Include="img\structural\bridge\bridge.png" />
+    <Content Include="img\structural\bridge\IBaseList.png" />
+    <Content Include="img\structural\bridge\NumberedList.png" />
+    <Content Include="img\structural\bridge\OrderedList.png" />
+    <Content Include="img\structural\bridge\OrnamentedList.png" />
+    <Content Include="img\structural\composite\AddingTasks.png" />
+    <Content Include="img\structural\composite\app.png" />
+    <Content Include="img\structural\composite\composite.png" />
+    <Content Include="img\structural\composite\ContactImpl.png" />
+    <Content Include="img\structural\composite\CreatingContacts.png" />
+    <Content Include="img\structural\composite\CreatingProject.png" />
+    <Content Include="img\structural\composite\DataSerializer.png" />
+    <Content Include="img\structural\composite\Deliverable.png" />
+    <Content Include="img\structural\composite\IContact.png" />
+    <Content Include="img\structural\composite\IProjectItem.png" />
+    <Content Include="img\structural\composite\Project.png" />
+    <Content Include="img\structural\composite\WorkTask.png" />
+    <Content Include="img\structural\decorator\ContactImpl2.png" />
+    <Content Include="img\structural\decorator\Decorator.png" />
+    <Content Include="img\structural\decorator\DecoratorApp.png" />
+    <Content Include="img\structural\decorator\DependantProjectItem7.png" />
+    <Content Include="img\structural\decorator\IContact1.png" />
+    <Content Include="img\structural\decorator\IProjectItem3.png" />
+    <Content Include="img\structural\decorator\ProjectDecorator5.png" />
+    <Content Include="img\structural\decorator\ProjectTask4.png" />
+    <Content Include="img\structural\decorator\SupportedProjectItem6.png" />
+    <Content Include="img\structural\proxy\AddressBookImpl.png" />
+    <Content Include="img\structural\proxy\AddressBookProxy1.png" />
+    <Content Include="img\structural\proxy\AddressBookProxy2.png" />
+    <Content Include="img\structural\proxy\AddressBookProxy3.png" />
+    <Content Include="img\structural\proxy\AddressBookProxy4.png" />
+    <Content Include="img\structural\proxy\AddressImpl.png" />
+    <Content Include="img\structural\proxy\IAddress.png" />
+    <Content Include="img\structural\proxy\IAddressBook.png" />
+    <Content Include="img\structural\proxy\proxy-diagram.png" />
+    <Content Include="img\structural\proxy\ProxyApp.png" />
+    <Content Include="index.html" />
+    <Content Include="js\bootstrap\bootstrap.min.js" />
+    <Content Include="js\jquery\jquery-1.9.1.min.js" />
+    <Content Include="js\modernizr-2.8.3.min.js" />
+    <Content Include="js\reveal\client.js" />
+    <Content Include="js\reveal\highlight.js" />
+    <Content Include="js\reveal\markdown.js" />
+    <Content Include="js\reveal\marked.js" />
+    <Content Include="js\reveal\master.js" />
+    <Content Include="js\reveal\math.js" />
+    <Content Include="js\reveal\notes.js" />
+    <Content Include="js\reveal\print-pdf.js" />
+    <Content Include="js\reveal\reveal.js" />
+    <Content Include="js\reveal\search.js" />
+    <Content Include="js\reveal\zoom.js" />
+    <Content Include="objGenerators.html" />
+    <Content Include="objRel.html" />
+    <Content Include="revealDemo.html" />
+    <Content Include="revealTemplate.html" />
+    <Content Include="reveal\lib\css\zenburn.css" />
+    <Content Include="reveal\lib\js\classList.js" />
+    <Content Include="reveal\lib\js\head.min.js" />
+    <Content Include="reveal\lib\js\html5shiv.js" />
+    <Content Include="structuralPatterns.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>42418</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:42418/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
