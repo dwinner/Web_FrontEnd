@@ -65,6 +65,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="architecturePatterns.html" />
+    <Content Include="behaviorPatterns.html" />
     <Content Include="canonical.html" />
     <Content Include="css\bootstrap\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap\bootstrap.min.css" />
@@ -82,6 +84,7 @@
     <Content Include="css\reveal\theme\sky.css" />
     <Content Include="css\reveal\theme\solarized.css" />
     <Content Include="css\reveal\theme\white.css" />
+    <Content Include="funcPatterns.html" />
     <Content Include="img\caninicalforms\cn-begin-1.png" />
     <Content Include="img\caninicalforms\cn-ctor-props-5.png" />
     <Content Include="img\caninicalforms\cn-icomparable-2.png" />
@@ -205,6 +208,10 @@
     <Content Include="img\structural\flyweight\comparer-factory.png" />
     <Content Include="img\structural\flyweight\flyweight-app.png" />
     <Content Include="img\structural\flyweight\flyweight-diagram.png" />
+    <Content Include="img\structural\immutable\1-item.png" />
+    <Content Include="img\structural\immutable\2-document.png" />
+    <Content Include="img\structural\immutable\3-invoice.png" />
+    <Content Include="img\structural\immutable\4-app.png" />
     <Content Include="img\structural\proxy\AddressBookImpl.png" />
     <Content Include="img\structural\proxy\AddressBookProxy1.png" />
     <Content Include="img\structural\proxy\AddressBookProxy2.png" />
@@ -232,12 +239,14 @@
     <Content Include="js\reveal\zoom.js" />
     <Content Include="objGenerators.html" />
     <Content Include="objRel.html" />
+    <Content Include="parallelPatterns.html" />
     <Content Include="revealDemo.html" />
     <Content Include="revealTemplate.html" />
     <Content Include="reveal\lib\css\zenburn.css" />
     <Content Include="reveal\lib\js\classList.js" />
     <Content Include="reveal\lib\js\head.min.js" />
     <Content Include="reveal\lib\js\html5shiv.js" />
+    <Content Include="soliddry.html" />
     <Content Include="structuralPatterns.html" />
     <Content Include="Web.config" />
   </ItemGroup>
