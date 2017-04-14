@@ -248,6 +248,7 @@
     <Content Include="reveal\lib\js\html5shiv.js" />
     <Content Include="soliddry.html" />
     <Content Include="structuralPatterns.html" />
+    <Content Include="usefullUml.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
