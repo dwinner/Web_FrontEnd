@@ -40,12 +40,9 @@
       <li>Iterator</li>
       <li>Mediator</li>
       <li>Memento</li>
-      <li>Observer: via events</li>
-      <li>Observer: via interfaces</li>
-      <li>Observer: out of the box</li>
+      <li>Observer</li>
       <li>State</li>
-      <li>Strategy: classic approach</li>
-      <li>Strategy: functional approach</li>
+      <li>Strategy</li>
       <li>Template method</li>
       <li>Non virtual interface</li>
       <li>Visitor</li>
@@ -310,39 +307,39 @@
    <section>
       <h4>The diagram</h4>
       <p class="fragment fade-up">
-         <img src="img/behavior/iterator/iterator-diagram.png" />
+         <img src="img/behavior/iterator/iterator-diagram.png"/>
       </p>
    </section>
    <section>
       <h4>Iterator interface</h4>
       <p class="fragment fade-up">
-         <img src="img/behavior/iterator/1-iterator-iface.png" />
+         <img src="img/behavior/iterator/1-iterator-iface.png"/>
       </p>
    </section>
    <section>
       <h4>Iterator implementation</h4>
       <p class="fragment fade-up">
-         <img src="img/behavior/iterator/2-iterator-impl.png" />
+         <img src="img/behavior/iterator/2-iterator-impl.png"/>
       </p>
    </section>
    <section>
       <h4>Aggregator interface</h4>
       <p class="fragment fade-up">
-         <img src="img/behavior/iterator/3-aggregator-iface.png" />
+         <img src="img/behavior/iterator/3-aggregator-iface.png"/>
       </p>
    </section>
    <section>
       <h4>Aggregator implementation</h4>
       <p class="fragment fade-up">
-         <img src="img/behavior/iterator/4-aggregator-impl.png" />
+         <img src="img/behavior/iterator/4-aggregator-impl.png"/>
       </p>
    </section>
    <section>
       <h4>Application</h4>
       <p class="fragment fade-up">
-         <img src="img/behavior/iterator/5-iterator-app.png" />
+         <img src="img/behavior/iterator/5-iterator-app.png"/>
       </p>
-   </section>   
+   </section>
 </section>
 
 <!-- Mediator -->
@@ -396,6 +393,340 @@
       <h4>App</h4>
       <p class="fragment fade-up">
       </p>
+   </section>
+</section>
+
+<!-- Memento -->
+<section>
+   <section>
+      <h4>Memento</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         This pattern is used to capture an object’s internal state and save it externally so that
+         it can be restored later.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/01-memento-diagram.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Address interface</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>Address implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/02-iaddress.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Address Book interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/03-address-impl.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Address Book impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/04-address-book-iface.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Address Book impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/05-addressbook-impl.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Address Book impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/06-addressbook-impl-2.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Contact interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/07-contact-iface.png" />         
+      </p>
+   </section>
+   <section>
+      <h4>Contact impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/08-contact-impl-1.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Contact impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/09-contact-impl-2.png" />
+      </p>
+   </section>
+   <section>
+      <h4>App</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/memento/10-app.png" />
+      </p>
+   </section>   
+</section>
+
+<!-- Observer -->
+<section>
+   <section>
+      <h4>Observer</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Observer pattern defines a relationship between objects so that when one
+         changes its state, all the others are notified accordingly. There is usually an identifi-
+         able single publisher of new state, and many subscribers who wish to receive it.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/01-observer-diagram.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Observer interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/02-observer-iface.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Subject interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/03-subject-iface.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Observer impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/04-observer-impl.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Subject impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/05-subject-impl-1.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Subject impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/06-subject-impl-2.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Simulator</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/07-simulator.png" />
+      </p>
+   </section>
+   <section>
+      <h4>App</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/08-app.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Out of the box observer</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>Observer impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/09-observer-impl.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Observable impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/10-observable-impl-1.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Observable impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/11-observable-impl-2.png" />
+      </p>
+   </section>
+   <section>
+      <h4>App</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/observer/12-app.png" />
+      </p>
+   </section>   
+</section>
+   
+<!-- State -->
+<section>
+   <section>
+      <h4>State</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The next pattern in this group, the State pattern, can be seen as a dynamic version of
+         the Strategy pattern. When the state inside an object changes, it can change its
+         behavior by switching to a set of different operations. This is achieved by an object
+         variable changing its subclass, within a hierarchy.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/state/01-State-diagram.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Automat State interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/state/02-IAutomatState.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Automat interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/state/03-IAutomat.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Automat Impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/state/04-AutomatImpl.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Waiting State</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/state/05-WaitingState.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Got Application State</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/state/06-GotApplicationState.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Fully Rented State</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/state/07-FullyRentedState.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Apartment Rented State</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/state/08-ApartmentRentedState.png" />
+      </p>
+   </section>
+   <section>
+      <h4>App</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/state/09-App.png" />
+      </p>
+   </section>   
+</section>
+
+<!-- Strategy -->
+<section>
+   <section>
+      <h4>Strategy</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Strategy pattern involves removing an algorithm from its host class and putting it
+         in a separate class. There may be different algorithms (strategies) that are applicable for
+         a given problem. If the algorithms are all kept in the host, messy code with lots of con-
+         ditional statements will result. The Strategy pattern enables a client to choose which
+         algorithm to use from a family of algorithms and gives it a simple way to access it. The
+         algorithms can also be expressed independently of the data they are using.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/strategy/01-Strategy-diagram.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Strategy interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/strategy/02-IStrategy.png" />
+      </p>
+   </section>
+   <section>
+      <h4>First Strategy</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/strategy/03-FirstStrategy.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Second Strategy</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/strategy/04-SecondStrategy.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Strategy Context</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/strategy/05-StrategyContext.png" />
+      </p>
+   </section>
+   <section>
+      <h4>App</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/strategy/06-App.png" />
+      </p>
+   </section>   
+</section>
+
+<!-- Template method -->
+<section>
+   <section>
+      <h4>Template method</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Template Method pattern enables algorithms to defer certain steps to sub-
+         classes. The structure of the algorithm does not change, but small well-defined parts
+         of its operation are handled elsewhere.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/template-method/01-TemplateMethod-diagram.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Project item</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/template-method/02-ProjectItem.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Deliverable</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/template-method/03-Deliverable.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Task</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/template-method/04-Task.png" />
+      </p>
    </section>   
 </section>
 
@@ -417,7 +748,7 @@
    </section>
    <section>
       <h4></h4>
-      <p class="fragment fade-up">         
+      <p class="fragment fade-up">
       </p>
    </section>
 </section>

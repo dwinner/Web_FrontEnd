@@ -131,6 +131,47 @@
     <Content Include="img\behavior\mediator\6-mediator-impl.png" />
     <Content Include="img\behavior\mediator\7-app.png" />
     <Content Include="img\behavior\mediator\mediator-diagram.png" />
+    <Content Include="img\behavior\memento\01-memento-diagram.png" />
+    <Content Include="img\behavior\memento\02-iaddress.png" />
+    <Content Include="img\behavior\memento\03-address-impl.png" />
+    <Content Include="img\behavior\memento\04-address-book-iface.png" />
+    <Content Include="img\behavior\memento\05-addressbook-impl.png" />
+    <Content Include="img\behavior\memento\06-addressbook-impl-2.png" />
+    <Content Include="img\behavior\memento\07-contact-iface.png" />
+    <Content Include="img\behavior\memento\08-contact-impl-1.png" />
+    <Content Include="img\behavior\memento\09-contact-impl-2.png" />
+    <Content Include="img\behavior\memento\10-app.png" />
+    <Content Include="img\behavior\observer\01-observer-diagram.png" />
+    <Content Include="img\behavior\observer\02-observer-iface.png" />
+    <Content Include="img\behavior\observer\03-subject-iface.png" />
+    <Content Include="img\behavior\observer\04-observer-impl.png" />
+    <Content Include="img\behavior\observer\05-subject-impl-1.png" />
+    <Content Include="img\behavior\observer\06-subject-impl-2.png" />
+    <Content Include="img\behavior\observer\07-simulator.png" />
+    <Content Include="img\behavior\observer\08-app.png" />
+    <Content Include="img\behavior\observer\09-observer-impl.png" />
+    <Content Include="img\behavior\observer\10-observable-impl-1.png" />
+    <Content Include="img\behavior\observer\11-observable-impl-2.png" />
+    <Content Include="img\behavior\observer\12-app.png" />
+    <Content Include="img\behavior\state\01-State-diagram.png" />
+    <Content Include="img\behavior\state\02-IAutomatState.png" />
+    <Content Include="img\behavior\state\03-IAutomat.png" />
+    <Content Include="img\behavior\state\04-AutomatImpl.png" />
+    <Content Include="img\behavior\state\05-WaitingState.png" />
+    <Content Include="img\behavior\state\06-GotApplicationState.png" />
+    <Content Include="img\behavior\state\07-FullyRentedState.png" />
+    <Content Include="img\behavior\state\08-ApartmentRentedState.png" />
+    <Content Include="img\behavior\state\09-App.png" />
+    <Content Include="img\behavior\strategy\01-Strategy-diagram.png" />
+    <Content Include="img\behavior\strategy\02-IStrategy.png" />
+    <Content Include="img\behavior\strategy\03-FirstStrategy.png" />
+    <Content Include="img\behavior\strategy\04-SecondStrategy.png" />
+    <Content Include="img\behavior\strategy\05-StrategyContext.png" />
+    <Content Include="img\behavior\strategy\06-App.png" />
+    <Content Include="img\behavior\template-method\01-TemplateMethod-diagram.png" />
+    <Content Include="img\behavior\template-method\02-ProjectItem.png" />
+    <Content Include="img\behavior\template-method\03-Deliverable.png" />
+    <Content Include="img\behavior\template-method\04-Task.png" />
     <Content Include="img\caninicalforms\cn-begin-1.png" />
     <Content Include="img\caninicalforms\cn-ctor-props-5.png" />
     <Content Include="img\caninicalforms\cn-icomparable-2.png" />
@@ -311,7 +352,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>42418</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
