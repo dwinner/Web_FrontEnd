@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Architecture hints"/>
+    <meta name="author" content="dwinner@inbox.ru"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/reveal/reveal.css"/>
+    <link rel="stylesheet" href="css/reveal/theme/sky.css" id="theme"/>
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css"/>
+    <script type="text/javascript">
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi)
+                ? 'css/releal/print/pdf.css'
+                : 'css/releal/print/pdf.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <script src="js/jquery/jquery-1.9.1.min.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    <title>Object generators</title>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <section>
+                <h4>Object generators</h4>
+            </section>
+            <section>
+                <ul>
+                    <li>Factory method</li>
+                    <li>Abstract Factory (Provider)</li>
+                    <li>Builder</li>
+                    <li>Prototype</li>
+                    <li>Singleton</li>
+                    <li>Lazy object instantiation</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>The factory method</h4>
+                <p class="fragment fade-up">Defines an interface for object creation</p>
+                <p class="fragment fade-up">Delegates to subclasses the responsibility for object creation</p>
+                <p class="fragment fade-up">Delegates to subclasses the behavior for object creation</p>
+            </section>
+            <section>
+                <img src="img/objectgenerators/factory.png" alt="factory"/>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>Interfaces</h4>
+                <div class="row">
+                    <div class="col-md-6">
+            <pre>
+               <code class="hljs" data-trim contenteditable>
+public interface IModule
+{
+   void SomeModule();
+}
+</code>
+</pre>
+                    </div>
+                    <div class="col-md-6">
+            <pre>
+               <code class="hljs" data-trim contenteditable>
+public interface IPage&lt;T&gt;
+   where T : IModule
+{
+   IList&lt;T&gt; PageCompositor { get; }
+   void AddModule();
+   void DisplayPage();
+}
+</code>
+</pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h4>Abstract implementations</h4>
+      <pre>
+         <code class="hljs" data-trim contenteditable>
+public abstract class ModuleImpl : IModule
+{
+   public abstract void SomeModule();
+}
+</code>
+</pre>
+            </section>
+            <section>
+      <pre>
+         <code class="hljs" data-trim contenteditable>
+public class PageImpl : IPage&lt;ModuleImpl&gt;
+{
+   protected PageImpl()
+   {
+   }
+
+   public IList&lt;ModuleImpl&gt; PageCompositor { get; protected set; }
+
+   public virtual void AddModule()
+   {
+      PageCompositor.Clear();
+      PageCompositor.Add(new FeaturesModuleImpl());
+      PageCompositor.Add(new PictureModuleImpl());
+   }
+
+   public virtual void DisplayPage()
+   {
+      foreach (var moduleImpl in PageCompositor)
+      {
+         moduleImpl.SomeModule();
+      }
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>IModule implementation</h4>
+      <pre>
+<code class="hljs" data-trim contenteditable>
+public sealed class TechnicalModuleImpl : ModuleImpl
+{
+   public override void SomeModule()
+      => Console.WriteLine("Technical content");
+}
+</code>
+</pre>
+      <pre>
+<code class="hljs" data-trim contenteditable>
+public class PictureModuleImpl : ModuleImpl
+{
+   public override void SomeModule()
+      => Console.WriteLine("Picture content");
+}
+</code>
+</pre>
+      <pre>
+<code class="hljs" data-trim contenteditable>
+public class FeaturesModuleImpl : ModuleImpl
+{
+   public override void SomeModule()
+      => Console.WriteLine("Technical content");
+}
+</code>
+</pre>
+      <pre>
+<code class="hljs" data-trim contenteditable>
+public class InstructionModuleImpl : ModuleImpl
+{
+   public override void SomeModule()
+      => Console.WriteLine("Instruction content");
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>
+                    IPage&lt;T&gt; implementation
+                </h4>
+      <pre>
+         <code class="hljs" data-trim contenteditable>
+public sealed class CatalogPage : PageImpl
+{
+   public CatalogPage()
+   {
+      PageCompositor = new List&lt;moduleimpl&gt;();
+   }
+
+   public override void AddModule()
+   {
+      PageCompositor.Clear();
+      PageCompositor.Add(new FeaturesModuleImpl());
+      PageCompositor.Add(new PictureModuleImpl());
+   }
+
+   public override void DisplayPage()
+   {
+      foreach (var moduleImpl in PageCompositor)
+      {
+         moduleImpl.SomeModule();
+      }
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>
+                    IPage&lt;T&gt; implementation
+                </h4>
+      <pre>
+      <code class="hljs" data-trim contenteditable>
+public class ManualPage : PageImpl
+{
+   public ManualPage()
+   {
+      PageCompositor = new List&lt;moduleimpl&gt;();
+   }
+
+   public override void AddModule()
+   {
+      PageCompositor.Clear();
+      PageCompositor.Add(new TechnicalModuleImpl());
+      PageCompositor.Add(new PictureModuleImpl());
+      PageCompositor.Add(new InstructionModuleImpl());
+   }
+
+   public override void DisplayPage()
+   {
+      Console.WriteLine("Manual page contains:");
+      foreach (var moduleImpl in PageCompositor)
+      {
+         moduleImpl.SomeModule();
+      }
+
+      Console.WriteLine();
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>The Application</h4>
+      <pre>
+         <code class="hljs" data-trim contenteditable>
+PageImpl catalogPage = new CatalogPage();
+catalogPage.AddModule();
+catalogPage.DisplayPage();
+
+PageImpl manualPage = new ManualPage();
+manualPage.AddModule();
+manualPage.DisplayPage();
+</code>
+</pre>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>Abstract factory</h4>
+            </section>
+            <section>
+                <h4>Motivation</h4>
+                <p class="fragment fade-up">
+                    It is required to create products different object types and establish the cooperation
+                    between them, forming a family of products. It must be used together.
+                </p>
+            </section>
+            <section>
+                <p class="fragment fade-up">
+                    It is required to construct a subsystem so that its internal state are configured when
+                    you create it. We must have a process to construct subsystem independently.
+                </p>
+            </section>
+            <section>
+                <p class="fragment fade-up">
+                    Subsystem must be configured through the use of product family generated by a
+                    factory object
+                </p>
+            </section>
+            <section>
+                <h4>Class diagram</h4>
+                <img src="img/objectgenerators/provider.png" alt="provider"/>
+            </section>
+        </section>
+
+        <section>
+            <h4>Phone number</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="img/objectgenerators/provider-phonenumber.png" alt="phoneNumber"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="img/objectgenerators/provider-usphonenumber.png" alt="usphonenumber"/>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/objectgenerators/provider-frenchphonenumber.png"
+                         alt="frenchphonenumber"/>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h4>Address</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="img/objectgenerators/provider-address.png" alt="address"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="img/objectgenerators/provider-frenchaddress.png" alt="frenchaddress"/>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/objectgenerators/provider-usaddress.png" alt="usaddress"/>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h4>Family objects provider</h4>
+            <p class="fragment fade-up">
+                <img src="img/objectgenerators/provider-addressfactory.png" alt="addressfactory"/>
+            </p>
+            <p class="fragment fade-up">
+                <img src="img/objectgenerators/provider-frenchaddressfactory.png"
+                     alt="frenchaddressfactory"/>
+            </p>
+            <p class="fragment fade-up">
+                <img src="img/objectgenerators/provider-usaddressfactory.png" alt="usaddressfactory"/>
+            </p>
+        </section>
+
+        <section>
+            <h4>Using provider</h4>
+            <img src="img/objectgenerators/provider-app.png" alt="provider-app"/>
+        </section>
+
+        <section>
+            <section>
+                <h4>Builder</h4>
+            </section>
+            <section>
+                <h4>Motivation</h4>
+                <p class="fragment fade-up">
+                    Algorithm of a step by step created object of a complex type should not depend on
+                    any object part
+                </p>
+                <p class="fragment fade-up">
+                    The build process is able to create the different object variations
+                </p>
+            </section>
+            <section>
+                <h4>Class diagram</h4>
+                <img src="img/objectgenerators/builder.png" alt="builder"/>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>Classical builder implementation</h4>
+            </section>
+            <section>
+                <h5>Interfaces</h5>
+   <pre>
+<code class="hljs" data-trim contenteditable>
+public interface IContact
+{
+   string FirstName { get; set; }
+   string LastName { get; set; }
+   string Title { get; set; }
+   string Organization { get; set; }
+}
+</code>
+</pre>
+            </section>
+            <section>
+   <pre>
+<code class="hljs" data-trim contenteditable>
+public interface ILocation
+{
+   string Location { get; set; }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h5>Implementation</h5>
+   <pre>
+<code class="hljs" data-trim contenteditable>
+[Serializable]
+public class ContactImpl : IContact
+{
+   public ContactImpl(
+      string firstName, string lastName, string title, string organization)
+   {
+      FirstName = firstName;
+      LastName = lastName;
+      Title = title;
+      Organization = organization;
+   }
+
+   public string FirstName { get; set; }
+   public string LastName { get; set; }
+   public string Title { get; set; }
+   public string Organization { get; set; }
+   public override string ToString() => $"{FirstName} {LastName}";
+}
+</code>
+</pre>
+            </section>
+            <section>
+   <pre>
+<code class="hljs" data-trim contenteditable>
+public class LocationImpl : ILocation
+{
+   public LocationImpl(string location)
+   {
+      Location = location;
+   }
+
+   public string Location { get; set; }
+   public override string ToString() => Location;
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>Class for composition of other objects</h4>
+   <pre>
+      <code class="hljs" data-trim contenteditable>
+public class Appointment
+{
+   [NotNull]
+   public ICollection&lt;IContact&gt; Attendees { get; }
+      = new LinkedList&lt;IContact&gt;();
+
+   [CanBeNull]
+   public ILocation Location { get; set; }
+
+   public DateTime StartDate { get; set; }
+
+   public DateTime EndDate { get; set; }
+
+   [CanBeNull]
+   public string Description { get; set; }
+
+   public void AddAttendee([NotNull] IContact aContact) => Attendees.Add(aContact);
+
+   public void RemoveAttendee([NotNull] IContact aContact) => Attendees.Remove(aContact);
+
+   public override string ToString()
+      =>
+         $"[Location={Location}, StartDate={StartDate}, EndDate={EndDate}, Description={Description}]";
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h6>The step by step object creation</h6>
+   <pre>
+      <code class="hljs" data-trim contenteditable>
+public class AppointmentBuilder
+{
+   [NotNull] protected Appointment Appointment = new Appointment();
+   protected bool HasErrors;
+   protected InfoRequiredException.InfoErrors RequiredElements
+      = InfoRequiredException.InfoErrors.None;
+
+   public void BuildAppointment() => Appointment = new Appointment();
+
+   public void BuildDates(DateTime startDate, DateTime endDate)
+   {
+      var currentDateTime = DateTime.Now;
+      Appointment.StartDate = startDate > currentDateTime
+         ? startDate
+         : currentDateTime;
+      Appointment.EndDate = endDate >= startDate ? endDate : startDate;
+   }
+
+   public void BuildDescription([CanBeNull] string newDescription)
+      => Appointment.Description = newDescription;
+
+   public void BuildAttendees([CanBeNull] ICollection&lt;IContact&gt; attendees)
+   {
+      if (attendees == null || attendees.Empty())
+      {
+         return;
+      }
+
+      foreach (var attendee in attendees)
+      {
+         Appointment.Attendees.Add(attendee);
+      }
+   }
+
+   public void BuildLocation([NotNull] ILocation newLocation)
+      => Appointment.Location = newLocation;
+
+   [NotNull]
+   public virtual Appointment GetAppointment()
+   {
+      if (Appointment.Location == null)
+      {
+         RequiredElements
+            |= InfoRequiredException.InfoErrors.LocationRequired;
+      }
+
+      if (Appointment.Attendees.Empty())
+      {
+         RequiredElements
+            |= InfoRequiredException.InfoErrors.AttendeeRequired;
+      }
+
+      if (RequiredElements != InfoRequiredException.InfoErrors.None)
+      {
+         HasErrors = true;
+         throw new InfoRequiredException(
+            "Some field is not set", RequiredElements);
+      }
+
+      return Appointment;
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h6>The director</h6>
+   <pre>
+      <code class="hljs" data-trim contenteditable>
+public static class Scheduler
+{
+   [NotNull]
+   public static Appointment CreateAppointment(
+      [NotNull] AppointmentBuilder builder,
+      DateTime startDateTime,
+      DateTime endDateTime,
+      [NotNull] string description,
+      [NotNull] ILocation location,
+      [NotNull] ICollection&lt;IContact&gt; attendees)
+   {
+      builder.BuildAppointment();
+      builder.BuildDates(startDateTime, endDateTime);
+      builder.BuildDescription(description);
+      builder.BuildAttendees(attendees);
+      builder.BuildLocation(location);
+
+      return builder.GetAppointment();
+   }
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <h4>Using the builder pattern</h4>
+   <pre>
+      <code class="hljs" data-trim contenteditable>
+var appointmentBuilder = new AppointmentBuilder();
+try
+{
+   var appointment = Scheduler.CreateAppointment(appointmentBuilder,
+      new DateTime(2010, 7, 7),
+      new DateTime(2011, 7, 7),
+      "Trek conversion",
+      new LocationImpl("Fargo, ND"),
+      new List&lt;IContact&gt;
+      {
+         new ContactImpl("Denny", "Glover", "Gun", "Hollywood")
+      });
+
+   foreach (var contact in appointment.Attendees)
+   {
+      WriteLine(contact);
+   }
+
+   WriteLine(appointment.Description);
+   WriteLine(appointment.StartDate);
+   WriteLine(appointment.EndDate);
+   WriteLine(appointment.Location);
+}
+catch (InfoRequiredException infoRequiredEx)
+{
+   PrintExceptions(infoRequiredEx);
+}
+</code>
+</pre>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>The inner builder variation</h4>
+            </section>
+            <section>
+                <h4>Motivation</h4>
+                <p class="fragment fade-up">
+                    The class is enough to have one strategy for creating objects step by step
+                </p>
+            </section>
+            <section>
+                <h4>Inner builder diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/inner-builder.png">
+                </p>
+            </section>
+            <section>
+                <h4>The AudioEntity class</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/01-inner-builder-class-begin.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>The inner builder class</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/02-inner-builder-inner-class-begin.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Mandatory fields</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/03-inner-builder-mandatory-fields.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Optional fields</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/04-inner-builder-optional-fields.png"/>
+                </p>
+                <abbr>End of inner class here!</abbr>
+            </section>
+            <section>
+                <h4>Generator methods for optional fields</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/05-inner-builder-generator-methods.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Object fields and private constructor</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/06-inner-builder-fld-ctor.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>IEquatable &lt;AudioEntity&gt;</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/07-inner-builder-equ.png"/>
+                </p>
+            </section>
+            <section>
+                <h4></h4>
+                <p class="fragment fade-up">
+                    <img src=""/>
+                </p>
+            </section>
+            <section>
+                <h4>System.Object</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/08-inner-builder-system-object.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>ToString</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/09-inner-builder-tostring.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Inner builder application</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/10-inner-builder-app.png"/>
+                </p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>The prototype</h4>
+            </section>
+            <section>
+                <h4>Motivation</h4>
+                <p class="fragment fade-up">
+                    The programmer should not know how objects are created
+                </p>
+                <p class="fragment fade-up">
+                    Classes, which instances are planned to create, determinate at runtime
+                </p>
+                <p class="fragment fade-up">
+                    Copies of a particular class may have a small number of states. It can be
+                    easier to install a prototype instead of manually creating of objects.
+                </p>
+            </section>
+            <section>
+                <h4>Prototype class diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Universal copy utility</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-unicopy.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Deep copy manager</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-deep-copy-manager.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>ICopy &lt;out T&gt; behavior</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-icopy.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Deep copying</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-copy-ext.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Class Address</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-address-begin.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Constructors and cloning</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-addr-ctor-and-cloning.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Defaults And Properties</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-addr-defaults-props.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>App use case: using copy extensions</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-using-copy-ext.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>App use case: using universal copy utils</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-using-unicopy.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>App use case: using ICopy contract</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/prototype-using-icopy.png"/>
+                </p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>The Singleton</h4>
+            </section>
+            <section>
+                <h4>Motivation</h4>
+                <p class="fragment fade-up">
+                    The system should have one and only one class instance or a fixed number of instances
+                </p>
+                <p class="fragment fade-up">
+                    It's required to organize a single instance through the use of inheritance
+                </p>
+            </section>
+            <section>
+                <h4>The diagram</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/singleton.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Generic thread-safety singleton</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/singleton-gen-ts.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Application</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/singleton-app.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Output</h4>
+                <p class="fragment fade-up">
+                    <img src="img/objectgenerators/singleton-app-output.png"/>
+                </p>
+            </section>
+            <section>
+                <h4>Why I have developed so general singleton solution?!</h4>
+                <p class="fragment fade-up">
+                    I want to have a thread safety object creation
+                </p>
+                <p class="fragment fade-up">
+                    I want not to apply this pattern on each class that must be single as well
+                </p>
+                <p class="fragment fade-up">
+                    But I still have a problems: I can create instances by the new operator, because
+                    the default constructor isn't private!
+                </p>
+                <p class="fragment fade-up">
+                    ...So I still have The Big "BUT" problem!
+                </p>
+            </section>
+        </section>
+    </div>
+</div>
+<script src="reveal/lib/js/head.min.js"></script>
+<script src="js/reveal/reveal.js"></script>
+<script type="text/javascript">
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide',
+        dependencies: [
+            {
+                src: 'reveal/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'js/reveal/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'js/reveal/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'js/reveal/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'js/reveal/zoom.js', async: true},
+            {src: 'js/reveal/notes.js', async: true}
+        ]
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8"/>
+   <meta name="description" content="Architecture hints"/>
+   <meta name="author" content="dwinner@inbox.ru"/>
+   <meta name="apple-mobile-web-app-capable" content="yes"/>
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+   <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css"/>
+   <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+   <link rel="stylesheet" href="css/reveal/reveal.css"/>
+   <link rel="stylesheet" href="css/reveal/theme/sky.css" id="theme"/>
+   <link rel="stylesheet" href="reveal/lib/css/zenburn.css"/>
+   <script type="text/javascript">
+      var link = document.createElement ('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match (/print-pdf/gi)
+         ? 'css/releal/print/pdf.css'
+         : 'css/releal/print/pdf.css';
+      document.getElementsByTagName ('head')[0].appendChild (link);
+   </script>
+   <script src="js/jquery/jquery-1.9.1.min.js"></script>
+   <script src="js/modernizr-2.8.3.min.js"></script>
+   <title>Behavior patterns</title>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+   <h4>Behavior patterns</h4>
+</section>
+<section>
+   <ul>
+      <li>Chain of responsibility</li>
+      <li>Command</li>
+      <li>Interpreter</li>
+      <li>Iterator</li>
+      <li>Mediator</li>
+      <li>Memento</li>
+      <li>Observer: via events</li>
+      <li>Observer: via interfaces</li>
+      <li>Observer: out of the box</li>
+      <li>State</li>
+      <li>Strategy: classic approach</li>
+      <li>Strategy: functional approach</li>
+      <li>Template method</li>
+      <li>Non virtual interface</li>
+      <li>Visitor</li>
+   </ul>
+</section>
+
+<!-- Chain of responsibility -->
+<section>
+   <section>
+      <h4>Chain of responsibility</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Chain of Responsibility pattern works with a list of Handler objects that have
+         limitations on the nature of the requests they can deal with. If an object cannot han-
+         dle a request, it passes it on to the next object in the chain. At the end of the chain,
+         there can be either default or exceptional behavior.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/chain/chain-diagram.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contact interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/chain/1-icontact.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contact implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/chain/2-contactimpl.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Project item interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/chain/3-iprojectitem.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Project task</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/chain/4-projecttask.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Application</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/chain/5-chain-app.png"/>
+      </p>
+   </section>
+</section>
+
+<!-- Command -->
+<section>
+   <section>
+      <h4>Command</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Command pattern creates distance between the client that requests an opera-
+         tion and the object that can perform it. This pattern is particularly versatile. It can
+         support:
+         • Sending requests to different receivers
+         • Queuing, logging, and rejecting requests
+         • Composing higher-level transactions from primitive operations
+         • Redo and Undo functionality
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/cmd-diagram.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Saver interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/1-isaver-iface.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Command interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/2-command-iface.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Class User - who wants to call the command</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/3-user_1.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Class User - who wants to call the command</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/4-user_2.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Calculator - the command receiver</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/5-calc_1.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Calculator - the command receiver</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/6-calc_2.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Command implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/7-cmd_impl_1.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Command implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/8-cmd_impl_2.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Application</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/command/9-cmd-app.png"/>
+      </p>
+   </section>
+</section>
+
+<!-- Interpreter -->
+<section>
+   <section>
+      <h4>Interpreter</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Interpreter pattern supports the interpretation of instructions written in a lan-
+         guage or notation defined for a specific purpose. The notation is precise and can be
+         defined in terms of a grammar.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/interpreter-diagram.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contact interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/01-icontact.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contact implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/02-contact-impl.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Context interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/03-icontext.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Context implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/04-context_impl.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contact list</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/05-contact_list.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Expression interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/06-iexpression.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>And Expression</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/07-and_expr.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Comparison Expression</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/08-comparison_expr.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Constant Expression</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/09-constant_expr.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Compound Expression</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/10-compound_expr.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Variable Expression</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/11-variable_expr.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Or Expression</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/12-or_expr.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Equals Expression</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/13-equals_expr.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contains Expression</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/14-contains_expr.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>App</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/interpreter/15-app.png"/>
+      </p>
+   </section>
+</section>
+
+<!-- Iterator -->
+<section>
+   <section>
+      <h4>Iterator</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Iterator pattern provides a way of accessing elements of a collection sequen-
+         tially, without knowing how the collection is structured. As an extension, the pat-
+         tern allows for filtering elements in a variety of ways as they are generated.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/iterator/iterator-diagram.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Iterator interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/iterator/1-iterator-iface.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Iterator implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/iterator/2-iterator-impl.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Aggregator interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/iterator/3-aggregator-iface.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Aggregator implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/iterator/4-aggregator-impl.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Application</h4>
+      <p class="fragment fade-up">
+         <img src="img/behavior/iterator/5-iterator-app.png" />
+      </p>
+   </section>   
+</section>
+
+<!-- Mediator -->
+<section>
+   <section>
+      <h4>Mediator</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Mediator pattern is there to enable objects to communicate without knowing
+         each other’s identities. It also encapsulates a protocol that objects can follow.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>Mediator interface</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>Colleague interface</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>Colleague Impl</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>Concrete Colleague 1</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>Concrete Colleague 2</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>Mediator impl</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>App</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>   
+</section>
+
+<!-- NOTE: Body goes here -->
+<!-- NOTE: Example
+<section>
+   <section>
+      <h4>Pattern name</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+      </p>
+   </section>
+   <section>
+      <h4></h4>
+      <p class="fragment fade-up">         
+      </p>
+   </section>
+</section>
+-->
+</div>
+</div>
+<script src="reveal/lib/js/head.min.js"></script>
+<script src="js/reveal/reveal.js"></script>
+<script type="text/javascript">
+   Reveal.initialize ({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide',
+      dependencies: [
+         { src: 'reveal/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+         {
+            src: 'js/reveal/marked.js',
+            condition: function () { return !!document.querySelector ('[data-markdown]'); }
+         },
+         {
+            src: 'js/reveal/markdown.js',
+            condition: function () { return !!document.querySelector ('[data-markdown]'); }
+         },
+         { src: 'js/reveal/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+         { src: 'js/reveal/zoom.js', async: true },
+         { src: 'js/reveal/notes.js', async: true }
+      ]
+   });
+</script>
+</body>
+</html>
