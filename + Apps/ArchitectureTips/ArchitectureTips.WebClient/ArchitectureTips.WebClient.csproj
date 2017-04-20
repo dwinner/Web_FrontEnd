@@ -86,6 +86,32 @@
     <Content Include="css\reveal\theme\solarized.css" />
     <Content Include="css\reveal\theme\white.css" />
     <Content Include="funcPatterns.html" />
+    <Content Include="img\arch\automapping\01-user-dto.png" />
+    <Content Include="img\arch\automapping\02-user.png" />
+    <Content Include="img\arch\automapping\03-app.png" />
+    <Content Include="img\arch\mvvm\08-composition-root.png" />
+    <Content Include="img\arch\mvvm\09-book-view-ctrl.png" />
+    <Content Include="img\arch\mvvm\1-01-bindable-base.png" />
+    <Content Include="img\arch\mvvm\1-02-viewmodel-base.png" />
+    <Content Include="img\arch\mvvm\1-03-delegate-command.png" />
+    <Content Include="img\arch\mvvm\1-04-event-aggr.png" />
+    <Content Include="img\arch\mvvm\10-book-view-ctrl.png" />
+    <Content Include="img\arch\mvvm\11-books-view-ctrl.png" />
+    <Content Include="img\arch\mvvm\12-books-view-ctrl.png" />
+    <Content Include="img\arch\mvvm\13-main-wnd.png" />
+    <Content Include="img\arch\mvvm\2-01-book.png" />
+    <Content Include="img\arch\mvvm\3-01-update-repo-iface.png" />
+    <Content Include="img\arch\mvvm\3-02-query-repo-iface.png" />
+    <Content Include="img\arch\mvvm\3-03-books-service-iface.png" />
+    <Content Include="img\arch\mvvm\3-04-book-repo-iface.png" />
+    <Content Include="img\arch\mvvm\3-05-book-info-event.png" />
+    <Content Include="img\arch\mvvm\4-01-books-sample-repository.png" />
+    <Content Include="img\arch\mvvm\4-02-books-sample-repository.png" />
+    <Content Include="img\arch\mvvm\5-01-books-service.png" />
+    <Content Include="img\arch\mvvm\5-02-books-service.png" />
+    <Content Include="img\arch\mvvm\6-01-book-vm.png" />
+    <Content Include="img\arch\mvvm\7-01-books-vm.png" />
+    <Content Include="img\arch\mvvm\7-02-books-vm.png" />
     <Content Include="img\behavior\chain\1-icontact.png" />
     <Content Include="img\behavior\chain\2-contactimpl.png" />
     <Content Include="img\behavior\chain\3-iprojectitem.png" />
@@ -351,6 +377,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

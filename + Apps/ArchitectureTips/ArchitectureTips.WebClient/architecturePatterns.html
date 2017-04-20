@@ -34,13 +34,203 @@
          </section>
          <section>
             <ul>
-               <li>Model-View-Controller</li>
-               <li>Model-View-Presenter</li>
-               <li>Model-View-View Model</li>
                <li>Auto mapping</li>
+               <li>Model-View-View Model</li>
                <li>Component composition</li>
             </ul>
          </section>
+
+         <!-- Auto mapping -->
+         <section>
+            <section>
+               <h4>Auto mapping</h4>
+            </section>
+            <section>
+               <h4>Role</h4>
+               <p class="fragment fade-up">
+                  You need a universal way to adapt one model object to another,
+                  for example, you want to create a view model, but do not want
+                  to modify the original model class. Similarly you will not break
+                  the single responsibility for one or more model classes.
+               </p>
+            </section>
+            <section>
+               <h4>User model</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/automapping/01-user-dto.png" />
+               </p>
+            </section>
+            <section>
+               <h4>User</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/automapping/02-user.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Example</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/automapping/03-app.png" />
+               </p>
+            </section>
+         </section>
+
+         <!-- Model-View-View Model -->
+         <section>
+            <section>
+               <h4>Model-View-View Model</h4>
+            </section>
+            <section>
+               <h4>Role</h4>
+               <p class="fragment fade-up">
+                  <!-- TODO: MVVM role -->
+               </p>
+            </section>
+            <section>
+               <h4>The diagram</h4>
+               <p class="fragment fade-up">
+                  <!-- TODO: MVVM diagram -->
+               </p>
+            </section>
+            <section>
+               <h4>Framework - Bindable base class</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/1-01-bindable-base.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Framework - View Model base class</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/1-02-viewmodel-base.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Framework - Delegate command</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/1-03-delegate-command.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Framework - Event aggregator</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/1-04-event-aggr.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Model - Book</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/2-01-book.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Contracts - Update repository interface</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/3-01-update-repo-iface.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Contracts - Query repository interface</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/3-02-query-repo-iface.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Contracts - Books service interface</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/3-03-books-service-iface.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Contracts - Books repository interface</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/3-04-book-repo-iface.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Contracts - Book Info Event</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/3-05-book-info-event.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Books Sample Repository</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/4-01-books-sample-repository.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Books Sample Repository</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/4-02-books-sample-repository.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Books service</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/5-01-books-service.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Books service</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/5-02-books-service.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Book View Model</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/6-01-book-vm.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Books View Model</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/7-01-books-vm.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Books View Model</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/7-02-books-vm.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Composition Root</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/08-composition-root.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Book view ctrl</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/09-book-view-ctrl.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Book view ctrl - code behind</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/10-book-view-ctrl.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Books view ctrl</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/11-books-view-ctrl.png" />
+               </p>
+            </section>
+            <section>
+               <h4>Books view ctrl - code behind</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/12-books-view-ctrl.png" />
+               </p>
+            </section>
+            <section>
+               <h4>App main window</h4>
+               <p class="fragment fade-up">
+                  <img src="img/arch/mvvm/13-main-wnd.png" />
+               </p>
+            </section>            
+         </section>
+
          <!-- NOTE: Body goes here -->
          <!-- NOTE: Example
          <section>
