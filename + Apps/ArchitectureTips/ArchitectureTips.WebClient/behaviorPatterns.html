@@ -111,10 +111,12 @@
          The Command pattern creates distance between the client that requests an opera-
          tion and the object that can perform it. This pattern is particularly versatile. It can
          support:
-         • Sending requests to different receivers
-         • Queuing, logging, and rejecting requests
-         • Composing higher-level transactions from primitive operations
-         • Redo and Undo functionality
+         <ul class="fragment fade-up">
+            <li class="fragment fade-up">Sending requests to different receivers</li>
+            <li class="fragment fade-up">Queuing, logging, and rejecting requests</li>
+            <li class="fragment fade-up">Composing higher-level transactions from primitive operations</li>
+            <li class="fragment fade-up">Redo and Undo functionality</li>
+         </ul>         
       </p>
    </section>
    <section>
@@ -356,41 +358,49 @@
    <section>
       <h4>The diagram</h4>
       <p class="fragment fade-up">
+         <img src="img/behavior/mediator/mediator-diagram.png" />
       </p>
    </section>
    <section>
       <h4>Mediator interface</h4>
       <p class="fragment fade-up">
+         <img src="img/behavior/mediator/1-mediator-iface.png" />
       </p>
    </section>
    <section>
       <h4>Colleague interface</h4>
       <p class="fragment fade-up">
+         <img src="img/behavior/mediator/2-colleague.png" />
       </p>
    </section>
    <section>
       <h4>Colleague Impl</h4>
       <p class="fragment fade-up">
+         <img src="img/behavior/mediator/3-colleague-impl.png" />
       </p>
    </section>
    <section>
       <h4>Concrete Colleague 1</h4>
       <p class="fragment fade-up">
+         <img src="img/behavior/mediator/4-colleague-1.png" />
       </p>
    </section>
    <section>
       <h4>Concrete Colleague 2</h4>
       <p class="fragment fade-up">
+         <img src="img/behavior/mediator/5-colleague-2.png" />
       </p>
    </section>
    <section>
       <h4>Mediator impl</h4>
       <p class="fragment fade-up">
+         <img src="img/behavior/mediator/6-mediator-impl.png" />
       </p>
    </section>
    <section>
       <h4>App</h4>
       <p class="fragment fade-up">
+         <img src="img/behavior/mediator/7-app.png" />
       </p>
    </section>
 </section>
@@ -416,22 +426,17 @@
    <section>
       <h4>Address interface</h4>
       <p class="fragment fade-up">
+         <img src="img/behavior/memento/02-iaddress.png" />
       </p>
    </section>
    <section>
       <h4>Address implementation</h4>
       <p class="fragment fade-up">
-         <img src="img/behavior/memento/02-iaddress.png" />
+         <img src="img/behavior/memento/03-address-impl.png" />         
       </p>
    </section>
    <section>
       <h4>Address Book interface</h4>
-      <p class="fragment fade-up">
-         <img src="img/behavior/memento/03-address-impl.png" />
-      </p>
-   </section>
-   <section>
-      <h4>Address Book impl</h4>
       <p class="fragment fade-up">
          <img src="img/behavior/memento/04-address-book-iface.png" />
       </p>
@@ -447,11 +452,11 @@
       <p class="fragment fade-up">
          <img src="img/behavior/memento/06-addressbook-impl-2.png" />
       </p>
-   </section>
+   </section>   
    <section>
       <h4>Contact interface</h4>
       <p class="fragment fade-up">
-         <img src="img/behavior/memento/07-contact-iface.png" />         
+         <img src="img/behavior/memento/07-contact-iface.png" />
       </p>
    </section>
    <section>
