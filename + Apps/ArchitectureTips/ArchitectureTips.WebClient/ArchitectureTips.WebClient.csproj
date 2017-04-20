@@ -173,6 +173,15 @@
     <Content Include="img\behavior\template-method\02-ProjectItem.png" />
     <Content Include="img\behavior\template-method\03-Deliverable.png" />
     <Content Include="img\behavior\template-method\04-Task.png" />
+    <Content Include="img\behavior\visitor\01-visitor-diagram.png" />
+    <Content Include="img\behavior\visitor\02-ivisitor.png" />
+    <Content Include="img\behavior\visitor\03-ielement.png" />
+    <Content Include="img\behavior\visitor\04-employee.png" />
+    <Content Include="img\behavior\visitor\05-clerk.png" />
+    <Content Include="img\behavior\visitor\06-employee-collection.png" />
+    <Content Include="img\behavior\visitor\07-vacation-visitor.png" />
+    <Content Include="img\behavior\visitor\08-income-visitor.png" />
+    <Content Include="img\behavior\visitor\09-app.png" />
     <Content Include="img\caninicalforms\cn-begin-1.png" />
     <Content Include="img\caninicalforms\cn-ctor-props-5.png" />
     <Content Include="img\caninicalforms\cn-icomparable-2.png" />
