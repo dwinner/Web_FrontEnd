@@ -112,6 +112,7 @@
     <Content Include="img\arch\mvvm\6-01-book-vm.png" />
     <Content Include="img\arch\mvvm\7-01-books-vm.png" />
     <Content Include="img\arch\mvvm\7-02-books-vm.png" />
+    <Content Include="img\arch\mvvm\mvvm-diagram.png" />
     <Content Include="img\behavior\chain\1-icontact.png" />
     <Content Include="img\behavior\chain\2-contactimpl.png" />
     <Content Include="img\behavior\chain\3-iprojectitem.png" />

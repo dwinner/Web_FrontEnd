@@ -36,7 +36,8 @@
             <ul>
                <li>Auto mapping</li>
                <li>Model-View-View Model</li>
-               <li>Component composition</li>
+               <!--<li>Composition</li>
+               <li>Managed extensibility framework</li>-->
             </ul>
          </section>
 
@@ -82,13 +83,27 @@
             <section>
                <h4>Role</h4>
                <p class="fragment fade-up">
-                  <!-- TODO: MVVM role -->
+                  <ul>
+                     <li class="fragment fade-up">
+                        The model is the entity that represents the business concept; it can be
+                        anything from a simple customer entity to a complex stock trade entity.
+                     </li>                     
+                     <li class="fragment fade-up">
+                        The View is the graphical control or set of controls responsible for
+                        rendering the Model data on screen. A View can be a WPF window, a Silverlight
+                        page, or just a XAML data template control.
+                     </li>                     
+                     <li class="fragment fade-up">
+                        The ViewModel is the magic behind everything. The ViewModel contains the UI logic,
+                        the commands, the events, and a reference to the Model.
+                     </li>                     
+                  </ul>
                </p>
             </section>
             <section>
                <h4>The diagram</h4>
                <p class="fragment fade-up">
-                  <!-- TODO: MVVM diagram -->
+                  <img src="img/arch/mvvm/mvvm-diagram.png" />
                </p>
             </section>
             <section>
