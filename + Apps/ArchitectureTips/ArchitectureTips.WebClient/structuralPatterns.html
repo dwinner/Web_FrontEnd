@@ -72,10 +72,11 @@
          more cost effective than rewriting them.
       </p>
       <p class="fragment fade-up">
-         Toolkits also need adapters. Although they are designed for reuse, not all applica
-         tions will want to use the interfaces that toolkits provide; some might prefer to stick
-         to a well-known, domain-specific interface. In such cases, the adapter can accept
-         calls from the application and transform them into calls on toolkit methods.
+         Toolkits also need adapters. Although they are designed for reuse, not all
+         applications will want to use the interfaces that toolkits provide;
+         some might prefer to stick to a well-known, domain-specific interface.
+         In such cases, the adapter can accept calls from the application and transform
+         them into calls on toolkit methods.
       </p>
    </section>
    <section>
@@ -407,10 +408,10 @@
    <section>
       <h4>Role</h4>
       <p class="fragment fade-up">
-         The role of the Facade pattern is to provide different high-level views of subsystems
-         whose details are hidden from users. In general, the operations that might be desir-
-         able from a user’s perspective could be made up of different selections of parts of the
-         subsystems.
+         The role of the Facade pattern is to provide different high-level views of
+         subsystems whose details are hidden from users. In general, the operations
+         that might be desirable from a user’s perspective could be made up of different
+         selections of parts of the subsystems.
       </p>
    </section>
    <section>
@@ -477,13 +478,17 @@
       <h4>Role</h4>
       <p class="fragment fade-up">
          The Flyweight pattern promotes an efficient way to share common information
-         present in small objects that occur in a system in large numbers. It thus helps reduce
-         storage requirements when many values are duplicated. The Flyweight pattern dis-
-         tinguishes between the intrinsic and extrinsic state of an object. The greatest savings
-         in the Flyweight pattern occur when objects use both kinds of state but:
+         present in small objects that occur in a system in large numbers. It thus helps
+         reduce storage requirements when many values are duplicated. The Flyweight pattern
+         distinguishes between the intrinsic and extrinsic state of an object.
+         The greatest savings in the Flyweight pattern occur when objects use both kinds of state but:
          <ul class="fragment fade-up">
-            <li class="fragment fade-up">The intrinsic state can be shared on a wide scale, minimizing storage requirements.</li>
-            <li class="fragment fade-up">The extrinsic state can be computed on the fly, trading computation for storage.</li>
+            <li class="fragment fade-up">
+               The intrinsic state can be shared on a wide scale, minimizing storage requirements.
+            </li>
+            <li class="fragment fade-up">
+               The extrinsic state can be computed on the fly, trading computation for storage.
+            </li>
          </ul>
       </p>
    </section>
