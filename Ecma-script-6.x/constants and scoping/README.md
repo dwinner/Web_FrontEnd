@@ -1,0 +1,3 @@
+﻿# constants and scoping
+
+

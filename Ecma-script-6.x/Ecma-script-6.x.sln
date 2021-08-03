@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1525
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "first-es6", "first-es6\first-es6.njsproj", "{D0C6EFC3-CBAF-48DE-A64B-F109961B8FBC}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "constants and scoping", "constants and scoping\constants and scoping.njsproj", "{176EC920-6709-4BE0-A22D-8F4B40B45CBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0C6EFC3-CBAF-48DE-A64B-F109961B8FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C6EFC3-CBAF-48DE-A64B-F109961B8FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C6EFC3-CBAF-48DE-A64B-F109961B8FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C6EFC3-CBAF-48DE-A64B-F109961B8FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{176EC920-6709-4BE0-A22D-8F4B40B45CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176EC920-6709-4BE0-A22D-8F4B40B45CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{176EC920-6709-4BE0-A22D-8F4B40B45CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{176EC920-6709-4BE0-A22D-8F4B40B45CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4FFECC2-965D-43EE-84A2-38350A45680A}
+	EndGlobalSection
+EndGlobal
