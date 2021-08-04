@@ -1,0 +1,9 @@
+{
+  "name": "enhanced-object-properties",
+  "version": "0.0.0",
+  "description": "enhanced object properties",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
