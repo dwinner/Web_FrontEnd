@@ -11,7 +11,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>fbf45cf3-a8bf-4041-94f2-106d37d058a5</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>object_assigning.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -29,6 +29,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="object_assigning.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="short_hand_obj.js">
       <SubType>Code</SubType>
     </Compile>
