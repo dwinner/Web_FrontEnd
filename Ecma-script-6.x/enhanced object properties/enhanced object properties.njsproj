@@ -11,7 +11,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>fbf45cf3-a8bf-4041-94f2-106d37d058a5</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>object_assigning.js</StartupFile>
+    <StartupFile>strings.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -33,6 +33,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="short_hand_obj.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="strings.js">
       <SubType>Code</SubType>
     </Compile>
     <Content Include="package.json" />
