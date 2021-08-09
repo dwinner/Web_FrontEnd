@@ -11,7 +11,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>fbf45cf3-a8bf-4041-94f2-106d37d058a5</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>strings.js</StartupFile>
+    <StartupFile>array_buffers.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -28,7 +28,12 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app.js" />
+    <Compile Include="array_buffers.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="array_samples.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="object_assigning.js">
       <SubType>Code</SubType>
     </Compile>
