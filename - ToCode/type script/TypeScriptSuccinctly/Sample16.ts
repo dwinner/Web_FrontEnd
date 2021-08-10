@@ -1,0 +1,5 @@
+module Succinctly {
+    module Utilities {
+
+    }
+}

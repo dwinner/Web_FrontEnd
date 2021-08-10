@@ -1,0 +1,9 @@
+{
+  "name": "template-literals",
+  "version": "0.0.0",
+  "description": "template literals",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
