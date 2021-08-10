@@ -9,6 +9,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "constants and scoping", "co
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "enhanced object properties", "enhanced object properties\enhanced object properties.njsproj", "{FBF45CF3-A8BF-4041-94F2-106D37D058A5}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "arrow functions", "arrow functions\arrow functions.njsproj", "{8864D235-F9F2-43BA-8589-DE0A06EDB34F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FBF45CF3-A8BF-4041-94F2-106D37D058A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBF45CF3-A8BF-4041-94F2-106D37D058A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBF45CF3-A8BF-4041-94F2-106D37D058A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8864D235-F9F2-43BA-8589-DE0A06EDB34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8864D235-F9F2-43BA-8589-DE0A06EDB34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8864D235-F9F2-43BA-8589-DE0A06EDB34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8864D235-F9F2-43BA-8589-DE0A06EDB34F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

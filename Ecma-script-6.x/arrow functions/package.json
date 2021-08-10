@@ -1,0 +1,9 @@
+{
+  "name": "arrow-functions",
+  "version": "0.0.0",
+  "description": "arrow functions",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
