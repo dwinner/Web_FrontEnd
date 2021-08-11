@@ -17,6 +17,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "template literals", "templa
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "destructuring assignment", "destructuring assignment\destructuring assignment.njsproj", "{73C1A032-D15F-4FBD-9752-DD7AB440AF06}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "modules", "modules\modules.njsproj", "{0C47428D-5F64-46C4-8604-D9727AC4DA1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{73C1A032-D15F-4FBD-9752-DD7AB440AF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73C1A032-D15F-4FBD-9752-DD7AB440AF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73C1A032-D15F-4FBD-9752-DD7AB440AF06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C47428D-5F64-46C4-8604-D9727AC4DA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C47428D-5F64-46C4-8604-D9727AC4DA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C47428D-5F64-46C4-8604-D9727AC4DA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C47428D-5F64-46C4-8604-D9727AC4DA1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
