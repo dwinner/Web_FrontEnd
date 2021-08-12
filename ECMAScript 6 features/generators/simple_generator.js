@@ -1,7 +1,7 @@
 function* sampleFunc() {
-  console.log('First');
-  yield;
-  console.log('Second'); 
+    console.log('First');
+    yield;
+    console.log('Second');
 }
 
 let gen = sampleFunc();
