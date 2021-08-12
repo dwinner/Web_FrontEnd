@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "classes",
+  "name": "iterators",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

@@ -11,3 +11,13 @@ export class Animal {
         console.log(input);
     }
 }
+
+export class Canine extends Animal {
+    constructor() {
+        super("canine");
+    }
+
+    static echo() {
+        super.echo("bow wow");
+    }
+}
