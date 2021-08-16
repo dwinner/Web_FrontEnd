@@ -153,11 +153,6 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
-/ASP.NET/Client Dev/Pro-jQuery/.nuget
-*.DotSettings
-/ASP.NET/BundlingFeatures/.vs/config
-/ASP.NET/Mobile Dev/.vs/config/applicationhost.config
-/ASP.NET/SignalR/Intro SignalR/.nuget
-/ASP.NET/SignalR/Pro SignalR/.vs/config/applicationhost.config
-/ASP.NET/SignalR/+ Examples/StockTicker/.vs/config
-/Aspect Oriented Pro/Aop.InPractice/.vs/config
+
+# WebStorm
+.idea/

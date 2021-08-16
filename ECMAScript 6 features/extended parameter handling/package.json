@@ -1,0 +1,9 @@
+{
+  "name": "extended-parameter-handling",
+  "version": "0.0.0",
+  "description": "extended parameter handling",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}

@@ -1,9 +1,0 @@
-{
-  "name": "constants-and-scoping",
-  "version": "0.0.0",
-  "description": "constants and scoping",
-  "main": "app.js",
-  "author": {
-    "name": ""
-  }
-}
