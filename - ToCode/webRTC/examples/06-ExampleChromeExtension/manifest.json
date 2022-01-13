@@ -1,0 +1,25 @@
+{
+   "author": "Agility Feat, Inc",
+   "background": {
+      "persistent": false,
+      "scripts": [ "background-script.js" ]
+   },
+   "content_scripts": [ {
+      "js": [ "content-script.js" ],
+      "matches": [ "*://*/*" ]
+   } ],
+   "description": "Usabilime screensharing is an extension to enable screensharing using WebRTC. Powered by Agility Feat.",
+   "homepage_url": "http://agilityfeat.com/",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgzirAx6qzzV67rHEa+zzw9CUBQjhExQvWuWUQGGbQylZhg8LJl+T8sOGsqKsb49zoVt6LYOnSgHnbaf8qLbl/UWIs1UhVJKATfmzIhT9D8JwZHTO/GnJtdaENsJj9T9BMcCgYhSEO+CAcDR8yvMYDaQMUdLQwtC0YtlXIR+9ikTGBvk8gM32rjKM4tn+ZQpb621o6mg56Fvsk1NmyNgoJPfGyvXkHZS4J1PJeg818uhZU4KntJ4vbYjXF0JM9IWw7yQTCazxw+e7WxkKfU43FgO6hI+z41MxnhfeFcMbU2Qf6zuSIEYydZ+iJG42JPLPkJmHDccMTrDx8sPKpgczlwIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "34",
+   "name": "Usabilime ScreenSharing",
+   "permissions": [ "desktopCapture" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.8"
+}

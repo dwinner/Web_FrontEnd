@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>O'Reilly Introduction to WebRTC</title>
+		<script src="getscreenmedia.bundle.js"></script>
+	</head>
+	<body>
+		Hello WebRTC!
+		<video id="someScreen" autoplay></video>
+		<script>
+			var someScreen = document.querySelector("#someScreen");
+			
+            window.setTimeout(function () {
+                getScreenMedia(function (err, stream) {
+                    if (err) {
+                       console.log('failed: ' + err);
+                    } else {
+                       console.log('got a stream', stream);  
+					   someScreen.src = URL.createObjectURL(stream);
+                    }
+                });
+            }, 500);
+		</script>
+	</body>
+</html>
