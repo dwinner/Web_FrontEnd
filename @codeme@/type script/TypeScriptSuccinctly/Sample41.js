@@ -1,2 +1,0 @@
-
-externalLogger.anything();
