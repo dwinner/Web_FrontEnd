@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta name="description" content="Architecture hints" />
+   <meta name="author" content="dwinner@inbox.ru" />
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css" />
+   <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+   <link rel="stylesheet" href="css/reveal/reveal.css" />
+   <link rel="stylesheet" href="css/reveal/theme/sky.css" id="theme" />
+   <link rel="stylesheet" href="reveal/lib/css/zenburn.css" />
+   <script type="text/javascript">
+      var link = document.createElement ('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match (/print-pdf/gi)
+         ? 'css/releal/print/pdf.css'
+         : 'css/releal/print/pdf.css';
+      document.getElementsByTagName ('head')[0].appendChild (link);
+   </script>
+   <script src="js/jquery/jquery-1.9.1.min.js"></script>
+   <script src="js/modernizr-2.8.3.min.js"></script>
+   <title>Patterns for concurrency</title>
+</head>
+<body>
+   <div class="reveal">
+      <div class="slides">
+         <section>
+            <h4>Patterns for concurrency</h4>
+         </section>
+         <section>
+            <ul>
+               <li>Decoupled console</li>
+               <li>Parallel caching</li>
+               <li>Parallel map-reduce</li>
+               <li>Parallel quick sort</li>
+               <li>Parallel reduction</li>
+               <li>Parallel tree search</li>
+               <li>Pipeline</li>
+               <li>Speculative caching</li>
+               <li>Speculative selection</li>
+               <li>Traversing parallel tree</li>
+               <li>Dataflow processing</li>               
+            </ul>
+         </section>
+         <!-- NOTE: Body goes here -->
+         <!-- NOTE: Example
+         <section>
+            <section>
+               <h4>Pattern name</h4>
+            </section>
+            <section>
+               <h4>Role</h4>
+               <p class="fragment fade-up">
+               </p>
+            </section>
+            <section>
+               <h4>The diagram</h4>
+               <p class="fragment fade-up">
+               </p>
+            </section>
+            <section>
+               <h4>...</h4>
+               <p class="fragment fade-up">
+                  <img src=""/>
+               </p>
+            </section>
+         </section>
+         -->
+      </div>
+   </div>
+   <script src="reveal/lib/js/head.min.js"></script>
+   <script src="js/reveal/reveal.js"></script>
+   <script type="text/javascript">
+   Reveal.initialize ({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide',
+      dependencies: [
+         { src: 'reveal/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+         {
+            src: 'js/reveal/marked.js',
+            condition: function () { return !!document.querySelector ('[data-markdown]'); }
+         },
+         {
+            src: 'js/reveal/markdown.js',
+            condition: function () { return !!document.querySelector ('[data-markdown]'); }
+         },
+         { src: 'js/reveal/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+         { src: 'js/reveal/zoom.js', async: true },
+         { src: 'js/reveal/notes.js', async: true }
+      ]
+   });
+   </script>
+</body>
+</html>

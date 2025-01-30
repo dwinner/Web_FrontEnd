@@ -1,0 +1,618 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8"/>
+   <meta name="description" content="Architecture hints"/>
+   <meta name="author" content="dwinner@inbox.ru"/>
+   <meta name="apple-mobile-web-app-capable" content="yes"/>
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+   <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css"/>
+   <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+   <link rel="stylesheet" href="css/reveal/reveal.css"/>
+   <link rel="stylesheet" href="css/reveal/theme/sky.css" id="theme"/>
+   <link rel="stylesheet" href="reveal/lib/css/zenburn.css"/>
+   <script type="text/javascript">
+      var link = document.createElement ('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match (/print-pdf/gi)
+         ? 'css/releal/print/pdf.css'
+         : 'css/releal/print/pdf.css';
+      document.getElementsByTagName ('head')[0].appendChild (link);
+   </script>
+   <script src="js/jquery/jquery-1.9.1.min.js"></script>
+   <script src="js/modernizr-2.8.3.min.js"></script>
+   <title>Structural patterns</title>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+   <h4>Structural patterns</h4>
+</section>
+<section>
+   <ul>
+      <li>Adapter</li>
+      <li>Bridge</li>
+      <li>Composite</li>
+      <li>Proxy</li>
+      <li>Decorator</li>
+      <li>Facade</li>
+      <li>Flyweight</li>
+      <li>Immutable object</li>
+   </ul>
+</section>
+<!-- Adapter -->
+<section>
+   <section>
+      <h4>The Adapter</h4>
+   </section>
+   <section>
+      <h4>Motivation</h4>
+      <p class="fragment fade-up">
+         The Adapter pattern enables a system to use classes whose interfaces don’t quite
+         match its requirements.
+      </p>
+      <p class="fragment fade-up">
+         It is especially useful for off-the-shelf code, for toolkits, and
+         for libraries.
+      </p>
+      <p class="fragment fade-up">
+         Many examples of the Adapter pattern involve input/output because
+         that is one domain that is constantly changing.
+      </p>
+   </section>
+   <section>
+      <p class="fragment fade-up">
+         For example, programs written in the
+         1980s will have very different user interfaces from those written in the 2000s. Being
+         able to adapt those parts of the system to new hardware facilities would be much
+         more cost effective than rewriting them.
+      </p>
+      <p class="fragment fade-up">
+         Toolkits also need adapters. Although they are designed for reuse, not all
+         applications will want to use the interfaces that toolkits provide;
+         some might prefer to stick to a well-known, domain-specific interface.
+         In such cases, the adapter can accept calls from the application and transform
+         them into calls on toolkit methods.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/adapter/adapter-diagram.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>IEmployee</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/adapter/IEmployee.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>EmployeeImpl</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/adapter/EmployeeImpl.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>ComparableEmployee</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/adapter/ComparableEmployee.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Adapter App</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/adapter/app.png"/>
+      </p>
+   </section>
+</section>
+<!-- Bridge -->
+<section>
+   <section>
+      <h4>The Bridge</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Bridge pattern decouples an abstraction from its implementation, enabling them
+         to vary independently. The Bridge pattern is useful when a new version of software is
+         brought out that will replace an existing version, but the older version must still run
+         for its existing client base. The client code will not have to change,
+         as it is conforming to a given abstraction, but the client will need to
+         indicate which version it wants
+         to use.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/bridge/bridge.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>IBaseList iface</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/bridge/IBaseList.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>BaseList impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/bridge/BaseList.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Numbered list</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/bridge/NumberedList.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Ordered list</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/bridge/OrderedList.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Ornamented list</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/bridge/OrnamentedList.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Bridge App</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/bridge/app.png"/>
+      </p>
+   </section>
+</section>
+<!-- Composite -->
+<section>
+   <section>
+      <h4>Composite</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Composite pattern arranges structured hierarchies so that single components
+         and groups of components can be treated in the same way. Typical operations on the
+         components include add, remove, display, find, and group.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/composite.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contact interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/IContact.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contact Impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/ContactImpl.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Project item interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/IProjectItem.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Project Impl</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/Project.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Deliverable</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/Deliverable.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Work task</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/WorkTask.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Data serializer helper</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/DataSerializer.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Creating the contacts</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/CreatingContacts.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Creating the project</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/CreatingProject.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Adding tasks, subtasks</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/AddingTasks.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Composite App</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/composite/app.png"/>
+      </p>
+   </section>
+</section>
+<!-- Proxy -->
+<section>
+   <section>
+      <h4>Proxy</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Proxy pattern supports objects that control the creation of and access to other
+         objects. The proxy is often a small (public) object that stands in for a more complex
+         (private) object that is activated once certain circumstances are clear
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/proxy-diagram.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Address interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/IAddress.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Address implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/AddressImpl.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>AddressBook interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/IAddressBook.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>AddressBook implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/AddressBookImpl.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>AddressBook Proxy</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/AddressBookProxy1.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>AddressBook Proxy</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/AddressBookProxy2.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>AddressBook Proxy</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/AddressBookProxy3.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>AddressBook Proxy</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/AddressBookProxy4.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Proxy App</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/proxy/ProxyApp.png"/>
+      </p>
+   </section>
+</section>
+<!-- Decorator -->
+<section>
+   <section>
+      <h4>Decorator</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The role of the Decorator pattern is to provide a way of attaching new state
+         and behavior to an object dynamically. The object does not know it is being
+         “decorated” which makes this a useful pattern for evolving systems.
+         A key implementation point in the Decorator pattern is that decorators both
+         inherit the original class and contain an instantiation of it.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/decorator/Decorator.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contact interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/decorator/IContact1.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Contact implementation</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/decorator/ContactImpl2.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Project interface</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/decorator/IProjectItem3.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Project task</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/decorator/ProjectTask4.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Project decorator</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/decorator/ProjectDecorator5.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Supported project item</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/decorator/SupportedProjectItem6.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Dependant project item</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/decorator/DependantProjectItem7.png"/>
+      </p>
+   </section>
+   <section>
+      <h4>Application</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/decorator/DecoratorApp.png"/>
+      </p>
+   </section>
+</section>
+<!-- Facade -->
+<section>
+   <section>
+      <h4>Facade</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The role of the Facade pattern is to provide different high-level views of
+         subsystems whose details are hidden from users. In general, the operations
+         that might be desirable from a user’s perspective could be made up of different
+         selections of parts of the subsystems.
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/facade/facade.png" />
+      </p>
+   </section>
+   <section>
+      <h4>High cohesion type</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/facade/cohesion-1.png" />
+      </p>
+   </section>
+   <section>
+      <h4>High cohesion type</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/facade/cohesion-2.png" />
+      </p>
+   </section>
+   <section>
+      <h4>High cohesion type</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/facade/cohesion-3.png" />
+      </p>
+   </section>
+   <section>
+      <h4>High cohesion type</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/facade/cohesion-4.png" />
+      </p>
+   </section>
+   <section>
+      <h4>High cohesion type</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/facade/cohesion-5.png" />
+      </p>
+   </section>
+   <section>
+      <h4>High cohesion type</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/facade/cohesion-6.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Facade To achieve low coupling</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/facade/facade-impl.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Facade App</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/facade/facade-app.png" />
+      </p>
+   </section>
+</section>
+<!-- Flyweight -->
+<section>
+   <section>
+      <h4>Flyweight</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         The Flyweight pattern promotes an efficient way to share common information
+         present in small objects that occur in a system in large numbers. It thus helps
+         reduce storage requirements when many values are duplicated. The Flyweight pattern
+         distinguishes between the intrinsic and extrinsic state of an object.
+         The greatest savings in the Flyweight pattern occur when objects use both kinds of state but:
+         <ul class="fragment fade-up">
+            <li class="fragment fade-up">
+               The intrinsic state can be shared on a wide scale, minimizing storage requirements.
+            </li>
+            <li class="fragment fade-up">
+               The extrinsic state can be computed on the fly, trading computation for storage.
+            </li>
+         </ul>
+      </p>
+   </section>
+   <section>
+      <h4>The diagram</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/flyweight/flyweight-diagram.png" />
+      </p>
+   </section>
+   <section>
+      <h4>POCO class: Audio entity</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/flyweight/audio-entity.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Comparison type</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/flyweight/audio-comparison-type.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Comparer example: By bitrate</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/flyweight/by-bitrate-comparer.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Audio comparer factory</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/flyweight/comparer-factory.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Audio comparer flyweight</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/flyweight/audio-comparer-flyweight.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Flyweight App</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/flyweight/flyweight-app.png" />
+      </p>
+   </section>   
+</section>
+<!-- Immutable object -->
+<section>
+   <section>
+      <h4>Immutable object</h4>
+   </section>
+   <section>
+      <h4>Role</h4>
+      <p class="fragment fade-up">
+         You need readonly state of the object, and You need a guarantee
+         that no one can corrupt this state
+      </p>
+   </section>   
+   <section>
+      <h4>Immutable item By aspect</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/immutable/1-item.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Immutable document By aspect</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/immutable/2-document.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Immutable class with advice composition</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/immutable/3-invoice.png" />
+      </p>
+   </section>
+   <section>
+      <h4>Application</h4>
+      <p class="fragment fade-up">
+         <img src="img/structural/immutable/4-app.png" />
+      </p>
+   </section>
+</section> 
+</div>
+</div>
+<script src="reveal/lib/js/head.min.js"></script>
+<script src="js/reveal/reveal.js"></script>
+<script type="text/javascript">
+   Reveal.initialize ({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide',
+      dependencies: [
+         {
+            src: 'reveal/lib/js/classList.js',
+            condition: function () {
+               return !document.body.classList;
+            }
+         },
+         {
+            src: 'js/reveal/marked.js',
+            condition: function () {
+               return !!document.querySelector ('[data-markdown]');
+            }
+         },
+         {
+            src: 'js/reveal/markdown.js',
+            condition: function () {
+               return !!document.querySelector ('[data-markdown]');
+            }
+         },
+         {
+            src: 'js/reveal/highlight.js',
+            async: true,
+            callback: function () {
+               hljs.initHighlightingOnLoad();
+            }
+         },
+         { src: 'js/reveal/zoom.js', async: true },
+         { src: 'js/reveal/notes.js', async: true }
+      ]
+   });
+</script>
+</body>
+</html>
