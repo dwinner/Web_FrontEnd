@@ -11,21 +11,29 @@
 // locally to this function and therefore have access to this local variable.
 // This means that the value is private to the two accessor methods, and it
 // cannot be set or modified except through the setter method.
-function addPrivateProperty(o, name, predicate) {
-    let value;  // This is the property value
+function addPrivateProperty(o, name, predicate)
+{
+   let value;  // This is the property value
 
-    // The getter method simply returns the value.
-    o[`get${name}`] = function() { return value; };
+   // The getter method simply returns the value.
+   o[`get${name}`] = function ()
+   {
+      return value;
+   };
 
-    // The setter method stores the value or throws an exception if
-    // the predicate rejects the value.
-    o[`set${name}`] = function(v) {
-        if (predicate && !predicate(v)) {
-            throw new TypeError(`set${name}: invalid value ${v}`);
-        } else {
-            value = v;
-        }
-    };
+   // The setter method stores the value or throws an exception if
+   // the predicate rejects the value.
+   o[`set${name}`] = function (v)
+   {
+      if (predicate && !predicate(v))
+      {
+         throw new TypeError(`set${name}: invalid value ${v}`);
+      }
+      else
+      {
+         value = v;
+      }
+   };
 }
 
 // The following code demonstrates the addPrivateProperty() method.
