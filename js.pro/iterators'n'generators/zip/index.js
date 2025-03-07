@@ -5,21 +5,26 @@ function* zip(...iterables)
    let iterators = iterables.map(it => it[Symbol.iterator]());
    let index = 0;
    while (iterators.length > 0)
-   {       // While there are still some iterators
+   {
+      // While there are still some iterators
       if (index >= iterators.length)
-      {    // If we reached the last iterator
-         index = 0;                      // go back to the first one.
+      {
+         // If we reached the last iterator go back to the first one.
+         index = 0;
       }
 
-      let item = iterators[index].next(); // Get next item from next iterator.
+      // Get next item from next iterator.
+      let item = iterators[index].next();
       if (item.done)
-      {                    // If that iterator is done
-         iterators.splice(index, 1);     // then remove it from the array.
+      {
+         // If that iterator is done then remove it from the array.
+         iterators.splice(index, 1);
       }
       else
-      {                              // Otherwise,
-         yield item.value;               // yield the iterated value
-         index++;                        // and move on to the next iterator.
+      {
+         // Otherwise, yield the iterated value and move on to the next iterator.
+         yield item.value;
+         index++;
       }
    }
 }
