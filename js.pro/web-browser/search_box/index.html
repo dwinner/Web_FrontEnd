@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Search web-component</title>
+   <link rel="stylesheet" href="css/style.css">
+   <meta name="description" content="">
+
+   <meta property="og:title" content="">
+   <meta property="og:type" content="">
+   <meta property="og:url" content="">
+   <meta property="og:image" content="">
+   <meta property="og:image:alt" content="">
+
+   <link rel="icon" href="/favicon.ico" sizes="any">
+   <link rel="icon" href="/icon.svg" type="image/svg+xml">
+   <link rel="apple-touch-icon" href="icon.png">
+
+   <link rel="manifest" href="site.webmanifest">
+   <meta name="theme-color" content="#fafafa">
+
+   <style>
+      .search {
+         /* background: bisque; */
+         font-family: sans-serif;
+      }
+
+      #foo {
+         user-select: none;
+      }
+   </style>
+</head>
+
+<body>
+<script src="js/app.js"></script>
+<p id="foo">Testing, testing</p>
+
+<search-box class="search" value="foobar" size=20 placeholder="Search...">
+</search-box>
+<p>Testing, testing</p>
+
+<button onclick="changeSize()">Change size</button>
+<button onclick="changePlaceholder()">Change placeholder</button>
+<button onclick="changeValue()">Change value</button>
+<button onclick="hide()">Disable</button>
+<button onclick="show()">Enable</button>
+
+<script>
+   let searchBoxEl = document.querySelector("search-box");
+   console.log("searchBoxEl", searchBoxEl);
+   searchBoxEl.addEventListener("clear", (e) =>
+   {
+      console.log("clear event");
+   });
+   searchBoxEl.addEventListener("search", (e) =>
+   {
+      console.log("search event", e.detail);
+   });
+
+   searchBoxEl.addEventListener("input", (e) =>
+   {
+      console.log("input event targeted at", e.target);
+      console.log(e);
+   });
+
+   searchBoxEl.addEventListener("focus", console.log);
+   searchBoxEl.addEventListener("blur", console.log);
+   searchBoxEl.addEventListener("click", console.log);
+
+   function changeSize()
+   {
+      searchBoxEl.size = 30;
+   }
+
+   function changePlaceholder()
+   {
+      searchBoxEl.placeholder = "?????????";
+   }
+
+   function changeValue()
+   {
+      searchBoxEl.value = "testing";
+   }
+
+   function hide()
+   {
+      searchBoxEl.disabled = true;
+   }
+
+   function show()
+   {
+      searchBoxEl.disabled = false;
+   }
+</script>
+</body>
+</html>
