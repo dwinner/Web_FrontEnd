@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>I'm thinking of a number...</title>
+   <link rel="stylesheet" href="css/style.css">
+   <style>
+      body {
+         height: 250px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-evenly;
+      }
+
+      #heading {
+         font: bold 36px sans-serif;
+         margin: 0;
+      }
+
+      #container {
+         border: solid black 1px;
+         height: 1em;
+         width: 80%;
+      }
+
+      #range {
+         background-color: green;
+         margin-left: 0;
+         height: 1em;
+         width: 100%;
+      }
+
+      #input {
+         display: block;
+         font-size: 24px;
+         width: 60%;
+         padding: 5px;
+      }
+
+      #playagain {
+         font-size: 24px;
+         padding: 10px;
+         border-radius: 5px;
+      }
+   </style>
+   <meta name="description" content="">
+
+   <meta property="og:title" content="">
+   <meta property="og:type" content="">
+   <meta property="og:url" content="">
+   <meta property="og:image" content="">
+   <meta property="og:image:alt" content="">
+
+   <link rel="icon" href="/favicon.ico" sizes="any">
+   <link rel="icon" href="/icon.svg" type="image/svg+xml">
+   <link rel="apple-touch-icon" href="icon.png">
+
+   <link rel="manifest" href="site.webmanifest">
+   <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+<h1 id="heading">I'm thinking of a number...</h1>
+
+<!-- A visual representation of the numbers that have not been ruled out -->
+<div id="container"><div id="range"></div></div>
+
+<!-- Where the user enters their guess -->
+<label for="input"></label>
+<input id="input" type="text">
+
+<!-- A button that reloads with no search string. Hidden until game ends. -->
+<button id="playagain" hidden onclick="location.search='';">Play Again</button>
+
+<script src="js/app.js"></script>
+</body>
+
+</html>
